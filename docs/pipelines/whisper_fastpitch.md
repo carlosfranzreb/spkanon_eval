@@ -28,22 +28,22 @@ Whisper is trained on 680k hours of multilingual data scraped from the Internet.
 
 ## Results
 
-We have evaluated these models with our [default setup](components/evaluation/default.md). The experiment folder for this run is `wandb/run-20230717_121945-pvsbw0y1`. The following tables result from running the script `scripts/print_results`.
+We have evaluated these models with our [default setup](components/evaluation/default.md). The experiment folders for this run are under `logs/whisper_fastpitch`. The following tables result from running the script `scripts/print_results`.
 
 ### Evaluation results
 
-| Component | cv-test_3utts | edacc-test | ls-test-clean | ravdess |
+| | cv-test_3utts | ls-test-clean | edacc-test | ravdess |
 | --- | --- | --- | --- | --- |
-| asv-plda/ignorant/results | 0.50 | 0.47 | 0.55 | 0.48 |
-| asv-plda/lazy-informed/results | 0.18 | 0.18 | 0.09 | 0.09 |
-| nisqa | 3.87 | 3.58 | 3.70 | 3.62 |
-| ser-audeering-w2v | 1.00 | 0.99 | 0.99 | 1.00 |
-| whisper-large | 0.18 | 0.34 | 0.08 | 0.01 |
-| whisper-small | 0.19 | 0.34 | 0.08 | 0.01 |
+| whisper-small | 0.19 | 0.08 | 0.34 | 0.01 |
+| whisper-large | 0.18 | 0.08 | 0.34 | 0.01 |
+| ser-audeering-w2v | 1.0 | 0.99 | 0.99 | 1.0 |
+| nisqa | 3.87 | 3.7 | 3.58 | 3.62 |
+| asv-plda/ignorant/results | 0.5 | 0.48 | 0.49 | 0.48 |
+| asv-plda/lazy-informed/results | 0.47 | 0.43 | 0.47 | 0.51 |
 
 ### Inference time for 10s input duration (in seconds)
 
 | Component | inference time |
 | --- | --- |
-| cpu_inference | 1.63 |
-| cuda_inference | 0.07 |
+| cpu_inference | 1.74 |
+| cuda_inference | 0.09 |

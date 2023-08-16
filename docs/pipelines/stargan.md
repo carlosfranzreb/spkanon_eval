@@ -35,18 +35,18 @@ We have evaluated these models with our [default setup](components/evaluation/de
 
 ### Evaluation results
 
-| Component | cv-test_3utts | edacc-test | ls-test-clean | ravdess |
+| | cv-test_3utts | ls-test-clean | edacc-test | ravdess |
 | --- | --- | --- | --- | --- |
-| asv-plda/ignorant/results | 0.25 | 0.45 | 0.34 | 0.44 |
-| asv-plda/lazy-informed/results | 0.21 | 0.28 | 0.26 | 0.37 |
-| nisqa | 3.41 | 2.93 | 3.07 | 3.30 |
-| ser-audeering-w2v | 0.99 | 0.99 | 1.00 | 0.98 |
-| whisper-large | 0.52 | 0.60 | 0.10 | 0.37 |
-| whisper-small | 0.70 | 0.74 | 0.15 | 0.59 |
+| whisper-small | 0.71 | 0.14 | 0.75 | 0.57 |
+| whisper-large | 0.51 | 0.09 | 0.6 | 0.35 |
+| ser-audeering-w2v | 0.99 | 1.0 | 0.99 | 0.98 |
+| nisqa | 3.41 | 3.12 | 2.95 | 3.32 |
+| asv-plda/ignorant/results | 0.27 | 0.32 | 0.38 | 0.44 |
+| asv-plda/lazy-informed/results | 0.22 | 0.27 | 0.28 | 0.36 |
 
 ### Inference time for 10s input duration (in seconds)
 
 | Component | inference time |
 | --- | --- |
-| cpu_inference | 7.46 |
+| cpu_inference | 8.71 |
 | cuda_inference | 0.16 |

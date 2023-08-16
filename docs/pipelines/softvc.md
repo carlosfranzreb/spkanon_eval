@@ -31,22 +31,22 @@ HuBERT is a self-supervised model trained on the whole LibriSpeech dataset (960 
 
 ## Results
 
-We have evaluated these models with our [default setup](components/evaluation/default.md). The experiment folder for this run is `wandb/run-20230718_091956-h0lspxgz`. The following tables result from running the script `scripts/print_results`.
+We have evaluated these models with our [default setup](components/evaluation/default.md). The experiment folders for this run are under `logs/softvc`.
 
 ### Evaluation results
 
-| Component | cv-test_3utts | edacc-test | ls-test-clean | ravdess |
+| | cv-test_3utts | ls-test-clean | edacc-test | ravdess |
 | --- | --- | --- | --- | --- |
-| asv-plda/ignorant/results | 0.43 | 0.45 | 0.42 | 0.39 |
-| asv-plda/lazy-informed/results | 0.27 | 0.30 | 0.19 | 0.10 |
-| nisqa | 3.48 | 3.60 | 3.95 | 3.92 |
-| ser-audeering-w2v | 1.00 | 1.00 | 1.00 | 1.00 |
-| whisper-large | 0.29 | 0.45 | 0.06 | 0.08 |
-| whisper-small | 0.36 | 0.53 | 0.07 | 0.16 |
+| whisper-small | 0.35 | 0.07 | 0.52 | 0.15 |
+| whisper-large | 0.28 | 0.06 | 0.47 | 0.08 |
+| ser-audeering-w2v | 1.0 | 1.0 | 1.0 | 1.0 |
+| nisqa | 3.49 | 3.95 | 3.6 | 3.92 |
+| asv-plda/ignorant/results | 0.43 | 0.44 | 0.44 | 0.4 |
+| asv-plda/lazy-informed/results | 0.28 | 0.19 | 0.3 | 0.1 |
 
 ### Inference time for 10s input duration (in seconds)
 
 | Component | inference time |
 | --- | --- |
-| cpu_inference | 4.91 |
-| cuda_inference | 0.43 |
+| cpu_inference | 8.06 |
+| cuda_inference | 0.67 |
