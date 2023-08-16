@@ -12,9 +12,9 @@ Then you need to define the datasets to use and the root directory where the dat
 
 ## Anonymization pipelines
 
-- STT-TTS with Whisper & FastPitch: does not require any further installation. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
-- StarGANv2-VC: install it with `build/stargan.sh`. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
-- SoftVC: : install it with `build/softvc.sh` does not require any further installation. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
+- **STT-TTS with Whisper & FastPitch**: does not require any further installation. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
+- **StarGANv2-VC**: install it with `build/stargan.sh`. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
+- **SoftVC**: install it with `build/softvc.sh` does not require any further installation. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
 
 ## Results
 
