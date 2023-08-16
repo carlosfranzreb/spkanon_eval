@@ -1,0 +1,82 @@
+2023-08-16 12:07:31,020 - progress - INFO - Initialized mel-spectrogram extractor with config:
+2023-08-16 12:07:31,020 - progress - INFO - 	n_mels: 80
+2023-08-16 12:07:31,020 - progress - INFO - 	n_fft: 2048
+2023-08-16 12:07:31,020 - progress - INFO - 	win_length: 1200
+2023-08-16 12:07:31,020 - progress - INFO - 	hop_length: 300
+2023-08-16 12:07:31,021 - progress - INFO - ### Start of inference with experiment folder `tests/logs/1692180451`
+2023-08-16 12:07:31,022 - progress - INFO - Adding root `tests/data` to datafiles `['data/debug/edacc-test.txt', 'data/debug/ls-dev-clean-2.txt', 'data/debug/cv-test.txt', 'data/debug/ravdess.txt']`
+2023-08-16 12:07:31,022 - progress - INFO - Adding root `tests/data` to `data/debug/edacc-test.txt`
+2023-08-16 12:07:31,023 - progress - INFO - 4 samples included (0.02 h)
+2023-08-16 12:07:31,023 - progress - INFO - 0 samples too short (0.0 h)
+2023-08-16 12:07:31,023 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-16 12:07:31,023 - progress - INFO - Adding root `tests/data` to `data/debug/ls-dev-clean-2.txt`
+2023-08-16 12:07:31,024 - progress - INFO - 10 samples included (0.016 h)
+2023-08-16 12:07:31,025 - progress - INFO - 0 samples too short (0.0 h)
+2023-08-16 12:07:31,025 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-16 12:07:31,025 - progress - INFO - Adding root `tests/data` to `data/debug/cv-test.txt`
+2023-08-16 12:07:31,030 - progress - INFO - 4 samples included (0.006 h)
+2023-08-16 12:07:31,030 - progress - INFO - 0 samples too short (0.0 h)
+2023-08-16 12:07:31,032 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-16 12:07:31,033 - progress - INFO - Adding root `tests/data` to `data/debug/ravdess.txt`
+2023-08-16 12:07:31,037 - progress - INFO - 7 samples included (0.007 h)
+2023-08-16 12:07:31,037 - progress - INFO - 0 samples too short (0.0 h)
+2023-08-16 12:07:31,037 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-16 12:07:31,037 - progress - INFO - New datafiles: `['tests/logs/1692180451/data/debug/edacc-test.txt', 'tests/logs/1692180451/data/debug/ls-dev-clean-2.txt', 'tests/logs/1692180451/data/debug/cv-test.txt', 'tests/logs/1692180451/data/debug/ravdess.txt']`
+2023-08-16 12:07:31,045 - progress - INFO - Running inference with files ['tests/logs/1692180451/data/debug/edacc-test.txt', 'tests/logs/1692180451/data/debug/ls-dev-clean-2.txt', 'tests/logs/1692180451/data/debug/cv-test.txt', 'tests/logs/1692180451/data/debug/ravdess.txt']
+2023-08-16 12:07:31,045 - progress - INFO - Dumping anonymized audiofiles to `tests/logs/1692180451/results`
+2023-08-16 12:07:31,045 - progress - INFO - Creating eval. DL for `['tests/logs/1692180451/data/debug/edacc-test.txt', 'tests/logs/1692180451/data/debug/ls-dev-clean-2.txt', 'tests/logs/1692180451/data/debug/cv-test.txt', 'tests/logs/1692180451/data/debug/ravdess.txt']`
+2023-08-16 12:07:31,045 - progress - INFO - Creating dataloader for tests/logs/1692180451/data/debug/edacc-test.txt
+2023-08-16 12:07:31,045 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': 'tests/data', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False}
+2023-08-16 12:07:31,046 - progress - INFO - Batch size: 2
+2023-08-16 12:07:31,046 - progress - INFO - Collate function: <function collate_fn_inference at 0x29547b430>
+2023-08-16 12:07:31,795 - progress - ERROR - Error while unpadding anonymized `tests/data/edacc_v1.0/clips/EDACC-C02-000000000.wav`; dumping padded
+2023-08-16 12:07:31,796 - progress - ERROR - Error while unpadding anonymized `tests/data/edacc_v1.0/clips/EDACC-C02-000000001.wav`; dumping padded
+2023-08-16 12:07:31,890 - progress - ERROR - Error while unpadding anonymized `tests/data/edacc_v1.0/clips/EDACC-C02-000000002.wav`; dumping padded
+2023-08-16 12:07:31,891 - progress - ERROR - Error while unpadding anonymized `tests/data/edacc_v1.0/clips/EDACC-C02-000000003.wav`; dumping padded
+2023-08-16 12:07:31,913 - progress - INFO - Creating dataloader for tests/logs/1692180451/data/debug/ls-dev-clean-2.txt
+2023-08-16 12:07:31,913 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': 'tests/data', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False}
+2023-08-16 12:07:31,913 - progress - INFO - Batch size: 2
+2023-08-16 12:07:31,913 - progress - INFO - Collate function: <function collate_fn_inference at 0x29547b430>
+2023-08-16 12:07:31,954 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/2412/153948/2412-153948-0000.flac`; dumping padded
+2023-08-16 12:07:31,954 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/2412/153948/2412-153948-0001.flac`; dumping padded
+2023-08-16 12:07:32,046 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/2412/153948/2412-153948-0002.flac`; dumping padded
+2023-08-16 12:07:32,046 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/3752/4944/3752-4944-0000.flac`; dumping padded
+2023-08-16 12:07:32,087 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/3752/4944/3752-4944-0001.flac`; dumping padded
+2023-08-16 12:07:32,087 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/3752/4944/3752-4944-0002.flac`; dumping padded
+2023-08-16 12:07:32,141 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/1988/24833/1988-24833-0000.flac`; dumping padded
+2023-08-16 12:07:32,141 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/1988/24833/1988-24833-0001.flac`; dumping padded
+2023-08-16 12:07:32,208 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/1988/24833/1988-24833-0002.flac`; dumping padded
+2023-08-16 12:07:32,209 - progress - ERROR - Error while unpadding anonymized `tests/data/LibriSpeech/dev-clean-2/1988/24833/1988-24833-0003.flac`; dumping padded
+2023-08-16 12:07:32,241 - progress - INFO - Creating dataloader for tests/logs/1692180451/data/debug/cv-test.txt
+2023-08-16 12:07:32,241 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': 'tests/data', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False}
+2023-08-16 12:07:32,242 - progress - INFO - Batch size: 2
+2023-08-16 12:07:32,242 - progress - INFO - Collate function: <function collate_fn_inference at 0x29547b430>
+2023-08-16 12:07:32,267 - progress - ERROR - Error while unpadding anonymized `tests/data/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60682.mp3`; dumping padded
+2023-08-16 12:07:32,268 - progress - ERROR - Error while unpadding anonymized `tests/data/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60683.mp3`; dumping padded
+2023-08-16 12:07:32,560 - progress - ERROR - Error while unpadding anonymized `tests/data/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16812.mp3`; dumping padded
+2023-08-16 12:07:32,561 - progress - ERROR - Error while unpadding anonymized `tests/data/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16814.mp3`; dumping padded
+2023-08-16 12:07:32,780 - progress - INFO - Creating dataloader for tests/logs/1692180451/data/debug/ravdess.txt
+2023-08-16 12:07:32,780 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': 'tests/data', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False}
+2023-08-16 12:07:32,781 - progress - INFO - Batch size: 2
+2023-08-16 12:07:32,781 - progress - INFO - Collate function: <function collate_fn_inference at 0x29547b430>
+2023-08-16 12:07:32,797 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-01-16.wav`; dumping padded
+2023-08-16 12:07:32,798 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-02-16.wav`; dumping padded
+2023-08-16 12:07:32,816 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-02-16.wav`; dumping padded
+2023-08-16 12:07:32,816 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-01-16.wav`; dumping padded
+2023-08-16 12:07:32,834 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-01-16.wav`; dumping padded
+2023-08-16 12:07:32,835 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-02-16.wav`; dumping padded
+2023-08-16 12:07:32,847 - progress - ERROR - Error while unpadding anonymized `tests/data/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-02-16.wav`; dumping padded
+2023-08-16 12:07:32,849 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-08-16 12:07:32,850 - progress - INFO - Creating datafile `tests/logs/1692180451/results/data/debug/edacc-test.txt`
+2023-08-16 12:07:32,851 - progress - INFO - Creating datafile `tests/logs/1692180451/results/data/debug/ls-dev-clean-2.txt`
+2023-08-16 12:07:32,852 - progress - INFO - Creating datafile `tests/logs/1692180451/results/data/debug/cv-test.txt`
+2023-08-16 12:07:32,853 - progress - INFO - Creating datafile `tests/logs/1692180451/results/data/debug/ravdess.txt`
+2023-08-16 12:07:32,853 - progress - INFO - End of inference
+2023-08-16 12:07:32,854 - progress - INFO - ### Start of evaluation
+2023-08-16 12:07:32,854 - progress - INFO - Evaluating experiment folder `tests/logs/1692180451`
+2023-08-16 12:07:35,359 - progress - INFO - Running evaluation with component `audeering_w2v`
+2023-08-16 12:07:35,360 - progress - INFO - Creating eval. DL for `tests/logs/1692180451/results/data/debug/edacc-test.txt`
+2023-08-16 12:07:35,360 - progress - INFO - Creating dataloader for tests/logs/1692180451/results/data/debug/edacc-test.txt
+2023-08-16 12:07:35,360 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 0, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': 'tests/data', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False}
+2023-08-16 12:07:35,360 - progress - INFO - Batch size: 2
+2023-08-16 12:07:35,360 - progress - INFO - Collate function: <function collate_fn_inference at 0x29547b430>

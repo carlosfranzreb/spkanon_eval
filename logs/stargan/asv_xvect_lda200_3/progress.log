@@ -1,0 +1,763 @@
+2023-07-28 11:39:41,232 - progress - INFO - Initialized mel-spectrogram extractor with config:
+2023-07-28 11:39:41,233 - progress - INFO - 	n_mels: 80
+2023-07-28 11:39:41,234 - progress - INFO - 	n_fft: 2048
+2023-07-28 11:39:41,234 - progress - INFO - 	win_length: 1200
+2023-07-28 11:39:41,235 - progress - INFO - 	hop_length: 300
+2023-07-28 11:39:49,164 - progress - INFO - Passing target selection algorithm to star_gan
+2023-07-28 11:39:49,177 - progress - INFO - ### Start of inference with experiment folder `logs/stargan/1690537180`
+2023-07-28 11:39:49,179 - progress - INFO - Adding root `/ds/audio` to datafiles `['data/common_voice/cv-test_3utts.txt', 'data/librispeech/ls-test-clean.txt', 'data/edacc/edacc-test.txt', 'data/ravdess/ravdess.txt']`
+2023-07-28 11:39:49,180 - progress - INFO - Adding root `/ds/audio` to `data/common_voice/cv-test_3utts.txt`
+2023-07-28 11:39:49,222 - progress - INFO - 1952 samples included (3.338 h)
+2023-07-28 11:39:49,223 - progress - INFO - 1 samples too short (0.0 h)
+2023-07-28 11:39:49,223 - progress - INFO - 0 samples too long (0.0 h)
+2023-07-28 11:39:49,224 - progress - INFO - Adding root `/ds/audio` to `data/librispeech/ls-test-clean.txt`
+2023-07-28 11:39:49,246 - progress - INFO - 2575 samples included (5.305 h)
+2023-07-28 11:39:49,247 - progress - INFO - 36 samples too short (0.018 h)
+2023-07-28 11:39:49,248 - progress - INFO - 0 samples too long (0.0 h)
+2023-07-28 11:39:49,248 - progress - INFO - Adding root `/ds/audio` to `data/edacc/edacc-test.txt`
+2023-07-28 11:39:49,328 - progress - INFO - 4700 samples included (10.845 h)
+2023-07-28 11:39:49,329 - progress - INFO - 4234 samples too short (0.829 h)
+2023-07-28 11:39:49,330 - progress - INFO - 355 samples too long (5.261 h)
+2023-07-28 11:39:49,330 - progress - INFO - Adding root `/ds/audio` to `data/ravdess/ravdess.txt`
+2023-07-28 11:39:49,364 - progress - INFO - 1440 samples included (1.48 h)
+2023-07-28 11:39:49,365 - progress - INFO - 0 samples too short (0.0 h)
+2023-07-28 11:39:49,366 - progress - INFO - 0 samples too long (0.0 h)
+2023-07-28 11:39:49,366 - progress - INFO - New datafiles: `['logs/stargan/1690537180/data/common_voice/cv-test_3utts.txt', 'logs/stargan/1690537180/data/librispeech/ls-test-clean.txt', 'logs/stargan/1690537180/data/edacc/edacc-test.txt', 'logs/stargan/1690537180/data/ravdess/ravdess.txt']`
+2023-07-28 11:39:49,367 - progress - INFO - Running inference with files ['logs/stargan/1690537180/data/common_voice/cv-test_3utts.txt', 'logs/stargan/1690537180/data/librispeech/ls-test-clean.txt', 'logs/stargan/1690537180/data/edacc/edacc-test.txt', 'logs/stargan/1690537180/data/ravdess/ravdess.txt']
+2023-07-28 11:39:49,368 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1690537180/results`
+2023-07-28 11:39:49,369 - progress - INFO - Creating eval. DL for `['logs/stargan/1690537180/data/common_voice/cv-test_3utts.txt', 'logs/stargan/1690537180/data/librispeech/ls-test-clean.txt', 'logs/stargan/1690537180/data/edacc/edacc-test.txt', 'logs/stargan/1690537180/data/ravdess/ravdess.txt']`
+2023-07-28 11:39:49,370 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/common_voice/cv-test_3utts.txt
+2023-07-28 11:39:49,370 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 11:39:49,373 - progress - INFO - Batch size: 1
+2023-07-28 11:39:49,374 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 11:45:59,987 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/librispeech/ls-test-clean.txt
+2023-07-28 11:45:59,988 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 11:45:59,989 - progress - INFO - Batch size: 1
+2023-07-28 11:45:59,990 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 11:52:26,764 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/edacc/edacc-test.txt
+2023-07-28 11:52:26,766 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 11:52:26,767 - progress - INFO - Batch size: 1
+2023-07-28 11:52:26,768 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:04:24,443 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/ravdess/ravdess.txt
+2023-07-28 12:04:24,444 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:04:24,445 - progress - INFO - Batch size: 1
+2023-07-28 12:04:24,446 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:06:18,232 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-07-28 12:06:18,234 - progress - INFO - Creating datafile `logs/stargan/1690537180/results/data/common_voice/cv-test_3utts.txt`
+2023-07-28 12:06:18,613 - progress - INFO - Creating datafile `logs/stargan/1690537180/results/data/librispeech/ls-test-clean.txt`
+2023-07-28 12:06:19,185 - progress - INFO - Creating datafile `logs/stargan/1690537180/results/data/edacc/edacc-test.txt`
+2023-07-28 12:06:20,297 - progress - INFO - Creating datafile `logs/stargan/1690537180/results/data/ravdess/ravdess.txt`
+2023-07-28 12:06:20,640 - progress - INFO - End of inference
+2023-07-28 12:06:20,641 - progress - INFO - ### Start of evaluation
+2023-07-28 12:06:20,643 - progress - INFO - Evaluating experiment folder `logs/stargan/1690537180`
+2023-07-28 12:06:20,645 - progress - INFO - Adding root `/ds/audio` to datafiles `['data/librispeech/ls-train-clean-100.txt', 'data/edacc/edacc-dev.txt']`
+2023-07-28 12:06:20,646 - progress - INFO - Adding root `/ds/audio` to `data/librispeech/ls-train-clean-100.txt`
+2023-07-28 12:06:20,935 - progress - INFO - 28515 samples included (100.578 h)
+2023-07-28 12:06:20,936 - progress - INFO - 24 samples too short (0.012 h)
+2023-07-28 12:06:20,937 - progress - INFO - 0 samples too long (0.0 h)
+2023-07-28 12:06:20,937 - progress - INFO - Adding root `/ds/audio` to `data/edacc/edacc-dev.txt`
+2023-07-28 12:06:21,052 - progress - INFO - 5000 samples included (11.132 h)
+2023-07-28 12:06:21,053 - progress - INFO - 4562 samples too short (0.904 h)
+2023-07-28 12:06:21,054 - progress - INFO - 286 samples too long (3.773 h)
+2023-07-28 12:06:21,055 - progress - INFO - New datafiles: `['logs/stargan/1690537180/data/librispeech/ls-train-clean-100.txt', 'logs/stargan/1690537180/data/edacc/edacc-dev.txt']`
+2023-07-28 12:06:23,357 - progress - INFO - Training component `asv_ignorant`
+2023-07-28 12:06:23,362 - progress - INFO - Filtering samples in logs/stargan/1690537180/data/librispeech/ls-train-clean-100.txt
+2023-07-28 12:06:23,492 - progress - INFO - Filtered datafile saved to logs/stargan/1690537180/data/librispeech/asv_splits/ls-train-clean-100_filtered.txt
+2023-07-28 12:06:23,493 - progress - INFO - Filtering samples in logs/stargan/1690537180/data/edacc/edacc-dev.txt
+2023-07-28 12:06:23,523 - progress - INFO - Filtered datafile saved to logs/stargan/1690537180/data/edacc/asv_splits/edacc-dev_filtered.txt
+2023-07-28 12:06:23,524 - progress - INFO - Number of speakers in training files: 313
+2023-07-28 12:06:23,525 - progress - INFO - Computing SpkId vectors of files ['logs/stargan/1690537180/data/librispeech/asv_splits/ls-train-clean-100_filtered.txt', 'logs/stargan/1690537180/data/edacc/asv_splits/edacc-dev_filtered.txt']
+2023-07-28 12:06:23,527 - progress - INFO - Creating dataloader for ['logs/stargan/1690537180/data/librispeech/asv_splits/ls-train-clean-100_filtered.txt', 'logs/stargan/1690537180/data/edacc/asv_splits/edacc-dev_filtered.txt']
+2023-07-28 12:06:23,528 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:06:23,529 - progress - INFO - Batch size: 4
+2023-07-28 12:06:23,529 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:08:49,553 - progress - INFO - Reducing dimensionality to 200 with LDA
+2023-07-28 12:08:53,725 - progress - INFO - Training PLDA model
+2023-07-28 12:08:54,690 - progress - INFO - Running evaluation with component `asv_ignorant`
+2023-07-28 12:08:54,691 - progress - INFO - ASV evaluation of datafile `cv-test_3utts`
+2023-07-28 12:08:54,694 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/common_voice/cv-test_3utts.txt into trial and enrollment data
+2023-07-28 12:08:54,696 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_trials.txt
+2023-07-28 12:08:54,697 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 12:08:57,690 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_trials.txt
+2023-07-28 12:08:57,694 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_trials.txt
+2023-07-28 12:08:57,695 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:08:57,696 - progress - INFO - Batch size: 4
+2023-07-28 12:08:57,696 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:10:15,076 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 12:10:15,080 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 12:10:15,081 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:10:15,082 - progress - INFO - Batch size: 4
+2023-07-28 12:10:15,083 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:12:50,369 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 12:12:52,152 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 12:12:52,153 - progress - INFO - No. of speaker pairs: 846951
+2023-07-28 12:12:52,821 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/common_voice/cv-test_3utts.txt
+2023-07-28 12:12:52,842 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 12:12:53,011 - progress - INFO - Computing EER for gender male
+2023-07-28 12:12:53,042 - progress - INFO - Computing EER for gender nan
+2023-07-28 12:12:53,112 - progress - INFO - Computing EER for gender female
+2023-07-28 12:12:53,121 - progress - INFO - Computing EER for gender other
+2023-07-28 12:12:53,126 - progress - INFO - Computing EER for accent nan
+2023-07-28 12:12:53,204 - progress - INFO - Computing EER for accent England English
+2023-07-28 12:12:53,211 - progress - INFO - Computing EER for accent New Zealand English
+2023-07-28 12:12:53,214 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:12:53,214 - progress - INFO - Computing EER for accent United States English
+2023-07-28 12:12:53,224 - progress - INFO - Computing EER for accent Canadian English
+2023-07-28 12:12:53,230 - progress - INFO - Computing EER for accent Australian English
+2023-07-28 12:12:53,232 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:12:53,233 - progress - INFO - Computing EER for accent India and South Asia (India, Pakistan, Sri Lanka)
+2023-07-28 12:12:53,239 - progress - INFO - Computing EER for accent Malaysian English
+2023-07-28 12:12:53,244 - progress - INFO - Computing EER for accent India and South Asia (India, Pakistan, Sri Lanka),Canadian English
+2023-07-28 12:12:53,246 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:12:53,247 - progress - INFO - Computing EER for accent England English,United States English
+2023-07-28 12:12:53,250 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:12:53,250 - progress - INFO - Computing EER for accent West Indies and Bermuda (Bahamas, Bermuda, Jamaica, Trinidad)
+2023-07-28 12:12:53,253 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:12:53,253 - progress - INFO - Computing EER for age teens
+2023-07-28 12:12:53,262 - progress - INFO - Computing EER for age nan
+2023-07-28 12:12:53,331 - progress - INFO - Computing EER for age thirties
+2023-07-28 12:12:53,340 - progress - INFO - Computing EER for age twenties
+2023-07-28 12:12:53,352 - progress - INFO - Computing EER for age fifties
+2023-07-28 12:12:53,357 - progress - INFO - Computing EER for age fourties
+2023-07-28 12:12:53,363 - progress - INFO - Computing EER for age sixties
+2023-07-28 12:12:53,369 - progress - INFO - ASV evaluation of datafile `ls-test-clean`
+2023-07-28 12:12:53,371 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/librispeech/ls-test-clean.txt into trial and enrollment data
+2023-07-28 12:12:53,372 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_trials.txt
+2023-07-28 12:12:53,373 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 12:12:53,609 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_trials.txt
+2023-07-28 12:12:53,611 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_trials.txt
+2023-07-28 12:12:53,612 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:12:53,613 - progress - INFO - Batch size: 4
+2023-07-28 12:12:53,613 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:12:56,815 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 12:12:56,818 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 12:12:56,819 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:12:56,820 - progress - INFO - Batch size: 4
+2023-07-28 12:12:56,821 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:13:04,152 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 12:13:04,366 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 12:13:04,367 - progress - INFO - No. of speaker pairs: 101400
+2023-07-28 12:13:04,434 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/librispeech/ls-test-clean.txt
+2023-07-28 12:13:04,439 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 12:13:04,538 - progress - INFO - Computing EER for gender M
+2023-07-28 12:13:04,542 - progress - INFO - Computing EER for gender F
+2023-07-28 12:13:04,546 - progress - INFO - ASV evaluation of datafile `edacc-test`
+2023-07-28 12:13:04,547 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/edacc/edacc-test.txt into trial and enrollment data
+2023-07-28 12:13:04,549 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_trials.txt
+2023-07-28 12:13:04,550 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 12:13:04,899 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_trials.txt
+2023-07-28 12:13:04,901 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_trials.txt
+2023-07-28 12:13:04,902 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:13:04,903 - progress - INFO - Batch size: 4
+2023-07-28 12:13:04,904 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:13:08,347 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 12:13:08,350 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 12:13:08,351 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:13:08,352 - progress - INFO - Batch size: 4
+2023-07-28 12:13:08,353 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:14:21,692 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 12:14:22,279 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 12:14:22,280 - progress - INFO - No. of speaker pairs: 278400
+2023-07-28 12:14:22,468 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/edacc/edacc-test.txt
+2023-07-28 12:14:22,474 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 12:14:22,664 - progress - INFO - Computing EER for gender Male
+2023-07-28 12:14:22,669 - progress - INFO - Computing EER for gender Female
+2023-07-28 12:14:22,674 - progress - INFO - Computing EER for age 25
+2023-07-28 12:14:22,678 - progress - INFO - Computing EER for age 24
+2023-07-28 12:14:22,682 - progress - INFO - Computing EER for age 34
+2023-07-28 12:14:22,686 - progress - INFO - Computing EER for age 21
+2023-07-28 12:14:22,690 - progress - INFO - Computing EER for age 40
+2023-07-28 12:14:22,693 - progress - INFO - Computing EER for age 67
+2023-07-28 12:14:22,694 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,695 - progress - INFO - Computing EER for age 38
+2023-07-28 12:14:22,696 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,697 - progress - INFO - Computing EER for age 33
+2023-07-28 12:14:22,701 - progress - INFO - Computing EER for age 58
+2023-07-28 12:14:22,705 - progress - INFO - Computing EER for age 31
+2023-07-28 12:14:22,708 - progress - INFO - Computing EER for age 30
+2023-07-28 12:14:22,710 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,710 - progress - INFO - Computing EER for age 28
+2023-07-28 12:14:22,714 - progress - INFO - Computing EER for age 32
+2023-07-28 12:14:22,715 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,716 - progress - INFO - Computing EER for age 36
+2023-07-28 12:14:22,717 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,718 - progress - INFO - Computing EER for age 22
+2023-07-28 12:14:22,722 - progress - INFO - Computing EER for age 26
+2023-07-28 12:14:22,726 - progress - INFO - Computing EER for age 39
+2023-07-28 12:14:22,730 - progress - INFO - Computing EER for age 45
+2023-07-28 12:14:22,731 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,732 - progress - INFO - Computing EER for age 41
+2023-07-28 12:14:22,733 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,734 - progress - INFO - Computing EER for age 27
+2023-07-28 12:14:22,738 - progress - INFO - Computing EER for age 35
+2023-07-28 12:14:22,742 - progress - INFO - Computing EER for age 48
+2023-07-28 12:14:22,743 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,744 - progress - INFO - Computing EER for age 49
+2023-07-28 12:14:22,745 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,746 - progress - INFO - Computing EER for age 23
+2023-07-28 12:14:22,747 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,748 - progress - INFO - Computing EER for age 19
+2023-07-28 12:14:22,749 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,750 - progress - INFO - Computing EER for age 53
+2023-07-28 12:14:22,751 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,751 - progress - INFO - Computing EER for age 46
+2023-07-28 12:14:22,753 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,753 - progress - INFO - Computing EER for ethnicity White
+2023-07-28 12:14:22,759 - progress - INFO - Computing EER for ethnicity South Asian
+2023-07-28 12:14:22,763 - progress - INFO - Computing EER for ethnicity Asian
+2023-07-28 12:14:22,767 - progress - INFO - Computing EER for ethnicity Black
+2023-07-28 12:14:22,771 - progress - INFO - Computing EER for ethnicity Mixed
+2023-07-28 12:14:22,772 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,773 - progress - INFO - Computing EER for ethnicity Latin American
+2023-07-28 12:14:22,774 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,775 - progress - INFO - Computing EER for education Undergraduate degree or NVQ/SVQ 5 or equivalent
+2023-07-28 12:14:22,781 - progress - INFO - Computing EER for education Postgraduate degree
+2023-07-28 12:14:22,784 - progress - INFO - Computing EER for education Highers/A-Levels or NVQ/SVQ 3 or equivalent
+2023-07-28 12:14:22,788 - progress - INFO - Computing EER for education Bachelor's degree
+2023-07-28 12:14:22,789 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,790 - progress - INFO - Computing EER for education PhD Applied Linguistics (in progress)
+2023-07-28 12:14:22,791 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,792 - progress - INFO - Computing EER for education National 5/GCSE or equivalent
+2023-07-28 12:14:22,793 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,794 - progress - INFO - Computing EER for education No qualifications
+2023-07-28 12:14:22,797 - progress - INFO - Computing EER for accent International
+2023-07-28 12:14:22,798 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,799 - progress - INFO - Computing EER for accent American
+2023-07-28 12:14:22,803 - progress - INFO - Computing EER for accent Romanian 
+2023-07-28 12:14:22,804 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,805 - progress - INFO - Computing EER for accent Standard Indian English
+2023-07-28 12:14:22,806 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,806 - progress - INFO - Computing EER for accent Scottish (Fife)
+2023-07-28 12:14:22,807 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,808 - progress - INFO - Computing EER for accent English with Scottish inflections
+2023-07-28 12:14:22,809 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,810 - progress - INFO - Computing EER for accent Asian
+2023-07-28 12:14:22,811 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,812 - progress - INFO - Computing EER for accent nan
+2023-07-28 12:14:22,816 - progress - INFO - Computing EER for accent Chinese accent or mixed accent(US, UK, China..) perhaps
+2023-07-28 12:14:22,817 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,818 - progress - INFO - Computing EER for accent American accent 
+2023-07-28 12:14:22,819 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,820 - progress - INFO - Computing EER for accent Catalan
+2023-07-28 12:14:22,821 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,822 - progress - INFO - Computing EER for accent American, I guess.
+2023-07-28 12:14:22,823 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,824 - progress - INFO - Computing EER for accent Spanish American
+2023-07-28 12:14:22,825 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,826 - progress - INFO - Computing EER for accent Spanish
+2023-07-28 12:14:22,829 - progress - INFO - Computing EER for accent Bulgarian
+2023-07-28 12:14:22,833 - progress - INFO - Computing EER for accent Latin
+2023-07-28 12:14:22,834 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,835 - progress - INFO - Computing EER for accent Latin American
+2023-07-28 12:14:22,836 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,837 - progress - INFO - Computing EER for accent French
+2023-07-28 12:14:22,838 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,839 - progress - INFO - Computing EER for accent Mexican
+2023-07-28 12:14:22,840 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,841 - progress - INFO - Computing EER for accent European
+2023-07-28 12:14:22,842 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,842 - progress - INFO - Computing EER for accent North American
+2023-07-28 12:14:22,843 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,844 - progress - INFO - Computing EER for accent Afrian
+2023-07-28 12:14:22,845 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,846 - progress - INFO - Computing EER for accent Nigerian
+2023-07-28 12:14:22,850 - progress - INFO - Computing EER for accent American 
+2023-07-28 12:14:22,851 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,852 - progress - INFO - Computing EER for accent Indian / Pakistani accent
+2023-07-28 12:14:22,853 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,854 - progress - INFO - Computing EER for accent Pakistani/American
+2023-07-28 12:14:22,855 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,856 - progress - INFO - Computing EER for accent African accent
+2023-07-28 12:14:22,857 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,858 - progress - INFO - Computing EER for accent Kenyan
+2023-07-28 12:14:22,859 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,860 - progress - INFO - Computing EER for accent Indian 
+2023-07-28 12:14:22,861 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,861 - progress - INFO - Computing EER for accent Ghanaian 
+2023-07-28 12:14:22,862 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,863 - progress - INFO - Computing EER for accent Spanish accent
+2023-07-28 12:14:22,864 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,865 - progress - INFO - Computing EER for accent Lithuanian
+2023-07-28 12:14:22,866 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,867 - progress - INFO - Computing EER for accent Lithuanian (eastern European)
+2023-07-28 12:14:22,868 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,869 - progress - INFO - Computing EER for accent British
+2023-07-28 12:14:22,870 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,871 - progress - INFO - Computing EER for accent Chinese 
+2023-07-28 12:14:22,872 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,873 - progress - INFO - Computing EER for accent Neutral
+2023-07-28 12:14:22,874 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,874 - progress - INFO - Computing EER for accent Fluent 
+2023-07-28 12:14:22,878 - progress - INFO - Computing EER for accent Irish
+2023-07-28 12:14:22,882 - progress - INFO - Computing EER for accent Jamaican
+2023-07-28 12:14:22,886 - progress - INFO - Computing EER for accent Fluent
+2023-07-28 12:14:22,890 - progress - INFO - Computing EER for accent italian
+2023-07-28 12:14:22,891 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,892 - progress - INFO - Computing EER for accent Israeli
+2023-07-28 12:14:22,893 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,894 - progress - INFO - Computing EER for accent Vietnamese
+2023-07-28 12:14:22,897 - progress - INFO - Computing EER for accent Midwestern United States
+2023-07-28 12:14:22,899 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,899 - progress - INFO - Computing EER for accent Indonesian
+2023-07-28 12:14:22,900 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,901 - progress - INFO - Computing EER for accent Vietnamese English
+2023-07-28 12:14:22,903 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,903 - progress - INFO - Computing EER for accent Vietnamese accent
+2023-07-28 12:14:22,904 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,905 - progress - INFO - Computing EER for n_languages 4
+2023-07-28 12:14:22,910 - progress - INFO - Computing EER for n_languages 8
+2023-07-28 12:14:22,911 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,912 - progress - INFO - Computing EER for n_languages 1
+2023-07-28 12:14:22,916 - progress - INFO - Computing EER for n_languages 3
+2023-07-28 12:14:22,920 - progress - INFO - Computing EER for n_languages 2
+2023-07-28 12:14:22,923 - progress - INFO - Computing EER for n_languages 5
+2023-07-28 12:14:22,927 - progress - INFO - Computing EER for start_english_age 11
+2023-07-28 12:14:22,932 - progress - INFO - Computing EER for start_english_age 7
+2023-07-28 12:14:22,935 - progress - INFO - Computing EER for start_english_age 5
+2023-07-28 12:14:22,939 - progress - INFO - Computing EER for start_english_age 0
+2023-07-28 12:14:22,943 - progress - INFO - Computing EER for start_english_age 6
+2023-07-28 12:14:22,946 - progress - INFO - Computing EER for start_english_age 2
+2023-07-28 12:14:22,950 - progress - INFO - Computing EER for start_english_age 17
+2023-07-28 12:14:22,951 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,952 - progress - INFO - Computing EER for start_english_age 10
+2023-07-28 12:14:22,955 - progress - INFO - Computing EER for start_english_age 8
+2023-07-28 12:14:22,959 - progress - INFO - Computing EER for start_english_age 9
+2023-07-28 12:14:22,960 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,961 - progress - INFO - Computing EER for start_english_age 37
+2023-07-28 12:14:22,962 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,962 - progress - INFO - Computing EER for start_english_age 22
+2023-07-28 12:14:22,963 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,964 - progress - INFO - Computing EER for start_english_age 14
+2023-07-28 12:14:22,965 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,966 - progress - INFO - Computing EER for start_english_age 3
+2023-07-28 12:14:22,969 - progress - INFO - Computing EER for start_english_age 1
+2023-07-28 12:14:22,973 - progress - INFO - Computing EER for start_english_age 31
+2023-07-28 12:14:22,975 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,975 - progress - INFO - Computing EER for start_english_age 18
+2023-07-28 12:14:22,983 - progress - INFO - Computing EER for start_english_age 13
+2023-07-28 12:14:22,984 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,985 - progress - INFO - Computing EER for start_english_age 1995
+2023-07-28 12:14:22,986 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,987 - progress - INFO - Computing EER for start_english_age 1975
+2023-07-28 12:14:22,988 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,989 - progress - INFO - Computing EER for start_english_age 12
+2023-07-28 12:14:22,990 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 12:14:22,991 - progress - INFO - ASV evaluation of datafile `ravdess`
+2023-07-28 12:14:22,993 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/ravdess/ravdess.txt into trial and enrollment data
+2023-07-28 12:14:22,995 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_trials.txt
+2023-07-28 12:14:22,995 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 12:14:23,130 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_trials.txt
+2023-07-28 12:14:23,133 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_trials.txt
+2023-07-28 12:14:23,134 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:14:23,135 - progress - INFO - Batch size: 4
+2023-07-28 12:14:23,136 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:14:25,835 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 12:14:25,838 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 12:14:25,839 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:14:25,840 - progress - INFO - Batch size: 4
+2023-07-28 12:14:25,841 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 12:14:42,868 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 12:14:42,955 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 12:14:42,956 - progress - INFO - No. of speaker pairs: 33984
+2023-07-28 12:14:42,981 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/ravdess/ravdess.txt
+2023-07-28 12:14:42,986 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 12:14:43,092 - progress - INFO - Computing EER for gender F
+2023-07-28 12:14:43,096 - progress - INFO - Computing EER for gender M
+2023-07-28 12:14:43,100 - progress - INFO - Computing EER for utt_emotion angry
+2023-07-28 12:14:43,106 - progress - INFO - Computing EER for utt_emotion fearful
+2023-07-28 12:14:43,110 - progress - INFO - Computing EER for utt_emotion disgust
+2023-07-28 12:14:43,113 - progress - INFO - Computing EER for utt_emotion sad
+2023-07-28 12:14:43,117 - progress - INFO - Computing EER for utt_emotion surprised
+2023-07-28 12:14:43,121 - progress - INFO - Computing EER for utt_emotion happy
+2023-07-28 12:14:43,125 - progress - INFO - Computing EER for utt_emotion calm
+2023-07-28 12:14:43,128 - progress - INFO - Computing EER for utt_emotion neutral
+2023-07-28 12:14:43,132 - progress - INFO - Computing EER for utt_intensity normal
+2023-07-28 12:14:43,138 - progress - INFO - Computing EER for utt_intensity strong
+2023-07-28 12:14:43,143 - progress - INFO - Computing EER for utt_text Dogs
+2023-07-28 12:14:43,148 - progress - INFO - Computing EER for utt_text Kids
+2023-07-28 12:14:43,151 - progress - INFO - Computing EER for utt_repetition 1
+2023-07-28 12:14:43,157 - progress - INFO - Computing EER for utt_repetition 2
+2023-07-28 12:14:44,363 - progress - INFO - Training component `asv_lazy_informed`
+2023-07-28 12:14:44,367 - progress - INFO - Anonymizing training data: ['logs/stargan/1690537180/data/librispeech/ls-train-clean-100.txt', 'logs/stargan/1690537180/data/edacc/edacc-dev.txt']
+2023-07-28 12:14:44,368 - progress - INFO - Set consistent targets of star_gan to False
+2023-07-28 12:14:44,368 - progress - INFO - Disabling consistent targets
+2023-07-28 12:14:44,376 - progress - INFO - Running inference with files ['logs/stargan/1690537180/data/librispeech/ls-train-clean-100.txt', 'logs/stargan/1690537180/data/edacc/edacc-dev.txt']
+2023-07-28 12:14:44,377 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1690537180/eval/asv-plda/lazy-informed/train`
+2023-07-28 12:14:44,378 - progress - INFO - Creating eval. DL for `['logs/stargan/1690537180/data/librispeech/ls-train-clean-100.txt', 'logs/stargan/1690537180/data/edacc/edacc-dev.txt']`
+2023-07-28 12:14:44,378 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/librispeech/ls-train-clean-100.txt
+2023-07-28 12:14:44,379 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 1, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 12:14:44,380 - progress - INFO - Batch size: 1
+2023-07-28 12:14:44,381 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:30:23,916 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/edacc/edacc-dev.txt
+2023-07-28 13:30:23,939 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 1, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:30:23,940 - progress - INFO - Batch size: 1
+2023-07-28 13:30:23,941 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:39:10,324 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-07-28 13:39:10,327 - progress - INFO - Creating datafile `logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/librispeech/ls-train-clean-100.txt`
+2023-07-28 13:39:17,864 - progress - INFO - Creating datafile `logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/edacc/edacc-dev.txt`
+2023-07-28 13:39:19,118 - progress - INFO - Filtering samples in logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/librispeech/ls-train-clean-100.txt
+2023-07-28 13:39:19,302 - progress - INFO - Filtered datafile saved to logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/librispeech/asv_splits/ls-train-clean-100_filtered.txt
+2023-07-28 13:39:19,303 - progress - INFO - Filtering samples in logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/edacc/edacc-dev.txt
+2023-07-28 13:39:19,336 - progress - INFO - Filtered datafile saved to logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/edacc/asv_splits/edacc-dev_filtered.txt
+2023-07-28 13:39:19,336 - progress - INFO - Number of speakers in training files: 313
+2023-07-28 13:39:19,338 - progress - INFO - Computing SpkId vectors of files ['logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/librispeech/asv_splits/ls-train-clean-100_filtered.txt', 'logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/edacc/asv_splits/edacc-dev_filtered.txt']
+2023-07-28 13:39:19,340 - progress - INFO - Creating dataloader for ['logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/librispeech/asv_splits/ls-train-clean-100_filtered.txt', 'logs/stargan/1690537180/eval/asv-plda/lazy-informed/train/data/edacc/asv_splits/edacc-dev_filtered.txt']
+2023-07-28 13:39:19,341 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:39:19,341 - progress - INFO - Batch size: 4
+2023-07-28 13:39:19,342 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:45:27,495 - progress - INFO - Reducing dimensionality to 200 with LDA
+2023-07-28 13:45:29,684 - progress - INFO - Training PLDA model
+2023-07-28 13:45:30,415 - progress - INFO - Running evaluation with component `asv_lazy_informed`
+2023-07-28 13:45:30,416 - progress - INFO - ASV evaluation of datafile `cv-test_3utts`
+2023-07-28 13:45:30,418 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/common_voice/cv-test_3utts.txt into trial and enrollment data
+2023-07-28 13:45:30,420 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_trials.txt
+2023-07-28 13:45:30,420 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 13:45:30,421 - progress - INFO - Trial and enrollment data already exist
+2023-07-28 13:45:30,422 - progress - INFO - Anonymizing enrollment data of the ASV system
+2023-07-28 13:45:30,423 - progress - INFO - Set consistent targets of star_gan to True
+2023-07-28 13:45:30,423 - progress - INFO - Enabling consistent targets
+2023-07-28 13:45:30,425 - progress - INFO - Running inference with files ['logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt']
+2023-07-28 13:45:30,425 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls`
+2023-07-28 13:45:30,426 - progress - INFO - Creating eval. DL for `['logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt']`
+2023-07-28 13:45:30,426 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 13:45:30,427 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 1, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:45:30,428 - progress - INFO - Batch size: 1
+2023-07-28 13:45:30,428 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:49:06,291 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-07-28 13:49:06,293 - progress - INFO - Creating datafile `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt`
+2023-07-28 13:49:06,505 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_trials.txt
+2023-07-28 13:49:06,507 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/common_voice/asv_splits/cv-test_3utts_trials.txt
+2023-07-28 13:49:06,508 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:49:06,509 - progress - INFO - Batch size: 4
+2023-07-28 13:49:06,509 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:50:47,812 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 13:50:47,815 - progress - INFO - Creating dataloader for logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/common_voice/asv_splits/cv-test_3utts_enrolls.txt
+2023-07-28 13:50:47,816 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:50:47,816 - progress - INFO - Batch size: 4
+2023-07-28 13:50:47,817 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:54:02,723 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 13:54:04,593 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 13:54:04,594 - progress - INFO - No. of speaker pairs: 846951
+2023-07-28 13:54:05,254 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/common_voice/cv-test_3utts.txt
+2023-07-28 13:54:05,275 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 13:54:05,463 - progress - INFO - Computing EER for gender male
+2023-07-28 13:54:05,496 - progress - INFO - Computing EER for gender nan
+2023-07-28 13:54:05,566 - progress - INFO - Computing EER for gender female
+2023-07-28 13:54:05,573 - progress - INFO - Computing EER for gender other
+2023-07-28 13:54:05,578 - progress - INFO - Computing EER for accent nan
+2023-07-28 13:54:05,656 - progress - INFO - Computing EER for accent England English
+2023-07-28 13:54:05,662 - progress - INFO - Computing EER for accent New Zealand English
+2023-07-28 13:54:05,665 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 13:54:05,665 - progress - INFO - Computing EER for accent United States English
+2023-07-28 13:54:05,675 - progress - INFO - Computing EER for accent Canadian English
+2023-07-28 13:54:05,680 - progress - INFO - Computing EER for accent Australian English
+2023-07-28 13:54:05,683 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 13:54:05,683 - progress - INFO - Computing EER for accent India and South Asia (India, Pakistan, Sri Lanka)
+2023-07-28 13:54:05,689 - progress - INFO - Computing EER for accent Malaysian English
+2023-07-28 13:54:05,694 - progress - INFO - Computing EER for accent India and South Asia (India, Pakistan, Sri Lanka),Canadian English
+2023-07-28 13:54:05,696 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 13:54:05,697 - progress - INFO - Computing EER for accent England English,United States English
+2023-07-28 13:54:05,699 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 13:54:05,700 - progress - INFO - Computing EER for accent West Indies and Bermuda (Bahamas, Bermuda, Jamaica, Trinidad)
+2023-07-28 13:54:05,702 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 13:54:05,703 - progress - INFO - Computing EER for age teens
+2023-07-28 13:54:05,712 - progress - INFO - Computing EER for age nan
+2023-07-28 13:54:05,783 - progress - INFO - Computing EER for age thirties
+2023-07-28 13:54:05,791 - progress - INFO - Computing EER for age twenties
+2023-07-28 13:54:05,802 - progress - INFO - Computing EER for age fifties
+2023-07-28 13:54:05,806 - progress - INFO - Computing EER for age fourties
+2023-07-28 13:54:05,812 - progress - INFO - Computing EER for age sixties
+2023-07-28 13:54:05,818 - progress - INFO - ASV evaluation of datafile `ls-test-clean`
+2023-07-28 13:54:05,820 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/librispeech/ls-test-clean.txt into trial and enrollment data
+2023-07-28 13:54:05,821 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_trials.txt
+2023-07-28 13:54:05,822 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 13:54:05,823 - progress - INFO - Trial and enrollment data already exist
+2023-07-28 13:54:05,823 - progress - INFO - Anonymizing enrollment data of the ASV system
+2023-07-28 13:54:05,824 - progress - INFO - Set consistent targets of star_gan to True
+2023-07-28 13:54:05,826 - progress - INFO - Running inference with files ['logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt']
+2023-07-28 13:54:05,826 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls`
+2023-07-28 13:54:05,827 - progress - INFO - Creating eval. DL for `['logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt']`
+2023-07-28 13:54:05,828 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 13:54:05,829 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 1, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:54:05,829 - progress - INFO - Batch size: 1
+2023-07-28 13:54:05,830 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:58:24,764 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-07-28 13:58:24,766 - progress - INFO - Creating datafile `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/librispeech/asv_splits/ls-test-clean_enrolls.txt`
+2023-07-28 13:58:25,168 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_trials.txt
+2023-07-28 13:58:25,171 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/librispeech/asv_splits/ls-test-clean_trials.txt
+2023-07-28 13:58:25,172 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:58:25,173 - progress - INFO - Batch size: 4
+2023-07-28 13:58:25,173 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:58:29,397 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 13:58:29,400 - progress - INFO - Creating dataloader for logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/librispeech/asv_splits/ls-test-clean_enrolls.txt
+2023-07-28 13:58:29,401 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:58:29,402 - progress - INFO - Batch size: 4
+2023-07-28 13:58:29,402 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 13:58:48,781 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 13:58:49,015 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 13:58:49,016 - progress - INFO - No. of speaker pairs: 101400
+2023-07-28 13:58:49,080 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/librispeech/ls-test-clean.txt
+2023-07-28 13:58:49,085 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 13:58:49,212 - progress - INFO - Computing EER for gender M
+2023-07-28 13:58:49,215 - progress - INFO - Computing EER for gender F
+2023-07-28 13:58:49,219 - progress - INFO - ASV evaluation of datafile `edacc-test`
+2023-07-28 13:58:49,221 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/edacc/edacc-test.txt into trial and enrollment data
+2023-07-28 13:58:49,222 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_trials.txt
+2023-07-28 13:58:49,223 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 13:58:49,224 - progress - INFO - Trial and enrollment data already exist
+2023-07-28 13:58:49,225 - progress - INFO - Anonymizing enrollment data of the ASV system
+2023-07-28 13:58:49,225 - progress - INFO - Set consistent targets of star_gan to True
+2023-07-28 13:58:49,227 - progress - INFO - Running inference with files ['logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt']
+2023-07-28 13:58:49,228 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls`
+2023-07-28 13:58:49,228 - progress - INFO - Creating eval. DL for `['logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt']`
+2023-07-28 13:58:49,229 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 13:58:49,230 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 1, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 13:58:49,230 - progress - INFO - Batch size: 1
+2023-07-28 13:58:49,231 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 14:07:07,397 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-07-28 14:07:07,399 - progress - INFO - Creating datafile `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/edacc/asv_splits/edacc-test_enrolls.txt`
+2023-07-28 14:07:08,221 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_trials.txt
+2023-07-28 14:07:08,226 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/edacc/asv_splits/edacc-test_trials.txt
+2023-07-28 14:07:08,226 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 14:07:08,227 - progress - INFO - Batch size: 4
+2023-07-28 14:07:08,228 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 14:07:12,706 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 14:07:12,710 - progress - INFO - Creating dataloader for logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/edacc/asv_splits/edacc-test_enrolls.txt
+2023-07-28 14:07:12,711 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 14:07:12,712 - progress - INFO - Batch size: 4
+2023-07-28 14:07:12,712 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 14:07:48,755 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 14:07:49,379 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 14:07:49,380 - progress - INFO - No. of speaker pairs: 278400
+2023-07-28 14:07:49,600 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/edacc/edacc-test.txt
+2023-07-28 14:07:49,605 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 14:07:49,841 - progress - INFO - Computing EER for gender Male
+2023-07-28 14:07:49,845 - progress - INFO - Computing EER for gender Female
+2023-07-28 14:07:49,849 - progress - INFO - Computing EER for age 25
+2023-07-28 14:07:49,859 - progress - INFO - Computing EER for age 24
+2023-07-28 14:07:49,862 - progress - INFO - Computing EER for age 34
+2023-07-28 14:07:49,866 - progress - INFO - Computing EER for age 21
+2023-07-28 14:07:49,869 - progress - INFO - Computing EER for age 40
+2023-07-28 14:07:49,872 - progress - INFO - Computing EER for age 67
+2023-07-28 14:07:49,873 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,874 - progress - INFO - Computing EER for age 38
+2023-07-28 14:07:49,875 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,875 - progress - INFO - Computing EER for age 33
+2023-07-28 14:07:49,878 - progress - INFO - Computing EER for age 58
+2023-07-28 14:07:49,881 - progress - INFO - Computing EER for age 31
+2023-07-28 14:07:49,884 - progress - INFO - Computing EER for age 30
+2023-07-28 14:07:49,885 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,885 - progress - INFO - Computing EER for age 28
+2023-07-28 14:07:49,888 - progress - INFO - Computing EER for age 32
+2023-07-28 14:07:49,889 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,889 - progress - INFO - Computing EER for age 36
+2023-07-28 14:07:49,890 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,891 - progress - INFO - Computing EER for age 22
+2023-07-28 14:07:49,893 - progress - INFO - Computing EER for age 26
+2023-07-28 14:07:49,896 - progress - INFO - Computing EER for age 39
+2023-07-28 14:07:49,899 - progress - INFO - Computing EER for age 45
+2023-07-28 14:07:49,900 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,900 - progress - INFO - Computing EER for age 41
+2023-07-28 14:07:49,901 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,902 - progress - INFO - Computing EER for age 27
+2023-07-28 14:07:49,905 - progress - INFO - Computing EER for age 35
+2023-07-28 14:07:49,907 - progress - INFO - Computing EER for age 48
+2023-07-28 14:07:49,908 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,909 - progress - INFO - Computing EER for age 49
+2023-07-28 14:07:49,910 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,910 - progress - INFO - Computing EER for age 23
+2023-07-28 14:07:49,911 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,912 - progress - INFO - Computing EER for age 19
+2023-07-28 14:07:49,913 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,913 - progress - INFO - Computing EER for age 53
+2023-07-28 14:07:49,914 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,914 - progress - INFO - Computing EER for age 46
+2023-07-28 14:07:49,915 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,916 - progress - INFO - Computing EER for ethnicity White
+2023-07-28 14:07:49,921 - progress - INFO - Computing EER for ethnicity South Asian
+2023-07-28 14:07:49,924 - progress - INFO - Computing EER for ethnicity Asian
+2023-07-28 14:07:49,927 - progress - INFO - Computing EER for ethnicity Black
+2023-07-28 14:07:49,930 - progress - INFO - Computing EER for ethnicity Mixed
+2023-07-28 14:07:49,931 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,932 - progress - INFO - Computing EER for ethnicity Latin American
+2023-07-28 14:07:49,932 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,933 - progress - INFO - Computing EER for education Undergraduate degree or NVQ/SVQ 5 or equivalent
+2023-07-28 14:07:49,953 - progress - INFO - Computing EER for education Postgraduate degree
+2023-07-28 14:07:49,955 - progress - INFO - Computing EER for education Highers/A-Levels or NVQ/SVQ 3 or equivalent
+2023-07-28 14:07:49,958 - progress - INFO - Computing EER for education Bachelor's degree
+2023-07-28 14:07:49,959 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,960 - progress - INFO - Computing EER for education PhD Applied Linguistics (in progress)
+2023-07-28 14:07:49,961 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,961 - progress - INFO - Computing EER for education National 5/GCSE or equivalent
+2023-07-28 14:07:49,962 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,963 - progress - INFO - Computing EER for education No qualifications
+2023-07-28 14:07:49,965 - progress - INFO - Computing EER for accent International
+2023-07-28 14:07:49,966 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,967 - progress - INFO - Computing EER for accent American
+2023-07-28 14:07:49,990 - progress - INFO - Computing EER for accent Romanian 
+2023-07-28 14:07:49,991 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,992 - progress - INFO - Computing EER for accent Standard Indian English
+2023-07-28 14:07:49,992 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,993 - progress - INFO - Computing EER for accent Scottish (Fife)
+2023-07-28 14:07:49,994 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,995 - progress - INFO - Computing EER for accent English with Scottish inflections
+2023-07-28 14:07:49,996 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,996 - progress - INFO - Computing EER for accent Asian
+2023-07-28 14:07:49,997 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:49,997 - progress - INFO - Computing EER for accent nan
+2023-07-28 14:07:50,000 - progress - INFO - Computing EER for accent Chinese accent or mixed accent(US, UK, China..) perhaps
+2023-07-28 14:07:50,001 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,002 - progress - INFO - Computing EER for accent American accent 
+2023-07-28 14:07:50,003 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,003 - progress - INFO - Computing EER for accent Catalan
+2023-07-28 14:07:50,004 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,005 - progress - INFO - Computing EER for accent American, I guess.
+2023-07-28 14:07:50,006 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,006 - progress - INFO - Computing EER for accent Spanish American
+2023-07-28 14:07:50,007 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,008 - progress - INFO - Computing EER for accent Spanish
+2023-07-28 14:07:50,011 - progress - INFO - Computing EER for accent Bulgarian
+2023-07-28 14:07:50,014 - progress - INFO - Computing EER for accent Latin
+2023-07-28 14:07:50,015 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,016 - progress - INFO - Computing EER for accent Latin American
+2023-07-28 14:07:50,017 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,017 - progress - INFO - Computing EER for accent French
+2023-07-28 14:07:50,018 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,019 - progress - INFO - Computing EER for accent Mexican
+2023-07-28 14:07:50,020 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,020 - progress - INFO - Computing EER for accent European
+2023-07-28 14:07:50,021 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,022 - progress - INFO - Computing EER for accent North American
+2023-07-28 14:07:50,023 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,023 - progress - INFO - Computing EER for accent Afrian
+2023-07-28 14:07:50,024 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,025 - progress - INFO - Computing EER for accent Nigerian
+2023-07-28 14:07:50,028 - progress - INFO - Computing EER for accent American 
+2023-07-28 14:07:50,029 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,029 - progress - INFO - Computing EER for accent Indian / Pakistani accent
+2023-07-28 14:07:50,030 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,031 - progress - INFO - Computing EER for accent Pakistani/American
+2023-07-28 14:07:50,032 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,032 - progress - INFO - Computing EER for accent African accent
+2023-07-28 14:07:50,033 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,034 - progress - INFO - Computing EER for accent Kenyan
+2023-07-28 14:07:50,035 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,035 - progress - INFO - Computing EER for accent Indian 
+2023-07-28 14:07:50,037 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,037 - progress - INFO - Computing EER for accent Ghanaian 
+2023-07-28 14:07:50,038 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,039 - progress - INFO - Computing EER for accent Spanish accent
+2023-07-28 14:07:50,040 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,041 - progress - INFO - Computing EER for accent Lithuanian
+2023-07-28 14:07:50,041 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,042 - progress - INFO - Computing EER for accent Lithuanian (eastern European)
+2023-07-28 14:07:50,043 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,044 - progress - INFO - Computing EER for accent British
+2023-07-28 14:07:50,045 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,046 - progress - INFO - Computing EER for accent Chinese 
+2023-07-28 14:07:50,047 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,047 - progress - INFO - Computing EER for accent Neutral
+2023-07-28 14:07:50,048 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,049 - progress - INFO - Computing EER for accent Fluent 
+2023-07-28 14:07:50,052 - progress - INFO - Computing EER for accent Irish
+2023-07-28 14:07:50,056 - progress - INFO - Computing EER for accent Jamaican
+2023-07-28 14:07:50,059 - progress - INFO - Computing EER for accent Fluent
+2023-07-28 14:07:50,062 - progress - INFO - Computing EER for accent italian
+2023-07-28 14:07:50,063 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,064 - progress - INFO - Computing EER for accent Israeli
+2023-07-28 14:07:50,064 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,065 - progress - INFO - Computing EER for accent Vietnamese
+2023-07-28 14:07:50,068 - progress - INFO - Computing EER for accent Midwestern United States
+2023-07-28 14:07:50,069 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,069 - progress - INFO - Computing EER for accent Indonesian
+2023-07-28 14:07:50,070 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,071 - progress - INFO - Computing EER for accent Vietnamese English
+2023-07-28 14:07:50,072 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,072 - progress - INFO - Computing EER for accent Vietnamese accent
+2023-07-28 14:07:50,073 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,074 - progress - INFO - Computing EER for n_languages 4
+2023-07-28 14:07:50,079 - progress - INFO - Computing EER for n_languages 8
+2023-07-28 14:07:50,080 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,081 - progress - INFO - Computing EER for n_languages 1
+2023-07-28 14:07:50,084 - progress - INFO - Computing EER for n_languages 3
+2023-07-28 14:07:50,087 - progress - INFO - Computing EER for n_languages 2
+2023-07-28 14:07:50,090 - progress - INFO - Computing EER for n_languages 5
+2023-07-28 14:07:50,093 - progress - INFO - Computing EER for start_english_age 11
+2023-07-28 14:07:50,097 - progress - INFO - Computing EER for start_english_age 7
+2023-07-28 14:07:50,100 - progress - INFO - Computing EER for start_english_age 5
+2023-07-28 14:07:50,103 - progress - INFO - Computing EER for start_english_age 0
+2023-07-28 14:07:50,106 - progress - INFO - Computing EER for start_english_age 6
+2023-07-28 14:07:50,109 - progress - INFO - Computing EER for start_english_age 2
+2023-07-28 14:07:50,111 - progress - INFO - Computing EER for start_english_age 17
+2023-07-28 14:07:50,112 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,113 - progress - INFO - Computing EER for start_english_age 10
+2023-07-28 14:07:50,116 - progress - INFO - Computing EER for start_english_age 8
+2023-07-28 14:07:50,118 - progress - INFO - Computing EER for start_english_age 9
+2023-07-28 14:07:50,119 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,120 - progress - INFO - Computing EER for start_english_age 37
+2023-07-28 14:07:50,121 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,121 - progress - INFO - Computing EER for start_english_age 22
+2023-07-28 14:07:50,122 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,123 - progress - INFO - Computing EER for start_english_age 14
+2023-07-28 14:07:50,124 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,125 - progress - INFO - Computing EER for start_english_age 3
+2023-07-28 14:07:50,128 - progress - INFO - Computing EER for start_english_age 1
+2023-07-28 14:07:50,131 - progress - INFO - Computing EER for start_english_age 31
+2023-07-28 14:07:50,131 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,132 - progress - INFO - Computing EER for start_english_age 18
+2023-07-28 14:07:50,135 - progress - INFO - Computing EER for start_english_age 13
+2023-07-28 14:07:50,136 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,137 - progress - INFO - Computing EER for start_english_age 1995
+2023-07-28 14:07:50,138 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,138 - progress - INFO - Computing EER for start_english_age 1975
+2023-07-28 14:07:50,139 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,140 - progress - INFO - Computing EER for start_english_age 12
+2023-07-28 14:07:50,141 - progress - WARNING - There are no different-speaker pairs; cannot compute EER
+2023-07-28 14:07:50,141 - progress - INFO - ASV evaluation of datafile `ravdess`
+2023-07-28 14:07:50,143 - progress - INFO - Splitting datafile logs/stargan/1690537180/data/ravdess/ravdess.txt into trial and enrollment data
+2023-07-28 14:07:50,144 - progress - INFO - Trial data will be stored in logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_trials.txt
+2023-07-28 14:07:50,144 - progress - INFO - Enrollment data will be stored in logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 14:07:50,145 - progress - INFO - Trial and enrollment data already exist
+2023-07-28 14:07:50,146 - progress - INFO - Anonymizing enrollment data of the ASV system
+2023-07-28 14:07:50,147 - progress - INFO - Set consistent targets of star_gan to True
+2023-07-28 14:07:50,149 - progress - INFO - Running inference with files ['logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt']
+2023-07-28 14:07:50,149 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls`
+2023-07-28 14:07:50,150 - progress - INFO - Creating eval. DL for `['logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt']`
+2023-07-28 14:07:50,151 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 14:07:50,151 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 1, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 14:07:50,152 - progress - INFO - Batch size: 1
+2023-07-28 14:07:50,153 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 14:09:18,605 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-07-28 14:09:18,607 - progress - INFO - Creating datafile `logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/ravdess/asv_splits/ravdess_enrolls.txt`
+2023-07-28 14:09:18,851 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_trials.txt
+2023-07-28 14:09:18,854 - progress - INFO - Creating dataloader for logs/stargan/1690537180/data/ravdess/asv_splits/ravdess_trials.txt
+2023-07-28 14:09:18,855 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 14:09:18,856 - progress - INFO - Batch size: 4
+2023-07-28 14:09:18,856 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 14:09:22,626 - progress - INFO - Computing SpkId vectors of files logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 14:09:22,630 - progress - INFO - Creating dataloader for logs/stargan/1690537180/eval/asv-plda/lazy-informed/anon-enrolls/data/ravdess/asv_splits/ravdess_enrolls.txt
+2023-07-28 14:09:22,630 - progress - INFO - Dataloader config: {'trainer': {'max_epochs': 2, 'batch_size': 4, 'accumulate_grad_batches': 8, 'log_every_n_steps': 1, 'num_workers': 10, 'limit_train_batches': 1.0, 'limit_val_batches': 0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-07-28 14:09:22,631 - progress - INFO - Batch size: 4
+2023-07-28 14:09:22,632 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f264fa8ee50>
+2023-07-28 14:09:30,806 - progress - INFO - Computing LLRs for all pairs of trial and enrollment utterances
+2023-07-28 14:09:30,899 - progress - INFO - Averaging LLRs across speakers
+2023-07-28 14:09:30,899 - progress - INFO - No. of speaker pairs: 33984
+2023-07-28 14:09:30,923 - progress - INFO - Analysing ASV results for logs/stargan/1690537180/results/data/ravdess/ravdess.txt
+2023-07-28 14:09:30,927 - progress - INFO - Computing EER of the whole dataset and dumping ROC curve
+2023-07-28 14:09:31,029 - progress - INFO - Computing EER for gender F
+2023-07-28 14:09:31,033 - progress - INFO - Computing EER for gender M
+2023-07-28 14:09:31,036 - progress - INFO - Computing EER for utt_emotion angry
+2023-07-28 14:09:31,040 - progress - INFO - Computing EER for utt_emotion fearful
+2023-07-28 14:09:31,044 - progress - INFO - Computing EER for utt_emotion disgust
+2023-07-28 14:09:31,047 - progress - INFO - Computing EER for utt_emotion sad
+2023-07-28 14:09:31,050 - progress - INFO - Computing EER for utt_emotion surprised
+2023-07-28 14:09:31,052 - progress - INFO - Computing EER for utt_emotion happy
+2023-07-28 14:09:31,057 - progress - INFO - Computing EER for utt_emotion calm
+2023-07-28 14:09:31,060 - progress - INFO - Computing EER for utt_emotion neutral
+2023-07-28 14:09:31,065 - progress - INFO - Computing EER for utt_intensity normal
+2023-07-28 14:09:31,080 - progress - INFO - Computing EER for utt_intensity strong
+2023-07-28 14:09:31,085 - progress - INFO - Computing EER for utt_text Dogs
+2023-07-28 14:09:31,091 - progress - INFO - Computing EER for utt_text Kids
+2023-07-28 14:09:31,094 - progress - INFO - Computing EER for utt_repetition 1
+2023-07-28 14:09:31,099 - progress - INFO - Computing EER for utt_repetition 2
+2023-07-28 14:09:31,707 - progress - INFO - End of evaluation

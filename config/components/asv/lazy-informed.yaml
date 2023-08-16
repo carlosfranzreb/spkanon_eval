@@ -1,0 +1,14 @@
+# this config must be a child of the `eval.components` config
+asv_lazy_informed:
+  cls: src.evaluation.asv.spkid_plda.ASV
+  scenario: lazy-informed # attack scenario; can be ignorant or lazy-informed
+  train: true
+  inference: ${inference} # required to anonymize the training data in the lazy-informed scenario
+  sample_rate: ${synthesis.sample_rate} # required to anonymize the training data in the lazy-informed scenario
+  reduced_dims: ${eval.config.asv_reduce_dims} # (optional) no. of dimensions to reduce the spkid vectors to (VPC uses 200)
+  lda_ckpt: null
+  plda_ckpt: null
+  filter: # (optional) filter out samples that don't meet these criteria
+    min_dur: 4 # min. duration (in s) for each utterance
+    min_samples: 2 # min. no. of samples per speaker
+  spkid: ${eval.config.spkid}

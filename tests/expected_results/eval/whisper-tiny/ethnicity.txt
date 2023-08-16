@@ -1,0 +1,2 @@
+dataset ethnicity n_samples avg_edits avg_words_ref wer
+edacc-test White 4 44.75 44.75 1.0

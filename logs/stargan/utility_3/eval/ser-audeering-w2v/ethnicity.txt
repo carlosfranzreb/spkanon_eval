@@ -1,0 +1,7 @@
+dataset ethnicity n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
+edacc-test White 1655 0.99 0.01 0.01 0.0 0.01 0.01 0.01
+edacc-test South Asian 364 0.99 0.0 0.01 -0.0 0.01 0.01 0.01
+edacc-test Asian 991 0.99 0.01 0.01 0.0 0.01 0.0 0.01
+edacc-test Black 1635 0.99 0.01 0.01 0.0 0.01 0.01 0.01
+edacc-test Mixed 31 0.99 0.0 0.0 -0.0 0.01 0.0 0.01
+edacc-test Latin American 24 1.0 0.0 0.01 0.0 0.0 0.0 0.01

@@ -1,0 +1,2 @@
+dataset n_languages n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
+edacc-test 4 4 0.9 -0.01 0.02 -0.02 0.03 -0.03 0.03

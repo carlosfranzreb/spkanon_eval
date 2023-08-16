@@ -1,0 +1,144 @@
+2023-08-15 09:45:22,236 - progress - INFO - ### Start of inference with experiment folder `logs/softvc/1692085379`
+2023-08-15 09:45:22,244 - progress - INFO - Adding root `/ds/audio` to datafiles `['data/common_voice/cv-test_3utts.txt', 'data/librispeech/ls-test-clean.txt', 'data/edacc/edacc-test.txt', 'data/ravdess/ravdess.txt']`
+2023-08-15 09:45:22,246 - progress - INFO - Adding root `/ds/audio` to `data/common_voice/cv-test_3utts.txt`
+2023-08-15 09:45:22,374 - progress - INFO - 1952 samples included (3.338 h)
+2023-08-15 09:45:22,377 - progress - INFO - 1 samples too short (0.0 h)
+2023-08-15 09:45:22,381 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-15 09:45:22,385 - progress - INFO - Adding root `/ds/audio` to `data/librispeech/ls-test-clean.txt`
+2023-08-15 09:45:22,502 - progress - INFO - 2575 samples included (5.305 h)
+2023-08-15 09:45:22,506 - progress - INFO - 36 samples too short (0.018 h)
+2023-08-15 09:45:22,508 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-15 09:45:22,511 - progress - INFO - Adding root `/ds/audio` to `data/edacc/edacc-test.txt`
+2023-08-15 09:45:22,770 - progress - INFO - 4700 samples included (10.845 h)
+2023-08-15 09:45:22,772 - progress - INFO - 4234 samples too short (0.829 h)
+2023-08-15 09:45:22,774 - progress - INFO - 355 samples too long (5.261 h)
+2023-08-15 09:45:22,776 - progress - INFO - Adding root `/ds/audio` to `data/ravdess/ravdess.txt`
+2023-08-15 09:45:22,954 - progress - INFO - 1440 samples included (1.48 h)
+2023-08-15 09:45:22,957 - progress - INFO - 0 samples too short (0.0 h)
+2023-08-15 09:45:22,960 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-15 09:45:22,962 - progress - INFO - New datafiles: `['logs/softvc/1692085379/data/common_voice/cv-test_3utts.txt', 'logs/softvc/1692085379/data/librispeech/ls-test-clean.txt', 'logs/softvc/1692085379/data/edacc/edacc-test.txt', 'logs/softvc/1692085379/data/ravdess/ravdess.txt']`
+2023-08-15 09:45:22,972 - progress - INFO - Running inference with files ['logs/softvc/1692085379/data/common_voice/cv-test_3utts.txt', 'logs/softvc/1692085379/data/librispeech/ls-test-clean.txt', 'logs/softvc/1692085379/data/edacc/edacc-test.txt', 'logs/softvc/1692085379/data/ravdess/ravdess.txt']
+2023-08-15 09:45:22,975 - progress - INFO - Dumping anonymized audiofiles to `logs/softvc/1692085379/results`
+2023-08-15 09:45:22,977 - progress - INFO - Creating eval. DL for `['logs/softvc/1692085379/data/common_voice/cv-test_3utts.txt', 'logs/softvc/1692085379/data/librispeech/ls-test-clean.txt', 'logs/softvc/1692085379/data/edacc/edacc-test.txt', 'logs/softvc/1692085379/data/ravdess/ravdess.txt']`
+2023-08-15 09:45:22,980 - progress - INFO - Creating dataloader for logs/softvc/1692085379/data/common_voice/cv-test_3utts.txt
+2023-08-15 09:45:22,982 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 09:45:22,986 - progress - INFO - Batch size: 1
+2023-08-15 09:45:22,990 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 10:02:55,831 - progress - INFO - Creating dataloader for logs/softvc/1692085379/data/librispeech/ls-test-clean.txt
+2023-08-15 10:02:55,842 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 10:02:55,853 - progress - INFO - Batch size: 1
+2023-08-15 10:02:55,856 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 10:27:54,437 - progress - INFO - Creating dataloader for logs/softvc/1692085379/data/edacc/edacc-test.txt
+2023-08-15 10:27:54,452 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 10:27:54,455 - progress - INFO - Batch size: 1
+2023-08-15 10:27:54,456 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 11:16:11,667 - progress - INFO - Creating dataloader for logs/softvc/1692085379/data/ravdess/ravdess.txt
+2023-08-15 11:16:11,672 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 11:16:11,676 - progress - INFO - Batch size: 1
+2023-08-15 11:16:11,677 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 11:23:25,037 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-08-15 11:23:25,060 - progress - INFO - Creating datafile `logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt`
+2023-08-15 11:23:27,966 - progress - INFO - Creating datafile `logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt`
+2023-08-15 11:23:32,737 - progress - INFO - Creating datafile `logs/softvc/1692085379/results/data/edacc/edacc-test.txt`
+2023-08-15 11:23:44,055 - progress - INFO - Creating datafile `logs/softvc/1692085379/results/data/ravdess/ravdess.txt`
+2023-08-15 11:23:49,140 - progress - INFO - End of inference
+2023-08-15 11:23:49,144 - progress - INFO - ### Start of evaluation
+2023-08-15 11:23:49,162 - progress - INFO - Evaluating experiment folder `logs/softvc/1692085379`
+2023-08-15 11:23:52,372 - progress - INFO - Running evaluation with component `audeering_w2v`
+2023-08-15 11:23:52,380 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt`
+2023-08-15 11:23:52,382 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt
+2023-08-15 11:23:52,385 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 11:23:52,387 - progress - INFO - Batch size: 2
+2023-08-15 11:23:52,389 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 11:31:15,689 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-15 11:31:16,943 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt`
+2023-08-15 11:31:16,951 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt
+2023-08-15 11:31:16,956 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 11:31:16,962 - progress - INFO - Batch size: 2
+2023-08-15 11:31:16,965 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 11:35:00,344 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-15 11:35:00,725 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/edacc/edacc-test.txt`
+2023-08-15 11:35:00,730 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/edacc/edacc-test.txt
+2023-08-15 11:35:00,733 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 11:35:00,737 - progress - INFO - Batch size: 2
+2023-08-15 11:35:00,741 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 11:42:18,190 - progress - INFO - Analysing the results for edacc-test
+2023-08-15 11:42:24,775 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/ravdess/ravdess.txt`
+2023-08-15 11:42:24,778 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/ravdess/ravdess.txt
+2023-08-15 11:42:24,781 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 11:42:24,783 - progress - INFO - Batch size: 2
+2023-08-15 11:42:24,787 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 11:43:54,019 - progress - INFO - Analysing the results for ravdess
+2023-08-15 11:43:56,373 - progress - INFO - Running evaluation with component `naturalness_nisqa`
+2023-08-15 11:43:56,377 - progress - INFO - Naturalness evaluation of datafile `cv-test_3utts`
+2023-08-15 11:48:40,566 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-15 11:48:41,090 - progress - INFO - Naturalness evaluation of datafile `ls-test-clean`
+2023-08-15 11:50:39,775 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-15 11:50:39,887 - progress - INFO - Naturalness evaluation of datafile `edacc-test`
+2023-08-15 11:54:16,357 - progress - INFO - Analysing the results for edacc-test
+2023-08-15 11:54:23,350 - progress - INFO - Naturalness evaluation of datafile `ravdess`
+2023-08-15 11:55:24,524 - progress - INFO - Analysing the results for ravdess
+2023-08-15 11:55:28,215 - progress - INFO - Running evaluation with component `whisper_small`
+2023-08-15 11:55:28,217 - progress - INFO - Computing WER of eval data with dataloader
+2023-08-15 11:55:28,224 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt`
+2023-08-15 11:55:28,226 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt
+2023-08-15 11:55:28,227 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 11:55:28,229 - progress - INFO - Batch size: 8
+2023-08-15 11:55:28,229 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 12:03:45,394 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-15 12:03:46,242 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt`
+2023-08-15 12:03:46,244 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt
+2023-08-15 12:03:46,247 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 12:03:46,249 - progress - INFO - Batch size: 8
+2023-08-15 12:03:46,252 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 12:11:03,903 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-15 12:11:04,134 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/edacc/edacc-test.txt`
+2023-08-15 12:11:04,136 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/edacc/edacc-test.txt
+2023-08-15 12:11:04,138 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 12:11:04,140 - progress - INFO - Batch size: 8
+2023-08-15 12:11:04,143 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 12:21:04,693 - progress - WARNING - Reference text of logs/softvc/1692085379/results/edacc_v1.0/clips/EDACC-C37_P2-000000056.wav has no words; WER = 0
+2023-08-15 12:22:41,433 - progress - WARNING - Reference text of logs/softvc/1692085379/results/edacc_v1.0/clips/EDACC-C38_P1-000000105.wav has no words; WER = 0
+2023-08-15 12:28:57,488 - progress - INFO - Analysing the results for edacc-test
+2023-08-15 12:29:02,242 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/ravdess/ravdess.txt`
+2023-08-15 12:29:02,244 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/ravdess/ravdess.txt
+2023-08-15 12:29:02,249 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 12:29:02,252 - progress - INFO - Batch size: 8
+2023-08-15 12:29:02,258 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 12:31:35,127 - progress - INFO - Analysing the results for ravdess
+2023-08-15 14:10:09,195 - progress - INFO - Running evaluation with component `whisper_large`
+2023-08-15 14:10:09,199 - progress - INFO - Computing WER of eval data with dataloader
+2023-08-15 14:10:09,428 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt`
+2023-08-15 14:10:09,431 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/common_voice/cv-test_3utts.txt
+2023-08-15 14:10:09,434 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 14:10:09,437 - progress - INFO - Batch size: 4
+2023-08-15 14:10:09,439 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 14:25:42,378 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-15 14:25:43,035 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt`
+2023-08-15 14:25:43,038 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/librispeech/ls-test-clean.txt
+2023-08-15 14:25:43,041 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 14:25:43,044 - progress - INFO - Batch size: 4
+2023-08-15 14:25:43,047 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 14:50:01,526 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-15 14:50:01,895 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/edacc/edacc-test.txt`
+2023-08-15 14:50:01,899 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/edacc/edacc-test.txt
+2023-08-15 14:50:01,902 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 14:50:02,113 - progress - INFO - Batch size: 4
+2023-08-15 14:50:02,116 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 15:21:16,592 - progress - WARNING - Reference text of logs/softvc/1692085379/results/edacc_v1.0/clips/EDACC-C37_P2-000000056.wav has no words; WER = 0
+2023-08-15 15:25:59,400 - progress - WARNING - Reference text of logs/softvc/1692085379/results/edacc_v1.0/clips/EDACC-C38_P1-000000105.wav has no words; WER = 0
+2023-08-15 15:45:54,248 - progress - INFO - Analysing the results for edacc-test
+2023-08-15 15:46:00,202 - progress - INFO - Creating eval. DL for `logs/softvc/1692085379/results/data/ravdess/ravdess.txt`
+2023-08-15 15:46:00,204 - progress - INFO - Creating dataloader for logs/softvc/1692085379/results/data/ravdess/ravdess.txt
+2023-08-15 15:46:00,206 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-15 15:46:00,208 - progress - INFO - Batch size: 4
+2023-08-15 15:46:00,210 - progress - INFO - Collate function: <function collate_fn_inference at 0x7f82e03bbe50>
+2023-08-15 15:52:01,785 - progress - INFO - Analysing the results for ravdess
+2023-08-15 15:52:02,588 - progress - INFO - Running evaluation with component `performance`
+2023-08-15 15:52:02,769 - progress - INFO - Changing model's device to cuda
+2023-08-15 15:52:02,777 - progress - INFO - Evaluating the GPU inference time
+2023-08-15 15:54:51,010 - progress - INFO - Evaluating the GPU throughput
+2023-08-15 17:35:05,148 - progress - INFO - Changing model's device to cpu
+2023-08-15 17:35:05,417 - progress - INFO - Evaluating the CPU inference time
+2023-08-15 17:53:28,452 - progress - INFO - Changing model's device to cuda
+2023-08-15 17:53:29,293 - progress - INFO - End of evaluation

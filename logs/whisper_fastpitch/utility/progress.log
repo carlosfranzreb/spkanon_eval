@@ -1,0 +1,145 @@
+2023-08-14 11:14:43,759 - progress - INFO - Passing target selection algorithm to fast_pitch
+2023-08-14 11:14:43,978 - progress - INFO - ### Start of inference with experiment folder `logs/stargan/1692003990`
+2023-08-14 11:14:43,984 - progress - INFO - Adding root `/ds/audio` to datafiles `['data/common_voice/cv-test_3utts.txt', 'data/librispeech/ls-test-clean.txt', 'data/edacc/edacc-test.txt', 'data/ravdess/ravdess.txt']`
+2023-08-14 11:14:43,986 - progress - INFO - Adding root `/ds/audio` to `data/common_voice/cv-test_3utts.txt`
+2023-08-14 11:14:44,214 - progress - INFO - 1952 samples included (3.338 h)
+2023-08-14 11:14:44,216 - progress - INFO - 1 samples too short (0.0 h)
+2023-08-14 11:14:44,218 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-14 11:14:44,220 - progress - INFO - Adding root `/ds/audio` to `data/librispeech/ls-test-clean.txt`
+2023-08-14 11:14:44,294 - progress - INFO - 2575 samples included (5.305 h)
+2023-08-14 11:14:44,296 - progress - INFO - 36 samples too short (0.018 h)
+2023-08-14 11:14:44,516 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-14 11:14:44,518 - progress - INFO - Adding root `/ds/audio` to `data/edacc/edacc-test.txt`
+2023-08-14 11:14:44,752 - progress - INFO - 4700 samples included (10.845 h)
+2023-08-14 11:14:44,754 - progress - INFO - 4234 samples too short (0.829 h)
+2023-08-14 11:14:44,756 - progress - INFO - 355 samples too long (5.261 h)
+2023-08-14 11:14:44,758 - progress - INFO - Adding root `/ds/audio` to `data/ravdess/ravdess.txt`
+2023-08-14 11:14:44,914 - progress - INFO - 1440 samples included (1.48 h)
+2023-08-14 11:14:44,916 - progress - INFO - 0 samples too short (0.0 h)
+2023-08-14 11:14:44,918 - progress - INFO - 0 samples too long (0.0 h)
+2023-08-14 11:14:44,920 - progress - INFO - New datafiles: `['logs/stargan/1692003990/data/common_voice/cv-test_3utts.txt', 'logs/stargan/1692003990/data/librispeech/ls-test-clean.txt', 'logs/stargan/1692003990/data/edacc/edacc-test.txt', 'logs/stargan/1692003990/data/ravdess/ravdess.txt']`
+2023-08-14 11:14:44,923 - progress - INFO - Running inference with files ['logs/stargan/1692003990/data/common_voice/cv-test_3utts.txt', 'logs/stargan/1692003990/data/librispeech/ls-test-clean.txt', 'logs/stargan/1692003990/data/edacc/edacc-test.txt', 'logs/stargan/1692003990/data/ravdess/ravdess.txt']
+2023-08-14 11:14:44,925 - progress - INFO - Dumping anonymized audiofiles to `logs/stargan/1692003990/results`
+2023-08-14 11:14:44,927 - progress - INFO - Creating eval. DL for `['logs/stargan/1692003990/data/common_voice/cv-test_3utts.txt', 'logs/stargan/1692003990/data/librispeech/ls-test-clean.txt', 'logs/stargan/1692003990/data/edacc/edacc-test.txt', 'logs/stargan/1692003990/data/ravdess/ravdess.txt']`
+2023-08-14 11:14:44,930 - progress - INFO - Creating dataloader for logs/stargan/1692003990/data/common_voice/cv-test_3utts.txt
+2023-08-14 11:14:44,932 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 11:14:44,943 - progress - INFO - Batch size: 1
+2023-08-14 11:14:44,945 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 11:24:48,922 - progress - INFO - Creating dataloader for logs/stargan/1692003990/data/librispeech/ls-test-clean.txt
+2023-08-14 11:24:48,923 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 11:24:48,925 - progress - INFO - Batch size: 1
+2023-08-14 11:24:48,926 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 11:41:28,093 - progress - INFO - Creating dataloader for logs/stargan/1692003990/data/edacc/edacc-test.txt
+2023-08-14 11:41:28,106 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 11:41:28,107 - progress - INFO - Batch size: 1
+2023-08-14 11:41:28,108 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:11:46,004 - progress - INFO - Creating dataloader for logs/stargan/1692003990/data/ravdess/ravdess.txt
+2023-08-14 12:11:46,025 - progress - INFO - Dataloader config: {'trainer': '${trainer}', 'root_folder': '/ds/audio', 'sample_rate': '${sample_rate}', 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:11:46,030 - progress - INFO - Batch size: 1
+2023-08-14 12:11:46,034 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:15:39,674 - progress - INFO - Done. Creating datafiles for the anonymized data
+2023-08-14 12:15:39,692 - progress - INFO - Creating datafile `logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt`
+2023-08-14 12:15:41,349 - progress - INFO - Creating datafile `logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt`
+2023-08-14 12:15:45,139 - progress - INFO - Creating datafile `logs/stargan/1692003990/results/data/edacc/edacc-test.txt`
+2023-08-14 12:15:54,052 - progress - INFO - Creating datafile `logs/stargan/1692003990/results/data/ravdess/ravdess.txt`
+2023-08-14 12:15:55,857 - progress - INFO - End of inference
+2023-08-14 12:15:55,860 - progress - INFO - ### Start of evaluation
+2023-08-14 12:15:55,867 - progress - INFO - Evaluating experiment folder `logs/stargan/1692003990`
+2023-08-14 12:15:57,713 - progress - INFO - Running evaluation with component `audeering_w2v`
+2023-08-14 12:15:57,732 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt`
+2023-08-14 12:15:57,735 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt
+2023-08-14 12:15:57,738 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:15:57,741 - progress - INFO - Batch size: 2
+2023-08-14 12:15:57,744 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:27:10,779 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-14 12:27:11,575 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt`
+2023-08-14 12:27:11,578 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt
+2023-08-14 12:27:11,582 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:27:11,585 - progress - INFO - Batch size: 2
+2023-08-14 12:27:11,587 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:31:42,406 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-14 12:31:42,586 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/edacc/edacc-test.txt`
+2023-08-14 12:31:42,589 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/edacc/edacc-test.txt
+2023-08-14 12:31:42,591 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:31:42,593 - progress - INFO - Batch size: 2
+2023-08-14 12:31:42,594 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:40:14,850 - progress - INFO - Analysing the results for edacc-test
+2023-08-14 12:40:16,539 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/ravdess/ravdess.txt`
+2023-08-14 12:40:16,540 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/ravdess/ravdess.txt
+2023-08-14 12:40:16,542 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 2, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:40:16,542 - progress - INFO - Batch size: 2
+2023-08-14 12:40:16,543 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:41:31,101 - progress - INFO - Analysing the results for ravdess
+2023-08-14 12:41:32,635 - progress - INFO - Running evaluation with component `naturalness_nisqa`
+2023-08-14 12:41:32,640 - progress - INFO - Naturalness evaluation of datafile `cv-test_3utts`
+2023-08-14 12:45:37,218 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-14 12:45:37,525 - progress - INFO - Naturalness evaluation of datafile `ls-test-clean`
+2023-08-14 12:47:17,849 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-14 12:47:17,913 - progress - INFO - Naturalness evaluation of datafile `edacc-test`
+2023-08-14 12:50:10,454 - progress - INFO - Analysing the results for edacc-test
+2023-08-14 12:50:14,035 - progress - INFO - Naturalness evaluation of datafile `ravdess`
+2023-08-14 12:50:53,072 - progress - INFO - Analysing the results for ravdess
+2023-08-14 12:50:55,328 - progress - INFO - Running evaluation with component `whisper_small`
+2023-08-14 12:50:55,331 - progress - INFO - Computing WER of eval data with dataloader
+2023-08-14 12:50:55,338 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt`
+2023-08-14 12:50:55,340 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt
+2023-08-14 12:50:55,342 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:50:55,344 - progress - INFO - Batch size: 8
+2023-08-14 12:50:55,346 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 12:58:11,430 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-14 12:58:12,071 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt`
+2023-08-14 12:58:12,075 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt
+2023-08-14 12:58:12,079 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 12:58:12,082 - progress - INFO - Batch size: 8
+2023-08-14 12:58:12,083 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 13:02:59,145 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-14 13:02:59,278 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/edacc/edacc-test.txt`
+2023-08-14 13:02:59,281 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/edacc/edacc-test.txt
+2023-08-14 13:02:59,284 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 13:02:59,286 - progress - INFO - Batch size: 8
+2023-08-14 13:02:59,290 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 13:08:34,314 - progress - WARNING - Reference text of logs/stargan/1692003990/results/edacc_v1.0/clips/EDACC-C37_P2-000000056.wav has no words; WER = 0
+2023-08-14 13:09:26,292 - progress - WARNING - Reference text of logs/stargan/1692003990/results/edacc_v1.0/clips/EDACC-C38_P1-000000105.wav has no words; WER = 0
+2023-08-14 13:13:01,468 - progress - INFO - Analysing the results for edacc-test
+2023-08-14 13:13:03,023 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/ravdess/ravdess.txt`
+2023-08-14 13:13:03,026 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/ravdess/ravdess.txt
+2023-08-14 13:13:03,029 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 8, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 13:13:03,032 - progress - INFO - Batch size: 8
+2023-08-14 13:13:03,034 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 13:14:11,474 - progress - INFO - Analysing the results for ravdess
+2023-08-14 13:18:13,429 - progress - INFO - Running evaluation with component `whisper_large`
+2023-08-14 13:18:13,448 - progress - INFO - Computing WER of eval data with dataloader
+2023-08-14 13:18:13,459 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt`
+2023-08-14 13:18:13,464 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/common_voice/cv-test_3utts.txt
+2023-08-14 13:18:13,467 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 13:18:13,473 - progress - INFO - Batch size: 4
+2023-08-14 13:18:13,475 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 13:27:52,085 - progress - INFO - Analysing the results for cv-test_3utts
+2023-08-14 13:27:52,368 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt`
+2023-08-14 13:27:52,371 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/librispeech/ls-test-clean.txt
+2023-08-14 13:27:52,373 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 13:27:52,376 - progress - INFO - Batch size: 4
+2023-08-14 13:27:52,378 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 13:46:26,661 - progress - INFO - Analysing the results for ls-test-clean
+2023-08-14 13:46:26,759 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/edacc/edacc-test.txt`
+2023-08-14 13:46:26,762 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/edacc/edacc-test.txt
+2023-08-14 13:46:26,764 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 13:46:26,766 - progress - INFO - Batch size: 4
+2023-08-14 13:46:26,768 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 14:06:06,911 - progress - WARNING - Reference text of logs/stargan/1692003990/results/edacc_v1.0/clips/EDACC-C37_P2-000000056.wav has no words; WER = 0
+2023-08-14 14:09:16,697 - progress - WARNING - Reference text of logs/stargan/1692003990/results/edacc_v1.0/clips/EDACC-C38_P1-000000105.wav has no words; WER = 0
+2023-08-14 14:22:11,996 - progress - INFO - Analysing the results for edacc-test
+2023-08-14 14:22:13,638 - progress - INFO - Creating eval. DL for `logs/stargan/1692003990/results/data/ravdess/ravdess.txt`
+2023-08-14 14:22:13,643 - progress - INFO - Creating dataloader for logs/stargan/1692003990/results/data/ravdess/ravdess.txt
+2023-08-14 14:22:13,645 - progress - INFO - Dataloader config: {'trainer': {'batch_size': 4, 'max_epochs': 20, 'num_workers': 10, 'accumulate_grad_batches': 1, 'limit_train_batches': 1.0, 'limit_val_batches': 1.0}, 'root_folder': '/ds/audio', 'sample_rate': 16000, 'trim_silence': False, 'shuffle': False, 'min_duration': 2, 'max_duration': 30}
+2023-08-14 14:22:13,647 - progress - INFO - Batch size: 4
+2023-08-14 14:22:13,649 - progress - INFO - Collate function: <function collate_fn_inference at 0x7fbc0ee99e50>
+2023-08-14 14:26:41,377 - progress - INFO - Analysing the results for ravdess
+2023-08-14 14:26:41,751 - progress - INFO - Running evaluation with component `performance`
+2023-08-14 14:26:41,914 - progress - INFO - Changing model's device to cuda
+2023-08-14 14:26:41,923 - progress - INFO - Evaluating the GPU inference time
+2023-08-14 14:26:51,024 - progress - INFO - Evaluating the GPU throughput
+2023-08-14 14:33:03,673 - progress - INFO - Changing model's device to cpu
+2023-08-14 14:33:04,099 - progress - INFO - Evaluating the CPU inference time
+2023-08-14 14:34:34,695 - progress - INFO - Changing model's device to cuda
+2023-08-14 14:34:35,719 - progress - INFO - End of evaluation

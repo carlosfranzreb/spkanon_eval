@@ -1,0 +1,6 @@
+spkid:
+  cls: src.featex.spkid.spkid.SpkId # cls that extracts this feature
+  toolkit: nemo
+  path: ecapa_tdnn # path to ckpt or name of pretrained model
+  train: false
+  trainer_cfg: config/trainers/spkid.yaml

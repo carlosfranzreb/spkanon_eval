@@ -1,0 +1,7 @@
+dataset ethnicity n_samples avg_edits avg_words_ref wer
+edacc-test White 1655 7.38 22.67 0.33
+edacc-test South Asian 364 7.08 21.66 0.33
+edacc-test Asian 991 6.95 21.21 0.33
+edacc-test Black 1635 8.51 22.74 0.37
+edacc-test Mixed 31 6.58 24.45 0.27
+edacc-test Latin American 24 5.25 28.38 0.18

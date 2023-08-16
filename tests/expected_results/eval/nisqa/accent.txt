@@ -1,0 +1,5 @@
+dataset accent n_samples mos
+edacc-test International 2 0.98
+edacc-test American 2 0.95
+cv-test US 2 0.85
+cv-test nan 2 0.82

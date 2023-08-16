@@ -1,0 +1,6 @@
+input_duration max_batch_size throughput
+5 46 20.639
+10 13 21.403
+20 35 20.511
+30 17 2.44
+60 19 32.501

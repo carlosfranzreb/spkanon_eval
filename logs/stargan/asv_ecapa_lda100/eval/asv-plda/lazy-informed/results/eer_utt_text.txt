@@ -1,0 +1,3 @@
+dataset utt_text n_pairs threshold eer
+ravdess Dogs 144 -7.207754407303472 0.4393939393939394
+ravdess Kids 144 -8.604195115223815 0.5681818181818182

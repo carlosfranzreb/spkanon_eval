@@ -1,0 +1,5 @@
+dataset n_samples mos
+cv-test_3utts 1952 2.96
+ls-test-clean 2575 3.88
+edacc-test 4700 2.63
+ravdess 1440 3.37

@@ -1,0 +1,1441 @@
+audio_filepath n_edits n_words_ref wer text
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-01-16.wav 1 6 0.17 Duns are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-02-16.wav 9 6 1.5 I'm so shitty and I need to learn.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-02-16.wav 11 6 1.83 It takes their time to make a dough out of it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-01-16.wav 4 6 0.67 Tid's a-touchin' by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-01-16.wav 8 6 1.33 It's a huge talent you may endure.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-02-16.wav 3 6 0.5 Kids are talking, neither do I.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-02-16.wav 3 6 0.5 And I'm sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-02-02-01-16.wav 3 6 0.5 Dumbs are sitting in my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-02-02-01-16.wav 7 6 1.17 Tell him say City's making jewellery.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-01-01-01-16.wav 8 6 1.33 It's Hitchcock Talk to you later, dolo.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-02-02-02-16.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-01-01-02-16.wav 3 6 0.5 Tincture touching by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-02-01-01-16.wav 4 6 0.67 Tints are touching like a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-01-01-02-02-16.wav 3 6 0.5 Don't say sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-01-02-01-16.wav 1 6 0.17 Doves are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-02-01-01-16.wav 4 6 0.67 Tincture Tucked by The Diller
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-01-02-01-16.wav 6 6 1.0 Don't be silly, my Venturi.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-02-02-02-16.wav 3 6 0.5 Dogs are sitting neither do I.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-01-01-02-16.wav 4 6 0.67 Tinselt hapty nigh the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-01-01-01-01-16.wav 4 6 0.67 Kids are taunting my endure.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-01-01-16.wav 4 6 0.67 I can't start talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-01-02-16.wav 2 6 0.33 Kids are trapped in by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-02-02-16.wav 1 6 0.17 Villains are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-02-01-16.wav 8 6 1.33 Dylan, she said you're like a dealer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-02-01-16.wav 6 6 1.0 Come to City of Evindere
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-02-02-16.wav 6 6 1.0 God is a city in Idyllwyrm.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-02-01-02-16.wav 3 6 0.5 Kids are touching my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-01-01-16.wav 7 6 1.17 Tim, something's happening in my enduro.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-02-01-02-16.wav 5 6 0.83 Kids are trapped in a nightingale hour.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-01-02-02-16.wav 6 6 1.0 Times is changing, Manitoulo!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-01-02-02-16.wav 4 6 0.67 Don't you sit by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-01-01-02-01-16.wav 7 6 1.17 I'm so shitty at buying a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-02-01-02-16.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-01-01-01-16.wav 5 6 0.83 Tinted with United Door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-02-02-01-16.wav 6 6 1.0 That's a silly mind-doory.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-02-02-02-16.wav 14 6 2.33 Tell them I'm just gonna sit here and wait to do it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-01-16.wav 3 6 0.5 I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-01-16.wav 9 6 1.5 Can't you touch it, maybe, don't worry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-02-16.wav 8 6 1.33 Change your top to invite in your work.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-02-16.wav 5 6 0.83 Tent are attached to my condoler.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-01-16.wav 3 6 0.5 Tentor taught you by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-01-16.wav 4 6 0.67 Now I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-02-16.wav 1 6 0.17 Doves are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-01-01-02-16.wav 7 6 1.17 Teacher tells you not to do it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-02-02-02-16.wav 6 6 1.0 Don't you sit in my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-01-02-16.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-02-01-01-16.wav 3 6 0.5 Kids are talking like a duel.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-02-01-16.wav 8 6 1.33 God, I'm just sitting here like a doer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-02-02-16.wav 7 6 1.17 Tell him he should sit in that door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-02-02-16.wav 7 6 1.17 Sometimes I say it like a doer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-02-01-16.wav 1 6 0.17 Duds are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-01-01-16.wav 3 6 0.5 Tens are trapped in by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-01-02-16.wav 8 6 1.33 Teacher, don't you like to do her?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-01-02-01-16.wav 7 6 1.17 Down to the city, my dear girl.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-08-02-01-01-16.wav 6 6 1.0 T-Jerk Touching 19 Kilograms
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-01-01-01-02-16.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-01-01-01-16.wav 6 6 1.0 Came so tight to United or?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-02-02-02-01-16.wav 5 6 0.83 Tom's a city, baby door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-01-02-02-16.wav 6 6 1.0 Johnson City United Doer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_16/03-01-03-02-01-02-16.wav 8 6 1.33 Take some time to be a good doer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-01-01-02-02-11.wav 1 6 0.17 Gulls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-02-01-01-11.wav 1 6 0.17 Students are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-01-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-02-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-02-02-02-11.wav 2 6 0.33 Darth is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-02-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-01-01-01-11.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-01-01-02-11.wav 2 6 0.33 The twins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-02-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-02-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-01-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-01-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-02-02-01-11.wav 6 6 1.0 D'Arcy's doing that again!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-02-01-02-11.wav 1 6 0.17 Tins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-02-01-01-11.wav 2 6 0.33 Because they're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-01-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-02-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-02-02-01-11.wav 3 6 0.5 John's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-01-01-01-11.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-01-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-01-02-02-11.wav 3 6 0.5 Start with just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-02-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-01-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-01-01-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-02-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-02-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-01-02-01-11.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-01-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-02-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-02-01-01-11.wav 1 6 0.17 They're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-01-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-01-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-02-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-02-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-02-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-01-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-02-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-01-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-02-01-02-11.wav 3 6 0.5 She's a talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-01-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-01-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-02-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-03-01-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-02-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-01-01-01-02-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-02-01-01-01-11.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-01-01-01-11.wav 2 6 0.33 Kids are taught in by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-01-01-02-11.wav 2 6 0.33 Kids, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-06-02-02-02-11.wav 2 6 0.33 Stop, they're sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-05-02-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-01-02-02-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-04-02-01-02-11.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-07-02-01-01-11.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-02-01-01-11.wav 6 6 1.0 Change of target, you've got the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_11/03-01-08-01-02-01-11.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-02-01-02-18.wav 5 6 0.83 She's a talking murder door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-01-02-02-18.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-02-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-01-01-01-18.wav 1 6 0.17 Fizz are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-01-01-01-02-18.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-01-01-02-18.wav 3 6 0.5 She's not talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-01-01-01-18.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-02-02-01-18.wav 5 6 0.83 Divestation, that door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-02-02-02-18.wav 3 6 0.5 I was like sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-01-02-02-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-01-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-02-01-01-18.wav 4 6 0.67 Shit, they're talking about the dollar!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-02-01-02-18.wav 1 6 0.17 They're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-02-01-01-18.wav 4 6 0.67 Did I talk him by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-01-02-01-18.wav 3 6 0.5 The doctor is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-01-02-02-18.wav 2 6 0.33 Doctor is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-01-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-02-01-01-18.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-02-01-02-18.wav 5 6 0.83 Get the fuck this back door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-01-01-02-18.wav 3 6 0.5 She's a talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-01-01-01-18.wav 3 6 0.5 She's not talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-02-02-01-18.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-02-02-02-18.wav 2 6 0.33 Doctor is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-02-02-02-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-01-01-02-18.wav 2 6 0.33 Is it talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-02-02-01-18.wav 3 6 0.5 Now they're standing by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-01-01-01-18.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-02-01-02-18.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-01-01-02-01-18.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-01-02-02-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-02-01-01-18.wav 5 6 0.83 Get that dog to you by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-02-01-02-18.wav 11 6 1.83 She's a tart, she's a... I might adore her.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-01-02-02-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-01-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-02-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-02-02-02-18.wav 6 6 1.0 That's for saving dollar.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-01-01-02-18.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-01-01-01-18.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-01-02-02-18.wav 2 6 0.33 Are they sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-02-01-02-18.wav 3 6 0.5 She's just talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-01-01-01-01-18.wav 1 6 0.17 Tres are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-01-01-02-18.wav 6 6 1.0 She's a taunting little dork.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-02-02-02-18.wav 1 6 0.17 Thugs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-01-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-02-01-01-18.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-01-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-01-01-02-02-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-02-02-01-01-18.wav 4 6 0.67 She's a-taunting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-01-01-02-18.wav 3 6 0.5 She's attacking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-03-02-02-02-18.wav 1 6 0.17 Those are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-02-02-01-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-02-02-02-18.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-04-01-01-02-18.wav 4 6 0.67 Kids are talking. Let it all out.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-07-01-01-01-18.wav 6 6 1.0 She doesn't talk to them by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-02-01-01-18.wav 7 6 1.17 Said I talked him like a dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-02-01-02-18.wav 4 6 0.67 To the exact things by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-06-01-02-02-18.wav 3 6 0.5 The Hunter is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-05-01-02-01-18.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-01-01-01-18.wav 3 6 0.5 She's not talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_18/03-01-08-02-02-01-18.wav 2 6 0.33 Doctor is sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-01-02-01-20.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-02-01-01-20.wav 4 6 0.67 I just touched it by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-02-01-02-20.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-02-01-01-20.wav 4 6 0.67 Can I start talking about the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-01-02-01-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-01-02-02-20.wav 7 6 1.17 I'll just sit in front of the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-02-02-02-20.wav 4 6 0.67 Don't touch anything by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-02-02-01-20.wav 6 6 1.0 This is a desk! I was sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-01-01-01-20.wav 3 6 0.5 Because we're talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-01-01-02-20.wav 5 6 0.83 He hasn't told him by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-01-01-01-02-20.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-01-01-01-20.wav 1 6 0.17 Tins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-02-02-01-20.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-01-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-02-01-02-20.wav 9 6 1.5 It just gets so exciting, I don't know.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-01-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-01-01-02-01-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-02-01-02-20.wav 1 6 0.17 Chilts are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-01-01-01-20.wav 6 6 1.0 There's a laundry line in the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-02-02-01-20.wav 4 6 0.67 The author is standing by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-01-01-02-20.wav 2 6 0.33 Because they're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-02-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-02-02-02-20.wav 1 6 0.17 The dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-02-02-01-20.wav 6 6 1.0 Tarsier is still anybody's adult.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-01-01-01-20.wav 3 6 0.5 She's not talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-01-01-02-20.wav 4 6 0.67 Why are my kids aren't talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-02-01-02-20.wav 6 6 1.0 TENZO TOLD ME TO BUY THE DOG!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-02-01-01-20.wav 4 6 0.67 Ch-Chelsea's haunting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-01-02-01-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-01-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-02-01-01-20.wav 9 6 1.5 Can't say Tarzan, but I have a toe.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-01-02-01-20.wav 1 6 0.17 And dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-02-02-02-20.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-01-01-02-20.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-01-01-01-01-20.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-02-01-02-20.wav 0 6 0.0 Kids are talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-01-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-01-01-01-20.wav 10 6 1.67 You know what, I'm going to go knock on the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-01-01-02-20.wav 1 6 0.17 The kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-02-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-02-02-01-20.wav 5 6 0.83 So it's a city by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-01-02-01-20.wav 4 6 0.67 The dog's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-01-02-02-20.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-02-01-02-20.wav 5 6 0.83 I can't stop talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-02-01-01-20.wav 1 6 0.17 Kids are taunting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-02-02-01-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-08-01-01-01-20.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-01-02-01-20.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-01-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-06-02-01-02-20.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-05-02-01-01-20.wav 1 6 0.17 Gens are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-01-01-01-20.wav 2 6 0.33 The kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-01-01-02-20.wav 10 6 1.67 It's a bit so dark in the way of the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-04-02-02-02-20.wav 8 6 1.33 I'm so sorry, I'm so sorry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-07-02-02-01-20.wav 5 6 0.83 Don't sit and stand by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-02-02-02-20.wav 6 6 1.0 My dogs are saying I have a dog!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-03-01-01-02-20.wav 7 6 1.17 I can't seem to lock inside the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-02-01-01-20.wav 2 6 0.33 The vents are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-01-01-02-02-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_20/03-01-02-01-02-01-20.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-02-01-01-21.wav 2 6 0.33 Teacher talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-01-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-01-01-02-21.wav 112 6 18.67 T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T-T
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-01-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-02-02-01-21.wav 1 6 0.17 Dons are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-02-02-02-21.wav 1 6 0.17 Dons are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-01-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-02-01-01-21.wav 1 6 0.17 Tins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-02-01-02-21.wav 6 6 1.0 Tunes are taunting, I'm a dork.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-02-01-02-21.wav 1 6 0.17 Tins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-02-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-01-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-01-01-01-02-21.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-02-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-01-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-02-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-01-01-02-01-21.wav 1 6 0.17 Dons are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-02-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-01-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-01-02-01-21.wav 4 6 0.67 Dogs are sitting, they'll have a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-02-01-01-21.wav 3 6 0.5 Tater Totting, by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-02-01-02-21.wav 1 6 0.17 Kids are dodging by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-01-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-01-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-02-02-01-21.wav 4 6 0.67 The answer is sitting behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-02-02-02-21.wav 2 6 0.33 Dodger is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-01-01-01-01-21.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-01-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-02-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-01-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-02-01-01-21.wav 1 6 0.17 Tits are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-02-01-02-21.wav 1 6 0.17 Ticks are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-02-01-01-21.wav 9 6 1.5 Tune in to our channel to find out more.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-02-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-01-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-02-02-01-21.wav 2 6 0.33 The hot dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-02-02-02-21.wav 2 6 0.33 Dante's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-01-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-01-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-01-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-08-02-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-02-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-02-02-02-21.wav 3 6 0.5 The answer is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-04-01-01-02-21.wav 1 6 0.17 Teens are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-07-01-01-01-21.wav 1 6 0.17 Teeth are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-02-01-01-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-02-01-02-21.wav 7 6 1.17 It turns out I'm a botanist.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-06-01-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-05-01-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-01-02-01-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-01-01-02-02-21.wav 1 6 0.17 Johns are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-02-02-01-01-21.wav 5 6 0.83 Since you're talking, bye for now.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-01-01-02-21.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_21/03-01-03-02-02-02-21.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-01-01-01-02-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-01-01-01-19.wav 2 6 0.33 into talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-02-02-01-19.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-01-02-02-19.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-02-01-02-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-02-01-02-19.wav 4 6 0.67 You kids are talking. Better go on.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-02-01-01-19.wav 2 6 0.33 Kids are talking like the dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-01-02-01-19.wav 6 6 1.0 Look at that sitting back of Doolag.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-01-02-02-19.wav 4 6 0.67 There are bizarre things happening by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-02-02-02-19.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-02-02-01-19.wav 11 6 1.83 I'm Jack Stamney, and I'm going to go now.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-01-01-01-19.wav 5 6 0.83 Jim's a talking back door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-01-01-02-19.wav 7 6 1.17 He is such a walking black dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-01-02-01-19.wav 2 6 0.33 DONGZOOM sitting by the door
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-02-01-01-19.wav 1 6 0.17 Chips are talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-02-02-02-19.wav 6 6 1.0 I'm just sitting right there.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-02-02-01-19.wav 8 6 1.33 You're only just sitting back and don't look.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-01-01-01-19.wav 3 6 0.5 You're just walking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-01-01-02-19.wav 2 6 0.33 Terrans are trapping by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-02-01-02-19.wav 8 6 1.33 James I'm talking and dying time, die now!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-02-01-01-19.wav 7 6 1.17 You're the dog and I'm the dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-01-02-01-19.wav 4 6 0.67 The dogs are shooting about the door now.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-01-02-02-19.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-01-01-02-19.wav 4 6 0.67 She's here talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-02-02-02-19.wav 4 6 0.67 How long was he sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-01-02-02-19.wav 3 6 0.5 I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-01-01-02-01-19.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-02-01-02-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-01-01-01-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-02-02-01-19.wav 5 6 0.83 The Jaws of Existence is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-01-01-01-19.wav 5 6 0.83 She ends up walking by the door and...
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-01-01-02-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-02-02-02-19.wav 2 6 0.33 You're just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-02-02-01-19.wav 4 6 0.67 Hello, I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-01-02-01-19.wav 3 6 0.5 You're actually sitting by the door, right?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-01-02-02-19.wav 2 6 0.33 The bugs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-02-01-02-19.wav 7 6 1.17 She's a fucking devil, she is!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-02-01-01-19.wav 7 6 1.17 It's a giant in my bedroom.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-02-01-02-19.wav 3 6 0.5 Kids are touching my door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-01-02-02-19.wav 6 6 1.0 I was in the wrong setting
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-02-01-01-19.wav 3 6 0.5 Kids are talking like a dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-01-02-01-19.wav 2 6 0.33 The elements are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-02-02-02-19.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-01-01-02-19.wav 1 6 0.17 Kids are talking back the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-01-01-01-01-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-02-02-02-19.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-03-01-01-02-19.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-02-01-01-19.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-01-01-02-02-19.wav 1 6 0.17 Dorms are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-02-01-02-01-19.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-01-02-01-19.wav 4 6 0.67 No, I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-01-02-02-19.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-06-02-01-02-19.wav 7 6 1.17 10, 11, 12, 13, 14, 15, 16
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-05-02-01-01-19.wav 5 6 0.83 James, you're talking like a doll!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-01-01-01-19.wav 7 6 1.17 Oh, it's just a flanking, vagrant door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-01-01-02-19.wav 2 6 0.33 The kids are dodging by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-04-02-02-02-19.wav 3 6 0.5 The arms are severed by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-07-02-02-01-19.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-02-02-01-19.wav 3 6 0.5 The old you're sitting by the door
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_19/03-01-08-01-01-01-19.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-02-02-02-10.wav 4 6 0.67 He's always just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-01-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-02-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-01-02-01-10.wav 4 6 0.67 So I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-01-01-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-01-02-02-10.wav 4 6 0.67 So I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-01-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-02-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-02-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-01-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-01-01-01-10.wav 4 6 0.67 Kids, I talk all out the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-02-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-02-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-02-02-01-10.wav 1 6 0.17 Dogs are standing by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-01-01-01-10.wav 2 6 0.33 Is it talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-01-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-01-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-02-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-02-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-01-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-01-02-01-10.wav 1 6 0.17 Dogs are standing by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-02-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-02-01-02-10.wav 2 6 0.33 Kids, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-02-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-01-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-02-01-01-10.wav 8 6 1.33 Cheers, I told you you'd enjoy it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-01-02-01-10.wav 3 6 0.5 Don't sit sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-02-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-01-01-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-01-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-02-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-02-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-01-01-02-10.wav 1 6 0.17 Kids are talking by the doorway.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-01-01-01-10.wav 3 6 0.5 Kinza-Taku by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-02-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-02-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-01-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-01-02-01-10.wav 2 6 0.33 Doves are sitting by the doomer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-01-01-02-10.wav 2 6 0.33 Kids are taught more by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-02-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-01-01-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-01-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-02-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-01-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-02-02-01-10.wav 9 6 1.5 The world's a sitting boy, don't you worry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-01-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-01-01-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-02-02-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-01-02-02-10.wav 2 6 0.33 Diet is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-03-02-01-02-10.wav 5 6 0.83 Get to talking, baby. Do it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-02-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-02-01-02-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-04-01-02-02-10.wav 3 6 0.5 The dog sat sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-07-01-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-02-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-02-02-02-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-06-01-01-02-10.wav 3 6 0.5 Kids are taught to lay the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-05-01-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-01-02-01-10.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_10/03-01-08-02-01-01-10.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-02-02-01-17.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-02-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-01-01-02-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-01-01-01-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-02-01-01-17.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-02-01-02-17.wav 3 6 0.5 Keeps on talking about the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-01-02-02-17.wav 7 6 1.17 Jack, let's take a crack at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-01-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-01-01-01-17.wav 1 6 0.17 Kids are looking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-02-02-01-17.wav 6 6 1.0 It doesn't seem like a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-01-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-01-01-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-02-01-01-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-01-01-02-17.wav 1 6 0.17 Kids are driving by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-02-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-01-01-01-01-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-01-01-02-17.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-02-02-02-17.wav 1 6 0.17 Dogs are sitting behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-01-02-01-17.wav 6 6 1.0 How's the sitting batter doing?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-02-01-01-17.wav 3 6 0.5 Kids are talking about a doll!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-02-01-01-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-02-01-02-17.wav 1 6 0.17 Kids are talking by their door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-01-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-01-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-02-02-01-17.wav 6 6 1.0 That's the thing about Nutella!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-02-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-01-01-02-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-01-01-01-17.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-01-02-02-17.wav 4 6 0.67 Now I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-02-01-02-17.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-02-02-01-17.wav 2 6 0.33 The dogs are sitting behind the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-01-01-01-17.wav 3 6 0.5 Kids are talking about it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-02-01-02-17.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-01-01-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-01-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-01-02-02-17.wav 3 6 0.5 That was us sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-01-02-01-17.wav 3 6 0.5 John's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-02-01-01-17.wav 1 6 0.17 Kids are talking about the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-02-01-02-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-01-01-02-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-01-01-01-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-02-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-02-02-02-17.wav 3 6 0.5 That was a sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-02-02-02-17.wav 5 6 0.83 Not as I seen him by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-01-01-02-17.wav 8 6 1.33 Can't stop talking about it, I do it!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-01-01-02-17.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-01-01-01-17.wav 1 6 0.17 Kids are talking around the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-05-02-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-06-02-02-02-17.wav 6 6 1.0 Dr. Singh, I'm sorry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-01-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-01-02-01-17.wav 8 6 1.33 That was the thing that I was doing.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-07-02-01-01-17.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-04-02-01-02-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-02-01-01-17.wav 1 6 0.17 Kids are talking right the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-08-01-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-02-01-02-17.wav 1 6 0.17 Kids are talking out the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-03-01-02-02-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-02-02-01-17.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-02-01-01-01-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_17/03-01-01-01-01-02-17.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-02-02-02-04.wav 3 6 0.5 Dillon's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-01-01-02-04.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-02-01-01-04.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-01-01-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-01-02-01-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-01-02-01-04.wav 3 6 0.5 It's also sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-01-02-02-04.wav 3 6 0.5 John's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-02-01-02-04.wav 1 6 0.17 They're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-02-01-01-04.wav 3 6 0.5 She's just talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-01-01-01-04.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-01-01-02-04.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-02-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-02-02-01-04.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-02-02-01-04.wav 1 6 0.17 Dogs are straying by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-01-01-01-04.wav 8 6 1.33 I should have been in front of him by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-01-01-01-04.wav 4 6 0.67 She has a chocolate by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-01-01-02-04.wav 2 6 0.33 Because they're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-02-02-02-04.wav 3 6 0.5 Another second by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-02-02-01-04.wav 7 6 1.17 Do I just say that to her?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-01-02-01-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-01-02-02-04.wav 1 6 0.17 Dogs are sitting at the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-02-01-02-04.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-02-01-01-04.wav 2 6 0.33 Cause they're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-02-01-02-04.wav 5 6 0.83 Because they're talking about each other!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-01-02-02-04.wav 4 6 0.67 That was a save by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-02-01-01-04.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-01-02-01-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-02-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-01-01-02-04.wav 2 6 0.33 Kids are talking about a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-01-01-01-01-04.wav 3 6 0.5 She's just talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-02-02-02-04.wav 2 6 0.33 The dogs are sitting at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-02-02-01-04.wav 5 6 0.83 Don't you see that door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-01-01-01-04.wav 6 6 1.0 She's a total murderer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-01-01-02-04.wav 2 6 0.33 Kids are talking about a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-02-01-02-04.wav 9 6 1.5 Chithert's Clock Team has more than to learn.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-02-01-01-04.wav 2 6 0.33 The kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-01-02-01-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-01-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-01-01-02-04.wav 5 6 0.83 Can't they find me by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-02-02-02-04.wav 4 6 0.67 Dogs are cellular adore.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-01-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-01-01-02-01-04.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-02-01-02-04.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-01-01-01-04.wav 1 6 0.17 Tres are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-02-02-01-04.wav 1 6 0.17 Dylans are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-01-01-01-02-04.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-01-01-01-04.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-02-02-02-01-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-01-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-03-02-01-02-04.wav 7 6 1.17 I can't believe they're talking about a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-02-01-02-04.wav 3 6 0.5 Kids are touching my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-02-01-01-04.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-07-01-02-01-04.wav 2 6 0.33 Dogs are sitting at a door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-04-01-02-02-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-02-02-02-04.wav 9 6 1.5 Don't just sit there and let it go.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-02-02-01-04.wav 5 6 0.83 Don't let there's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-05-01-01-01-04.wav 5 6 0.83 Cause they're talking about a killer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-06-01-01-02-04.wav 5 6 0.83 Should we talk to the manager?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-01-02-01-04.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_04/03-01-08-02-01-01-04.wav 4 6 0.67 The kids are talking, my daughter!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-02-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-02-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-01-01-01-03.wav 5 6 0.83 Jim's a talking back door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-01-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-02-01-02-03.wav 8 6 1.33 We can't start talking about it until our...
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-02-01-01-03.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-01-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-01-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-01-01-01-03.wav 5 6 0.83 You guys are talking like a doormat!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-02-02-01-03.wav 6 6 1.0 Dimes are extremely mad to get that.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-01-01-02-02-03.wav 1 6 0.17 Doves are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-01-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-02-01-01-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-01-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-02-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-01-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-01-01-01-01-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-02-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-01-02-01-03.wav 1 6 0.17 Doors are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-02-01-01-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-02-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-02-01-01-03.wav 7 6 1.17 It's a dark and violent world.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-01-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-01-02-02-03.wav 2 6 0.33 F. Dogs are sitting by the door. F.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-02-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-02-02-01-03.wav 4 6 0.67 George is hitting back the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-01-01-01-03.wav 2 6 0.33 Kids are knocking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-01-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-01-02-02-03.wav 9 6 1.5 Do I? Is that considering being a bad dad?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-02-01-02-03.wav 6 6 1.0 You can actually buy a godotla!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-02-02-01-03.wav 6 6 1.0 The dogs are sick of getting banged on!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-01-01-01-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-02-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-01-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-01-01-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-01-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-01-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-02-01-02-03.wav 1 6 0.17 Kids are jumping by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-02-01-01-03.wav 8 6 1.33 Uh, James, I'm talking, I have to do one.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-01-01-01-03.wav 4 6 0.67 Kids are talking back to do that.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-01-01-02-03.wav 8 6 1.33 She didn't sound dark in back of the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-02-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-02-02-01-03.wav 2 6 0.33 Darks are sinning by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-02-02-02-03.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-01-01-02-03.wav 12 6 2.0 You didn't say you wanted to go back to G-Glock.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-01-01-01-03.wav 3 6 0.5 Kids aren't fucking blinded door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-01-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-06-02-02-02-03.wav 24 6 4.0 I'm sorry, I'm sorry, I'm sorry, I'm sorry. I'm sorry, I'm sorry, I'm sorry, I'm sorry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-05-02-02-01-03.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-01-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-01-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-04-02-01-02-03.wav 7 6 1.17 Is there a gelatin guy in the jailer?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-07-02-01-01-03.wav 7 6 1.17 It's a fucking bunch of doormat.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-02-01-01-03.wav 5 6 0.83 It is a joking back door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-08-01-02-01-03.wav 5 6 0.83 Jojo, sitting back with Dora.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-02-01-02-03.wav 5 6 0.83 The kids are joking, guys, enjoy!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-03-01-02-02-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-02-02-01-03.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-01-01-01-02-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_03/03-01-02-01-01-01-03.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-01-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-02-01-01-02.wav 3 6 0.5 Please, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-02-01-02-02.wav 6 6 1.0 T-shirts are too many to wear.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-01-01-02-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-01-01-01-02.wav 6 6 1.0 Twizzle, toss and valley-doll.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-02-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-02-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-02-02-01-02.wav 7 6 1.17 Dad, that's just sitting in front of the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-01-01-01-02.wav 6 6 1.0 Did you talk to him at the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-02-02-02-02.wav 4 6 0.67 The ballots are still in by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-01-01-02-02.wav 4 6 0.67 Tune through Tasking by the July.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-02-01-01-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-01-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-01-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-02-01-01-02.wav 6 6 1.0 Toot toot toot, you can find the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-01-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-02-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-01-01-01-01-02.wav 2 6 0.33 Truth or talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-01-01-02-02.wav 1 6 0.17 Toots are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-01-01-02-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-01-01-01-02.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-02-02-01-02.wav 6 6 1.0 Talk to you soon, I enjoy.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-02-02-02-02.wav 1 6 0.17 Dogs are sitting at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-01-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-02-01-01-02.wav 7 6 1.17 She is just hugging my little one.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-02-01-02-02.wav 3 6 0.5 Tooth untouched by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-02-01-02-02.wav 3 6 0.5 Do you think talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-01-01-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-02-01-02-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-01-01-01-02.wav 4 6 0.67 True through top and by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-02-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-02-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-02-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-01-01-02-02.wav 7 6 1.17 I think I'll just hang my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-01-01-01-02.wav 3 6 0.5 She's been talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-02-01-01-02.wav 9 6 1.5 I'm so tired, I'm going to bed.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-02-01-02-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-01-02-01-02.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-01-01-02-02.wav 8 6 1.33 Do you think talking is going to get her?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-02-02-02-02.wav 4 6 0.67 Don't start sitting at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-02-01-01-02.wav 6 6 1.0 See you next time.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-02-01-02-02.wav 8 6 1.33 I shouldn't have talked in my video.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-04-01-02-02-02.wav 1 6 0.17 Gods are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-07-01-02-01-02.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-02-02-01-02.wav 2 6 0.33 Dogs are sued by the DLR.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-02-02-02-02.wav 6 6 1.0 Guys, I'll see you later.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-06-01-01-02-02.wav 3 6 0.5 She's been talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-05-01-01-01-02.wav 1 6 0.17 Tooth are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-01-02-01-02.wav 2 6 0.33 Tiles is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-08-02-01-01-02.wav 9 6 1.5 Do you think Tato and I need to lie?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-01-01-01-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-01-01-01-02-02.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-02-02-02-01-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-01-02-02-02.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_02/03-01-03-02-01-02-02.wav 6 6 1.0 To Zutau, June 5 to July.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-01-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-01-01-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-02-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-01-01-02-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-02-02-02-05.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-02-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-02-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-01-01-02-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-01-01-01-05.wav 3 6 0.5 Kids are talking, Patador.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-02-01-01-05.wav 1 6 0.17 Kids aren't talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-02-01-02-05.wav 2 6 0.33 Kids, I'm talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-01-02-02-05.wav 3 6 0.5 The dog is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-01-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-01-01-01-05.wav 2 6 0.33 Kids aren't talking by their door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-02-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-02-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-02-01-02-05.wav 1 6 0.17 Teens are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-01-02-02-05.wav 1 6 0.17 Dollhounds are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-01-02-01-05.wav 3 6 0.5 The dog is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-02-02-01-05.wav 4 6 0.67 Dallas is sitting on the jam!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-02-02-02-05.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-01-01-02-05.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-01-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-01-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-02-01-02-05.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-01-01-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-01-01-02-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-02-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-01-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-02-01-01-05.wav 1 6 0.17 Kids are talking by the Dola.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-01-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-01-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-02-01-01-05.wav 4 6 0.67 I can't stop talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-02-01-02-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-01-01-02-05.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-01-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-02-02-01-05.wav 4 6 0.67 Toxic sitting on the floor.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-02-02-02-05.wav 1 6 0.17 Oh, dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-02-02-02-05.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-01-01-02-05.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-02-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-01-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-02-01-02-05.wav 3 6 0.5 Teams are talking at a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-01-01-02-01-05.wav 3 6 0.5 The dog says, sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-01-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-02-01-02-05.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-03-01-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-02-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-02-01-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-01-01-01-02-05.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-01-01-02-05.wav 1 6 0.17 Kids are touting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-01-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-05-02-02-01-05.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-06-02-02-02-05.wav 3 6 0.5 And Daws is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-01-02-02-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-01-02-01-05.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-07-02-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-04-02-01-02-05.wav 2 6 0.33 Cheers to talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-02-01-01-05.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_05/03-01-08-01-02-01-05.wav 3 6 0.5 The house is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-01-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-01-01-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-02-01-01-12.wav 1 6 0.17 Tins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-01-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-02-02-02-12.wav 1 6 0.17 Dots are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-02-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-02-02-01-12.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-02-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-01-01-02-12.wav 1 6 0.17 Chimps are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-01-01-01-12.wav 1 6 0.17 Sins are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-02-01-01-12.wav 3 6 0.5 Can't stop talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-02-01-02-12.wav 1 6 0.17 Kids are talking by the jar!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-01-02-02-12.wav 2 6 0.33 Charles is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-01-02-01-12.wav 2 6 0.33 Johnson's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-01-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-02-01-02-12.wav 4 6 0.67 Tooth for Talking by Vindular
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-02-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-02-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-01-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-01-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-02-02-01-12.wav 8 6 1.33 Don't just say it right in your...
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-02-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-01-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-01-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-01-01-02-12.wav 2 6 0.33 Tim's are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-02-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-01-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-02-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-02-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-01-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-01-02-02-12.wav 1 6 0.17 Doves are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-01-02-01-12.wav 2 6 0.33 Dolls is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-02-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-02-01-02-12.wav 2 6 0.33 The cats are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-01-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-02-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-02-02-02-12.wav 4 6 0.67 T-Lux are sitting by Ventura.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-02-02-01-12.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-02-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-01-01-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-01-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-02-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-03-01-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-02-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-02-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-01-01-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-02-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-08-01-02-01-12.wav 1 6 0.17 Dogs are sitting by the driller.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-01-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-01-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-05-02-02-01-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-06-02-02-02-12.wav 2 6 0.33 Johnson's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-01-02-02-12.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-01-02-01-12.wav 1 6 0.17 Doves are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-07-02-01-01-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_12/03-01-04-02-01-02-12.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-02-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-01-01-01-15.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-01-02-02-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-01-02-01-15.wav 8 6 1.33 Don't just sit there, you big dollo!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-02-01-01-15.wav 1 6 0.17 You're talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-02-01-02-15.wav 3 6 0.5 Get the Tundra by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-01-01-02-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-01-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-02-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-02-02-02-15.wav 6 6 1.0 Don't sit in my bed!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-02-02-02-15.wav 3 6 0.5 The answer's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-01-01-02-15.wav 1 6 0.17 They're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-02-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-01-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-01-01-02-02-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-02-01-01-15.wav 0 6 0.0 Kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-01-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-02-02-02-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-01-01-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-01-01-02-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-02-01-02-15.wav 1 6 0.17 They're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-01-02-02-15.wav 3 6 0.5 The answer's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-01-01-02-15.wav 2 6 0.33 Kids, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-01-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-02-02-01-15.wav 3 6 0.5 The answer is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-02-02-02-15.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-01-02-02-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-01-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-02-01-01-15.wav 4 6 0.67 The kids are talking back to me!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-02-01-02-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-01-01-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-01-02-02-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-02-01-02-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-01-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-02-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-01-01-02-15.wav 2 6 0.33 Just like, talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-02-02-02-15.wav 2 6 0.33 Why are dogs are sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-02-02-01-15.wav 1 6 0.17 Dogs are just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-02-02-02-15.wav 4 6 0.67 It's all just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-01-01-02-15.wav 1 6 0.17 Kids are attacking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-01-01-01-15.wav 4 6 0.67 It's attacking me by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-02-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-02-01-02-15.wav 5 6 0.83 My team is front-talking right the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-01-02-02-15.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-01-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-01-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-08-02-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-02-01-01-15.wav 8 6 1.33 James is going to tell us something about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-02-01-02-15.wav 7 6 1.17 Dude, stop talking about it, don't worry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-04-01-02-02-15.wav 3 6 0.5 Tom's not sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-07-01-02-01-15.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-02-02-01-15.wav 1 6 0.17 Dots are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-02-02-02-15.wav 3 6 0.5 Dawn's off sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-06-01-01-02-15.wav 2 6 0.33 The kids are talking back the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-05-01-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-01-01-01-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-01-01-01-02-15.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-02-02-02-01-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-01-02-02-15.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_15/03-01-03-02-01-02-15.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-02-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-02-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-01-02-02-23.wav 2 6 0.33 Dancers, sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-01-02-01-23.wav 2 6 0.33 The hogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-02-02-01-23.wav 3 6 0.5 Guys, I'm sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-02-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-01-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-01-01-01-23.wav 4 6 0.67 Can I take something by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-01-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-02-01-01-23.wav 4 6 0.67 Kids, stop talking about each other!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-01-01-01-23.wav 1 6 0.17 Kids and Talking by the Door
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-01-01-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-02-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-01-02-02-23.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-02-01-02-23.wav 4 6 0.67 Get a jockey by the jaw!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-01-01-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-01-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-02-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-01-01-01-23.wav 2 6 0.33 Kids, inside. Stand by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-02-02-01-23.wav 1 6 0.17 Dogs are sitting by the jar!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-02-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-02-02-02-23.wav 1 6 0.17 Dolphins are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-01-01-02-23.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-01-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-02-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-02-01-02-23.wav 2 6 0.33 Kids are talking about the joy.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-01-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-01-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-01-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-02-02-02-23.wav 4 6 0.67 Don't be sitting by the jar!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-02-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-01-02-01-23.wav 3 6 0.5 Don's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-02-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-01-01-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-01-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-01-01-02-23.wav 5 6 0.83 Kids aren't talking when they're done.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-01-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-02-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-02-02-02-23.wav 2 6 0.33 Giles is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-01-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-01-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-02-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-02-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-02-01-02-23.wav 1 6 0.17 Kids are talking by the jar!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-01-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-01-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-01-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-05-02-01-01-23.wav 5 6 0.83 It's exciting by nature.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-06-02-01-02-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-01-01-02-23.wav 2 6 0.33 Tinser talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-01-01-01-23.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-07-02-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-04-02-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-02-02-01-23.wav 10 6 1.67 Don't I just said he was in a jar?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-08-01-01-01-23.wav 4 6 0.67 Kids, that sign came from the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-02-02-02-23.wav 3 6 0.5 John's just sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-03-01-01-02-23.wav 4 6 0.67 Kids, it's not him by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-02-01-01-23.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-02-01-02-01-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_23/03-01-01-01-02-02-23.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-02-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-01-02-02-24.wav 8 6 1.33 So let's just say goodbye to Joy.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-02-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-01-01-01-24.wav 8 6 1.33 Since when can I not see my face?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-01-01-01-02-24.wav 2 6 0.33 Tinsel talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-01-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-01-01-01-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-02-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-02-02-02-24.wav 5 6 0.83 Do not obsess over that door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-01-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-01-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-02-01-01-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-02-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-02-01-01-24.wav 2 6 0.33 Tick starts talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-01-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-01-02-02-24.wav 1 6 0.17 Doves are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-01-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-02-01-01-24.wav 6 6 1.0 Thanks for watching, bye guys!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-02-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-01-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-01-01-01-24.wav 2 6 0.33 Toons are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-02-02-01-24.wav 1 6 0.17 These dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-02-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-02-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-01-01-02-24.wav 4 6 0.67 Can't search flatly by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-02-02-01-24.wav 2 6 0.33 The ants are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-01-01-01-24.wav 1 6 0.17 Toots are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-02-01-02-24.wav 2 6 0.33 Tints are toggling by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-01-01-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-01-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-02-01-01-24.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-02-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-01-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-01-02-01-24.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-02-02-01-24.wav 3 6 0.5 The lamps are set by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-02-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-01-01-02-24.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-01-01-01-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-01-02-02-24.wav 3 6 0.5 The ox is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-02-01-02-24.wav 7 6 1.17 Jason, talk that out of your ass.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-01-01-01-01-24.wav 3 6 0.5 Tinsel is walking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-01-01-02-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-02-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-01-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-02-01-01-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-01-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-01-01-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-02-02-01-01-24.wav 4 6 0.67 She had started walking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-01-01-02-24.wav 2 6 0.33 Cancel talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-03-02-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-02-02-01-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-02-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-04-01-01-02-24.wav 3 6 0.5 She is so talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-07-01-01-01-24.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-02-01-01-24.wav 3 6 0.5 Cheers, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-02-01-02-24.wav 5 6 0.83 Tents are $12,000.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-06-01-02-02-24.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-05-01-02-01-24.wav 1 6 0.17 Dorms are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-01-01-01-24.wav 6 6 1.0 Okay, so, to fucking buy the toy.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_24/03-01-08-02-02-01-24.wav 3 6 0.5 The locks are setting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-01-01-01-22.wav 3 6 0.5 She isn't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-01-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-02-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-01-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-02-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-02-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-02-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-01-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-02-01-02-22.wav 0 6 0.0 Kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-02-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-01-01-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-01-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-02-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-01-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-02-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-01-01-02-01-22.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-01-02-01-22.wav 1 6 0.17 Dolls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-02-01-02-22.wav 0 6 0.0 Kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-02-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-01-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-01-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-02-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-01-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-01-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-01-01-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-01-02-01-22.wav 3 6 0.5 John is just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-02-01-01-22.wav 0 6 0.0 Kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-02-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-02-01-01-22.wav 1 6 0.17 Kids are chomping by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-01-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-02-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-01-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-01-01-02-22.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-02-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-02-02-01-22.wav 4 6 0.67 So long as they're sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-07-01-01-01-22.wav 1 6 0.17 Kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-04-01-01-02-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-02-01-02-22.wav 1 6 0.17 Kids are stalking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-02-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-05-01-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-06-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-01-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-08-02-02-01-22.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-01-01-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-01-02-01-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-02-02-01-01-22.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-01-01-02-22.wav 1 6 0.17 Kids are jumping by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_22/03-01-03-02-02-02-22.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-01-01-01-14.wav 5 6 0.83 Kids are talking, but I can do it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-02-02-01-14.wav 11 6 1.83 Do I have to have a ceiling I can draw in?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-02-02-02-14.wav 4 6 0.67 Don't touch it by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-02-02-01-14.wav 2 6 0.33 The hubs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-01-01-01-14.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-01-01-02-14.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-02-01-02-14.wav 8 6 1.33 Da da da da da da da da!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-02-01-01-14.wav 10 6 1.67 T-Rex can't stop. T-Rex is right the time.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-01-02-01-14.wav 3 6 0.5 Don't sit by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-01-02-02-14.wav 11 6 1.83 Damn it, I still didn't know how to draw her.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-01-01-02-02-14.wav 6 6 1.0 Glanced Arsine Lavegoire.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-01-02-01-14.wav 2 6 0.33 Tops are sitting at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-02-01-01-14.wav 7 6 1.17 Tubes are tight in there, you know why?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-01-01-02-14.wav 3 6 0.5 Kids, I'm talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-02-02-02-14.wav 2 6 0.33 The lobsters are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-01-01-02-14.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-01-01-01-01-14.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-02-02-02-14.wav 7 6 1.17 Don't sit in bed at night.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-01-02-01-14.wav 3 6 0.5 It's actually sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-02-01-01-14.wav 3 6 0.5 Kids are talking like a doll!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-01-02-02-14.wav 3 6 0.5 The dogs are sitting at a door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-02-01-02-14.wav 6 6 1.0 Can't they talk in their door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-02-01-02-14.wav 6 6 1.0 She's her talking method to what?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-02-01-01-14.wav 3 6 0.5 Kids are talking like a dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-01-02-01-14.wav 5 6 0.83 That is the silver door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-01-02-02-14.wav 3 6 0.5 Dad, they're sitting at the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-02-02-02-14.wav 4 6 0.67 Dullo's frustrated by the Dullo.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-02-02-01-14.wav 8 6 1.33 I'm just gonna let it go.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-01-01-01-14.wav 7 6 1.17 It's like talking to the back of a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-01-01-02-14.wav 3 6 0.5 Kept attacking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-02-02-01-14.wav 2 6 0.33 Dogs are staying by the dogs.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-01-01-01-14.wav 2 6 0.33 Tips on talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-02-01-02-14.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-01-02-02-14.wav 5 6 0.83 Dance of Cylinder, the Glower.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-01-01-02-01-14.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-02-02-02-14.wav 4 6 0.67 The Hunters are still at the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-01-01-02-14.wav 4 6 0.67 Kids are talking and I ignore it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-01-02-01-14.wav 10 6 1.67 I just didn't know how to draw, did I?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-01-02-02-14.wav 8 6 1.33 Now let's have a sit at my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-02-01-02-14.wav 6 6 1.0 That's fantastic, well done!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-02-01-01-14.wav 6 6 1.0 The Doctor's gonna die!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-01-01-01-14.wav 3 6 0.5 Kids are talking like a doll.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-01-01-02-14.wav 6 6 1.0 Get your fucking ready to order.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-02-02-02-14.wav 10 6 1.67 That's how you say you didn't let the door out.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-02-02-01-14.wav 1 6 0.17 Dogs are sitting on the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-02-01-01-14.wav 10 6 1.67 Click to talk to me, I don't know what.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-08-01-02-01-14.wav 6 6 1.0 It's awesome sitting in a controller.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-01-01-01-14.wav 4 6 0.67 Don't untie me by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-01-01-02-14.wav 9 6 1.5 Can you tell I'm telling the truth, you know?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-06-02-02-02-14.wav 6 6 1.0 I'm just sitting right here.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-05-02-02-01-14.wav 6 6 1.0 Does a third parter.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-01-02-01-14.wav 8 6 1.33 I'm so stupid, what am I doing?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-01-02-02-14.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-04-02-01-02-14.wav 4 6 0.67 The kids are talking like a dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-07-02-01-01-14.wav 5 6 0.83 Tits, I'm talking about the darts.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-02-01-02-14.wav 1 6 0.17 Kids are talking by the dog!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-03-01-02-02-14.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-02-02-01-14.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-01-01-01-02-14.wav 3 6 0.5 Kids are talking like a guy.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_14/03-01-02-01-01-01-14.wav 3 6 0.5 Kids are talking like a doll.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-02-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-01-01-02-13.wav 3 6 0.5 She keeps on talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-02-01-01-13.wav 2 6 0.33 You guys are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-01-01-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-02-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-01-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-02-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-02-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-01-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-02-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-02-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-02-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-01-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-01-01-02-13.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-02-02-02-13.wav 3 6 0.5 So I'm sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-02-02-01-13.wav 2 6 0.33 Dogs are sitting like the dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-01-02-02-13.wav 3 6 0.5 Dog's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-02-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-02-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-02-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-02-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-01-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-01-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-01-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-02-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-02-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-02-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-01-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-02-01-02-13.wav 1 6 0.17 Kings are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-02-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-01-02-02-13.wav 2 6 0.33 Jobs is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-01-02-02-13.wav 1 6 0.17 Dogs are sitting around the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-01-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-02-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-02-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-01-01-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-02-02-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-01-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-03-02-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-08-02-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-02-01-02-13.wav 3 6 0.5 Kids are talking like a dork.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-02-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-07-01-02-01-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-04-01-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-02-02-02-13.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-02-02-01-13.wav 4 6 0.67 Don't I was sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-05-01-01-01-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_13/03-01-06-01-01-02-13.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-02-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-01-02-01-09.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-01-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-02-02-02-09.wav 5 6 0.83 Don't you dare inquire the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-02-02-01-09.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-01-02-01-09.wav 3 6 0.5 I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-01-02-02-09.wav 2 6 0.33 The girls are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-02-01-02-09.wav 6 6 1.0 Just talking about it is wrong.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-02-01-01-09.wav 2 6 0.33 And they're talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-02-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-01-02-02-09.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-02-02-01-09.wav 1 6 0.17 Dorms are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-01-01-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-02-02-01-09.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-02-01-02-09.wav 2 6 0.33 You kids are talking behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-01-02-02-09.wav 2 6 0.33 The robbers are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-01-01-02-01-09.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-02-02-02-09.wav 0 6 0.0 Dogs are sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-01-01-02-09.wav 2 6 0.33 Climbs out talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-01-02-01-09.wav 1 6 0.17 Tarps are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-01-02-02-09.wav 1 6 0.17 Dumps are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-02-01-02-09.wav 6 6 1.0 JerryScienceHowJerryWhyThatIsHorror
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-02-01-01-09.wav 10 6 1.67 I can't even talk and it's already dark.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-01-01-02-09.wav 5 6 0.83 Kids are talking right now, don't worry.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-02-02-02-09.wav 2 6 0.33 G-Guns are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-02-02-01-09.wav 6 6 1.0 The harvester is sitting in my yard.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-01-01-02-09.wav 2 6 0.33 Cams are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-01-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-02-02-02-09.wav 3 6 0.5 The robbers were sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-01-02-01-09.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-02-01-01-09.wav 4 6 0.67 I can't stop talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-01-02-02-09.wav 6 6 1.0 The only thing is, it's sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-02-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-02-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-02-01-01-09.wav 4 6 0.67 I can't start talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-01-02-01-09.wav 2 6 0.33 The roads are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-01-02-02-09.wav 6 6 1.0 The arms are just sitting in front of the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-02-02-02-09.wav 5 6 0.83 Those are silly letters to her!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-02-02-01-09.wav 4 6 0.67 Dogs are silly, why they doing?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-01-01-01-09.wav 2 6 0.33 Answer talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-01-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-08-02-02-01-09.wav 0 6 0.0 Dogs are sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-02-02-02-09.wav 10 6 1.67 The hardest part is figuring out how to do it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-02-02-01-09.wav 6 6 1.0 Ugh, the stars are staring right at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-07-01-01-01-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-04-01-01-02-09.wav 9 6 1.5 I can't hear you talking. I have to talk.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-02-01-02-09.wav 4 6 0.67 Kids are talking while they're going.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-02-01-01-09.wav 5 6 0.83 Keeps on talking like a dork!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-05-01-02-01-09.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-06-01-02-02-09.wav 2 6 0.33 Thanks for sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-01-01-02-02-09.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-01-02-01-09.wav 2 6 0.33 The arms are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-02-02-01-01-09.wav 6 6 1.0 Here's your talking Tagataura.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-01-01-02-09.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_09/03-01-03-02-02-02-09.wav 1 6 0.17 Lines are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-02-02-02-07.wav 3 6 0.5 Time for a sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-01-01-02-07.wav 3 6 0.5 TJ talking over the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-02-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-01-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-01-01-02-02-07.wav 1 6 0.17 Dogs are sitting by the dealer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-02-02-01-07.wav 1 6 0.17 The dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-01-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-01-02-02-07.wav 3 6 0.5 Dad was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-01-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-02-01-01-07.wav 6 6 1.0 Teams am testing my intel.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-02-01-02-07.wav 7 6 1.17 Can you do a choking baby dance?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-01-01-02-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-01-01-01-07.wav 6 6 1.0 Kids aren't talking when they're doing it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-02-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-02-02-02-07.wav 7 6 1.17 Don't you sit in my vidular.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-02-01-02-07.wav 3 6 0.5 Kids are talking my dealer
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-01-02-02-07.wav 3 6 0.5 I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-01-01-02-07.wav 4 6 0.67 Kids are attacked in my video.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-01-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-02-02-01-07.wav 4 6 0.67 Times are sitting right now.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-02-02-02-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-01-02-02-07.wav 3 6 0.5 Dogs are shitting my door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-01-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-02-01-01-07.wav 2 6 0.33 Teams are charging by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-02-01-02-07.wav 2 6 0.33 Kids, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-02-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-01-02-01-07.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-02-02-02-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-01-01-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-01-01-02-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-01-01-02-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-02-02-02-07.wav 4 6 0.67 Times are sitting right adorley.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-02-02-01-07.wav 4 6 0.67 Tell him to be sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-02-02-02-07.wav 4 6 0.67 The hogs are sinning by the day.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-01-01-02-07.wav 6 6 1.0 Kids aren't talking, man, they're doing it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-01-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-02-01-01-07.wav 3 6 0.5 Kids are talking right into him.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-02-01-02-07.wav 9 6 1.5 James is now jailed, James is now in jail!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-01-02-02-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-01-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-01-01-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-01-02-02-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-02-01-02-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-01-01-01-07.wav 1 6 0.17 Kids are talking by the dealer.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-02-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-01-01-01-07.wav 5 6 0.83 Tidzo talking made a dillery.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-01-01-01-02-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-02-02-02-01-07.wav 1 6 0.17 Dimes are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-01-02-02-07.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-03-02-01-02-07.wav 2 6 0.33 Kids, I'm talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-01-02-01-07.wav 2 6 0.33 The arms are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-08-02-01-01-07.wav 7 6 1.17 Tadesha I thought you might have died.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-02-01-01-07.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-02-01-02-07.wav 4 6 0.67 He's so chubby by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-04-01-02-02-07.wav 2 6 0.33 Dogs, I'm sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-07-01-02-01-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-02-02-01-07.wav 11 6 1.83 Dodge some shit and get back to D.O.D.E.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-02-02-02-07.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-06-01-01-02-07.wav 3 6 0.5 Kids are talking like the do it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_07/03-01-05-01-01-01-07.wav 1 6 0.17 Kids are chatting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-01-01-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-01-02-01-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-02-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-01-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-02-02-02-06.wav 7 6 1.17 Don't test it in front of the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-02-02-01-06.wav 5 6 0.83 That was their stage, by the jar!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-02-02-02-06.wav 8 6 1.33 I'm telling you, I was just sitting behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-02-02-01-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-01-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-02-01-02-06.wav 5 6 0.83 Just a talking dinosaur.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-02-01-01-06.wav 7 6 1.17 Can't stop talking about it, so I...
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-01-02-01-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-01-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-01-02-02-06.wav 2 6 0.33 Just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-02-01-02-06.wav 2 6 0.33 Kids are trapped in by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-02-01-02-06.wav 6 6 1.0 Kids, I'm talking my head into it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-02-01-01-06.wav 6 6 1.0 Just a tiny bit of joy.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-01-02-01-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-01-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-02-02-02-06.wav 2 6 0.33 Dogs are staying behind the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-02-02-01-06.wav 3 6 0.5 Dad's not sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-01-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-01-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-01-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-02-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-01-02-01-06.wav 2 6 0.33 Down to sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-02-01-01-06.wav 6 6 1.0 Get that giant spider to life!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-02-02-02-06.wav 5 6 0.83 Don't hesitate, buy the job!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-01-01-02-06.wav 1 6 0.17 Kids are chomping by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-01-02-01-06.wav 3 6 0.5 I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-01-02-02-06.wav 1 6 0.17 Dogs are sitting by a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-02-01-02-06.wav 6 6 1.0 10 times faster than a car.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-02-01-01-06.wav 7 6 1.17 to the top of my lungs alright
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-01-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-02-02-02-06.wav 2 6 0.33 Darks is sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-02-02-01-06.wav 11 6 1.83 That's not the kind of situation I live in, Tom.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-02-02-01-06.wav 7 6 1.17 Guys, I said it, and I adored.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-02-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-01-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-01-01-02-01-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-02-01-02-06.wav 8 6 1.33 Get the top, you're gonna die!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-03-01-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-02-02-01-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-01-01-01-02-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-02-01-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-02-01-01-06.wav 1 6 0.17 Kids are jumping by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-08-01-02-01-06.wav 3 6 0.5 I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-01-01-01-06.wav 3 6 0.5 She's not talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-01-01-02-06.wav 0 6 0.0 Kids are talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-06-02-02-02-06.wav 7 6 1.17 That's how you save a life.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-05-02-02-01-06.wav 6 6 1.0 That's a simple idea.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-01-02-01-06.wav 5 6 0.83 D'oh, I was just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-01-02-02-06.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-04-02-01-02-06.wav 6 6 1.0 Can't start talking, why even talk?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_06/03-01-07-02-01-01-06.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-02-02-01-01.wav 2 6 0.33 I was sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-01-01-01-01.wav 1 6 0.17 kittens are talking by the door
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-01-02-01-01.wav 2 6 0.33 I was sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-02-01-02-01.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-02-01-01-01.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-01-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-01-01-02-01.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-02-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-02-02-01-01.wav 2 6 0.33 The little dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-02-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-01-01-02-01.wav 1 6 0.17 Kittens are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-02-01-01-01.wav 2 6 0.33 Tears are talking like the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-01-01-02-02-01.wav 7 6 1.17 Darn, I just hit him right at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-02-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-02-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-01-01-02-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-01-01-01-01-01.wav 1 6 0.17 The kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-02-01-02-01.wav 2 6 0.33 Kids, I'm talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-01-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-01-01-02-01.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-02-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-02-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-02-01-02-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-02-01-01-01.wav 1 6 0.17 Tiz are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-01-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-02-01-02-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-01-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-02-02-01-01.wav 3 6 0.5 No, I'm sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-01-01-02-01.wav 0 6 0.0 Kids are talking by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-02-02-02-01.wav 5 6 0.83 Don't I'm just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-02-02-02-01.wav 0 6 0.0 Dogs are sitting by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-02-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-01-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-01-01-02-01.wav 1 6 0.17 The kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-02-01-02-01.wav 1 6 0.17 Kids aren't talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-02-01-01-01.wav 1 6 0.17 Children are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-08-02-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-02-01-02-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-02-01-01-01.wav 1 6 0.17 The kids are talking by the door!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-07-01-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-04-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-02-02-02-01.wav 6 6 1.0 I'm so tired, I'm sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-02-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-05-01-01-01-01.wav 1 6 0.17 Kids are knocking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-06-01-01-02-01.wav 0 6 0.0 kids are talking by the door
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-01-01-01-02-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-01-01-01-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-02-02-02-01-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-01-02-02-01.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_01/03-01-03-02-01-02-01.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-01-02-01-08.wav 3 6 0.5 Don't, you're sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-02-01-01-08.wav 8 6 1.33 Can't they tell you where to go?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-02-01-01-08.wav 1 6 0.17 Kids are ducking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-02-01-02-08.wav 7 6 1.17 Do you think Johnny might enjoy it?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-01-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-01-02-01-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-02-02-01-08.wav 4 6 0.67 Dogs are city, invite a dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-02-02-02-08.wav 5 6 0.83 Tell the ones that are sitting at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-01-01-02-08.wav 6 6 1.0 Since there's a lock even by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-01-01-01-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-01-01-01-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-01-01-01-02-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-02-02-01-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-01-02-02-08.wav 3 6 0.5 Dad's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-02-01-02-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-01-01-02-01-08.wav 3 6 0.5 Tom's just sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-01-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-02-01-02-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-01-01-01-08.wav 1 6 0.17 Tits are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-02-02-01-08.wav 1 6 0.17 The dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-01-01-02-08.wav 1 6 0.17 These kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-02-02-02-08.wav 4 6 0.67 Still in the city by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-02-02-01-08.wav 3 6 0.5 Dogs are sitting there doing...
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-02-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-01-01-02-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-01-01-01-08.wav 6 6 1.0 This kid's here talking about a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-02-01-01-08.wav 5 6 0.83 Can't they talk even by the door?
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-02-01-02-08.wav 6 6 1.0 Get your fucking bloody job!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-01-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-01-02-01-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-02-01-01-08.wav 6 6 1.0 Kentucky Matador.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-01-02-01-08.wav 6 6 1.0 Down through city and back to door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-02-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-01-01-01-01-08.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-01-01-02-08.wav 3 6 0.5 These kids are talking about a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-02-01-02-08.wav 3 6 0.5 Kids are talking about a dog.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-01-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-01-01-02-08.wav 2 6 0.33 Kids are talking right at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-01-01-01-08.wav 2 6 0.33 Kids are taught healing by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-02-02-01-08.wav 2 6 0.33 Dogs are sitting in a door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-02-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-01-02-02-08.wav 5 6 0.83 Down to your seat and by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-01-02-01-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-02-01-01-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-02-01-02-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-02-02-01-08.wav 8 6 1.33 Still have to do the same, light the door up.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-08-01-01-01-08.wav 8 6 1.33 I can't tell you that at all.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-01-02-02-08.wav 3 6 0.5 Tell us you're sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-01-02-01-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-05-02-01-01-08.wav 1 6 0.17 dudes are talking by the door
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-06-02-01-02-08.wav 6 6 1.0 Defensive technology manager alert!
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-01-01-02-08.wav 1 6 0.17 Kids are talking at the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-01-01-01-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-07-02-02-01-08.wav 0 6 0.0 Dogs are sitting by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-04-02-02-02-08.wav 5 6 0.83 So long as you're sitting there, the door...
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-02-02-02-08.wav 6 6 1.0 Dr. Sidney Medidor.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-03-01-01-02-08.wav 1 6 0.17 Kids are talking about the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-02-01-01-08.wav 0 6 0.0 Kids are talking by the door.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-02-01-02-01-08.wav 4 6 0.67 Dogs are sitting back and enjoying it.
+logs/stargan/1690791241/results/Audio_Speech_Actors_01-24/Actor_08/03-01-01-01-02-02-08.wav 0 6 0.0 Dogs are sitting by the door.

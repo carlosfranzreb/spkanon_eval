@@ -1,0 +1,126 @@
+name: Multi-speaker FastPitch + corresponding HiFi-GAN
+trainer:
+  batch_size: 1
+  max_epochs: 20
+  num_workers: 10
+  accumulate_grad_batches: 1
+  limit_train_batches: 1.0
+  limit_val_batches: 1.0
+optim:
+  _target_: torch.optim.AdamW
+  lr: 0.0002
+  betas:
+  - 0.8
+  - 0.99
+  sched:
+    name: CosineAnnealing
+    min_lr: '1e-5'
+    warmup_ratio: 0.02
+checkpointing:
+  monitor: val_loss
+  mode: min
+data:
+  config:
+    trainer: ${trainer}
+    root_folder: /ds/audio
+    sample_rate: ${sample_rate}
+    trim_silence: false
+    shuffle: false
+    min_duration: 2
+    max_duration: 30
+  datasets:
+    eval:
+    - data/common_voice/cv-test_3utts.txt
+    - data/librispeech/ls-test-clean.txt
+    - data/edacc/edacc-test.txt
+    - data/ravdess/ravdess.txt
+    train_eval:
+    - data/librispeech/ls-train-clean-100.txt
+    - data/edacc/edacc-dev.txt
+seed: 0
+log_dir: logs/stargan
+inference:
+  run: true
+  input:
+    spectrogram: spectrogram
+    target: target
+resources:
+  device: cuda
+  n_devices: 1
+  n_nodes: 1
+  debug: false
+sample_rate: 16000
+featex:
+  whisper:
+    cls: src.featex.asr.whisper.Whisper
+    train: false
+    size: small
+    output: text
+    batch_size: 4
+featproc:
+  fast_pitch:
+    cls: src.featproc.fast_pitch.FastPitch
+    init: tts_en_fastpitch_multispeaker
+    input:
+      text: whisper
+      source: source
+      target: target
+    n_targets: 20
+    target_selection: ${target_selection}
+  output:
+    featproc:
+    - spectrogram
+    - target
+    featex: []
+synthesis:
+  cls: src.synthesis.hifigan.HifiGan
+  init: tts_en_hifitts_hifigan_ft_fastpitch
+  sample_rate: 44100
+  input:
+    spectrogram: spectrogram
+target_selection:
+  cls: src.target_selection.random.RandomSelector
+  consistent_targets: true
+eval:
+  config:
+    seed: 1000
+    baseline: false
+    exp_folder: null
+    sample_rate: ${synthesis.sample_rate}
+  components:
+    audeering_w2v:
+      cls: src.evaluation.ser.audeering_w2v.EmotionEvaluator
+      init: audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim
+      train: false
+      num_workers: ${trainer.num_workers}
+      batch_size: 2
+    naturalness_nisqa:
+      cls: src.evaluation.naturalness.naturalness_nisqa.NisqaEvaluator
+      init: submodules/NISQA/weights/nisqa_tts.tar
+      train: false
+      num_workers: ${trainer.num_workers}
+      batch_size: 10
+    whisper_small:
+      cls: src.featex.asr.whisper.Whisper
+      train: false
+      size: small
+      output: text
+      batch_size: 8
+    whisper_large:
+      cls: src.featex.asr.whisper.Whisper
+      train: false
+      size: large
+      output: text
+      batch_size: 4
+    performance:
+      cls: src.evaluation.performance.performance.PerformanceEvaluator
+      train: false
+      sample_rate: ${sample_rate}
+      repetitions: 10
+      durations:
+      - 5
+      - 10
+      - 20
+      - 30
+      - 60
+commit_hash: b11ae83

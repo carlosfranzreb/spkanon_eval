@@ -1,0 +1,8 @@
+dataset education n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
+edacc-test Undergraduate degree or NVQ/SVQ 5 or equivalent 2372 0.99 0.01 0.01 0.0 0.01 0.01 0.01
+edacc-test Postgraduate degree 1223 0.99 0.01 0.01 0.0 0.01 0.01 0.01
+edacc-test Highers/A-Levels or NVQ/SVQ 3 or equivalent 745 0.99 0.01 0.01 0.0 0.01 0.01 0.01
+edacc-test Bachelor's degree 24 0.99 0.0 0.01 -0.0 0.0 -0.0 0.01
+edacc-test PhD Applied Linguistics (in progress) 4 0.99 -0.0 0.01 -0.01 0.01 -0.01 0.01
+edacc-test National 5/GCSE or equivalent 103 0.99 0.0 0.01 -0.0 0.01 0.0 0.01
+edacc-test No qualifications 229 0.99 0.01 0.01 -0.0 0.0 0.01 0.02

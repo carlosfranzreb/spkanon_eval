@@ -1,0 +1,11 @@
+dataset gender n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
+cv-test_3utts male 261 1.0 0.0 0.0 0.0 0.0 -0.0 0.0
+cv-test_3utts nan 1646 1.0 0.0 0.0 0.0 0.0 -0.0 0.0
+cv-test_3utts female 48 1.0 0.0 0.0 0.0 0.0 -0.0 0.0
+cv-test_3utts other 6 1.0 0.0 0.0 0.0 0.0 -0.0 0.0
+ls-test-clean M 1211 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ls-test-clean F 1364 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+edacc-test Male 2625 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+edacc-test Female 2075 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ravdess F 720 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ravdess M 720 1.0 0.0 0.0 0.0 0.0 0.0 0.0

@@ -1,0 +1,5 @@
+audio_filepath mos
+tests/logs/1692108388/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60682.mp3 0.88
+tests/logs/1692108388/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60683.mp3 0.81
+tests/logs/1692108388/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16812.mp3 0.90
+tests/logs/1692108388/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16814.mp3 0.75

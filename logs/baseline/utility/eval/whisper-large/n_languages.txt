@@ -1,0 +1,7 @@
+dataset n_languages n_samples avg_edits avg_words_ref wer
+edacc-test 4 1120 7.0 24.04 0.29
+edacc-test 8 179 5.36 21.23 0.25
+edacc-test 1 593 5.08 21.51 0.24
+edacc-test 3 1442 6.44 21.29 0.3
+edacc-test 2 1195 6.99 23.15 0.3
+edacc-test 5 171 4.54 18.75 0.24

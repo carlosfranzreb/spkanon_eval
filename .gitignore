@@ -1,0 +1,13 @@
+*.tar.gz
+.DS_Store
+.code-server
+__pycache__
+venv
+data/pretrained_models
+checkpoints
+models
+*.mp3
+*.flac
+*.wav
+tmp.py
+tmp.ipynb

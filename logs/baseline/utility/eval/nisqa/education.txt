@@ -1,0 +1,8 @@
+dataset education n_samples mos
+edacc-test Undergraduate degree or NVQ/SVQ 5 or equivalent 2372 2.51
+edacc-test Postgraduate degree 1223 2.8
+edacc-test Highers/A-Levels or NVQ/SVQ 3 or equivalent 745 2.79
+edacc-test Bachelor's degree 24 2.3
+edacc-test PhD Applied Linguistics (in progress) 4 1.94
+edacc-test National 5/GCSE or equivalent 103 3.47
+edacc-test No qualifications 229 2.12

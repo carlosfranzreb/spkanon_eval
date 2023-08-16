@@ -1,0 +1,7 @@
+dataset n_languages n_samples mos
+edacc-test 4 1120 2.82
+edacc-test 8 179 2.82
+edacc-test 1 593 3.06
+edacc-test 3 1442 2.98
+edacc-test 2 1195 2.94
+edacc-test 5 171 2.94

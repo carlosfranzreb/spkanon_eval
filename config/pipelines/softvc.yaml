@@ -1,0 +1,22 @@
+sample_rate: 16000
+
+featex:
+  hubert:
+    cls: src.featex.hubert_softvc.HubertSoftVC
+
+featproc:
+  acoustic:
+    cls: src.featproc.acoustic_softvc.AcousticSoftVC
+    input:
+      hubert_units: hubert
+  output:
+    featproc:
+      - spectrogram
+      - target
+    featex: []
+
+synthesis:
+  cls: src.synthesis.hifigan_softvc.HifiganSoftVC
+  sample_rate: ${sample_rate}
+  input:
+    spectrogram: spectrogram

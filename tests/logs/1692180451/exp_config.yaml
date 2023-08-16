@@ -1,0 +1,62 @@
+name: StarGANv2-VC
+train: false
+inference:
+  run: true
+  input:
+    spectrogram: spectrogram
+    target: target
+seed: 0
+log_dir: tests/logs
+trainer:
+  batch_size: 2
+  max_epochs: 20
+  num_workers: 0
+  accumulate_grad_batches: 1
+  limit_train_batches: 1.0
+  limit_val_batches: 1.0
+sample_rate: 24000
+featex:
+  spectrogram:
+    cls: src.featex.spectrogram.SpecExtractor
+    n_mels: 80
+    n_fft: 2048
+    win_length: 1200
+    hop_length: 300
+synthesis:
+  cls: src.synthesis.dummy.DummySynthesizer
+  sample_rate: ${sample_rate}
+  input:
+    spectrogram: spectrogram
+data:
+  config:
+    trainer: ${trainer}
+    root_folder: tests/data
+    sample_rate: ${sample_rate}
+    trim_silence: false
+    shuffle: false
+  datasets:
+    eval:
+    - data/debug/edacc-test.txt
+    - data/debug/ls-dev-clean-2.txt
+    - data/debug/cv-test.txt
+    - data/debug/ravdess.txt
+    train_eval:
+    - data/debug/ls-dev-clean-2.txt
+resources:
+  device: cpu
+  n_devices: 1
+  n_nodes: 1
+  debug: false
+eval:
+  config:
+    baseline: false
+    exp_folder: null
+    sample_rate: ${synthesis.sample_rate}
+  components:
+    audeering_w2v:
+      cls: src.evaluation.ser.audeering_w2v.EmotionEvaluator
+      init: audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim
+      train: false
+      num_workers: 0
+      batch_size: 2
+commit_hash: f6dcf00

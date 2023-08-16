@@ -1,0 +1,17 @@
+data:
+  config: # details of the data (TODO: should this differ for each dataset?)
+    trainer: ${trainer}
+    root_folder: /ds/audio
+    sample_rate: ${sample_rate}
+    trim_silence: false
+    shuffle: false
+
+  datasets:
+    eval:
+      - data/vctk/stargan_val_mic1.txt
+      - data/vctk/stargan_val_mic2.txt
+    train_pipeline: # data to train the synthesizer (if necessary).
+      - data/librispeech/train-clean-100.txt
+      - data/librispeech/train-other-500.txt
+    train_eval:
+      - data/librispeech/train-clean-360.txt

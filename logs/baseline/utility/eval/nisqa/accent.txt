@@ -1,0 +1,59 @@
+dataset accent n_samples mos
+cv-test_3utts nan 1733 2.94
+cv-test_3utts England English 27 3.27
+cv-test_3utts New Zealand English 3 3.67
+cv-test_3utts United States English 126 3.14
+cv-test_3utts Canadian English 15 3.5
+cv-test_3utts Australian English 3 4.17
+cv-test_3utts India and South Asia (India, Pakistan, Sri Lanka) 30 2.59
+cv-test_3utts Malaysian English 6 3.16
+cv-test_3utts India and South Asia (India, Pakistan, Sri Lanka),Canadian English 3 2.0
+cv-test_3utts England English,United States English 3 1.88
+cv-test_3utts West Indies and Bermuda (Bahamas, Bermuda, Jamaica, Trinidad) 3 2.47
+edacc-test International 46 2.8
+edacc-test American 155 2.4
+edacc-test Romanian  90 2.56
+edacc-test Standard Indian English 179 2.34
+edacc-test Scottish (Fife) 62 2.8
+edacc-test English with Scottish inflections 39 2.22
+edacc-test Asian 25 2.43
+edacc-test nan 68 2.56
+edacc-test Chinese accent or mixed accent(US, UK, China..) perhaps 34 1.84
+edacc-test American accent  7 3.07
+edacc-test Catalan 31 2.52
+edacc-test American, I guess. 35 2.5
+edacc-test Spanish American 52 2.66
+edacc-test Spanish 192 3.16
+edacc-test Bulgarian 8 2.67
+edacc-test Latin 31 2.83
+edacc-test Latin American 24 2.3
+edacc-test French 35 4.0
+edacc-test Mexican 40 2.62
+edacc-test European 31 2.71
+edacc-test North American 38 3.48
+edacc-test Afrian 244 2.11
+edacc-test Nigerian 337 2.7
+edacc-test American  70 2.47
+edacc-test Indian / Pakistani accent 4 1.94
+edacc-test Pakistani/American 2 2.45
+edacc-test African accent 226 2.39
+edacc-test Kenyan 360 2.18
+edacc-test Indian  264 3.18
+edacc-test Ghanaian  75 1.93
+edacc-test Spanish accent 157 2.68
+edacc-test Lithuanian 195 2.91
+edacc-test Lithuanian (eastern European) 159 2.85
+edacc-test British 69 2.57
+edacc-test Chinese  56 2.99
+edacc-test Neutral 54 3.0
+edacc-test Fluent  69 2.06
+edacc-test Irish 182 2.67
+edacc-test Jamaican 49 2.93
+edacc-test Fluent 199 3.45
+edacc-test italian 81 2.34
+edacc-test Israeli 178 1.93
+edacc-test Vietnamese 166 2.68
+edacc-test Midwestern United States 51 2.76
+edacc-test Indonesian 115 3.08
+edacc-test Vietnamese English 66 2.36
+edacc-test Vietnamese accent 50 3.05

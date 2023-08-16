@@ -1,0 +1,2 @@
+dataset age n_pairs threshold eer
+cv-test thirties 4 -658.1066783248448 0.0

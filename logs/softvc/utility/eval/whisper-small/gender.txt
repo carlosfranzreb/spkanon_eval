@@ -1,0 +1,11 @@
+dataset gender n_samples avg_edits avg_words_ref wer
+cv-test_3utts male 261 3.99 9.9 0.4
+cv-test_3utts nan 1646 3.51 10.02 0.35
+cv-test_3utts female 48 2.4 10.31 0.23
+cv-test_3utts other 6 1.0 10.0 0.1
+ls-test-clean M 1211 1.21 20.97 0.06
+ls-test-clean F 1364 1.53 19.33 0.08
+edacc-test Male 2625 12.04 22.72 0.53
+edacc-test Female 2075 11.29 21.88 0.52
+ravdess F 720 1.03 6.0 0.17
+ravdess M 720 0.76 6.0 0.13

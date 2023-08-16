@@ -1,0 +1,19 @@
+data:
+  config: # details of the data (TODO: should this differ for each dataset?)
+    trainer: ${trainer}
+    root_folder: /ds/audio
+    sample_rate: ${sample_rate}
+    trim_silence: false
+    shuffle: false
+    min_duration: 2
+    max_duration: 30
+
+  datasets:
+    eval:
+      - data/common_voice/cv-test_3utts.txt
+      - data/librispeech/ls-test-clean.txt
+      - data/edacc/edacc-test.txt
+      - data/ravdess/ravdess.txt
+    train_eval:
+      - data/librispeech/ls-train-clean-100.txt
+      - data/edacc/edacc-dev.txt

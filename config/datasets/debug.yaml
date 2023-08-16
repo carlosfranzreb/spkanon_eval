@@ -1,0 +1,20 @@
+data:
+  config: # details of the data (TODO: should this differ for each dataset?)
+    trainer: ${trainer}
+    root_folder: /Users/cafr02/datasets
+    sample_rate: ${sample_rate}
+    trim_silence: false # apply voice activity detection (VAD)
+    shuffle: false
+    min_duration: 2
+    max_duration: 25
+
+  datasets:
+    eval:
+      # - data/debug/edacc-test.txt
+      # - data/debug/ls-dev-clean-2.txt
+      # - data/debug/cv-test.txt
+      - data/debug/ravdess.txt
+    train_targetselection: # data to train the synthesizer (if necessary)
+      - data/debug/ls-dev-clean-2.txt
+    train_eval: # data to train the evaluation systems
+      - data/debug/ls-dev-clean-2.txt

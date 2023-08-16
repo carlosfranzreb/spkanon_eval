@@ -1,0 +1,5 @@
+dataset education n_pairs threshold eer
+edacc-test Undergraduate degree or NVQ/SVQ 5 or equivalent 841 -59.841345986129554 0.4039408866995074
+edacc-test Postgraduate degree 324 -54.06892128064652 0.4215686274509804
+edacc-test Highers/A-Levels or NVQ/SVQ 3 or equivalent 64 -42.04769329765683 0.375
+edacc-test No qualifications 4 -25.06476519400214 0.0

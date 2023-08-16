@@ -1,0 +1,17 @@
+dataset accent n_pairs threshold eer
+cv-test_3utts nan 334084 -157.4016345045859 0.3379549393414211
+cv-test_3utts England English 81 -154.28853838176235 0.3611111111111111
+cv-test_3utts United States English 1764 -154.16212353822067 0.35365853658536583
+cv-test_3utts Canadian English 25 -162.13948923230646 0.1
+cv-test_3utts India and South Asia (India, Pakistan, Sri Lanka) 100 -140.31378267224892 0.3
+cv-test_3utts Malaysian English 4 -206.27594190234942 0.5
+edacc-test American 9 -45.77820128732499 0.16666666666666666
+edacc-test nan 4 -7.187560806061396 0.0
+edacc-test Spanish 4 -76.36019086154101 0.0
+edacc-test Bulgarian 4 -80.48086201943792 0.0
+edacc-test Nigerian 4 -55.41058791816998 0.0
+edacc-test Fluent  4 -93.72085826713149 0.0
+edacc-test Irish 9 -108.37315208503627 0.3333333333333333
+edacc-test Jamaican 4 -77.3385872076422 0.0
+edacc-test Fluent 4 -55.225589493449945 0.5
+edacc-test Vietnamese 9 -87.11120214328281 0.16666666666666666

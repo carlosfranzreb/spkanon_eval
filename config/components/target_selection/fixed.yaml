@@ -1,0 +1,6 @@
+# the same target is always selected
+
+target_selection:
+  cls: src.target_selection.fixed.FixedSelector
+  consistent_targets: true # whether the same target should always be used for the same source
+  target: ${target_speaker} # should be a valid target for the selected pipeline

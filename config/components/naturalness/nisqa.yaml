@@ -1,0 +1,6 @@
+naturalness_nisqa:
+  cls: src.evaluation.naturalness.naturalness_nisqa.NisqaEvaluator
+  init: submodules/NISQA/weights/nisqa_tts.tar
+  train: false
+  num_workers: ${trainer.num_workers}
+  batch_size: 10

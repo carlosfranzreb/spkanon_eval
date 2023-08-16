@@ -1,0 +1,5 @@
+dataset utt_emotion n_samples mos
+ravdess angry 2 0.99
+ravdess fearful 2 0.96
+ravdess disgust 1 1.02
+ravdess sad 2 1.04

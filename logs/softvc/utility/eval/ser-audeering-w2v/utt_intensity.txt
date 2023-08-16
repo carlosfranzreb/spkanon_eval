@@ -1,0 +1,3 @@
+dataset utt_intensity n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
+ravdess normal 768 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ravdess strong 672 1.0 0.0 0.0 0.0 0.0 0.0 0.0

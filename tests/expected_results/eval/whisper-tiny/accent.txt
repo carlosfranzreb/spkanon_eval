@@ -1,0 +1,5 @@
+dataset accent n_samples avg_edits avg_words_ref wer
+edacc-test International 2 46.5 46.5 1.0
+edacc-test American 2 43.0 43.0 1.0
+cv-test US 2 12.5 12.5 1.0
+cv-test nan 2 9.5 9.5 1.0

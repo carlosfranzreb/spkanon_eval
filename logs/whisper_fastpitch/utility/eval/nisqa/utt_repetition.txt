@@ -1,0 +1,3 @@
+dataset utt_repetition n_samples mos
+ravdess 1 720 3.62
+ravdess 2 720 3.61

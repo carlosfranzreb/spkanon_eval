@@ -1,0 +1,6 @@
+audeering_w2v:
+  cls: src.evaluation.ser.audeering_w2v.EmotionEvaluator
+  init: audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim
+  train: false
+  num_workers: ${trainer.num_workers}
+  batch_size: 2

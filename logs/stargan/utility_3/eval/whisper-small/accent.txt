@@ -1,0 +1,59 @@
+dataset accent n_samples avg_edits avg_words_ref wer
+cv-test_3utts nan 1733 7.06 10.0 0.71
+cv-test_3utts England English 27 6.89 9.78 0.7
+cv-test_3utts New Zealand English 3 5.0 11.0 0.45
+cv-test_3utts United States English 126 5.43 9.92 0.55
+cv-test_3utts Canadian English 15 5.33 11.07 0.48
+cv-test_3utts Australian English 3 4.33 11.67 0.37
+cv-test_3utts India and South Asia (India, Pakistan, Sri Lanka) 30 14.17 10.1 1.4
+cv-test_3utts Malaysian English 6 3.67 9.83 0.37
+cv-test_3utts India and South Asia (India, Pakistan, Sri Lanka),Canadian English 3 6.33 11.67 0.54
+cv-test_3utts England English,United States English 3 12.67 11.33 1.12
+cv-test_3utts West Indies and Bermuda (Bahamas, Bermuda, Jamaica, Trinidad) 3 0.67 5.0 0.13
+edacc-test International 46 7.85 20.2 0.39
+edacc-test American 155 15.66 23.36 0.67
+edacc-test Romanian  90 18.11 24.79 0.73
+edacc-test Standard Indian English 179 19.17 21.23 0.9
+edacc-test Scottish (Fife) 62 13.26 23.79 0.56
+edacc-test English with Scottish inflections 39 14.28 16.62 0.86
+edacc-test Asian 25 18.04 16.28 1.11
+edacc-test nan 68 17.25 24.68 0.7
+edacc-test Chinese accent or mixed accent(US, UK, China..) perhaps 34 17.09 37.03 0.46
+edacc-test American accent  7 11.86 31.14 0.38
+edacc-test Catalan 31 18.71 20.19 0.93
+edacc-test American, I guess. 35 19.31 32.14 0.6
+edacc-test Spanish American 52 17.19 23.73 0.72
+edacc-test Spanish 192 12.34 19.79 0.62
+edacc-test Bulgarian 8 9.75 26.5 0.37
+edacc-test Latin 31 11.71 24.45 0.48
+edacc-test Latin American 24 19.96 28.38 0.7
+edacc-test French 35 10.29 25.23 0.41
+edacc-test Mexican 40 11.65 19.8 0.59
+edacc-test European 31 11.84 30.1 0.39
+edacc-test North American 38 12.0 29.89 0.4
+edacc-test Afrian 244 19.99 24.56 0.81
+edacc-test Nigerian 337 19.37 25.54 0.76
+edacc-test American  70 20.94 25.81 0.81
+edacc-test Indian / Pakistani accent 4 18.0 33.25 0.54
+edacc-test Pakistani/American 2 105.0 44.5 2.36
+edacc-test African accent 226 27.17 16.93 1.6
+edacc-test Kenyan 360 21.64 24.18 0.89
+edacc-test Indian  264 9.57 17.13 0.56
+edacc-test Ghanaian  75 12.37 23.4 0.53
+edacc-test Spanish accent 157 10.05 18.16 0.55
+edacc-test Lithuanian 195 12.91 23.18 0.56
+edacc-test Lithuanian (eastern European) 159 17.01 21.53 0.79
+edacc-test British 69 16.14 21.41 0.75
+edacc-test Chinese  56 22.04 21.8 1.01
+edacc-test Neutral 54 11.94 20.91 0.57
+edacc-test Fluent  69 26.62 29.97 0.89
+edacc-test Irish 182 13.81 27.37 0.5
+edacc-test Jamaican 49 18.22 31.86 0.57
+edacc-test Fluent 199 16.61 14.89 1.12
+edacc-test italian 81 15.04 24.63 0.61
+edacc-test Israeli 178 18.78 22.67 0.83
+edacc-test Vietnamese 166 27.77 20.34 1.37
+edacc-test Midwestern United States 51 15.8 22.61 0.7
+edacc-test Indonesian 115 10.05 17.29 0.58
+edacc-test Vietnamese English 66 16.36 19.42 0.84
+edacc-test Vietnamese accent 50 16.74 22.6 0.74

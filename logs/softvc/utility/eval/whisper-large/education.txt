@@ -1,0 +1,8 @@
+dataset education n_samples avg_edits avg_words_ref wer
+edacc-test Undergraduate degree or NVQ/SVQ 5 or equivalent 2372 10.9 22.66 0.48
+edacc-test Postgraduate degree 1223 10.53 22.61 0.47
+edacc-test Highers/A-Levels or NVQ/SVQ 3 or equivalent 745 9.65 21.78 0.44
+edacc-test Bachelor's degree 24 6.54 28.38 0.23
+edacc-test PhD Applied Linguistics (in progress) 4 17.5 33.25 0.53
+edacc-test National 5/GCSE or equivalent 103 9.83 13.68 0.72
+edacc-test No qualifications 229 8.24 22.66 0.36
