@@ -31,3 +31,14 @@ You can find the components, build instructions and evaluation results in the `s
 To evaluate your own model, you have to implement the required wrappers. We also have implemented several components which you might find useful. Read about them [here](docs/components.md). You can also look at the existing anonymization models to learn more about this framework. They are stored in [this repository](https://github.com/carlosfranzreb/spkanon_models).
 
 Alternatively, you can define an `infer` method on your model and replace the current model in the `spkanon_eval/main.py` file. The `infer` method should anonymize and unpad batches. See `featex_eval.anonymizer.Anonymizer.infer` to learn how we do it.
+
+## Citation
+
+```tex
+@inproceedings{franzreb2023comprehensive,
+  title={A Comprehensive Evaluation Framework for Speaker Anonymization Systems},
+  author={Franzreb, Carlos and Polzehl, Tim and Moeller, Sebastian},
+  booktitle={Proc. 3rd Symposium on Security and Privacy in Speech Communication},
+  year={2023},
+}
+```
