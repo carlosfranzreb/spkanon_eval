@@ -14,7 +14,7 @@ Once the framework is installed, you can run the tests with `python -m unittest 
 
 ## Full results of the SPSC 2023 paper
 
-The results that were used on the aforementioned paper can be found on a previous commit of this repository. We have removed them from the current version to simplify the repository. Here is a link under which the results can be found: TODO
+The results that were used on the aforementioned paper can be found on a previous commit of this repository. We have removed them from the current version to simplify the repository. Here is a link under which the results can be found: <https://github.com/carlosfranzreb/spkanon_eval/tree/28f27eb>. The notebooks summarizing the results are under `scripts`.
 
 ## Existing anonymization models
 
