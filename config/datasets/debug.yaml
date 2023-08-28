@@ -13,8 +13,8 @@ data:
       # - data/debug/edacc-test.txt
       # - data/debug/ls-dev-clean-2.txt
       # - data/debug/cv-test.txt
-      - data/debug/ravdess.txt
-    train_targetselection: # data to train the synthesizer (if necessary)
-      - data/debug/ls-dev-clean-2.txt
-    train_eval: # data to train the evaluation systems
-      - data/debug/ls-dev-clean-2.txt
+      - data/ravdess/ravdess.txt
+    # train_targetselection: # data to train the synthesizer (if necessary)
+    #   - data/debug/ls-dev-clean-2.txt
+    # train_eval: # data to train the evaluation systems
+    #   - data/debug/ls-dev-clean-2.txt

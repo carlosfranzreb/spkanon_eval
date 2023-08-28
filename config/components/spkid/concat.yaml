@@ -1,13 +1,11 @@
 spkid:
-  cls: src.featex.spkid.spkid_concat.SpkIdConcat
+  cls: spkanon_eval.featex.spkid.spkid_concat.SpkIdConcat
   train: false
   trainer_cfg: config/trainers/spkid.yaml
   models:
-    - toolkit: speechbrain
-      path: speechbrain/spkrec-xvect-voxceleb
+    - path: speechbrain/spkrec-xvect-voxceleb
       train: false
       trainer_cfg: config/trainers/spkid.yaml
-    - toolkit: speechbrain
-      path: speechbrain/spkrec-ecapa-voxceleb
+    - path: speechbrain/spkrec-ecapa-voxceleb
       train: false
       trainer_cfg: config/trainers/spkid.yaml

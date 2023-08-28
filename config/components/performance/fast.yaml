@@ -1,9 +1,0 @@
-performance:
-  cls: src.evaluation.performance.performance.PerformanceEvaluator
-  train: false
-  sample_rate: ${sample_rate}
-  repetitions: 5
-  durations:
-    - 5
-    - 10
-    - 20

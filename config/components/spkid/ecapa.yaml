@@ -1,6 +1,5 @@
 spkid:
-  cls: src.featex.spkid.spkid.SpkId # cls that extracts this feature
-  toolkit: speechbrain
+  cls: spkanon_eval.featex.spkid.spkid.SpkId # cls that extracts this feature
   path: speechbrain/spkrec-ecapa-voxceleb # path to ckpt or name of pretrained model
   train: false
   trainer_cfg: config/trainers/spkid.yaml
