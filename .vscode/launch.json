@@ -14,13 +14,13 @@
       "justMyCode": false
     },
     {
-      "name": "Run full evaluation",
+      "name": "Run config.yaml",
       "type": "python",
       "request": "launch",
       "program": "run.py",
       "console": "integratedTerminal",
       "justMyCode": false,
-      "args": ["--device", "cpu", "--config", "config/full.yaml"]
+      "args": ["--device", "cpu", "--config", "config/config.yaml"]
     }
   ]
 }

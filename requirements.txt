@@ -1,11 +1,15 @@
-torch==2.0.0
-torchvision==0.15.1
-torchaudio==2.0.1
-nemo_toolkit[all]==1.17.0
-resampy==0.4.2
-speechbrain==0.5.14
+speechbrain>=0.5.15
 openai-whisper==20230314
-https://github.com/RaviSoji/plda/tarball/master  # Works for version 0.1.0
+plda @ https://github.com/RaviSoji/plda/tarball/master
+omegaconf>=2.3.0
+transformers>=4.30.0
+editdistance>=0.6.2
+pandas>=2.0.3
 
-flake8==6.0.0
-black==19.10b0
+# NISQA dependencies
+librosa>=0.8.1
+matplotlib>=3.5.1
+
+# dev dependencies
+flake8>=6.0.0
+black>=19.10b0

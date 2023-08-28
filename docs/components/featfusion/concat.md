@@ -1,6 +1,6 @@
 # Feature Concatenation
 
-The `Concat` class, defined in `src/featfusion/concat.py`, concatenates features from different sources into a single feature representation. It can be used to combine time-variant and time-invariant features, like speech and speaker representations.
+The `Concat` class, defined in `spkanon_eval/featfusion/concat.py`, concatenates features from different sources into a single feature representation. It can be used to combine time-variant and time-invariant features, like speech and speaker representations.
 
 The `config` dictionary should have two keys:
 

@@ -1,6 +1,6 @@
 # Spectrogram Extraction
 
-The `SpecExtractor`, defined in the file `src/featex/spectrogram.py`, is class is designed to compute the mel-spectrogram of an audio tensor after normalizing it. Upon initialization, the `SpecExtractor` object sets up the mel-spectrogram transformation using the `torchaudio.transforms.MelSpectrogram` class. The mel-spectrogram is a representation of the audio signal's spectral content over time and is widely used in audio analysis tasks.
+The `SpecExtractor`, defined in the file `spkanon_eval/featex/spectrogram.py`, is class is designed to compute the mel-spectrogram of an audio tensor after normalizing it. Upon initialization, the `SpecExtractor` object sets up the mel-spectrogram transformation using the `torchaudio.transforms.MelSpectrogram` class. The mel-spectrogram is a representation of the audio signal's spectral content over time and is widely used in audio analysis tasks.
 
 The `config` object should contain the following attributes:
 

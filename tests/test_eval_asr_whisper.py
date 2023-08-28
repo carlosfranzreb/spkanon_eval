@@ -14,13 +14,13 @@ from base import BaseTestClass, run_pipeline
 class TestEvalWhisper(BaseTestClass):
     def test_results(self):
         """
-        Test whether the SER results match the expected values.
+        Test whether the ASR results match the expected values.
         """
 
         # run the experiment with both ASV evaluation scenarios
         self.init_config.eval.components = {
             "whisper_tiny": {
-                "cls": "src.featex.asr.whisper.Whisper",
+                "cls": "spkanon_eval.featex.asr.whisper.Whisper",
                 "train": False,
                 "size": "tiny",
                 "output": "text",

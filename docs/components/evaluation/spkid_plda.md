@@ -15,7 +15,7 @@ Our ASV implementation can be run with any speaker embedding models from SpeechB
 This phase requires a dataset different from the one used for evaluation.
 
 1. [optional] Remove utterances that are shorter than 4 seconds, and remove speakers that have less than 2 utterances.
-2. Fine-tune [NeMo's SpkId net](../featex/spkid.md).
+2. Fine-tune the [SpkId net](../featex/spkid.md).
 3. Extract SpkId vectors for each utterance from the fine-tuned net.
 4. Center the SpkId vectors.
 5. [optional] Decrease the dimensionality of the centered SpkId vectors with [sklearn's LDA](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html).
@@ -43,7 +43,7 @@ If you want to evaluate your anonymization pipeline with this component, you hav
 
 ```yaml
 asv:
-  cls: src.evaluation.asv_vpc.ASV
+  cls: spkanon_eval.evaluation.asv_vpc.ASV
   scenario: ignorant # attack scenario; can be ignorant or lazy-informed
   train: true
   data: ${data}
@@ -56,7 +56,7 @@ asv:
     min_dur: 4 # min. duration (in s) for each utterance
     min_samples: 2 # min. no. of samples per speaker
   spkid:
-    cls: src.featex.spkid.SpkId # cls that extracts this feature
+    cls: spkanon_eval.featex.spkid.SpkId # cls that extracts this feature
     path: ecapa_tdnn # path to ckpt or name of pretrained model
     train: false
     trainer_cfg: config/trainers/spkid.yaml # cfg used to init the trainer and optimizer

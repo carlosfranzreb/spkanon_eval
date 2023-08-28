@@ -1,18 +1,15 @@
 # create and activate conda environment
+conda update -n base -c defaults conda
 conda create -p ./venv python=3.9 -y
+eval "$(conda shell.bash hook)"
 conda activate ./venv
 
-# install conda packages
-conda install -c conda-forge pynini -y
-conda install 'ffmpeg<4.4' -y
+# ffmpeg is required to load MP3 files
+conda install -y 'ffmpeg<5'
 
 # install pip dependencies
 pip install --no-input --upgrade pip
-pip install --no-input Cython==0.29.34
-pip install --no-input -r ./requirements.txt
+pip install --no-input .
 
-# Add NISQA as a submodule
-mkdir submodules
-cd submodules
-git submodule add https://github.com/gabrielmittag/NISQA.git
-cd ..
+# clone NISQA
+git clone https://github.com/gabrielmittag/NISQA.git

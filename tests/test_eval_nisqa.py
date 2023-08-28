@@ -6,19 +6,18 @@ for the debug data.
 """
 
 
-import pickle
-from string import Template
 import json
 import os
+from shutil import rmtree
 
 from base import BaseTestClass, run_pipeline
-from src.setup_module import setup
+from spkanon_eval.setup_module import setup
 
 
 NISQA_CFG = {
     "naturalness_nisqa": {
-        "cls": "src.evaluation.naturalness.naturalness_nisqa.NisqaEvaluator",
-        "init": "submodules/NISQA/weights/nisqa_tts.tar",
+        "cls": "spkanon_eval.evaluation.naturalness.naturalness_nisqa.NisqaEvaluator",
+        "init": "NISQA/weights/nisqa_tts.tar",
         "train": False,
         "num_workers": "${trainer.num_workers}",
         "batch_size": 10,
@@ -37,10 +36,13 @@ class TestEvalNisqa(BaseTestClass):
 
         # run the experiment with both ASV evaluation scenarios
         self.init_config.eval.components = NISQA_CFG
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        self.init_config.log_dir = os.path.join(
+            self.init_config.log_dir, "nisqa_correctness"
+        )
+        self.config, log_dir = run_pipeline(self.init_config)
 
         # assert that the directory exists
-        expected_dir = os.path.join(self.log_dir, "eval", "nisqa")
+        expected_dir = os.path.join(log_dir, "eval", "nisqa")
         self.assertTrue(os.path.isdir(expected_dir))
 
         # assert that all eval utterances are included in the output
@@ -48,7 +50,7 @@ class TestEvalNisqa(BaseTestClass):
         for eval_file in self.config.data.datasets.eval:
             # gather the utterances from this eval file
             expected_utts = list()
-            for line in open(os.path.join(self.log_dir, "results", eval_file)):
+            for line in open(os.path.join(log_dir, "results", eval_file)):
                 expected_utts.append(json.loads(line)["audio_filepath"])
 
             # gather the utts from the NISQA output and ensure the scores are valid
@@ -73,7 +75,7 @@ class TestEvalNisqa(BaseTestClass):
             extrema[fname]["max"] = max(eval_scores)
             min_idx = eval_scores.index(extrema[fname]["min"])
             max_idx = eval_scores.index(extrema[fname]["max"])
-            datafile = os.path.join(self.log_dir, "results", f"extrema_{fname}")
+            datafile = os.path.join(log_dir, "results", f"extrema_{fname}")
             with open(datafile, "w") as f:
                 f.write(json.dumps({"audio_filepath": eval_utts[min_idx]}))
                 f.write(json.dumps({"audio_filepath": eval_utts[max_idx]}))
@@ -81,10 +83,9 @@ class TestEvalNisqa(BaseTestClass):
         # run evaluation again and check the extrema scores
         nisqa = setup(self.config.eval.components.naturalness_nisqa, "cpu")
         datafiles = [
-            os.path.join(self.log_dir, "results", f)
-            for f in self.config.data.datasets.eval
+            os.path.join(log_dir, "results", f) for f in self.config.data.datasets.eval
         ]
-        nisqa.eval_dir(self.log_dir, datafiles, False)
+        nisqa.eval_dir(log_dir, datafiles, False)
         for eval_file in os.listdir(expected_dir):
             if not eval_file.startswith("extrema_"):
                 continue
@@ -100,6 +101,8 @@ class TestEvalNisqa(BaseTestClass):
                         float(score), extrema[fname]["max"], places=1
                     )
 
+        rmtree(log_dir)
+
     def test_results(self):
         """
         Compare the results with those that we have checked manually.
@@ -107,11 +110,14 @@ class TestEvalNisqa(BaseTestClass):
 
         # run the experiment with both ASV evaluation scenarios
         self.init_config.eval.components = NISQA_CFG
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        self.init_config.log_dir = os.path.join(
+            self.init_config.log_dir, "nisqa_results"
+        )
+        self.config, log_dir = run_pipeline(self.init_config)
 
         # get the directory where the results are stored
         results_subdir = "eval/nisqa"
-        results_dir = os.path.join(self.log_dir, results_subdir)
+        results_dir = os.path.join(log_dir, results_subdir)
         expected_dir = os.path.join("tests", "expected_results", results_subdir)
 
         # assert that both directories contain the same files
@@ -132,3 +138,5 @@ class TestEvalNisqa(BaseTestClass):
 
             with self.subTest(fname=fname):
                 self.assertCountEqual(results, expected)
+
+        rmtree(log_dir)

@@ -1,2 +1,2 @@
 dataset ethnicity n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
-edacc-test White 4 0.9 -0.01 0.02 -0.02 0.03 -0.03 0.03
+edacc-test White 4 1.0 0.0 0.0 0.0 0.0 0.0 0.0

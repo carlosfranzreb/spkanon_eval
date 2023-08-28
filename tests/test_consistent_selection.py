@@ -7,7 +7,7 @@ import unittest
 import torch
 from omegaconf import OmegaConf
 
-from src.target_selection.random import RandomSelector
+from spkanon_eval.target_selection.random import RandomSelector
 
 
 class TestConsistentSelection(unittest.TestCase):

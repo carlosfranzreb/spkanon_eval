@@ -6,8 +6,7 @@ venv
 data/pretrained_models
 checkpoints
 models
-*.mp3
-*.flac
-*.wav
 tmp.py
 tmp.ipynb
+spkanon_eval.egg-info
+NISQA

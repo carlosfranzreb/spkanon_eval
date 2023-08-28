@@ -3,7 +3,7 @@ import json
 import unittest
 import shutil
 
-from src.evaluation.asv.trials_enrolls import split_trials_enrolls
+from spkanon_eval.evaluation.asv.trials_enrolls import split_trials_enrolls
 
 
 class TestTrialsEnrolls(unittest.TestCase):

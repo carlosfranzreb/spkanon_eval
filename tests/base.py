@@ -5,20 +5,20 @@ This base class should be inherited by all test classes.
 """
 
 
-import unittest
 import os
+import unittest
 from argparse import ArgumentParser
 from shutil import rmtree
+from tempfile import NamedTemporaryFile
 
 from omegaconf import OmegaConf
 
 from run import setup
-from src.main import main
+from spkanon_eval.main import main
 
 
 MARKER_FILE = ".TEST-FOLDER"
 LOG_DIR = "tests/logs"
-DUMP_CONFIG = "config.yaml"
 
 
 class BaseTestClass(unittest.TestCase):
@@ -26,7 +26,7 @@ class BaseTestClass(unittest.TestCase):
         """
         Create the config object with the StarGANv2-VC pipeline. Training is disabled,
         inference and evaluation are enabled.
-        It will be modified by the test class before running the experiment with 
+        It will be modified by the test class before running the experiment with
         `run_pipeline()`. The logging directory will be stored in `self.log_dir`, and
         deleted after the test with `tearDown()`.
         """
@@ -41,6 +41,7 @@ class BaseTestClass(unittest.TestCase):
                 },
                 "seed": 0,
                 "log_dir": LOG_DIR,
+                "device": "cpu",
                 "trainer": {
                     "batch_size": 2,
                     "max_epochs": 20,
@@ -52,7 +53,7 @@ class BaseTestClass(unittest.TestCase):
                 "sample_rate": 24000,
                 "featex": {
                     "spectrogram": {
-                        "cls": "src.featex.spectrogram.SpecExtractor",
+                        "cls": "spkanon_eval.featex.spectrogram.SpecExtractor",
                         "n_mels": 80,
                         "n_fft": 2048,
                         "win_length": 1200,
@@ -60,7 +61,7 @@ class BaseTestClass(unittest.TestCase):
                     }
                 },
                 "synthesis": {
-                    "cls": "src.synthesis.dummy.DummySynthesizer",
+                    "cls": "spkanon_eval.synthesis.dummy.DummySynthesizer",
                     "sample_rate": "${sample_rate}",
                     "input": {"spectrogram": "spectrogram"},
                 },
@@ -82,12 +83,6 @@ class BaseTestClass(unittest.TestCase):
                         "train_eval": ["data/debug/ls-dev-clean-2.txt"],
                     },
                 },
-                "resources": {
-                    "device": "cpu",
-                    "n_devices": 1,
-                    "n_nodes": 1,
-                    "debug": False,
-                },
                 "eval": {
                     "config": {
                         "baseline": False,
@@ -100,8 +95,9 @@ class BaseTestClass(unittest.TestCase):
         )
 
     def tearDown(self):
-        """Delete the logging directory."""
-        rmtree(self.log_dir)
+        """Delete the logging directory if it exists as an attribute."""
+        if hasattr(self, "log_dir"):
+            rmtree(self.log_dir)
 
 
 def run_pipeline(config):
@@ -109,14 +105,13 @@ def run_pipeline(config):
     Run the pipeline with the current config.
     """
     args = ArgumentParser()
+    args.device = config.device
 
     # save the config to a file and pass the file to the setup function
-    OmegaConf.save(config, DUMP_CONFIG)
-    args.config = DUMP_CONFIG
+    with NamedTemporaryFile(mode="w+", encoding="utf-8") as tmp_file:
+        OmegaConf.save(config, tmp_file.name)
+        args.config = tmp_file.name
+        config, log_dir = setup(args)
 
-    args.device = config.resources.device
-    args.n_devices = config.resources.n_devices
-    args.debug = config.resources.debug
-    config, log_dir = setup(args)
     main(config, log_dir)
     return config, log_dir

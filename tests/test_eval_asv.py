@@ -7,36 +7,33 @@ for the debug data.
 
 
 import pickle
-from string import Template
-import json
 import os
 import copy
+from shutil import rmtree
 
 import torchaudio
-import torch
 from omegaconf import OmegaConf
 import numpy as np
 import plda
-from pytorch_lightning import seed_everything
 
 from base import BaseTestClass, run_pipeline
-from src.setup_module import setup
-from src.dataloader import setup_dataloader, collate_fn_inference
-from src.evaluation.asv.spkid_plda import SAMPLE_RATE as EVAL_SR
+from spkanon_eval.setup_module import setup
+from spkanon_eval.datamodules.dataloader import setup_dataloader
+from spkanon_eval.evaluation.asv.spkid_plda import SAMPLE_RATE as EVAL_SR
+from spkanon_eval.utils import seed_everything
 
 
 SPKEMB_SIZE = 192
 SPKID_CONFIG = {
-    "cls": "src.featex.spkid.spkid.SpkId",
-    "toolkit": "nemo",
-    "path": "ecapa_tdnn",
+    "cls": "spkanon_eval.featex.spkid.spkid.SpkId",
+    "path": "speechbrain/spkrec-ecapa-voxceleb",
     "train": False,
     "trainer": {"batch_size": 2},
 }
 ASV_IGNORANT_CONFIG = OmegaConf.create(
     {
         "asv_ignorant": {
-            "cls": "src.evaluation.asv.spkid_plda.ASV",
+            "cls": "spkanon_eval.evaluation.asv.spkid_plda.ASV",
             "scenario": "ignorant",
             "train": True,
             "lda_ckpt": None,
@@ -48,7 +45,7 @@ ASV_IGNORANT_CONFIG = OmegaConf.create(
 ASV_LAZY_CONFIG = OmegaConf.create(
     {
         "asv_lazy_informed": {
-            "cls": "src.evaluation.asv.spkid_plda.ASV",
+            "cls": "spkanon_eval.evaluation.asv.spkid_plda.ASV",
             "scenario": "lazy-informed",
             "train": True,
             "inference": "${inference}",
@@ -69,11 +66,12 @@ class TestEvalASV(BaseTestClass):
 
         # run the experiment with both ASV evaluation scenarios
         self.init_config.eval.components = ASV_IGNORANT_CONFIG
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        self.init_config.log_dir = os.path.join(self.init_config.log_dir, "asv_test")
+        config, log_dir = run_pipeline(self.init_config)
 
         # get the directory where the results are stored
         results_subdir = "eval/asv-plda/ignorant/results"
-        results_dir = os.path.join(self.log_dir, results_subdir)
+        results_dir = os.path.join(log_dir, results_subdir)
         expected_dir = os.path.join("tests", "expected_results", results_subdir)
 
         # assert that both directories contain the same files
@@ -90,6 +88,8 @@ class TestEvalASV(BaseTestClass):
             with self.subTest(fname=fname):
                 self.assertCountEqual(results, expected)
 
+        rmtree(log_dir)
+
     def test_lda_reduction(self):
         """
         Ensure that, when defined in the config, an LDA algorithm is trained and saved
@@ -100,10 +100,13 @@ class TestEvalASV(BaseTestClass):
         lda_output_size = 2
         self.init_config.eval.components = ASV_IGNORANT_CONFIG
         self.init_config.eval.components.asv_ignorant.reduced_dims = lda_output_size
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        self.init_config.log_dir = os.path.join(
+            self.init_config.log_dir, "asv_test_lda_reduction"
+        )
+        config, log_dir = run_pipeline(self.init_config)
 
         asv_subdir = "eval/asv-plda/ignorant"
-        asv_dir = os.path.join(self.log_dir, asv_subdir)
+        asv_dir = os.path.join(log_dir, asv_subdir)
 
         # assert that the LDA algorithm was trained and saved to disk
         lda_path = os.path.join(asv_dir, "train", "models", "lda.pkl")
@@ -136,6 +139,8 @@ class TestEvalASV(BaseTestClass):
             "The PLDA model expects a different input size",
         )
 
+        rmtree(log_dir)
+
     def test_enrollment_targets(self):
         """
         Ensure that, when the inference and evaluation seeds are different, the targets
@@ -150,12 +155,12 @@ class TestEvalASV(BaseTestClass):
 
         # add the dummy featproc component to the config and random target selection
         self.init_config.target_selection = {
-            "cls": "src.target_selection.random.RandomSelector",
+            "cls": "spkanon_eval.target_selection.random.RandomSelector",
             "consistent_targets": True,
         }
         self.init_config.featproc = {
             "dummy": {
-                "cls": "src.featproc.dummy.DummyConverter",
+                "cls": "spkanon_eval.featproc.dummy.DummyConverter",
                 "input": {
                     "spectrogram": "spectrogram",
                     "source": "source",
@@ -165,16 +170,15 @@ class TestEvalASV(BaseTestClass):
             },
             "output": {"featproc": ["spectrogram", "target"], "featex": []},
         }
-
-        # set the evaluation seed to be different from the inference seed
         self.init_config.eval.config.seed = self.init_config.seed + 100
-
-        # evaluate with the lazy-informed ASV, where enrollment data is anonymized
         self.init_config.eval.components = ASV_LAZY_CONFIG
+        self.init_config.log_dir = os.path.join(
+            self.init_config.log_dir, "asv_test_enrollment_targets"
+        )
 
         # run the experiment and get the log file with the selected targets
-        self.config, self.log_dir = run_pipeline(self.init_config)
-        targets_log = os.path.join(self.log_dir, "targets.log")
+        config, log_dir = run_pipeline(self.init_config)
+        targets_log = os.path.join(log_dir, "targets.log")
 
         # gather the source-target pairs from the Common Voice dataset
         targets = list()
@@ -209,6 +213,8 @@ class TestEvalASV(BaseTestClass):
             found_difference, "All inference and enrollment targets are the same"
         )
 
+        rmtree(log_dir)
+
     def test_lazy_informed_asv(self):
         """
         In the lazy-informed scenario, the ASV system is trained with anonymized
@@ -221,12 +227,12 @@ class TestEvalASV(BaseTestClass):
 
         # add the dummy featproc component to the config and random target selection
         self.init_config.target_selection = {
-            "cls": "src.target_selection.random.RandomSelector",
+            "cls": "spkanon_eval.target_selection.random.RandomSelector",
             "consistent_targets": True,
         }
         self.init_config.featproc = {
             "dummy": {
-                "cls": "src.featproc.dummy.DummyConverter",
+                "cls": "spkanon_eval.featproc.dummy.DummyConverter",
                 "input": {
                     "spectrogram": "spectrogram",
                     "source": "source",
@@ -236,14 +242,16 @@ class TestEvalASV(BaseTestClass):
             },
             "output": {"featproc": ["spectrogram", "target"], "featex": []},
         }
-
         self.init_config.eval.config.seed = self.init_config.seed + 1
         self.init_config.eval.components = ASV_LAZY_CONFIG
-        self.config, self.log_dir = run_pipeline(self.init_config)
-        asv_dir = os.path.join(self.log_dir, "eval", "asv-plda", "lazy-informed")
+        self.init_config.log_dir = os.path.join(
+            self.init_config.log_dir, "asv_test_lazy_informed"
+        )
+        config, log_dir = run_pipeline(self.init_config)
+        asv_dir = os.path.join(log_dir, "eval", "asv-plda", "lazy-informed")
 
         # find the train_eval datafile and assert that it is LibriSpeech's dev-clean-2
-        train_files = self.config.data.datasets.train_eval
+        train_files = config.data.datasets.train_eval
         self.assertEqual(len(train_files), 1, "Wrong number of train_eval datasets")
 
         train_file = train_files[0]
@@ -279,25 +287,19 @@ class TestEvalASV(BaseTestClass):
         seed_everything(self.init_config.eval.config.seed)
 
         # compute the spkid vecs for the anonymized utterances
-        # as is done in src.evaluation.asv.spkid_plda.compute_spkid_vecs
-        spkid_model = setup(self.config.eval.components.asv_lazy_informed.spkid, "cpu")
+        # as is done in spkanon_eval.evaluation.asv.spkid_plda.compute_spkid_vecs
+        spkid_model = setup(config.eval.components.asv_lazy_informed.spkid, "cpu")
         labels = np.array([], dtype=int)  # utterance labels
         vecs = None  # spkid vecs of utterances
 
-        spkid_config = copy.deepcopy(self.config.data.config)
-        spkid_config.trainer = (
-            self.config.eval.components.asv_lazy_informed.spkid.trainer
-        )
+        spkid_config = copy.deepcopy(config.data.config)
+        spkid_config.trainer = config.eval.components.asv_lazy_informed.spkid.trainer
         spkid_config.sample_rate = EVAL_SR
-        dl = setup_dataloader(
-            spkid_config, anon_train_file, collate_fn=collate_fn_inference
-        )
+        dl = setup_dataloader(spkid_config, [anon_train_file])
         for batch in dl:
             new_vecs = spkid_model.run(batch).detach().cpu().numpy()
             vecs = new_vecs if vecs is None else np.vstack([vecs, new_vecs])
-            new_labels = np.array(
-                [dl.dataset.id2label[l] for l in batch[2].detach().cpu().numpy()]
-            )
+            new_labels = batch[1].detach().cpu().numpy()
             labels = np.concatenate([labels, new_labels])
         vecs -= np.mean(vecs, axis=0)
 
@@ -316,7 +318,10 @@ class TestEvalASV(BaseTestClass):
         for attr in ["m", "A", "Psi", "relevant_U_dims", "inv_A"]:
             self.assertTrue(
                 np.allclose(
-                    getattr(new_plda.model, attr), getattr(old_plda.model, attr),
+                    getattr(new_plda.model, attr),
+                    getattr(old_plda.model, attr),
                 ),
                 f"The attribute {attr} of the PLDA models differ",
             )
+
+        rmtree(log_dir)

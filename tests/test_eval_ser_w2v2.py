@@ -1,14 +1,9 @@
-"""
-Test the evaluation components. We don't check whether the numbers are right, like the
-EER or the LLRs, but rather that these numbers are computed for the correct speakers
-and utterances. This test class inherits from BaseTestClass, which runs the inference
-for the debug data.
-"""
-
-
 import os
-
 from base import BaseTestClass, run_pipeline
+import torch
+from omegaconf import OmegaConf
+
+from spkanon_eval.evaluation.ser.audeering_w2v import EmotionEvaluator
 
 
 class TestEvalSer(BaseTestClass):
@@ -20,7 +15,7 @@ class TestEvalSer(BaseTestClass):
         # run the experiment with both ASV evaluation scenarios
         self.init_config.eval.components = {
             "audeering_w2v": {
-                "cls": "src.evaluation.ser.audeering_w2v.EmotionEvaluator",
+                "cls": "spkanon_eval.evaluation.ser.audeering_w2v.EmotionEvaluator",
                 "init": "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim",
                 "train": False,
                 "num_workers": 0,
@@ -52,3 +47,29 @@ class TestEvalSer(BaseTestClass):
 
             with self.subTest(fname=fname):
                 self.assertCountEqual(results, expected)
+
+    def test_batch(self):
+        """
+        Test whether the batching works: the results of the batch should equal the results of the
+        individual samples. We check the emotion embeddings for each sample.
+        """
+        audios = torch.randn(4, 50000) - 0.5
+        config = OmegaConf.create(
+            {
+                "init": "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim",
+                "batch_size": 2,
+                "data": {
+                    "config": {
+                        "trainer": {"batch_size": 2},
+                        "sample_rate": 16000,
+                    },
+                },
+            }
+        )
+        evaluator = EmotionEvaluator(config, "cpu")
+        batched_out = evaluator.run([audios])[0]
+        single_out = [evaluator.run([audio.unsqueeze(0)])[0] for audio in audios]
+        for i in range(len(batched_out)):
+            self.assertTrue(torch.allclose(batched_out[i], single_out[i]))
+            if i > 0:
+                self.assertFalse(torch.allclose(batched_out[i], batched_out[i - 1]))

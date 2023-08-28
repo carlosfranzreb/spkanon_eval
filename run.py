@@ -2,28 +2,19 @@ from argparse import ArgumentParser
 import os
 import logging
 import yaml
-from time import time
+from time import time, sleep
 import subprocess
 
-import pytorch_lightning as pl
 from omegaconf import OmegaConf
 
-from src.main import main
+from spkanon_eval.main import main
+from spkanon_eval.utils import seed_everything
 
 
 def setup(args):
-    config = load_subconfigs(yaml.load(open(args.config)))
+    config = load_subconfigs(yaml.full_load(open(args.config)))
     config = OmegaConf.create(config)
-    config.resources.update(
-        {
-            "device": args.device,
-            "n_devices": int(args.n_devices),
-            "n_nodes": int(os.environ["SLURM_NNODES"])
-            if "SLURM_NNODES" in os.environ
-            else 1,
-            "debug": args.debug,
-        }
-    )
+    config.device = args.device
     config.commit_hash = (
         subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
         .decode("ascii")
@@ -32,11 +23,14 @@ def setup(args):
 
     # create the logging directory
     log_dir = os.path.join(config.log_dir, str(int(time())))
+    while os.path.exists(log_dir):
+        sleep(1)
+        log_dir = os.path.join(config.log_dir, str(int(time())))
     os.makedirs(log_dir)
 
     # if a seed is specified, set it
     if config.seed is not None:
-        pl.seed_everything(config.seed)
+        seed_everything(config.seed)
 
     # dump config file to experiment folder
     OmegaConf.save(config, os.path.join(log_dir, "exp_config.yaml"))
@@ -69,7 +63,7 @@ def load_subconfigs(config):
         if isinstance(value, dict):
             full_config[key] = load_subconfigs(value)
         elif key.endswith("_cfg"):
-            full_config.update(load_subconfigs(yaml.load(open(value))))
+            full_config.update(load_subconfigs(yaml.full_load(open(value))))
         else:
             full_config[key] = value
 
@@ -80,6 +74,4 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--config")
     parser.add_argument("--device", default="cuda")
-    parser.add_argument("--n_devices", default="1")
-    parser.add_argument("--debug", action="store_true")
     main(*setup(parser.parse_args()))

@@ -1,3 +1,3 @@
 dataset utt_repetition n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
-ravdess 1 3 0.99 0.0 0.01 -0.01 0.01 -0.01 0.01
-ravdess 2 4 0.96 0.0 0.0 -0.0 0.01 0.01 0.01
+ravdess 1 3 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ravdess 2 4 1.0 0.0 0.0 0.0 0.0 0.0 0.0

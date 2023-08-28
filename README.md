@@ -1,32 +1,33 @@
-# Speaker Anonymization
+# SpkAnon Eval
 
 ![Workflow badge](https://github.com/carlosfranzreb/spkanon/actions/workflows/build.yml/badge.svg)
 
-Evaluation framework for speaker anonymization systems. [Here](docs/index.md) we describe how the framework works. Please write an issue if anything is unclear or you need help, and leave a star if you find this useful! Contributions are welcome, including adding new components, improving the framework or the documentation.
+Evaluation framework for speaker anonymization models.
 
 ## Installation
 
-To install the necessary packages, run the `build/framework.sh` script. It will create a Conda environment inside the repository, where the necessary dependencies are installed. Once the script is done, you can run the tests with `python -m unittest discover -s ./tests`.
+The evaluation framework can be installed with `pip install .`. Alternatively, the script `build/framework.sh` creates a conda environment and installs the framework there, as well as `ffmpeg`. Audiofiles are loaded with `torchaudio`. To load MP3 files, `ffmpeg` is required. You can install it with `conda install 'ffmpeg<5'`, as is done in the build script.
 
-Then you need to define the datasets to use and the root directory where the datasets are stored in the config. If you do so in the `config/datasets/evaluation.yaml` file, you can directly evaluate an STT-TTS that uses Whisper and FastPitch by running `python run.py --config config/full.yaml`. You can read more about that pipeline [here](docs/pipelines/whisper_fastpitch.md).
+If you want to evaluate the naturalness of your synthesized speech with NISQA, clone the repository: `git clone https://github.com/gabrielmittag/NISQA.git`. This is also done in the build script.
 
-## Anonymization pipelines
+Once the framework is installed, you can run the tests with `python -m unittest discover -s ./tests`. The test audio files are already part of the framework.
 
-- **STT-TTS with Whisper & FastPitch**: does not require any further installation. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
-- **StarGANv2-VC**: install it with `build/stargan.sh`. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
-- **SoftVC**: install it with `build/softvc.sh` does not require any further installation. Read more about this pipeline [here](docs/pipelines/whisper_fastpitch.md).
+## Full results of the SPSC 2023 paper
 
-## Results
+The results that were used on the aforementioned paper can be found on a previous commit of this repository. We have removed them from the current version to simplify the repository. Here is a link under which the results can be found: TODO
 
-Full results for the three pipelines mentioned above can be found under the `logs` folder. They are gathered in the notebooks under `scripts/spsc2023_results`.
+## Existing anonymization models
 
-## Citation
+We have moved the anonymization models to a separate repository, as well as the build scripts required for them. They are:
 
-```tex
-@inproceedings{franzreb2023comprehensive,
-  title={A Comprehensive Evaluation Framework for Speaker Anonymization Systems},
-  author={Franzreb, Carlos and Polzehl, Tim and Moeller, Sebastian},
-  booktitle={Proc. 3rd Symposium on Security and Privacy in Speech Communication},
-  year={2023},
-}
-```
+- **STT-TTS with Whisper & FastPitch**: extracts the text from the input speech and synthesizes it with one of the 20 FastPitch target speakers.
+- **StarGANv2-VC**: voice conversion model trained with 20 target speakers of VCTK.
+- **SoftVC**: install it with build/softvc.sh does not require any further installation. Read more about this pipeline here.
+
+You can find the components, build instructions and evaluation results in the `spkanon_models` repository: <https://github.com/carlosfranzreb/spkanon_models>.
+
+## Evaluate your anonymization model
+
+To evaluate your own model, you have to implement the required wrappers. We also have implemented several components which you might find useful. Read about them [here](docs/components.md). You can also look at the existing anonymization models to learn more about this framework. They are stored in [this repository](https://github.com/carlosfranzreb/spkanon_models).
+
+Alternatively, you can define an `infer` method on your model and replace the current model in the `spkanon_eval/main.py` file. The `infer` method should anonymize and unpad batches. See `featex_eval.anonymizer.Anonymizer.infer` to learn how we do it.

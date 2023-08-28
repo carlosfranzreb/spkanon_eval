@@ -1,5 +1,5 @@
 dataset accent n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
-edacc-test International 2 0.97 -0.03 0.03 -0.03 0.03 -0.05 0.05
-edacc-test American 2 0.84 0.01 0.01 -0.01 0.02 -0.01 0.01
-cv-test US 2 0.95 -0.01 0.01 -0.01 0.01 -0.0 0.02
-cv-test nan 2 0.97 -0.01 0.01 -0.01 0.01 -0.0 0.02
+edacc-test International 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+edacc-test American 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+cv-test US 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+cv-test nan 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0

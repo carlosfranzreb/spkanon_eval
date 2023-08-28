@@ -5,7 +5,7 @@ import shutil
 
 from omegaconf import OmegaConf
 
-from src.evaluation.asv.asv_utils import filter_samples
+from spkanon_eval.evaluation.asv.asv_utils import filter_samples
 
 
 class TestFilterSamples(unittest.TestCase):

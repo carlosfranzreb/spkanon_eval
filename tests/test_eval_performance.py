@@ -24,7 +24,7 @@ class TestEvalPerformance(BaseTestClass):
         self.init_config.eval.components = OmegaConf.create(
             {
                 "performance": {
-                    "cls": "src.evaluation.performance.performance.PerformanceEvaluator",
+                    "cls": "spkanon_eval.evaluation.performance.performance.PerformanceEvaluator",
                     "train": False,
                     "repetitions": 2,
                     "sample_rate": "${sample_rate}",
@@ -44,7 +44,6 @@ class TestEvalPerformance(BaseTestClass):
 
         # assert that the results files contain the same lines
         for fname in os.listdir(results_dir):
-
             with open(os.path.join(results_dir, fname)) as f:
                 results = f.readlines()
 
