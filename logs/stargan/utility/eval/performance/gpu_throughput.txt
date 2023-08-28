@@ -1,6 +1,0 @@
-input_duration max_batch_size throughput
-5 8 13.069
-10 4 6.565
-20 2 3.354
-30 1 2.225
-60 0 OOM_error

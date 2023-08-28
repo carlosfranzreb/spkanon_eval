@@ -1,9 +1,0 @@
-dataset utt_emotion n_samples avg_edits avg_words_ref wer
-ravdess angry 192 3.62 6.0 0.6
-ravdess fearful 192 4.49 6.0 0.75
-ravdess disgust 192 3.02 6.0 0.5
-ravdess sad 192 3.68 6.0 0.61
-ravdess surprised 192 3.92 6.0 0.65
-ravdess happy 192 3.32 6.0 0.55
-ravdess calm 192 1.59 6.0 0.26
-ravdess neutral 96 1.38 6.0 0.23

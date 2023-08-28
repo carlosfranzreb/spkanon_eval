@@ -1,5 +1,0 @@
-dataset n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
-cv-test_3utts 1952 0.99 0.01 0.01 -0.0 0.01 0.01 0.01
-ls-test-clean 2575 1.0 0.0 0.0 -0.0 0.0 0.0 0.01
-edacc-test 4700 0.99 0.01 0.01 0.0 0.01 0.01 0.01
-ravdess 1440 0.98 0.0 0.01 -0.0 0.01 0.01 0.02

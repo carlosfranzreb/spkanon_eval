@@ -1,3 +1,0 @@
-dataset utt_intensity n_samples avg_edits avg_words_ref wer
-ravdess normal 768 2.55 6.0 0.42
-ravdess strong 672 4.03 6.0 0.67

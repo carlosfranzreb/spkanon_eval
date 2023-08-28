@@ -1,3 +1,0 @@
-dataset utt_intensity n_pairs threshold eer
-ravdess normal 169 -7.446697504452731 0.5064102564102564
-ravdess strong 121 -7.97047119508064 0.4727272727272727

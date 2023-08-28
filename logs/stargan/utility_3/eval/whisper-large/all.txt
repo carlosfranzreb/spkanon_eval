@@ -1,5 +1,0 @@
-dataset n_samples avg_edits avg_words_ref wer
-cv-test_3utts 1952 5.33 10.0 0.53
-ls-test-clean 2575 1.84 20.1 0.09
-edacc-test 4700 13.87 22.35 0.62
-ravdess 1440 1.97 6.0 0.33

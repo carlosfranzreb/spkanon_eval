@@ -1,6 +1,0 @@
-input_duration inference_mean inference_std
-5 0.338 0.002
-10 0.671 0.002
-20 1.337 0.001
-30 2.007 0.006
-60 4.048 0.07

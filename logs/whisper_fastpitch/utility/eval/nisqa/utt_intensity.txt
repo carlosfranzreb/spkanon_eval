@@ -1,3 +1,0 @@
-dataset utt_intensity n_samples mos
-ravdess normal 768 3.61
-ravdess strong 672 3.62

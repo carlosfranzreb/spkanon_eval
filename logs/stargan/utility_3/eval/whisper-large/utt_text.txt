@@ -1,3 +1,0 @@
-dataset utt_text n_samples avg_edits avg_words_ref wer
-ravdess Dogs 720 1.73 6.0 0.29
-ravdess Kids 720 2.21 6.0 0.37

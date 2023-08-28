@@ -1,3 +1,0 @@
-dataset utt_repetition n_samples avg_edits avg_words_ref wer
-ravdess 1 720 2.24 6.0 0.37
-ravdess 2 720 2.22 6.0 0.37

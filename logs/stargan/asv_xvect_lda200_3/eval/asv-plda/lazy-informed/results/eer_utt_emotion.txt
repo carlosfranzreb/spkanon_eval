@@ -1,9 +1,0 @@
-dataset utt_emotion n_pairs threshold eer
-ravdess angry 16 -14.023093020367588 0.5
-ravdess fearful 16 -12.364001496511392 0.3333333333333333
-ravdess disgust 4 -8.990726749406448 0.0
-ravdess sad 4 -10.263488686859045 0.0
-ravdess surprised 4 -8.849831358051626 0.0
-ravdess happy 16 -10.91175074454321 0.25
-ravdess calm 16 -10.111912700410707 0.25
-ravdess neutral 4 -5.592051661853361 0.0

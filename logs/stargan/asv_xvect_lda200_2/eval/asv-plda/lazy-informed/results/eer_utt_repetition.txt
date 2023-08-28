@@ -1,3 +1,0 @@
-dataset utt_repetition n_pairs threshold eer
-ravdess 1 169 -13.863435214649712 0.5128205128205128
-ravdess 2 121 -12.742416097150569 0.3

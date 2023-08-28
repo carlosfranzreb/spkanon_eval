@@ -1,2 +1,0 @@
-input_duration max_batch_size throughput
-5 702 53.471

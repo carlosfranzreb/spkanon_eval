@@ -1,7 +1,0 @@
-dataset ethnicity n_samples mos
-edacc-test White 1655 2.69
-edacc-test South Asian 364 2.47
-edacc-test Asian 991 2.84
-edacc-test Black 1635 2.49
-edacc-test Mixed 31 2.83
-edacc-test Latin American 24 2.3
