@@ -10,3 +10,8 @@ tmp.py
 tmp.ipynb
 spkanon_eval.egg-info
 NISQA
+
+spkanon_models
+StarGANv2VC
+softvc_acoustic
+softvc_hifigan
