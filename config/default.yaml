@@ -1,20 +1,20 @@
 name: SoftVC
 
 trainer_cfg: config/trainers/default.yaml
-datasets_cfg: config/datasets/debug.yaml
+datasets_cfg: config/datasets/evaluation.yaml
 train: false
 seed: 0
 log_dir: logs/baseline
 device: cpu # overwritten on runtime
 
 inference:
-  run: false # store anonymized utterances; can be true, false or a path to an exp folder
+  run: true # store anonymized utterances; can be true, false or a path to an exp folder
   input: # input of the `infer` method of the anonymizer
     spectrogram: spectrogram # key under which the spectrogram can be found
     target: target
 
-# target_selection_cfg: config/components/target_selection/random.yaml
-# pipeline_cfg: spkanon_models/whisper_fastpitch/config.yaml
+target_selection_cfg: config/components/target_selection/random.yaml
+pipeline_cfg: spkanon_models/whisper_fastpitch/config.yaml # must clone spkanon_models repo first (see README)
 
 eval: # calls func `eval_dir` of each component, passing exp_folder and config
   config:
@@ -22,10 +22,13 @@ eval: # calls func `eval_dir` of each component, passing exp_folder and config
     baseline: true # non-anonymized speech is evaluated; inference and train must be false, eval must be present
     exp_folder: null # if not null, this folder is evaluated instead of current exp_folder
     sample_rate: ${synthesis.sample_rate} # SR of the anonymized data
-    # asv_reduce_dims: 200
-    # asv_spkid_cfg: config/components/spkid/xvector.yaml
+    asv_reduce_dims: 200
+    asv_spkid_cfg: config/components/spkid/xvector.yaml
 
   components:
-    # asv_ignorant_cfg: config/components/asv/ignorant.yaml
-    # asv_lazy_informed_cfg: config/components/asv/lazy-informed.yaml
+    asv_ignorant_cfg: config/components/asv/ignorant.yaml
+    asv_lazy_informed_cfg: config/components/asv/lazy-informed.yaml
+    small_asr_cfg: config/components/asr/whisper_small.yaml
+    large_asr_cfg: config/components/asr/whisper_large.yaml
     ser_cfg: config/components/ser/audeering_w2v.yaml
+    naturalness_cfg: config/components/naturalness/nisqa.yaml
