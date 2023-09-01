@@ -126,7 +126,9 @@ class ASV:
 
         # fine-tune SpkId model and store the ckpt if needed
         if self.config.spkid.train:
-            self.spkid_model.finetune(exp_folder, train_files, n_speakers)
+            self.spkid_model.finetune(
+                os.path.join(dump_dir, "spkid"), train_files, n_speakers
+            )
 
         # compute SpkId vectors of all utterances with fine-tuned net and center them
         vecs, labels = self.compute_spkid_vecs(train_files)

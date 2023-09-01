@@ -4,6 +4,7 @@ embeddings.
 """
 
 
+import shutil
 import os
 import logging
 import json
@@ -27,11 +28,9 @@ class SpkId:
         """Initialize the model with the given config and freeze its parameters."""
         self.config = config
         self.device = device
-        model_path = config.path
+        self.save_dir = os.path.join("checkpoints", config.path)
         self.model = EncoderClassifier.from_hparams(
-            source=model_path,
-            savedir=os.path.join("checkpoints", model_path),
-            run_opts={"device": device},
+            source=config.path, savedir=self.save_dir, run_opts={"device": device}
         )
         self.model.eval()
 
@@ -92,9 +91,10 @@ class SpkId:
 
         # train the model
         with open(self.config.finetune_config) as f:
-            hparams = load_hyperpyyaml(f, overrides={"output_folder": dump_dir})
+            hparams = load_hyperpyyaml(
+                f, overrides={"output_folder": dump_dir, "out_n_neurons": n_speakers}
+            )
         train_data = prepare_dataset(hparams, train_datafile)
-        hparams["out_n_neurons"] = n_speakers
         speaker_brain = SpeakerBrain(
             modules=hparams["modules"],
             opt_class=hparams["opt_class"],
@@ -115,3 +115,11 @@ class SpkId:
             },
         )
         checkpointer.save_checkpoint(name="spkid_model")
+        shutil.copy(
+            os.path.join(self.save_dir, "hyperparams.yaml"),
+            os.path.join(dump_dir, "CKPT+spkid_model"),
+        )
+        self.model = EncoderClassifier.from_hparams(
+            source=os.path.join(dump_dir, "CKPT+spkid_model"),
+            run_opts={"device": self.device},
+        )
