@@ -1,7 +1,7 @@
 data:
   config: # details of the data (TODO: should this differ for each dataset?)
     trainer: ${trainer}
-    root_folder: /Users/cafr02/datasets
+    root_folder: /ds/audio
     sample_rate: ${sample_rate}
     trim_silence: false # apply voice activity detection (VAD)
     shuffle: false
@@ -10,11 +10,9 @@ data:
 
   datasets:
     eval:
-      # - data/debug/edacc-test.txt
-      # - data/debug/ls-dev-clean-2.txt
-      # - data/debug/cv-test.txt
-      - data/ravdess/ravdess.txt
-    # train_targetselection: # data to train the synthesizer (if necessary)
-    #   - data/debug/ls-dev-clean-2.txt
-    # train_eval: # data to train the evaluation systems
-    #   - data/debug/ls-dev-clean-2.txt
+      - spkanon_eval/data/debug/edacc-test.txt
+      - spkanon_eval/data/debug/ls-dev-clean-2.txt
+      - spkanon_eval/data/debug/cv-test.txt
+      - spkanon_eval/data/ravdess/ravdess.txt
+    train_eval: # data to train the evaluation systems
+      - spkanon_eval/data/debug/ls-dev-clean-2.txt

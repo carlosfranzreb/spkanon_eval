@@ -19,7 +19,10 @@ LOGGER = logging.getLogger("progress")
 
 class Whisper:
     def __init__(self, config, device, **kwargs):
-        self.model = whisper.load_model(config.size).to(device)
+        self.model = whisper.load_model(
+            config.size,
+            download_root = "checkpoints/whisper",
+        ).to(device)
         self.model_size = config.size
         self.device = device
         self.out = config.output

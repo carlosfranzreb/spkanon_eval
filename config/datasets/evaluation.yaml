@@ -10,10 +10,10 @@ data:
 
   datasets:
     eval:
-      - data/common_voice/cv-test_3utts.txt
-      - data/librispeech/ls-test-clean.txt
-      - data/edacc/edacc-test.txt
-      - data/ravdess/ravdess.txt
+      - spkanon_eval/data/common_voice/cv-test_3utts.txt
+      - spkanon_eval/data/librispeech/ls-test-clean.txt
+      - spkanon_eval/data/edacc/edacc-test.txt
+      - spkanon_eval/data/ravdess/ravdess.txt
     train_eval:
-      - data/librispeech/ls-train-clean-100.txt
-      - data/edacc/edacc-dev.txt
+      - spkanon_eval/data/librispeech/ls-train-clean-100.txt
+      - spkanon_eval/data/edacc/edacc-dev.txt
