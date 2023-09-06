@@ -1,14 +1,14 @@
+*.egg-info
 *.tar.gz
 .DS_Store
 .code-server
 __pycache__
 venv
-data/pretrained_models
+pretrained_models
 checkpoints
 models
 tmp.py
 tmp.ipynb
-spkanon_eval.egg-info
 NISQA
 
 spkanon_models
