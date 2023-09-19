@@ -54,8 +54,6 @@ def load_subconfigs(config):
     Given a config, load all the subconfigs that are specified in the config into
     the same level as the parameter. Configs are specified by parameters ending with
     '_cfg'. If a value of the config is a dict, call this function again recursively.
-    Delete the '_cfg' parameter after loading the config it points to, except those
-    of the data and trainer configs.
     """
 
     full_config = dict()
