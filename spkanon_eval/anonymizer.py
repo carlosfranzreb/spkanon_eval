@@ -95,7 +95,7 @@ class Anonymizer:
                 min_idx = list()
                 for channel in specs[i]:
                     same_value = channel == channel[-1]
-                    for idx in range(same_value.shape[0], 0, -1):
+                    for idx in range(same_value.shape[0] - 1, 0, -1):
                         if same_value[idx] is False:
                             break
                         last_idx = idx
