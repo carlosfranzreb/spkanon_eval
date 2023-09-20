@@ -34,7 +34,6 @@ class BaseTestClass(unittest.TestCase):
         self.init_config = OmegaConf.create(
             {
                 "name": "StarGANv2-VC",
-                "train": False,
                 "inference": {
                     "run": True,
                     "input": {"spectrogram": "spectrogram", "target": "target"},
@@ -42,15 +41,8 @@ class BaseTestClass(unittest.TestCase):
                 "seed": 0,
                 "log_dir": LOG_DIR,
                 "device": "cpu",
-                "trainer": {
-                    "batch_size": 2,
-                    "max_epochs": 20,
-                    "num_workers": 0,
-                    "accumulate_grad_batches": 1,
-                    "limit_train_batches": 1.0,
-                    "limit_val_batches": 1.0,
-                },
                 "sample_rate": 24000,
+                "batch_size": 2,
                 "featex": {
                     "spectrogram": {
                         "cls": "spkanon_eval.featex.spectrogram.SpecExtractor",
@@ -67,11 +59,9 @@ class BaseTestClass(unittest.TestCase):
                 },
                 "data": {
                     "config": {
-                        "trainer": "${trainer}",
                         "root_folder": "tests/data",
                         "sample_rate": "${sample_rate}",
-                        "trim_silence": False,
-                        "shuffle": False,
+                        "batch_size": "${batch_size}",
                     },
                     "datasets": {
                         "eval": [
@@ -106,6 +96,7 @@ def run_pipeline(config):
     """
     args = ArgumentParser()
     args.device = config.device
+    args.num_workers = 0
 
     # save the config to a file and pass the file to the setup function
     with NamedTemporaryFile(mode="w+", encoding="utf-8") as tmp_file:

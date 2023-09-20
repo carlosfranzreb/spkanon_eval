@@ -1,10 +1,8 @@
 data:
   config: # details of the data (TODO: should this differ for each dataset?)
-    trainer: ${trainer}
     root_folder: /ds/audio
-    sample_rate: ${sample_rate}
-    trim_silence: false
-    shuffle: false
+    sample_rate: ${sample_rate} # depends on the anonymization model
+    batch_size: ${batch_size} # depends on the anonymization model
     min_duration: 2
     max_duration: 30
 

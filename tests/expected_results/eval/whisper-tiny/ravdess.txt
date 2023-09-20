@@ -1,8 +1,8 @@
 audio_filepath n_edits n_words_ref wer text
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-01-16.wav 6 6 1.0 .
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-02-16.wav 6 6 1.0 .
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-02-16.wav 6 6 1.0 .
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-01-16.wav 6 6 1.0 .
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-01-16.wav 6 6 1.0 .
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-02-16.wav 6 6 1.0 .
-tests/logs/1692786156/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-02-16.wav 6 6 1.0 .
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-01-16.wav 6 6 1.0 .
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-02-16.wav 6 6 1.0 .
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-02-16.wav 10 6 1.67 The first step is to make a hole in the hole.
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-01-16.wav 6 6 1.0 .
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-01-16.wav 6 6 1.0 .
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-02-16.wav 6 6 1.0 .
+tests/logs/1695201555/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-02-16.wav 6 6 1.0 .

@@ -47,7 +47,6 @@ def evaluate(exp_folder, model, config):
     # iterate over the components and train & evaluate them
     for name, cfg in config.eval.components.items():
         cfg.data = {"config": copy.deepcopy(data_cfg)}
-        cfg.data.config.trainer = copy.deepcopy(cfg.data.config.trainer)
         component = setup(cfg, config.device, model=model)
 
         if cfg.train is True:

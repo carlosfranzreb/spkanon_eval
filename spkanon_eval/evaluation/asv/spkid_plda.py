@@ -267,7 +267,7 @@ class ASV:
         vecs = None  # spkid vecs of utterances
 
         spkid_config = copy.deepcopy(self.config.data.config)
-        spkid_config.trainer = self.config.spkid.trainer
+        spkid_config.batch_size = self.config.spkid.batch_size
         spkid_config.sample_rate = SAMPLE_RATE
         dl = setup_dataloader(spkid_config, datafiles)
         for batch in dl:

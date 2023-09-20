@@ -1,8 +1,8 @@
 audio_filepath mos
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-01-16.wav 1.01
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-02-16.wav 0.95
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-02-16.wav 0.98
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-01-16.wav 0.97
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-01-16.wav 1.02
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-02-16.wav 0.99
-tests/logs/1692108388/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-02-16.wav 1.09
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-01-02-01-16.wav 0.94
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-01-02-02-16.wav 1.00
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-06-02-01-02-16.wav 0.96
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-05-02-01-01-16.wav 0.97
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-07-01-01-01-16.wav 0.98
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-01-01-02-16.wav 0.97
+tests/logs/nisqa_results/1695203491/results/Audio_Speech_Actors_01-24/Actor_16/03-01-04-02-02-02-16.wav 1.11

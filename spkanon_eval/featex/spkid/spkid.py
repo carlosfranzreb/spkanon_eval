@@ -60,6 +60,8 @@ class SpkId:
                 the classifier.
         """
 
+        LOGGER.info(f"Fine-tuning the spkid model with datafiles {datafiles}")
+
         # create the train datafile as expected by SpeechBrain
         os.makedirs(dump_dir, exist_ok=True)
         train_datafile = os.path.join(dump_dir, "train_datafile.json")
@@ -92,13 +94,19 @@ class SpkId:
         # train the model
         with open(self.config.finetune_config) as f:
             hparams = load_hyperpyyaml(
-                f, overrides={"output_folder": dump_dir, "out_n_neurons": n_speakers}
+                f,
+                overrides={
+                    "output_folder": dump_dir,
+                    "out_n_neurons": n_speakers,
+                    "num_workers": self.config.num_workers,
+                },
             )
         train_data = prepare_dataset(hparams, train_datafile)
         speaker_brain = SpeakerBrain(
             modules=hparams["modules"],
             opt_class=hparams["opt_class"],
             hparams=hparams,
+            run_opts={"device": self.device},
         )
         speaker_brain.fit(
             speaker_brain.hparams.epoch_counter,

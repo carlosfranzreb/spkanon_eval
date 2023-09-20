@@ -32,10 +32,8 @@ class TestEvalDataloader(unittest.TestCase):
         self.batch_size = 2
         self.config = OmegaConf.create(
             {
-                "trainer": {
-                    "batch_size": self.batch_size,
-                    "num_workers": 0,
-                },
+                "batch_size": self.batch_size,
+                "num_workers": 0,
                 "sample_rate": self.sample_rate,
             }
         )

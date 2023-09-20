@@ -1,2 +1,2 @@
 dataset education n_samples mos
-edacc-test Undergraduate degree or NVQ/SVQ 5 or equivalent 4 0.96
+edacc-test Undergraduate degree or NVQ/SVQ 5 or equivalent 4 1.0

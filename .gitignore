@@ -9,7 +9,7 @@ checkpoints
 models
 tmp.py
 tmp.ipynb
-NISQA
+./NISQA
 
 spkanon_models
 StarGANv2VC

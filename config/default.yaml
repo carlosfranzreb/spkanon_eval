@@ -1,10 +1,7 @@
-name: SoftVC
-
-trainer_cfg: config/trainers/default.yaml
 datasets_cfg: config/datasets/evaluation.yaml
 train: false
 seed: 0
-log_dir: logs/baseline
+log_dir: logs/stargan
 device: cpu # overwritten on runtime
 
 inference:
@@ -14,7 +11,7 @@ inference:
     target: target
 
 target_selection_cfg: config/components/target_selection/random.yaml
-pipeline_cfg: spkanon_models/whisper_fastpitch/config.yaml # must clone spkanon_models repo first (see README)
+pipeline_cfg: spkanon_models/stargan/config.yaml # must clone spkanon_models repo first (see README)
 
 eval: # calls func `eval_dir` of each component, passing exp_folder and config
   config:

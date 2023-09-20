@@ -21,7 +21,7 @@ class Whisper:
     def __init__(self, config, device, **kwargs):
         self.model = whisper.load_model(
             config.size,
-            download_root = "checkpoints/whisper",
+            download_root="checkpoints/whisper",
         ).to(device)
         self.model_size = config.size
         self.device = device
@@ -30,7 +30,7 @@ class Whisper:
 
         # update batch size; data is only needed by `eval_dir`
         if "data" in self.config:
-            self.config.data.config.trainer.batch_size = config.batch_size
+            self.config.data.config.batch_size = config.batch_size
 
     def run(self, batch):
         """

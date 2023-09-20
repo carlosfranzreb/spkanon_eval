@@ -1,4 +1,4 @@
 dataset n_pairs threshold eer
-ls-dev-clean-2 9 -2771.453274428628 0.5
-cv-test 4 4.141059510516687 1.0
+ls-dev-clean-2 9 -2738.0508521269403 0.5
+cv-test 4 -0.959841558902788 1.0
 ravdess 1 -40.19485980042319 nan

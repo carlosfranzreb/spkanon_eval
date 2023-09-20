@@ -1,5 +1,5 @@
 audio_filepath n_edits n_words_ref wer text
-tests/logs/1692786156/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60682.mp3 16 16 1.0 .
-tests/logs/1692786156/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60683.mp3 9 9 1.0 .
-tests/logs/1692786156/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16812.mp3 6 6 1.0 .
-tests/logs/1692786156/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16814.mp3 13 13 1.0 .
+tests/logs/1695201555/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60682.mp3 16 16 1.0 .
+tests/logs/1695201555/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_60683.mp3 9 9 1.0 .
+tests/logs/1695201555/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16812.mp3 6 6 1.0 .
+tests/logs/1695201555/results/cv-corpus-10.0-2022-07-04/en/clips/common_voice_en_16814.mp3 13 13 1.0 .

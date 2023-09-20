@@ -27,7 +27,7 @@ class EmotionEvaluator:
         self.model.eval()
 
         # prepare the config for the dataloader
-        self.config.data.config.trainer.batch_size = config.batch_size
+        self.config.data.config.batch_size = config.batch_size
         self.config.data.config.sample_rate = SAMPLE_RATE
 
     def run(self, batch):

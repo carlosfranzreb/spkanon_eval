@@ -19,7 +19,7 @@ NISQA_CFG = {
         "cls": "spkanon_eval.evaluation.naturalness.naturalness_nisqa.NisqaEvaluator",
         "init": "NISQA/weights/nisqa_tts.tar",
         "train": False,
-        "num_workers": "${trainer.num_workers}",
+        "num_workers": "${data.config.num_workers}",
         "batch_size": 10,
     }
 }

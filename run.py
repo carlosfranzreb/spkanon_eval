@@ -15,6 +15,7 @@ def setup(args):
     config = load_subconfigs(yaml.full_load(open(args.config)))
     config = OmegaConf.create(config)
     config.device = args.device
+    config.data.config.num_workers = args.num_workers
     config.commit_hash = (
         subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
         .decode("ascii")
@@ -72,4 +73,7 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--config")
     parser.add_argument("--device", default="cuda")
+    parser.add_argument("--num_workers", default=10, type=int)
     main(*setup(parser.parse_args()))
+
+    # TODO: check that the trainer removal was succesful

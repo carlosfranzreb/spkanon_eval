@@ -28,7 +28,8 @@ SPKID_CONFIG = {
     "cls": "spkanon_eval.featex.spkid.spkid.SpkId",
     "path": "speechbrain/spkrec-ecapa-voxceleb",
     "train": False,
-    "trainer": {"batch_size": 2},
+    "batch_size": 2,
+    "num_workers": 0,
 }
 ASV_IGNORANT_CONFIG = OmegaConf.create(
     {
@@ -293,7 +294,7 @@ class TestEvalASV(BaseTestClass):
         vecs = None  # spkid vecs of utterances
 
         spkid_config = copy.deepcopy(config.data.config)
-        spkid_config.trainer = config.eval.components.asv_lazy_informed.spkid.trainer
+        spkid_config.batch_size = SPKID_CONFIG["batch_size"]
         spkid_config.sample_rate = EVAL_SR
         dl = setup_dataloader(spkid_config, [anon_train_file])
         for batch in dl:
