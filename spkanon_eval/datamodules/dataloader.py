@@ -20,14 +20,14 @@ def setup_dataloader(config: OmegaConf, datafiles: list[str]) -> DataLoader:
     """
 
     LOGGER.info(f"Creating dataloader for {datafiles}")
-    LOGGER.info(f"Dataloader config: {config}")
-    LOGGER.info(f"Batch size: {config.batch_size}")
+    LOGGER.info(f"\tSample rate: {config.sample_rate}")
+    LOGGER.info(f"\tBatch size: {config.batch_size}")
+    LOGGER.info(f"\tNum. workers: {config.num_workers}")
 
     return DataLoader(
         dataset=SpeakerIdDataset(datafiles, config.sample_rate),
         batch_size=config.batch_size,
         collate_fn=collate_fn,
-        drop_last=config.get("drop_last", False),
         num_workers=config.num_workers,
     )
 

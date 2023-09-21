@@ -75,5 +75,3 @@ if __name__ == "__main__":
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--num_workers", default=10, type=int)
     main(*setup(parser.parse_args()))
-
-    # TODO: check that the trainer removal was succesful
