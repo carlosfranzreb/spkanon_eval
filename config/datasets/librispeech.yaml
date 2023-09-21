@@ -6,9 +6,6 @@ data:
 
   datasets:
     eval:
-      - spkanon_eval/data/librispeech/test-clean.txt
-    train_pipeline: # data to train the synthesizer (if necessary).
-      - spkanon_eval/data/librispeech/train-clean-100.txt
-      - spkanon_eval/data/librispeech/train-other-500.txt
+      - spkanon_eval/data/librispeech/ls-test-clean.txt
     train_eval:
-      - spkanon_eval/data/librispeech/train-clean-360.txt
+      - spkanon_eval/data/librispeech/ls-train-clean-360.txt
