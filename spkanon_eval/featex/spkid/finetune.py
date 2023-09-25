@@ -74,6 +74,7 @@ class SpeakerBrain(sb.core.Brain):
 
         if stage == sb.Stage.TRAIN:
             spkid = torch.cat([spkid] * self.n_augment, dim=0)
+            spkid = spkid.to(self.device)
 
         loss = self.hparams.compute_cost(predictions, spkid, lens)
 
