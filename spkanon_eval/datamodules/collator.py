@@ -10,4 +10,4 @@ def collate_fn(batch: list[tuple[tensor, int]]) -> tuple[tensor, tensor]:
     audio, speakers = zip(*batch)
     audio = pad_sequence(audio, batch_first=True)
     speakers = tensor([int(speaker) for speaker in speakers])
-    return audio, tensor(speakers)
+    return audio, speakers
