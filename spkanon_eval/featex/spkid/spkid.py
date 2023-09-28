@@ -113,6 +113,8 @@ class SpkId:
             train_data,
             train_loader_kwargs=hparams["dataloader_options"],
         )
+        with open(os.path.join(dump_dir, "train_losses.txt"), "w") as f:
+            f.write("\n".join([str(loss) for loss in speaker_brain.losses]))
 
         # save the embedding model and load it
         checkpointer = Checkpointer(

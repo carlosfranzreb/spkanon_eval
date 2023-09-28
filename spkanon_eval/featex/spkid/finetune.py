@@ -73,44 +73,21 @@ class SpeakerBrain(sb.core.Brain):
         )
 
         if stage == sb.Stage.TRAIN:
-            spkid = torch.cat([spkid] * self.n_augment, dim=0)
+            spkid = torch.cat([spkid] * self.n_augment, dim=0).to(self.device)
 
         loss = self.hparams.compute_cost(predictions, spkid, lens)
+        self.losses.append(loss.item())
 
         if stage == sb.Stage.TRAIN and hasattr(
             self.hparams.lr_annealing, "on_batch_end"
         ):
             self.hparams.lr_annealing.on_batch_end(self.optimizer)
 
-        if stage != sb.Stage.TRAIN:
-            self.error_metrics.append(uttid, predictions, spkid, lens)
-
         return loss
 
     def on_stage_start(self, stage, epoch=None):
         """Gets called at the beginning of an epoch."""
-        if stage != sb.Stage.TRAIN:
-            self.error_metrics = self.hparams.error_stats()
-
-    def on_stage_end(self, stage, stage_loss, epoch=None):
-        """Gets called at the end of an epoch."""
-        # Compute/store important stats
-        stage_stats = {"loss": stage_loss}
-        if stage == sb.Stage.TRAIN:
-            self.train_stats = stage_stats
-        else:
-            stage_stats["ErrorRate"] = self.error_metrics.summarize("average")
-
-        # Perform end-of-iteration things, like annealing, logging, etc.
-        if stage == sb.Stage.VALID:
-            old_lr, new_lr = self.hparams.lr_annealing(epoch)
-            sb.nnet.schedulers.update_learning_rate(self.optimizer, new_lr)
-
-            self.hparams.train_logger.log_stats(
-                stats_meta={"epoch": epoch, "lr": old_lr},
-                train_stats=self.train_stats,
-                valid_stats=stage_stats,
-            )
+        self.losses = list()
 
 
 def prepare_dataset(hparams: dict, train_datafile: str) -> DynamicItemDataset:
