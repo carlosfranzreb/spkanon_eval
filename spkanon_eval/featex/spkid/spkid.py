@@ -4,14 +4,12 @@ embeddings.
 """
 
 
-import shutil
 import os
 import logging
 import json
 import csv
 
 from speechbrain.pretrained import EncoderClassifier
-from speechbrain.utils.checkpoints import Checkpointer
 from hyperpyyaml import load_hyperpyyaml
 from omegaconf import OmegaConf
 import torch
@@ -32,6 +30,10 @@ class SpkId:
         self.model = EncoderClassifier.from_hparams(
             source=config.path, savedir=self.save_dir, run_opts={"device": device}
         )
+        if config.emb_model_ckpt is not None:
+            LOGGER.info(f"Loading emb. model from {config.emb_model_ckpt}")
+            state_dict = torch.load(config.emb_model_ckpt, map_location=device)
+            self.model.mods.embedding_model.load_state_dict(state_dict)
         self.model.eval()
 
     def run(self, batch: list[torch.Tensor]) -> torch.Tensor:
@@ -117,19 +119,6 @@ class SpkId:
             f.write("\n".join([str(loss) for loss in speaker_brain.losses]))
 
         # save the embedding model and load it
-        checkpointer = Checkpointer(
-            dump_dir,
-            recoverables={
-                "embedding_model": speaker_brain.modules.embedding_model,
-                "classifier": speaker_brain.modules.classifier,
-            },
-        )
-        checkpointer.save_checkpoint(name="spkid_model")
-        shutil.copy(
-            os.path.join(self.save_dir, "hyperparams.yaml"),
-            os.path.join(dump_dir, "CKPT+spkid_model"),
-        )
-        self.model = EncoderClassifier.from_hparams(
-            source=os.path.join(dump_dir, "CKPT+spkid_model"),
-            run_opts={"device": self.device},
-        )
+        emb_model_state_dict = speaker_brain.modules.embedding_model.state_dict()
+        torch.save(emb_model_state_dict, os.path.join(dump_dir, "embedding_model.pt"))
+        self.model.mods.embedding_model.load_state_dict(emb_model_state_dict)

@@ -5,3 +5,5 @@ spkid:
   batch_size: 24
   num_workers: ${data.config.num_workers}
   finetune_config: spkanon_eval/config/components/spkid/train_xvec.yaml
+  emb_model_ckpt: ${eval.config.spkid_emb_model_ckpt} # path to ckpt of embedding model
+  train: ${eval.config.spkid_train}
