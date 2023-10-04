@@ -75,8 +75,6 @@ class SpeakerBrain(sb.core.Brain):
             spkid = torch.cat([spkid] * self.n_augment, dim=0).to(self.device)
 
         loss = self.hparams.compute_cost(predictions, spkid, lens)
-        self.losses.append(loss.item())
-
         if stage == sb.Stage.TRAIN and hasattr(
             self.hparams.lr_annealing, "on_batch_end"
         ):
@@ -86,17 +84,32 @@ class SpeakerBrain(sb.core.Brain):
 
     def on_stage_start(self, stage, epoch=None):
         """Gets called at the beginning of an epoch."""
-        self.losses = list()
+        if stage == sb.Stage.VALID:
+            self.error_metrics = self.hparams.error_stats()
+
+    def on_stage_end(self, stage, stage_loss, epoch=None):
+        """Gets called at the end of an epoch."""
+        stage_stats = {"loss": stage_loss}
+        if stage == sb.Stage.TRAIN:
+            self.train_stats = stage_stats
+        elif stage == sb.Stage.VALID:
+            old_lr, new_lr = self.hparams.lr_annealing(epoch)
+            sb.nnet.schedulers.update_learning_rate(self.optimizer, new_lr)
+            self.hparams.train_logger.log_stats(
+                stats_meta={"epoch": epoch, "lr": old_lr},
+                train_stats=self.train_stats,
+                valid_stats=stage_stats,
+            )
 
 
-def prepare_dataset(hparams: dict, train_datafile: str) -> DynamicItemDataset:
+def prepare_dataset(hparams: dict, datafile: str) -> DynamicItemDataset:
     "Creates the datasets and their data processing pipelines."
 
     snt_len_sample = int(hparams["sample_rate"] * hparams["sentence_len"])
-    train_data = DynamicItemDataset.from_csv(
-        csv_path=train_datafile,
+    data = DynamicItemDataset.from_csv(
+        csv_path=datafile,
     )
-    datasets = [train_data]
+    datasets = [data]
 
     # Define audio pipeline:
     @sb.utils.data_pipeline.takes("wav", "duration")
@@ -117,4 +130,4 @@ def prepare_dataset(hparams: dict, train_datafile: str) -> DynamicItemDataset:
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
     sb.dataio.dataset.set_output_keys(datasets, ["id", "sig", "spk_id_encoded"])
 
-    return train_data
+    return data

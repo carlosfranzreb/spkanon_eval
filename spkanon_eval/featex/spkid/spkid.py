@@ -8,6 +8,7 @@ import os
 import logging
 import json
 import csv
+import random
 
 from speechbrain.pretrained import EncoderClassifier
 from hyperpyyaml import load_hyperpyyaml
@@ -64,36 +65,6 @@ class SpkId:
 
         LOGGER.info(f"Fine-tuning the spkid model with datafiles {datafiles}")
 
-        # create the train datafile as expected by SpeechBrain
-        os.makedirs(dump_dir, exist_ok=True)
-        train_datafile = os.path.join(dump_dir, "train_datafile.json")
-        csv_file = open(train_datafile, "w")
-        csv_writer = csv.writer(
-            csv_file,
-            delimiter=",",
-            quotechar='"',
-            quoting=csv.QUOTE_MINIMAL,
-        )
-        speaker_ids = list()
-        csv_writer.writerow(["ID", "duration", "wav", "spk_id", "spk_id_encoded"])
-        for datafile in datafiles:
-            for line in open(datafile):
-                obj = json.loads(line)
-                if obj["label"] not in speaker_ids:
-                    speaker_ids.append(obj["label"])
-                csv_writer.writerow(
-                    [
-                        obj["audio_filepath"],
-                        obj["duration"],
-                        obj["audio_filepath"],
-                        obj["label"],
-                        speaker_ids.index(obj["label"]),
-                    ]
-                )
-        csv_file.close()
-        json.dump(speaker_ids, open(os.path.join(dump_dir, "spk_ids.json"), "w"))
-
-        # train the model
         with open(self.config.finetune_config) as f:
             hparams = load_hyperpyyaml(
                 f,
@@ -103,22 +74,112 @@ class SpkId:
                     "num_workers": self.config.num_workers,
                 },
             )
-        train_data = prepare_dataset(hparams, train_datafile)
+
+        # create the datafiles and writers
+        os.makedirs(dump_dir, exist_ok=True)
+        splits = dict()
+        for split in ["train", "val"]:
+            splits[split] = dict()
+            splits[split]["file"] = os.path.join(dump_dir, f"{split}.csv")
+            splits[split]["writer"] = open(splits[split]["file"], "w")
+            splits[split]["csv_writer"] = csv.writer(
+                splits[split]["writer"],
+                delimiter=",",
+                quotechar='"',
+                quoting=csv.QUOTE_MINIMAL,
+            )
+            splits[split]["csv_writer"].writerow(
+                ["ID", "duration", "wav", "spk_id", "spk_id_encoded"]
+            )
+
+        # split the data and store the speaker IDs
+        speaker_ids = list()
+        for datafile in datafiles:
+            speaker_objs = list()
+            for line in open(datafile):
+                obj = json.loads(line)
+                if obj["label"] not in speaker_ids:
+                    speaker_ids.append(obj["label"])
+                    if len(speaker_objs) > 0:
+                        split_spk_utts(
+                            speaker_objs,
+                            splits["train"]["csv_writer"],
+                            splits["val"]["csv_writer"],
+                            hparams["val_ratio"],
+                            len(speaker_ids) - 2,
+                        )
+                        speaker_objs = list()
+                speaker_objs.append(obj)
+            speaker_ids.append(speaker_objs[0]["label"])
+            split_spk_utts(
+                speaker_objs,
+                splits["train"]["csv_writer"],
+                splits["val"]["csv_writer"],
+                hparams["val_ratio"],
+                len(speaker_ids) - 2,
+            )
+
+        for split in splits:
+            splits[split]["writer"].close()
+        json.dump(speaker_ids, open(os.path.join(dump_dir, "spk_ids.json"), "w"))
+
+        # train the model
+        train_data = prepare_dataset(hparams, splits["train"]["file"])
+        val_data = prepare_dataset(hparams, splits["val"]["file"])
         speaker_brain = SpeakerBrain(
             modules=hparams["modules"],
             opt_class=hparams["opt_class"],
             hparams=hparams,
             run_opts={"device": self.device},
         )
+        speaker_brain.epoch_losses = {"TRAIN": [], "VALID": []}
+        val_kwargs = hparams["dataloader_options"]
+        val_kwargs["shuffle"] = False
         speaker_brain.fit(
             speaker_brain.hparams.epoch_counter,
             train_data,
+            val_data,
             train_loader_kwargs=hparams["dataloader_options"],
+            valid_loader_kwargs=val_kwargs,
         )
-        with open(os.path.join(dump_dir, "train_losses.txt"), "w") as f:
-            f.write("\n".join([str(loss) for loss in speaker_brain.losses]))
 
         # save the embedding model and load it
         emb_model_state_dict = speaker_brain.modules.embedding_model.state_dict()
         torch.save(emb_model_state_dict, os.path.join(dump_dir, "embedding_model.pt"))
         self.model.mods.embedding_model.load_state_dict(emb_model_state_dict)
+
+
+def split_spk_utts(
+    speaker_objs: list[dict],
+    train_writer: csv.writer,
+    val_writer: csv.writer,
+    ratio: float,
+    spk_id: int,
+) -> None:
+    """
+    Split the given list of speaker utterances into training and validation sets.
+
+    Args:
+        speaker_objs: List of speaker utterances from the datafile.
+        train_writer: CSV writer for the training datafile.
+        val_writer: CSV writer for the validation datafile.
+        ratio: Ratio of validation utterances.
+        spk_id: Speaker ID, as stored in self.speakers.
+    """
+
+    indices = list(range(len(speaker_objs)))
+    random_indices = random.sample(indices, len(indices))
+    n_val = int(len(speaker_objs) * ratio)
+
+    for idx, random_idx in enumerate(random_indices):
+        obj = speaker_objs[random_idx]
+        writer = val_writer if idx < n_val else train_writer
+        writer.writerow(
+            [
+                obj["audio_filepath"],
+                obj["duration"],
+                obj["audio_filepath"],
+                obj["label"],
+                spk_id,
+            ]
+        )
