@@ -109,7 +109,7 @@ class Anonymizer:
                 # remove the padding from the audio
                 unpadded_audios.append(audios[i, :, : -int(removed_frames_audio)])
             except Exception:
-                fpath = data[i]["audio_filepath"]
+                fpath = data[i]["path"]
                 LOGGER.error(
                     f"Error while unpadding anonymized `{fpath}`; dumping padded"
                 )

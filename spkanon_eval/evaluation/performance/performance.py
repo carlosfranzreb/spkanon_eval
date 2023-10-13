@@ -1,8 +1,3 @@
-"""
-Measure the inference time and throughput of the model, on GPU and CPU.
-"""
-
-
 import os
 import logging
 import time
@@ -21,10 +16,12 @@ class PerformanceEvaluator:
         self.device = device
         self.model = model
 
-    def eval_dir(self, exp_folder, *args):
+    def eval_dir(self, exp_folder: str, *args) -> None:
         """
-        Dump the GPU and CPU specs, and compute the inference time and throughput for
-        the model on both devices.
+        Measure the inference time and throughput of the model, on GPU and CPU.
+
+        Args:
+            exp_folder: path to the experiment folder
         """
 
         dump_folder = os.path.join(exp_folder, "eval", "performance")

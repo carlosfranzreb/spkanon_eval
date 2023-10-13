@@ -2,56 +2,65 @@ import json
 import os
 import logging
 
+from omegaconf import OmegaConf
+
 
 LOGGER = logging.getLogger("progress")
 
 
-def add_root(
-    manifest_filepath: str,
-    root_folder: str,
-    log_dir: str,
-    min_dur: float = None,
-    max_dur: float = None,
-):
+def prepare_datafile(stage: str, config: OmegaConf, log_dir: str) -> None:
     """
     Add the root folder to the paths of the audiofiles and store the resulting
-    manifest files within the experiment folder.
+    datafiles within the experiment folder, merged into a single datafile named after
+    the stage.
 
     Args:
-        manifest_filepath (str): path to the manifest file
-        root_folder (str): path to the root folder
-        log_dir (str): path to the experiment folder
-        min_dur (float, optional): minimum duration of the audiofiles to keep.
-        max_dur (float, optional): maximum duration of the audiofiles to keep.
+        stage: stage of the datafiles to create (eval, train_eval, target_pool)
+        config: config object, containing:
+        - the datafiles under `data.datasets.{stage}`,
+        - the root folder under `data.config.root_folder`,
+        - the min. duration under `data.config.min_duration`,
+        - the max. duration under `data.config.max_duration`.
+
+    Raises:
+        FileExistsError: if the new datafile already exists.
     """
-    LOGGER.info(f"Adding root `{root_folder}` to datafiles `{manifest_filepath}`")
-    new_paths = list()
-    if isinstance(manifest_filepath, str):
-        manifest_filepath = [manifest_filepath]
-    for fpath in manifest_filepath:
-        LOGGER.info(f"Adding root `{root_folder}` to `{fpath}`")
-        new_paths.append(os.path.join(log_dir, fpath))
-        if os.path.exists(new_paths[-1]):  # manifest already modified
-            LOGGER.info(f"New filepath `{new_paths[-1]}` already exists; skipping")
-            continue
-        os.makedirs(os.path.dirname(new_paths[-1]), exist_ok=True)
+
+    LOGGER.info(f"Preparing datafile for stage {stage}")
+
+    datafiles = config.data.datasets[stage]
+    root_folder = config.data.config.root_folder
+    min_dur = config.data.config.get("min_duration", 0)
+    max_dur = config.data.config.get("max_duration", float("inf"))
+    new_df = os.path.join(log_dir, "data", f"{stage}.txt")
+    if os.path.exists(new_df):  # datafile already modified
+        raise FileExistsError(f"New filepath `{new_df}` already exists")
+    else:
+        os.makedirs(os.path.dirname(new_df), exist_ok=True)
+
+    new_df_writer = open(new_df, "w")
+    seen_speakers = 0
+    for datafile in datafiles:
         too_short, too_long, included = list(), list(), list()
-        with open(new_paths[-1], "w") as writer:
-            with open(fpath) as reader:
-                for line in reader:
-                    obj = json.loads(line)
-                    dur = obj["duration"]
-                    if min_dur is not None and dur < min_dur:
-                        too_short.append(dur)
-                        continue
-                    if max_dur is not None and dur > max_dur:
-                        too_long.append(dur)
-                        continue
-                    included.append(dur)
-                    obj["audio_filepath"] = obj["audio_filepath"].replace(
-                        "{root}", root_folder
-                    )
-                    writer.write(json.dumps(obj) + "\n")
+        speaker_ids = list()
+        with open(datafile) as reader:
+            for line in reader:
+                obj = json.loads(line)
+                dur = obj["duration"]
+                if dur < min_dur:
+                    too_short.append(dur)
+                    continue
+                if dur > max_dur:
+                    too_long.append(dur)
+                    continue
+                included.append(dur)
+                obj["path"] = obj["path"].replace("{root}", root_folder)
+                spk = datafile + "_" + obj["label"]
+                if spk not in speaker_ids:
+                    speaker_ids.append(spk)
+                obj["speaker_id"] = seen_speakers + speaker_ids.index(spk)
+                new_df_writer.write(json.dumps(obj) + "\n")
+        seen_speakers += len(speaker_ids)
 
         LOGGER.info(
             f"{len(included)} samples included ({round(sum(included) / 3600, 3 )} h)"
@@ -63,5 +72,5 @@ def add_root(
             f"{len(too_long)} samples too long ({round(sum(too_long) / 3600, 3 )} h)"
         )
 
-    LOGGER.info(f"New datafiles: `{new_paths}`")
-    return new_paths
+    new_df_writer.close()
+    LOGGER.info(f"Done with datafile prep for stage {stage}")

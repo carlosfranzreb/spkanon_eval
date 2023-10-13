@@ -64,7 +64,6 @@ def create_file(folder, subset, dump_file, root_folder, max_duration=None):
 
     # iterate over the speakers
     for spk in speakers["PARTICIPANT_ID"]:
-
         # skip speakers that are not in the conversations of this subset
         if spk.rsplit("-", 1)[0] not in convos:
             logging.debug(f"Skipping speaker {spk}")
@@ -113,7 +112,7 @@ def create_file(folder, subset, dump_file, root_folder, max_duration=None):
 
             try:
                 obj = {
-                    "audio_filepath": utt_file.replace(root_folder, "{root}"),
+                    "path": utt_file.replace(root_folder, "{root}"),
                     "label": spk,
                     "duration": round(duration, 2),
                     "text": texts[utt_id],
@@ -150,7 +149,6 @@ def get_speaker_data(spk_id, speakers_file):
 
 
 if __name__ == "__main__":
-
     # configure logging with timestamp and level and dump to logs/create_dataset/{timestamp}.log
     logging.basicConfig(
         filename=os.path.join(

@@ -1,9 +1,8 @@
 """
-Create the data file as is expected by NeMo's dataloader: as a txt file with one
-dict per line, with the fields "audio_filepath": str, "duration": float and "label":
+Create the data file as is expected by the dataset: as a txt file with one
+dict per line, with the fields "path": str, "duration": float and "label":
 int. Given our use case, we store the speaker ID in the label field. We also store
-the transcript and gender, which are used in the evaluation. They will not be parsed
-by NeMo's dataloader.
+the transcript and gender, which are used in the evaluation.
 """
 
 
@@ -42,7 +41,7 @@ def create_file(folder, dump_file, root_folder, max_duration):
                             writer.write(
                                 json.dumps(
                                     {
-                                        "audio_filepath": audiofile.replace(
+                                        "path": audiofile.replace(
                                             root_folder, "{root}"
                                         ),
                                         "text": text.strip(),

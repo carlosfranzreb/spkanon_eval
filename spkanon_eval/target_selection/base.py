@@ -84,8 +84,8 @@ class BaseSelector:
         Update the target selection algorithm with the new value of
         `consistent_targets`.
         """
-        if consistent_targets is True and self.targets is None:
-            LOGGER.info("Enabling consistent targets")
+        if consistent_targets is True:
+            LOGGER.info("Enabling consistent targets and removing previous targets")
             self.targets = dict()
         elif consistent_targets is False:
             LOGGER.info("Disabling consistent targets")

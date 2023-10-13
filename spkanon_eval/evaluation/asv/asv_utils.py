@@ -5,6 +5,7 @@ import logging
 import numpy as np
 from sklearn.metrics import roc_curve, RocCurveDisplay
 from matplotlib import pyplot as plt
+from omegaconf import OmegaConf
 
 from spkanon_eval.evaluation.analysis import get_characteristics
 
@@ -12,21 +13,24 @@ from spkanon_eval.evaluation.analysis import get_characteristics
 LOGGER = logging.getLogger("progress")
 
 
-def compute_eer(sources, targets, llrs):
+def compute_eer(
+    sources: np.array, targets: np.array, llrs: np.array
+) -> tuple[np.array, np.array, np.array, int]:
     """
     Compute the equal error rate (EER) for the given LLRs. The EER is the threshold
-    that minimizes the absolute difference between the false acceptance rate (FAR)
-    and the false rejection rate (FRR). We compute it with sklearn's roc_curve.
+    that minimizes the absolute difference between the false positive rate (FPR)
+    and the false negative rate (FNR). We compute it with sklearn's roc_curve.
 
     Args:
-    - pairs: sorted numpy array with all pairs of trial and enrollment utterances
-    - llrs: numpy array containing the log-likelihood ratio (LLR) of each pair
+        sources: shape (n_pairs) - the source speakers
+        targets: shape (n_pairs) - the target speaker for each source speaker
+        llrs: shape (n_pairs) - the log-likelihood ratio of each source-target pair
 
     Returns:
-    - fpr: numpy array containing the false positive rates (FPR) for each threshold
-    - tpr: numpy array containing the true positive rates (TPR) for each threshold
-    - thresholds: numpy array containing the thresholds
-    - key: index of the threshold that is closest to the EER
+        fpr: shape (n_pairs) - the false positive rates (FPR) for each threshold
+        tpr: shape (n_pairs) - the true positive rates (TPR) for each threshold
+        thresholds: shape (n_pairs) - the thresholds
+        key: index of the threshold that is closest to the EER
     """
     # check that there are sources and targets
     if len(sources) == 0 or len(targets) == 0:
@@ -105,7 +109,7 @@ def analyse_results(datafile, llr_file):
                     f.write(f"{thresholds[eer_key]} {fpr[eer_key]}\n")
 
 
-def count_speakers(datafile):
+def count_speakers(datafile: str) -> int:
     """Count the number of speakers in the datafile."""
     with open(datafile) as f:
         current_spk = None
@@ -117,46 +121,6 @@ def count_speakers(datafile):
                 n_speakers += 1
     LOGGER.info(f"Number of speakers in {datafile}: {n_speakers}")
     return n_speakers
-
-
-def filter_samples(datafile, filter_cfg):
-    """
-    Filter out samples that do not meet the criteria given in the config. The
-    criteria may define the minimum duration of the samples and the minimum number
-    of samples per speaker.
-    Store the results in the experiment folder and return the path to the
-    filtered datafile. This method assumes that the samples of each speaker
-    are all placed together in the datafile.
-    Also, return the number of speakers that remain after the filtering.
-    """
-    LOGGER.info(f"Filtering samples in {datafile}")
-    min_samples = filter_cfg.get("min_samples", 1)
-    min_duration = filter_cfg.get("min_dur", 0)
-    folder, file = os.path.split(datafile)
-    filename, ext = os.path.splitext(file)
-    os.makedirs(os.path.join(folder, "asv_splits"), exist_ok=True)
-    out_file = os.path.join(folder, "asv_splits", f"{filename}_filtered{ext}")
-    writer = open(out_file, "w")
-    n_speakers = 0
-    with open(datafile) as f:
-        spk_lines = list()
-        current_spk = None
-        for line in f:
-            obj = json.loads(line.strip())
-            if obj["label"] != current_spk:
-                if len(spk_lines) >= min_samples:
-                    writer.writelines(spk_lines)
-                    n_speakers += 1
-                current_spk = obj["label"]
-                spk_lines = list()
-            if obj["duration"] >= min_duration:
-                spk_lines.append(line)
-        if len(spk_lines) >= min_samples:
-            writer.writelines(spk_lines)
-            n_speakers += 1
-    writer.close()
-    LOGGER.info(f"Filtered datafile saved to {out_file}")
-    return out_file, n_speakers
 
 
 def compute_llrs(plda, vecs, chunk_size):

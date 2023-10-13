@@ -31,43 +31,53 @@ class NisqaEvaluator:
     def train(self, exp_folder, datafiles):
         raise NotImplementedError
 
-    def eval_dir(self, exp_folder, datafiles, is_baseline):
+    def eval_dir(self, exp_folder: str, datafile: str, *args) -> None:
+        """
+        Run all samples in the datafile through the NISQA model and dump their MOS.
+
+        Args:
+            exp_folder: path to the experiment folder
+            datafile: datafile to evaluate
+        """
+
         # create the dump folder and the file that stores the EERs
         dump_folder = os.path.join(exp_folder, "eval", "nisqa")
         os.makedirs(dump_folder, exist_ok=True)
+        fname = os.path.splitext(os.path.basename(datafile))[0]
 
-        # iterate over the evaluation files and evaluate them separately
-        for datafile in datafiles:
-            fname = os.path.splitext(os.path.basename(datafile))[0]
-            LOGGER.info(f"Naturalness evaluation of datafile `{fname}`")
+        # run the evaluation with the anonymized data
+        dataset, fnames = create_dataset(datafile, self.args)
+        preds, _ = predict_mos(
+            self.model,
+            dataset,
+            self.config.batch_size,
+            self.device,
+            num_workers=self.config.num_workers,
+        )
 
-            # run the evaluation with the anonymized data
-            dataset, fnames = create_dataset(datafile, self.args)
-            preds, _ = predict_mos(
-                self.model,
-                dataset,
-                self.config.batch_size,
-                self.device,
-                num_workers=self.config.num_workers,
-            )
+        # write the predictions to a file
+        with open(os.path.join(dump_folder, f"{fname}.txt"), "w") as f:
+            f.write("path mos\n")
+            for i in range(len(preds)):
+                # round to 3 decimals
+                f.write(f"{fnames[i]} {preds[i].item():.2f}\n")
 
-            # write the predictions to a file
-            with open(os.path.join(dump_folder, f"{fname}.txt"), "w") as f:
-                f.write("audio_filepath mos\n")
-                for i in range(len(preds)):
-                    # round to 3 decimals
-                    f.write(f"{fnames[i]} {preds[i].item():.2f}\n")
-
-            analyse_results(dump_folder, datafile, preds, analyse_func, headers_func)
+        analyse_results(dump_folder, datafile, preds, analyse_func, headers_func)
 
 
-def create_dataset(datafile, args):
+def create_dataset(datafile: str, args: dict) -> tuple[SpeechQualityDataset, list[str]]:
     """
-    Adaptation from NISQA._loadDatasetsCSVpredict to our datafiles. Returns
-    the dataset and the filenames, which are needed to match the predictions
-    to the original files.
+    Adaptation from NISQA._loadDatasetsCSVpredict to our datafiles.
+
+    Args:
+        datafile: path to the datafile
+        args: the args from the NISQA model
+
+    Returns:
+        the dataset used to pass the data through the model
+        the filenames, needed to match the predictions to the original files.
     """
-    col = "audio_filepath"
+    col = "path"
     fnames = [json.loads(line)[col] for line in open(datafile)]
     dataset = SpeechQualityDataset(
         pd.DataFrame(fnames, columns=[col]),

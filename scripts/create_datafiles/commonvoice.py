@@ -44,7 +44,7 @@ def create_file(data_file, dump_file, root_folder, max_duration, min_utts=2):
             writer.write(
                 json.dumps(
                     {
-                        "audio_filepath": audiofile.replace(root_folder, "{root}"),
+                        "path": audiofile.replace(root_folder, "{root}"),
                         "text": row["sentence"],
                         "duration": duration,
                         "label": row["client_id"],  # speaker ID

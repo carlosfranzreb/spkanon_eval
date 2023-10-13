@@ -23,27 +23,29 @@ def create_file(stargan_file, vctk_folder, microphone, dump_file, root_folder):
     # iterate over the datafile
     for line in open(stargan_file):
         path = line.strip().replace("./Data/", "")
-        vctk_speaker, end = path.split("/") # speaker label as defined in VCTK
-        utt_file, stargan_speaker, = end.split("|")  # spk label from StarGAN
-        utt = utt_file.replace(".wav", "") # utterance ID
+        vctk_speaker, end = path.split("/")  # speaker label as defined in VCTK
+        (
+            utt_file,
+            stargan_speaker,
+        ) = end.split(
+            "|"
+        )  # spk label from StarGAN
+        utt = utt_file.replace(".wav", "")  # utterance ID
         if len(utt) < 3:  # prepend zeros to utterance ID
             utt = (3 - len(utt)) * "0" + utt
         text_file = os.path.join(
-            vctk_folder,
-            "txt",
-            vctk_speaker,
-            f"{vctk_speaker}_{utt}.txt"
+            vctk_folder, "txt", vctk_speaker, f"{vctk_speaker}_{utt}.txt"
         )
         audiofile = os.path.join(
             vctk_folder,
             "wav48_silence_trimmed",
             vctk_speaker,
-            f"{vctk_speaker}_{utt}_mic{microphone}.flac"
+            f"{vctk_speaker}_{utt}_mic{microphone}.flac",
         )
         try:
             audio, sample_rate = torchaudio.load(audiofile)
             obj = {
-                "audio_filepath": audiofile.replace(root_folder, "{root}"),
+                "path": audiofile.replace(root_folder, "{root}"),
                 "text": open(text_file).read().strip(),
                 "duration": audio.shape[1] / sample_rate,
                 "label": stargan_speaker,
@@ -86,5 +88,5 @@ if __name__ == "__main__":
         args.vctk_folder,
         args.microphone,
         args.dump_file,
-        args.root_folder
+        args.root_folder,
     )

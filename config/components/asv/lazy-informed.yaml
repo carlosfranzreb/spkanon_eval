@@ -8,7 +8,4 @@ asv_lazy_informed:
   reduced_dims: ${eval.config.asv_reduce_dims} # (optional) no. of dimensions to reduce the spkid vectors to (VPC uses 200)
   lda_ckpt: null
   plda_ckpt: null
-  filter: # (optional) filter out samples that don't meet these criteria
-    min_dur: 4 # min. duration (in s) for each utterance
-    min_samples: 2 # min. no. of samples per speaker
   spkid: ${eval.config.spkid}

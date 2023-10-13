@@ -52,7 +52,7 @@ class Whisper:
         elif self.out == "encoding":  # return encoder output
             return self.model.encoder(mels)
 
-    def eval_dir(self, exp_folder, datafiles, is_baseline):
+    def eval_dir(self, exp_folder: str, datafile: str, *args) -> None:
         """
         Compute the transcription of each sample and its WER. Dump both into a file
         within the current experiment folder. Keep track of the average WER of each
@@ -60,9 +60,8 @@ class Whisper:
         averages as well.
 
         Args:
-        exp_folder (str): path to the experiment folder that contains the manifest files
-            and the anonymized data
-        dataloader: a dataloader that iterates over the anonymized data
+            exp_folder: path to the experiment folder
+            datafile: datafile to evaluate
         """
         LOGGER.info("Computing WER of eval data with dataloader")
         if self.out != "text":  # desired output must be text
@@ -71,46 +70,39 @@ class Whisper:
         # pick the directory where the results will be stored and create it if needed
         dump_folder = os.path.join(exp_folder, "eval", f"whisper-{self.model_size}")
         os.makedirs(dump_folder, exist_ok=True)
+        data = {"n_edits": list(), "n_words_ref": list()}  # stores the WER stats
 
-        # iterate over the batches in the eval. dataloader
-        for datafile in datafiles:
-            data = {"n_edits": list(), "n_words_ref": list()}  # stores the WER stats
+        # define the dump file and write the headers
+        dump_file = os.path.join(dump_folder, os.path.basename(datafile))
+        with open(dump_file, "w", encoding="utf-8") as f:
+            f.write("path n_edits n_words_ref wer text\n")
 
-            # define the dump file and write the headers
-            dump_file = os.path.join(dump_folder, os.path.basename(datafile))
-            with open(dump_file, "w", encoding="utf-8") as f:
-                f.write("audio_filepath n_edits n_words_ref wer text\n")
+        for _, batch, sample_data in eval_dataloader(
+            self.config.data.config, datafile, self.device
+        ):
+            texts_pred = self.run(batch)  # compute the transcriptions for the batch
+            for i, text_pred in enumerate(texts_pred):  # iterate through the batch
+                # compute the WER for the current sample
+                audiofile = sample_data[i]["path"]
+                text_ref = sample_data[i]["text"]
+                n_edits, n_words, wer = compute_edits(normalizer(text_pred), text_ref)
+                # if wer could not be computed, skip
+                if n_words == 0:
+                    LOGGER.warn(f"Reference text of {audiofile} has no words; WER = 0")
+                # dump the results for this sample into the datafile
+                with open(dump_file, "a", encoding="utf-8") as f:
+                    f.write(f"{audiofile} {n_edits} {n_words} {wer} {text_pred}\n")
+                # update datafile stats
+                data["n_edits"].append(n_edits)
+                data["n_words_ref"].append(n_words)
 
-            for _, batch, sample_data in eval_dataloader(
-                self.config.data.config, [datafile], self.device
-            ):
-                texts_pred = self.run(batch)  # compute the transcriptions for the batch
-                for i, text_pred in enumerate(texts_pred):  # iterate through the batch
-                    # compute the WER for the current sample
-                    audiofile = sample_data[i]["audio_filepath"]
-                    text_ref = sample_data[i]["text"]
-                    n_edits, n_words, wer = compute_edits(
-                        normalizer(text_pred), text_ref
-                    )
-                    # if wer could not be computed, skip
-                    if n_words == 0:
-                        LOGGER.warn(
-                            f"Reference text of {audiofile} has no words; WER = 0"
-                        )
-                    # dump the results for this sample into the datafile
-                    with open(dump_file, "a", encoding="utf-8") as f:
-                        f.write(f"{audiofile} {n_edits} {n_words} {wer} {text_pred}\n")
-                    # update datafile stats
-                    data["n_edits"].append(n_edits)
-                    data["n_words_ref"].append(n_words)
-
-            analyse_results(
-                dump_folder,
-                datafile,
-                [np.array(data["n_edits"]), np.array(data["n_words_ref"])],
-                analyse_func,
-                headers_func,
-            )
+        analyse_results(
+            dump_folder,
+            datafile,
+            [np.array(data["n_edits"]), np.array(data["n_words_ref"])],
+            analyse_func,
+            headers_func,
+        )
 
     def to(self, device):
         """

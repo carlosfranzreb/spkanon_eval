@@ -4,7 +4,7 @@ import logging
 from spkanon_eval.anonymizer import Anonymizer
 from spkanon_eval.inference import infer
 from spkanon_eval.evaluate import evaluate
-from spkanon_eval.datamodules.utils import add_root
+from spkanon_eval.datamodules.utils import prepare_datafile
 
 
 LOGGER = logging.getLogger("progress")
@@ -14,18 +14,6 @@ TARGET_LOGGER = logging.getLogger("targets")
 def main(config, log_dir):
     """Run the jobs (training, inference, evaluation) as specified in the config."""
 
-    # if the target selection algorithm requires training, prepare the data
-    if "target_selection" in config:
-        train_alg = config.target_selection.get("train", False)
-        if train_alg is True:
-            add_root(
-                config.data.datasets.train_targetselection,
-                config.data.config.root_folder,
-                log_dir,
-                config.data.config.get("min_duration", None),
-                config.data.config.get("max_duration", None),
-            )
-
     model = Anonymizer(config, log_dir)  # create the model
 
     if "inference" in config and config.inference.run is not False:
@@ -33,33 +21,14 @@ def main(config, log_dir):
         if isinstance(config.inference.run, str):  # path is given
             exp_folder = config.inference.run
         else:  # infer an existing exp folder
-            exp_folder = model.log_dir
+            exp_folder = log_dir
         log_msg = f"### Start of inference with experiment folder `{exp_folder}`"
         LOGGER.info(log_msg)
         TARGET_LOGGER.info(log_msg)
         # create the eval datafiles if they don't exist
-        if not all(
-            [
-                os.path.exists(os.path.join(exp_folder, f))
-                for f in config.data.datasets.eval
-            ]
-        ):
-            add_root(
-                config.data.datasets.eval,
-                config.data.config.root_folder,
-                exp_folder,
-                config.data.config.get("min_duration", None),
-                config.data.config.get("max_duration", None),
-            )
-        infer(
-            model,
-            exp_folder,
-            [os.path.join(exp_folder, f) for f in config.data.datasets.eval],
-            os.path.join(exp_folder, "results"),
-            config.inference.input,
-            config.data.config,
-            config.synthesis.sample_rate,
-        )
+        if not os.path.exists(os.path.join(exp_folder, "data", "eval.txt")):
+            prepare_datafile("eval", config, exp_folder)
+        infer(exp_folder, "eval", model, config)
         LOGGER.info("End of inference")
 
     if "eval" in config:
@@ -75,28 +44,11 @@ def main(config, log_dir):
 
         # if any component requires training, create the necessary datafiles
         if any([c.train for c in config.eval.components.values()]):
-            add_root(
-                config.data.datasets.train_eval,
-                config.data.config.root_folder,
-                exp_folder,
-                config.data.config.get("min_duration", None),
-                config.data.config.get("max_duration", None),
-            )
+            prepare_datafile("train_eval", config, exp_folder)
 
         # create the eval datafiles if they don't exist (for the baseline)
-        if not all(
-            [
-                os.path.exists(os.path.join(exp_folder, f))
-                for f in config.data.datasets.eval
-            ]
-        ):
-            add_root(
-                config.data.datasets.eval,
-                config.data.config.root_folder,
-                exp_folder,
-                config.data.config.get("min_duration", None),
-                config.data.config.get("max_duration", None),
-            )
+        if not os.path.exists(os.path.join(exp_folder, "data", "eval.txt")):
+            prepare_datafile("eval", config, exp_folder)
 
         evaluate(exp_folder, model, config)
         LOGGER.info("End of evaluation")

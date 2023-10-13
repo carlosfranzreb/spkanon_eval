@@ -54,7 +54,6 @@ def create_file(folder, dump_file, root_folder):
         if not actor_dir.startswith("Actor_"):
             continue
         for audiofile in os.listdir(os.path.join(folder, actor_dir)):
-
             # skip non-audio files
             if not audiofile.endswith(".wav"):
                 continue
@@ -66,7 +65,7 @@ def create_file(folder, dump_file, root_folder):
 
             # write the line to the dump file
             obj = {
-                "audio_filepath": path.replace(root_folder, "{root}"),
+                "path": path.replace(root_folder, "{root}"),
                 "duration": round(duration, 2),
                 "label": actor_dir,
                 **get_utt_info(audiofile),
@@ -97,7 +96,6 @@ def get_utt_info(filename):
 
 
 if __name__ == "__main__":
-
     # define and parse the arguments
     parser = ArgumentParser()
     parser.add_argument(

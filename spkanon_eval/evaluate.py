@@ -3,25 +3,26 @@ import logging
 import copy
 
 import torch
+from omegaconf import OmegaConf
 
 from spkanon_eval.setup_module import setup
 from spkanon_eval.utils import seed_everything
+from spkanon_eval.anonymizer import Anonymizer
 
 
 SAMPLE_RATE = 16000  # sample rate for evaluation
 LOGGER = logging.getLogger("progress")
 
 
-def evaluate(exp_folder, model, config):
+def evaluate(exp_folder: str, model: Anonymizer, config: OmegaConf) -> None:
     """
-    Evaluate the given experiment with the components defined in the config.
+    Evaluate the given experiment with the components defined in the config. Components
+    may be trained before the evaluation.
 
-    - If a new seed is defined on the eval config, set it.
-    - If a component requires training, do so before starting the evaluation.
-    - The evaluation is performed by the eval_dir method of each component. It receives
-        as input the path to the experiment folder, where it will store its results. It
-        may also receive an evaluation dataloader, if the batch size is defined in its
-        config.
+    Args:
+        exp_folder: path to the experiment folder
+        model: the anonymizer model
+        config: the config object, as defined in the documentation (TODO)
     """
 
     # change the RNG seed if required
@@ -36,13 +37,9 @@ def evaluate(exp_folder, model, config):
     data_cfg.sample_rate = SAMPLE_RATE
 
     # use the anonymized datafiles if we are not evaluating the baseline
-    if config.eval.config.baseline is False:
-        datafiles = [
-            os.path.join(exp_folder, "results", f) for f in config.data.datasets.eval
-        ]
-    # if we are evaluating the baseline, use the original datafiles
-    else:
-        datafiles = [os.path.join(exp_folder, f) for f in config.data.datasets.eval]
+    is_baseline = config.eval.config.baseline
+    fname = "eval" if is_baseline is True else "anon_eval"
+    datafile = os.path.join(exp_folder, "data", f"{fname}.txt")
 
     # iterate over the components and train & evaluate them
     for name, cfg in config.eval.components.items():
@@ -51,11 +48,7 @@ def evaluate(exp_folder, model, config):
 
         if cfg.train is True:
             LOGGER.info(f"Training component `{name}`")
-            train_datafiles = [
-                os.path.join(exp_folder, f) for f in config.data.datasets.train_eval
-            ]
-            component.train(exp_folder, train_datafiles)
+            component.train(exp_folder)
 
         LOGGER.info(f"Running evaluation with component `{name}`")
-        component.eval_dir(exp_folder, datafiles, config.eval.config.baseline)
-        torch.cuda.empty_cache()  # delete PyTorch cache
+        component.eval_dir(exp_folder, datafile, is_baseline)

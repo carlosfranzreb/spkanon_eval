@@ -52,18 +52,18 @@ class SpkId:
         """
         return self.model.encode_batch(batch[0].to(self.device)).squeeze(1)
 
-    def finetune(self, dump_dir: str, datafiles: list[str], n_speakers: int) -> None:
+    def finetune(self, dump_dir: str, datafile: str, n_speakers: int) -> None:
         """
         Fine-tune this model with the given datafiles.
 
         Args:
             dump_dir: Path to the folder where the model and datafiles will be saved.
-            datafiles: List of paths to the datafiles used for fine-tuning.
+            datafile: paths to the datafile used for fine-tuning.
             n_speakers: Number of speakers across all datafiles, used to initialize
                 the classifier.
         """
 
-        LOGGER.info(f"Fine-tuning the spkid model with datafiles {datafiles}")
+        LOGGER.info(f"Fine-tuning the spkid model with datafile {datafile}")
 
         with open(self.config.finetune_config) as f:
             hparams = load_hyperpyyaml(
@@ -92,36 +92,35 @@ class SpkId:
                 ["ID", "duration", "wav", "spk_id", "spk_id_encoded"]
             )
 
-        # split the data and store the speaker IDs
-        speaker_ids = list()
-        for datafile in datafiles:
-            speaker_objs = list()
-            for line in open(datafile):
-                obj = json.loads(line)
-                if obj["label"] not in speaker_ids:
-                    speaker_ids.append(obj["label"])
-                    if len(speaker_objs) > 0:
-                        split_spk_utts(
-                            speaker_objs,
-                            splits["train"]["csv_writer"],
-                            splits["val"]["csv_writer"],
-                            hparams["val_ratio"],
-                            len(speaker_ids) - 2,
-                        )
-                        speaker_objs = list()
-                speaker_objs.append(obj)
-            speaker_ids.append(speaker_objs[0]["label"])
-            split_spk_utts(
-                speaker_objs,
-                splits["train"]["csv_writer"],
-                splits["val"]["csv_writer"],
-                hparams["val_ratio"],
-                len(speaker_ids) - 2,
-            )
+        # split the data of each speaker into training and validation sets
+        speaker_objs = list()
+        current_spk = None
+        for line in open(datafile):
+            obj = json.loads(line)
+            spk = obj["speaker_id"]
+            if current_spk is None:
+                current_spk = spk
+            elif spk != current_spk:
+                split_spk_utts(
+                    speaker_objs,
+                    splits["train"]["csv_writer"],
+                    splits["val"]["csv_writer"],
+                    hparams["val_ratio"],
+                    current_spk,
+                )
+                speaker_objs = list()
+                current_spk = spk
+            speaker_objs.append(obj)
+        split_spk_utts(
+            speaker_objs,
+            splits["train"]["csv_writer"],
+            splits["val"]["csv_writer"],
+            hparams["val_ratio"],
+            current_spk,
+        )
 
         for split in splits:
             splits[split]["writer"].close()
-        json.dump(speaker_ids, open(os.path.join(dump_dir, "spk_ids.json"), "w"))
 
         # train the model
         train_data = prepare_dataset(hparams, splits["train"]["file"])
@@ -175,11 +174,5 @@ def split_spk_utts(
         obj = speaker_objs[random_idx]
         writer = val_writer if idx < n_val else train_writer
         writer.writerow(
-            [
-                obj["audio_filepath"],
-                obj["duration"],
-                obj["audio_filepath"],
-                obj["label"],
-                spk_id,
-            ]
+            [obj["path"], obj["duration"], obj["path"], obj["label"], spk_id]
         )
