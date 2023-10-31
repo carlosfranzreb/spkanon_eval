@@ -1,2 +1,0 @@
-dataset n_languages n_samples mos
-edacc-test 4 4 1.0

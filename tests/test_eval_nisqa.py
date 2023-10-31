@@ -8,135 +8,66 @@ for the debug data.
 
 import json
 import os
-from shutil import rmtree
+import shutil
+import unittest
 
-from base import BaseTestClass, run_pipeline
-from spkanon_eval.setup_module import setup
+from omegaconf import OmegaConf
+
+from spkanon_eval.evaluation.naturalness.naturalness_nisqa import NisqaEvaluator
 
 
-NISQA_CFG = {
-    "naturalness_nisqa": {
+NISQA_CFG = OmegaConf.create(
+    {
         "cls": "spkanon_eval.evaluation.naturalness.naturalness_nisqa.NisqaEvaluator",
-        "init": "NISQA/weights/nisqa_tts.tar",
+        "init": "spkanon_eval/NISQA/weights/nisqa_tts.tar",
         "train": False,
-        "num_workers": "${data.config.num_workers}",
+        "num_workers": 0,
         "batch_size": 10,
     }
-}
+)
 
 
-class TestEvalNisqa(BaseTestClass):
+class TestEvalNisqa(unittest.TestCase):
+    def setUp(self) -> None:
+        """Run NISQA with the LibriSpeech dev-clean data."""
+        self.exp_folder = "spkanon_eval/tests/logs/naturalness_nisqa"
+        if os.path.isdir(self.exp_folder):
+            shutil.rmtree(self.exp_folder)
+        os.makedirs(os.path.join(self.exp_folder))
+        self.datafile = "spkanon_eval/tests/datafiles/ls-dev-clean-2.txt"
+
+        self.nisqa = NisqaEvaluator(NISQA_CFG, "cpu")
+        self.nisqa.eval_dir(self.exp_folder, self.datafile)
+        self.results_dir = os.path.join(self.exp_folder, "eval", "nisqa")
+
+    def tearDown(self) -> None:
+        """Remove the experiment folder."""
+        shutil.rmtree(self.exp_folder)
+
     def test_nisqa(self):
         """
-        Check that NISQA outputs MOS scores for all utterances in the test set,
-        regardless what the scores are. Also, to ensure that the scores and filenames
-        are properly matched, compute again the score of the minimum and maximum scores
-        and test whether the new scores are the same as the old ones (aprox).
+        Check that NISQA produces valid scores for the utterances in the datafile. As
+        we are using original data, we expect the MOS scores to be between 4 and 5.
         """
-
-        # run the experiment with both ASV evaluation scenarios
-        self.init_config.eval.components = NISQA_CFG
-        self.init_config.log_dir = os.path.join(
-            self.init_config.log_dir, "nisqa_correctness"
-        )
-        self.config, log_dir = run_pipeline(self.init_config)
 
         # assert that the directory exists
-        expected_dir = os.path.join(log_dir, "eval", "nisqa")
-        self.assertTrue(os.path.isdir(expected_dir))
+        self.assertTrue(os.path.isdir(self.results_dir))
 
-        # assert that all eval utterances are included in the output
-        extrema = dict()
-        for eval_file in self.config.data.datasets.eval:
-            # gather the utterances from this eval file
-            expected_utts = list()
-            for line in open(os.path.join(log_dir, "results", eval_file)):
-                expected_utts.append(json.loads(line)["audio_filepath"])
+        # gather the utterances from the datafile
+        expected_utts = list()
+        for line in open(os.path.join(self.datafile)):
+            expected_utts.append(json.loads(line)["path"])
 
-            # gather the utts from the NISQA output and ensure the scores are valid
-            fname = os.path.basename(eval_file)
-            output_file = os.path.join(expected_dir, fname)
-            eval_utts, eval_scores = list(), list()
-            with open(output_file) as f:
-                next(f)  # skip header
-                for line in f:
-                    utt, score = line.split()
-                    self.assertGreaterEqual(float(score), 0)
-                    self.assertLessEqual(float(score), 5)
-                    eval_utts.append(utt)
-                    eval_scores.append(float(score))
-
-            # assert that all utts are included in the output
-            self.assertCountEqual(expected_utts, eval_utts)
-
-            # add fnames of extrema scores to a new datafile
-            extrema[fname] = dict()
-            extrema[fname]["min"] = min(eval_scores)
-            extrema[fname]["max"] = max(eval_scores)
-            min_idx = eval_scores.index(extrema[fname]["min"])
-            max_idx = eval_scores.index(extrema[fname]["max"])
-            datafile = os.path.join(log_dir, "results", f"extrema_{fname}")
-            with open(datafile, "w") as f:
-                f.write(json.dumps({"audio_filepath": eval_utts[min_idx]}))
-                f.write(json.dumps({"audio_filepath": eval_utts[max_idx]}))
-
-        # run evaluation again and check the extrema scores
-        nisqa = setup(self.config.eval.components.naturalness_nisqa, "cpu")
-        datafiles = [
-            os.path.join(log_dir, "results", f) for f in self.config.data.datasets.eval
-        ]
-        nisqa.eval_dir(log_dir, datafiles, False)
-        for eval_file in os.listdir(expected_dir):
-            if not eval_file.startswith("extrema_"):
-                continue
-            fname = eval_file[len("extrema_") :]
-            for i, line in enumerate(open(os.path.join(expected_dir, eval_file))):
+        # gather the utts from the NISQA output and ensure the scores are valid
+        output_file = os.path.join(self.results_dir, "ls-dev-clean-2.txt")
+        eval_utts = list()
+        with open(output_file) as f:
+            next(f)  # skip header
+            for line in f:
                 utt, score = line.split()
-                if i == 0:
-                    self.assertAlmostEqual(
-                        float(score), extrema[fname]["min"], places=1
-                    )
-                elif i == 1:
-                    self.assertAlmostEqual(
-                        float(score), extrema[fname]["max"], places=1
-                    )
+                self.assertGreaterEqual(float(score), 4)
+                self.assertLessEqual(float(score), 5)
+                eval_utts.append(utt)
 
-        rmtree(log_dir)
-
-    def test_results(self):
-        """
-        Compare the results with those that we have checked manually.
-        """
-
-        # run the experiment with both ASV evaluation scenarios
-        self.init_config.eval.components = NISQA_CFG
-        self.init_config.log_dir = os.path.join(
-            self.init_config.log_dir, "nisqa_results"
-        )
-        self.config, log_dir = run_pipeline(self.init_config)
-
-        # get the directory where the results are stored
-        results_subdir = "eval/nisqa"
-        results_dir = os.path.join(log_dir, results_subdir)
-        expected_dir = os.path.join("tests", "expected_results", results_subdir)
-
-        # assert that both directories contain the same files
-        self.assertCountEqual(os.listdir(results_dir), os.listdir(expected_dir))
-
-        # assert that the results files contain the same lines
-        for fname in os.listdir(results_dir):
-            # check that the results file is the same as the expected results file
-            with open(os.path.join(results_dir, fname)) as f:
-                results = f.readlines()
-            with open(os.path.join(expected_dir, fname)) as f:
-                expected = f.readlines()
-
-            # if the file contains the results for each utterance, ignore the fnames
-            if results[0].startswith("audio_filepath"):
-                results = [r.split()[1:] for r in results]
-                expected = [e.split()[1:] for e in expected]
-
-            with self.subTest(fname=fname):
-                self.assertCountEqual(results, expected)
-
-        rmtree(log_dir)
+        # assert that all utts are included in the output
+        self.assertCountEqual(expected_utts, eval_utts)

@@ -1,2 +1,0 @@
-dataset gender n_pairs threshold eer
-ls-dev-clean-2 F 4 -2573.176577426784 0.5

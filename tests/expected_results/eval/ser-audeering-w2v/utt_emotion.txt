@@ -1,5 +1,0 @@
-dataset utt_emotion n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
-ravdess angry 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-ravdess fearful 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-ravdess disgust 1 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-ravdess sad 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0

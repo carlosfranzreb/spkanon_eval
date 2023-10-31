@@ -100,7 +100,7 @@ def get_characteristics(datafile: str) -> tuple[dict, list, list]:
             # iterate over the chars in this object
             for key, value in obj.items():
                 # skip the keys that are not speaker characteristics
-                if key in ["audio_filepath", "text", "duration", "label"]:
+                if key in ["path", "text", "duration", "speaker_id", "label"]:
                     continue
 
                 # pick an index depending on the characteristic (utt or spk)

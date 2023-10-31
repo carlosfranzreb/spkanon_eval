@@ -1,7 +1,0 @@
-dataset gender n_samples similarity arousal_diff dominance_diff valence_diff arousal_absdiff dominance_absdiff valence_absdiff
-edacc-test Male 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-edacc-test Female 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-ls-dev-clean-2 F 6 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-ls-dev-clean-2 M 4 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-cv-test female 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0
-cv-test male 2 1.0 0.0 0.0 0.0 0.0 0.0 0.0

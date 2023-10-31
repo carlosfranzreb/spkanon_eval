@@ -10,7 +10,21 @@ The evaluation framework can be installed with `pip install .`. Alternatively, t
 
 If you want to evaluate the naturalness of your synthesized speech with NISQA, clone the repository: `git clone https://github.com/gabrielmittag/NISQA.git`. This is also done in the build script.
 
-Once the framework is installed, you can run the tests with `python -m unittest discover -s ./tests`. The test audio files are already part of the framework.
+Once the framework is installed, you can run the tests with `python -m unittest discover -s spkanon_eval/tests`. We expect you to clone this repository inside another one where you implement your models and run the experiments, as shown below. The tests also assume this. The test audio files are already part of the framework.
+
+### Expected structure
+
+```linux
+my_repo/
+  my_models/
+  logs/
+  spkanon_eval/
+    spkanon_eval/
+    tests/
+    spkanon_models
+    NISQA/
+    ...
+```
 
 ## Full results of the SPSC 2023 paper
 

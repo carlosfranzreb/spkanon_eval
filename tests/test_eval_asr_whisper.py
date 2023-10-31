@@ -7,48 +7,114 @@ for the debug data.
 
 
 import os
+import shutil
+import unittest
+import json
 
-from base import BaseTestClass, run_pipeline
+from omegaconf import OmegaConf
+
+from spkanon_eval.featex.asr.whisper import Whisper
 
 
-class TestEvalWhisper(BaseTestClass):
-    def test_results(self):
+class TestEvalWhisper(unittest.TestCase):
+    def setUp(self):
         """
-        Test whether the ASR results match the expected values.
+        Create the evaluation component and run it with the LibriSpeech dev-clean data.
         """
 
-        # run the experiment with both ASV evaluation scenarios
-        self.init_config.eval.components = {
-            "whisper_tiny": {
-                "cls": "spkanon_eval.featex.asr.whisper.Whisper",
+        self.exp_folder = "spkanon_eval/tests/logs/asr_whisper"
+        if os.path.isdir(self.exp_folder):
+            shutil.rmtree(self.exp_folder)
+        os.makedirs(os.path.join(self.exp_folder))
+        self.datafile = "spkanon_eval/tests/datafiles/ls-dev-clean-2.txt"
+
+        config = OmegaConf.create(
+            {
                 "train": False,
                 "size": "tiny",
                 "output": "text",
-                "batch_size": 16,
+                "batch_size": 4,
+                "data": {
+                    "config": {
+                        "sample_rate": 16000,
+                        "batch_size": 4,
+                        "num_workers": 0,
+                    },
+                },
             }
-        }
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        )
+        self.whisper = Whisper(config, "cpu")
+        self.whisper.eval_dir(self.exp_folder, self.datafile)
+        self.results_dir = os.path.join(self.exp_folder, "eval", "whisper-tiny")
+        self.wers = list()
 
-        # get the directory where the results are stored
-        results_subdir = "eval/whisper-tiny"
-        results_dir = os.path.join(self.log_dir, results_subdir)
-        expected_dir = os.path.join("tests", "expected_results", results_subdir)
+    def tearDown(self) -> None:
+        """Remove the experiment folder."""
+        shutil.rmtree(self.exp_folder)
 
-        # assert that both directories contain the same files
-        self.assertCountEqual(os.listdir(results_dir), os.listdir(expected_dir))
+    def test_sample_results(self):
+        """Check the content of the `ls-dev-clean-2.txt` file."""
 
-        # assert that the results files contain the same lines
-        for fname in os.listdir(results_dir):
-            # check that the results file is the same as the expected results file
-            with open(os.path.join(results_dir, fname)) as f:
-                results = f.readlines()
-            with open(os.path.join(expected_dir, fname)) as f:
-                expected = f.readlines()
+        with open(os.path.join(self.results_dir, "ls-dev-clean-2.txt")) as f:
+            results = [line.split() for line in f.readlines()]
+        results = results[1:]
 
-            # if the file contains the results for each utterance, ignore the fnames
-            if results[0].startswith("audio_filepath"):
-                results = [r.split()[1:] for r in results]
-                expected = [e.split()[1:] for e in expected]
+        with open(self.datafile) as f:
+            expected = [json.loads(line) for line in f.readlines()]
 
-            with self.subTest(fname=fname):
-                self.assertCountEqual(results, expected)
+        self.assertEqual(len(results), len(expected))
+
+        for obj in expected:
+            out_obj = None
+            for out in results:
+                if out[0] == obj["path"]:
+                    out_obj = out
+                    break
+            self.assertTrue(out_obj is not None)
+            self.assertEqual(len(obj["text"].split()), int(out_obj[2]))
+            wer = float(out_obj[3])
+            self.assertGreaterEqual(wer, 0)
+            self.assertLessEqual(wer, 0.3)
+            self.wers.append(wer)
+
+    def test_analysis(self):
+        """
+        Test the analysis output:
+
+        - `all.txt` should contain the avg. WER of all samples.
+        - `gender.txt` should contain the avg. WER per gender.
+        """
+
+        # ensure that the correct number of files is created
+        self.assertEqual(len(os.listdir(self.results_dir)), 3)
+
+        # if the analysis has not been run, run it
+        if len(self.wers) == 0:
+            self.test_sample_results()
+
+        # check the content of the `all.txt` file
+        with open(os.path.join(self.results_dir, "all.txt")) as f:
+            all_results = f.readlines()
+
+        self.assertEqual(len(all_results), 2)
+        computed_wer = float(all_results[1].split()[-1])
+        self.assertAlmostEqual(computed_wer, sum(self.wers) / len(self.wers), places=2)
+
+        # check the content of the `gender.txt` file
+        with open(self.datafile) as f:
+            sample_genders = [json.loads(l)["gender"] for l in f]
+
+        with open(os.path.join(self.results_dir, "gender.txt")) as f:
+            gender_results = [line.split() for line in f.readlines()]
+
+        self.assertEqual(len(gender_results) - 1, len(set(sample_genders)))
+
+        for line in gender_results[1:]:
+            gender = line[1]
+            computed_wer = float(line[-1])
+            true_wers = [
+                self.wers[idx] * (sample_genders[idx] == gender)
+                for idx in range(len(self.wers))
+            ]
+            true_wer = sum(true_wers) / sum([g == gender for g in sample_genders])
+            self.assertAlmostEqual(computed_wer, true_wer, places=1)

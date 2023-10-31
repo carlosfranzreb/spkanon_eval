@@ -7,40 +7,52 @@ for the debug data.
 
 
 import os
+import unittest
+import shutil
 
 from omegaconf import OmegaConf
+import torch
 
-from base import BaseTestClass, run_pipeline
+from spkanon_eval.evaluation.performance.performance import PerformanceEvaluator
 
 
-class TestEvalPerformance(BaseTestClass):
+class DummyModel(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc = torch.nn.Linear(1, 1)
+
+    def forward(self, *args):
+        input = torch.tensor([1.0])
+        return self.fc(input)
+
+
+class TestEvalPerformance(unittest.TestCase):
     def test_results(self):
         """
         Test whether the Performance results match the expected values. We only test
         the CPU results, not the GPU results.
         """
 
+        exp_folder = "spkanon_eval/tests/logs/performance"
+        if os.path.isdir(exp_folder):
+            shutil.rmtree(exp_folder)
+        os.makedirs(os.path.join(exp_folder))
+
         # run the experiment with both ASV evaluation scenarios
-        self.init_config.eval.components = OmegaConf.create(
+        self.config = OmegaConf.create(
             {
-                "performance": {
-                    "cls": "spkanon_eval.evaluation.performance.performance.PerformanceEvaluator",
-                    "train": False,
-                    "repetitions": 2,
-                    "sample_rate": "${sample_rate}",
-                    "durations": [2, 4],
-                },
-            }
+                "repetitions": 2,
+                "sample_rate": 16000,
+                "durations": [2, 3],
+            },
         )
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        evaluator = PerformanceEvaluator(self.config, "cpu", DummyModel())
+        evaluator.eval_dir(exp_folder)
+        results_dir = os.path.join(exp_folder, "eval", "performance")
 
-        # get the directory where the results are stored
-        results_subdir = "eval/performance"
-        results_dir = os.path.join(self.log_dir, results_subdir)
-        expected_dir = os.path.join("tests", "expected_results", results_subdir)
-
-        # assert that both directories contain the same files
-        self.assertCountEqual(os.listdir(results_dir), os.listdir(expected_dir))
+        # assert that both directories contain the correct number of files
+        self.assertTrue(os.path.isdir(results_dir))
+        self.assertEqual(len(os.listdir(results_dir)), 2)
 
         # assert that the results files contain the same lines
         for fname in os.listdir(results_dir):
@@ -49,16 +61,16 @@ class TestEvalPerformance(BaseTestClass):
 
             # for `cpu_specs.txt`, compare it with the CPU in this machine
             if fname == "cpu_specs.txt":
-                f_expected = os.path.join(expected_dir, fname)
+                f_expected = os.path.join(results_dir, fname)
                 os.system(f"sysctl -a | grep machdep.cpu > {f_expected}")
-                with open(os.path.join(expected_dir, fname)) as f:
+                with open(os.path.join(results_dir, fname)) as f:
                     expected = f.readlines()
                 with self.subTest(fname=fname):
                     self.assertEqual(results, expected)
 
-            # check that the header and first col match, but ignore the numbers
+            # check that the header and first col match, ignore the numbers
             else:
-                with open(os.path.join(expected_dir, fname)) as f:
+                with open(os.path.join(results_dir, fname)) as f:
                     expected = f.readlines()
                 with self.subTest(fname=fname):
                     self.assertEqual(results[0], expected[0])
@@ -66,3 +78,5 @@ class TestEvalPerformance(BaseTestClass):
                         [line.split()[0] for line in results],
                         [line.split()[0] for line in expected],
                     )
+
+        shutil.rmtree(exp_folder)

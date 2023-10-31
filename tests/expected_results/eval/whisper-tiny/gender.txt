@@ -1,7 +1,0 @@
-dataset gender n_samples avg_edits avg_words_ref wer
-edacc-test Male 2 44.5 46.5 0.96
-edacc-test Female 2 41.5 43.0 0.97
-ls-dev-clean-2 F 6 17.67 18.17 0.97
-ls-dev-clean-2 M 4 17.75 18.0 0.99
-cv-test female 2 12.5 12.5 1.0
-cv-test male 2 9.5 9.5 1.0

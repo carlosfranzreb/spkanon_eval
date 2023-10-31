@@ -1,2 +1,0 @@
-dataset ethnicity n_samples mos
-edacc-test White 4 1.0

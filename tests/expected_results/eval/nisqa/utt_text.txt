@@ -1,3 +1,0 @@
-dataset utt_text n_samples mos
-ravdess Dogs 3 1.02
-ravdess Kids 4 0.97

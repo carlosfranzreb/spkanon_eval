@@ -18,7 +18,7 @@ from spkanon_eval.main import main
 
 
 MARKER_FILE = ".TEST-FOLDER"
-LOG_DIR = "tests/logs"
+LOG_DIR = "spkanon_eval/tests/logs"
 
 
 class BaseTestClass(unittest.TestCase):
@@ -33,7 +33,7 @@ class BaseTestClass(unittest.TestCase):
 
         self.init_config = OmegaConf.create(
             {
-                "name": "StarGANv2-VC",
+                "name": "Test",
                 "inference": {
                     "run": True,
                     "input": {"spectrogram": "spectrogram", "target": "target"},
@@ -59,18 +59,15 @@ class BaseTestClass(unittest.TestCase):
                 },
                 "data": {
                     "config": {
-                        "root_folder": "tests/data",
+                        "root_folder": "spkanon_eval/tests/data",
                         "sample_rate": "${sample_rate}",
                         "batch_size": "${batch_size}",
                     },
                     "datasets": {
                         "eval": [
-                            "data/debug/edacc-test.txt",
-                            "data/debug/ls-dev-clean-2.txt",
-                            "data/debug/cv-test.txt",
-                            "data/debug/ravdess.txt",
+                            "spkanon_eval/data/debug/ls-dev-clean-2.txt",
                         ],
-                        "train_eval": ["data/debug/ls-dev-clean-2.txt"],
+                        "train_eval": ["spkanon_eval/data/debug/ls-dev-clean-2.txt"],
                     },
                 },
                 "eval": {
@@ -83,11 +80,6 @@ class BaseTestClass(unittest.TestCase):
                 },
             }
         )
-
-    def tearDown(self):
-        """Delete the logging directory if it exists as an attribute."""
-        if hasattr(self, "log_dir"):
-            rmtree(self.log_dir)
 
 
 def run_pipeline(config):

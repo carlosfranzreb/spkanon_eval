@@ -1,5 +1,0 @@
-audio_filepath mos
-tests/logs/nisqa_results/1695203491/results/edacc_v1.0/clips/EDACC-C02-000000000.wav 0.94
-tests/logs/nisqa_results/1695203491/results/edacc_v1.0/clips/EDACC-C02-000000001.wav 1.10
-tests/logs/nisqa_results/1695203491/results/edacc_v1.0/clips/EDACC-C02-000000002.wav 0.99
-tests/logs/nisqa_results/1695203491/results/edacc_v1.0/clips/EDACC-C02-000000003.wav 0.97

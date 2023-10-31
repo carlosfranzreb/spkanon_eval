@@ -1,5 +1,0 @@
-dataset n_samples mos
-edacc-test 4 1.0
-ls-dev-clean-2 10 1.01
-cv-test 4 0.85
-ravdess 7 0.99

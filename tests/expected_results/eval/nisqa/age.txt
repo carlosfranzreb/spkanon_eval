@@ -1,3 +1,0 @@
-dataset age n_samples mos
-edacc-test 25 4 1.0
-cv-test thirties 4 0.85

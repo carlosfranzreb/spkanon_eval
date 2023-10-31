@@ -64,13 +64,12 @@ class Whisper:
             datafile: datafile to evaluate
         """
         LOGGER.info("Computing WER of eval data with dataloader")
-        if self.out != "text":  # desired output must be text
+        if self.out != "text":
             self.out = "text"
         normalizer = EnglishTextNormalizer()
-        # pick the directory where the results will be stored and create it if needed
         dump_folder = os.path.join(exp_folder, "eval", f"whisper-{self.model_size}")
         os.makedirs(dump_folder, exist_ok=True)
-        data = {"n_edits": list(), "n_words_ref": list()}  # stores the WER stats
+        stats = {"n_edits": list(), "n_words_ref": list()}
 
         # define the dump file and write the headers
         dump_file = os.path.join(dump_folder, os.path.basename(datafile))
@@ -93,13 +92,13 @@ class Whisper:
                 with open(dump_file, "a", encoding="utf-8") as f:
                     f.write(f"{audiofile} {n_edits} {n_words} {wer} {text_pred}\n")
                 # update datafile stats
-                data["n_edits"].append(n_edits)
-                data["n_words_ref"].append(n_words)
+                stats["n_edits"].append(n_edits)
+                stats["n_words_ref"].append(n_words)
 
         analyse_results(
             dump_folder,
             datafile,
-            [np.array(data["n_edits"]), np.array(data["n_words_ref"])],
+            [np.array(stats["n_edits"]), np.array(stats["n_words_ref"])],
             analyse_func,
             headers_func,
         )

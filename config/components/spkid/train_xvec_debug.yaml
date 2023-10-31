@@ -13,13 +13,14 @@ train_log: !ref <output_folder>/train_log.txt
 
 train_annotation: !ref <save_folder>/train.csv
 valid_annotation: !ref <save_folder>/dev.csv
+val_ratio: 0.4
 
 # Folder to extract data augmentation files
 rir_folder: checkpoints/rirs
 
 # Training parameters
 number_of_epochs: 1
-batch_size: 128
+batch_size: 2
 lr: 0.001
 lr_final: 0.0001
 

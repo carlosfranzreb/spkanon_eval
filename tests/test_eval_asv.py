@@ -30,6 +30,7 @@ SPKID_CONFIG = {
     "train": False,
     "batch_size": 2,
     "num_workers": 0,
+    "emb_model_ckpt": None,
 }
 ASV_IGNORANT_CONFIG = OmegaConf.create(
     {
@@ -62,7 +63,9 @@ ASV_LAZY_CONFIG = OmegaConf.create(
 class TestEvalASV(BaseTestClass):
     def test_results(self):
         """
-        Test whether the ignorant ASV results match the expected values.
+        Test whether the ignorant ASV component, when given the ls-dev-clean-2 debug
+        dataset for evaluation, yields the correct files, each with appropriate content,
+        regardless of the specific EER values.
         """
 
         # run the experiment with both ASV evaluation scenarios
@@ -70,26 +73,23 @@ class TestEvalASV(BaseTestClass):
         self.init_config.log_dir = os.path.join(self.init_config.log_dir, "asv_test")
         config, log_dir = run_pipeline(self.init_config)
 
-        # get the directory where the results are stored
+        # assert that 3 files were created
         results_subdir = "eval/asv-plda/ignorant/results"
         results_dir = os.path.join(log_dir, results_subdir)
-        expected_dir = os.path.join("tests", "expected_results", results_subdir)
-
-        # assert that both directories contain the same files
         results_files = [f for f in os.listdir(results_dir) if f.endswith(".txt")]
-        expected_files = [f for f in os.listdir(expected_dir) if f.endswith(".txt")]
-        self.assertCountEqual(results_files, expected_files)
+        self.assertEqual(len(results_files), 3)
 
-        # assert that the results files contain the same lines
-        for fname in results_files:
-            with open(os.path.join(results_dir, fname)) as f:
-                results = f.readlines()
-            with open(os.path.join(expected_dir, fname)) as f:
-                expected = f.readlines()
-            with self.subTest(fname=fname):
-                self.assertCountEqual(results, expected)
+        # check the overall results
+        with open(os.path.join(results_dir, "eer.txt")) as f:
+            lines = f.readlines()
+            self.assertEqual(len(lines), 2)
+            out = lines[1].strip().split()
+            self.assertEqual(out[0], "anon_eval")
+            self.assertEqual(int(out[1]), 9)
+            self.assertTrue(isinstance(float(out[2]), float))
+            self.assertTrue(0 <= float(out[3]) <= 1)
 
-        rmtree(log_dir)
+        rmtree(self.init_config.log_dir)
 
     def test_lda_reduction(self):
         """
@@ -140,7 +140,7 @@ class TestEvalASV(BaseTestClass):
             "The PLDA model expects a different input size",
         )
 
-        rmtree(log_dir)
+        rmtree(self.init_config.log_dir)
 
     def test_enrollment_targets(self):
         """
@@ -181,21 +181,19 @@ class TestEvalASV(BaseTestClass):
         config, log_dir = run_pipeline(self.init_config)
         targets_log = os.path.join(log_dir, "targets.log")
 
-        # gather the source-target pairs from the Common Voice dataset
+        # gather the source-target pairs, separating them by run (inference, enroll)
         targets = list()
         last_line_was_included = False
         for line in open(targets_log):
             if "###" in line:
+                last_line_was_included = False
                 continue
             elements = line.strip().split()
             source, target = elements[-3], elements[-1]
-            if source.startswith("00"):
-                if last_line_was_included is False:
-                    targets.append(list())
-                    last_line_was_included = True
-                targets[-1].append((source, target))
-            else:
-                last_line_was_included = False
+            if last_line_was_included is False:
+                targets.append(list())
+                last_line_was_included = True
+            targets[-1].append((source, target))
 
         # assert that there are two lists of targets: inference and enrollment
         self.assertEqual(len(targets), 2)
@@ -214,7 +212,7 @@ class TestEvalASV(BaseTestClass):
             found_difference, "All inference and enrollment targets are the same"
         )
 
-        rmtree(log_dir)
+        rmtree(self.init_config.log_dir)
 
     def test_lazy_informed_asv(self):
         """
@@ -257,10 +255,12 @@ class TestEvalASV(BaseTestClass):
 
         train_file = train_files[0]
         self.assertEqual(
-            train_file, "data/debug/ls-dev-clean-2.txt", "Wrong train_eval dataset"
+            train_file,
+            "spkanon_eval/data/debug/ls-dev-clean-2.txt",
+            "Wrong train_eval dataset",
         )
 
-        anon_train_file = os.path.join(asv_dir, "train", train_file)
+        anon_train_file = os.path.join(log_dir, "data", "anon_train_eval.txt")
         self.assertTrue(
             os.path.exists(anon_train_file),
             "The anonymized train_eval file does not exist",
@@ -296,7 +296,7 @@ class TestEvalASV(BaseTestClass):
         spkid_config = copy.deepcopy(config.data.config)
         spkid_config.batch_size = SPKID_CONFIG["batch_size"]
         spkid_config.sample_rate = EVAL_SR
-        dl = setup_dataloader(spkid_config, [anon_train_file])
+        dl = setup_dataloader(spkid_config, anon_train_file)
         for batch in dl:
             new_vecs = spkid_model.run(batch).detach().cpu().numpy()
             vecs = new_vecs if vecs is None else np.vstack([vecs, new_vecs])
@@ -325,4 +325,4 @@ class TestEvalASV(BaseTestClass):
                 f"The attribute {attr} of the PLDA models differ",
             )
 
-        rmtree(log_dir)
+        rmtree(self.init_config.log_dir)

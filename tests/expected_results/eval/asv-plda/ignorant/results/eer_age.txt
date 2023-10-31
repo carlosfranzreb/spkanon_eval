@@ -1,2 +1,0 @@
-dataset age n_pairs threshold eer
-cv-test thirties 4 -0.959841558902788 1.0

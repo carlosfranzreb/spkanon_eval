@@ -1,5 +1,0 @@
-audio_filepath n_edits n_words_ref wer text
-tests/logs/1695201555/results/edacc_v1.0/clips/EDACC-C02-000000000.wav 17 17 1.0 The first step is to make a hole in the hole.
-tests/logs/1695201555/results/edacc_v1.0/clips/EDACC-C02-000000001.wav 9 9 1.0 .
-tests/logs/1695201555/results/edacc_v1.0/clips/EDACC-C02-000000002.wav 72 76 0.95 The first step is to make the engine a little more powerful.
-tests/logs/1695201555/results/edacc_v1.0/clips/EDACC-C02-000000003.wav 74 77 0.96 The first step is to make the engine a little more powerful.

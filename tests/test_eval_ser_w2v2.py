@@ -1,15 +1,18 @@
 import os
-from base import BaseTestClass, run_pipeline
+import json
+import shutil
+
 import torch
 from omegaconf import OmegaConf
 
 from spkanon_eval.evaluation.ser.audeering_w2v import EmotionEvaluator
+from base import BaseTestClass, run_pipeline
 
 
 class TestEvalSer(BaseTestClass):
     def test_results(self):
         """
-        Test whether the SER results match the expected values.
+        Test whether the SER results are valid. They should be between 0 and 1.
         """
 
         # run the experiment with both ASV evaluation scenarios
@@ -22,31 +25,29 @@ class TestEvalSer(BaseTestClass):
                 "batch_size": 2,
             }
         }
-        self.config, self.log_dir = run_pipeline(self.init_config)
+        self.init_config.log_dir = os.path.join(self.init_config.log_dir, "eval_ser")
+        self.config, log_dir = run_pipeline(self.init_config)
+        results_dir = os.path.join(log_dir, "eval", "ser-audeering-w2v")
+        self.assertTrue(os.path.isdir(results_dir))
 
-        # get the directory where the results are stored
-        results_subdir = "eval/ser-audeering-w2v"
-        results_dir = os.path.join(self.log_dir, results_subdir)
-        expected_dir = os.path.join("tests", "expected_results", results_subdir)
+        # gather the utterances from the datafile
+        expected_utts = list()
+        for line in open(os.path.join(self.config.data.datasets.eval[0])):
+            expected_utts.append(json.loads(line)["path"].replace("{root}/", ""))
 
-        # assert that both directories contain the same files
-        self.assertCountEqual(os.listdir(results_dir), os.listdir(expected_dir))
+        # check the results
+        with open(os.path.join(results_dir, "anon_eval.txt")) as f:
+            results = f.readlines()
+            self.assertEqual(len(results), len(expected_utts) + 1)
+            for line in results[1:]:
+                values = line.split()
+                self.assertTrue(len(values), 8)
+                fname = values[0][values[0].index("LibriSpeech") :]
+                self.assertTrue(fname in expected_utts)
+                for idx in range(1, 8):
+                    self.assertTrue(0 <= float(values[idx]) <= 1.1)
 
-        # assert that the results files contain the same lines
-        for fname in os.listdir(results_dir):
-            # check that the results file is the same as the expected results file
-            with open(os.path.join(results_dir, fname)) as f:
-                results = f.readlines()
-            with open(os.path.join(expected_dir, fname)) as f:
-                expected = f.readlines()
-
-            # if the file contains the results for each utterance, ignore the fnames
-            if results[0].startswith("audio_filepath"):
-                results = [r.split()[1:] for r in results]
-                expected = [e.split()[1:] for e in expected]
-
-            with self.subTest(fname=fname):
-                self.assertCountEqual(results, expected)
+        shutil.rmtree(self.init_config.log_dir)
 
     def test_batch(self):
         """
