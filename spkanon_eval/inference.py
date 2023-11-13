@@ -2,7 +2,6 @@ import os
 import json
 import logging
 
-from torch.cuda import OutOfMemoryError
 import torchaudio
 from omegaconf import OmegaConf
 

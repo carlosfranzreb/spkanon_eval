@@ -11,7 +11,6 @@ from spkanon_eval.datamodules.utils import prepare_datafile
 
 
 LOGGER = logging.getLogger("progress")
-TARGET_LOGGER = logging.getLogger("targets")
 
 
 def main(config: OmegaConf, exp_folder: str):
@@ -22,7 +21,6 @@ def main(config: OmegaConf, exp_folder: str):
     if "inference" in config and config.inference.run is not False:
         log_msg = f"### Start of inference with experiment folder `{exp_folder}`"
         LOGGER.info(log_msg)
-        TARGET_LOGGER.info(log_msg)
         # create the eval datafiles if they don't exist
         if not os.path.exists(os.path.join(exp_folder, "data", "eval.txt")):
             prepare_datafile("eval", config, exp_folder)
@@ -32,7 +30,6 @@ def main(config: OmegaConf, exp_folder: str):
     if "eval" in config:
         log_msg = "### Start of evaluation"
         LOGGER.info(log_msg)
-        TARGET_LOGGER.info(log_msg)
         # if an experiment folder is given, copy its eval datafiles
         if config.eval.config.exp_folder is not None:
             os.makedirs(os.path.join(exp_folder, "data"), exist_ok=True)

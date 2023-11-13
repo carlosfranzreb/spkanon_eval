@@ -3,7 +3,6 @@ import torch
 
 
 LOGGER = logging.getLogger("progress")
-TARGET_LOGGER = logging.getLogger("targets")
 
 
 class BaseSelector:
@@ -70,7 +69,6 @@ class BaseSelector:
             if s not in self.targets:
                 self.targets[s] = target[i]
 
-        self.log_targets(source, target)
         return target
 
     def select_new(self, spec):
@@ -90,10 +88,3 @@ class BaseSelector:
         elif consistent_targets is False:
             LOGGER.info("Disabling consistent targets")
             self.targets = None
-
-    def log_targets(self, source, target):
-        """
-        Log each source-target pair.
-        """
-        for s, t in zip(source, target):
-            TARGET_LOGGER.info(f"{s} -> {t}")

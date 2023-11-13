@@ -2,7 +2,6 @@ import os
 import logging
 import copy
 
-import torch
 from omegaconf import OmegaConf
 
 from spkanon_eval.setup_module import setup

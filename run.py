@@ -37,15 +37,15 @@ def setup(args):
     OmegaConf.save(config, os.path.join(log_dir, "exp_config.yaml"))
 
     # create logger in experiment folder to log progress: dump to file and stdout
-    for log_file in ["progress", "targets"]:
-        logger = logging.getLogger(log_file)
-        logger.setLevel(logging.INFO)
-        file_handler = logging.FileHandler(os.path.join(log_dir, f"{log_file}.log"))
-        file_handler.setFormatter(
-            logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-        )
-        logger.addHandler(file_handler)
-    logging.getLogger("progress").addHandler(logging.StreamHandler())
+    logger_name = "progress"
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.INFO)
+    file_handler = logging.FileHandler(os.path.join(log_dir, f"{logger_name}.log"))
+    file_handler.setFormatter(
+        logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    )
+    logger.addHandler(file_handler)
+    logger.addHandler(logging.StreamHandler())
 
     return config, log_dir
 
