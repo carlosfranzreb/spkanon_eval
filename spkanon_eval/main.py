@@ -39,7 +39,9 @@ def main(config: OmegaConf, exp_folder: str):
             if any([c.train for c in config.eval.components.values()]):
                 files.append("train_eval")
                 if os.path.exists(
-                    os.path.join(config.eval.config.exp_folder, "anon_train_eval.txt")
+                    os.path.join(
+                        config.eval.config.exp_folder, "data", "anon_train_eval.txt"
+                    )
                 ):
                     files.append("anon_train_eval")
             LOGGER.info(
