@@ -93,11 +93,16 @@ class SpeakerBrain(sb.core.Brain):
         if stage == sb.Stage.TRAIN:
             self.train_stats = stage_stats
         elif stage == sb.Stage.VALID:
-            old_lr, new_lr = self.hparams.lr_annealing(epoch)
-            sb.nnet.schedulers.update_learning_rate(self.optimizer, new_lr)
+            if epoch > 0:
+                old_lr, new_lr = self.hparams.lr_annealing(epoch)
+                sb.nnet.schedulers.update_learning_rate(self.optimizer, new_lr)
+                train_stats = self.train_stats
+            else:
+                old_lr = 0.0
+                train_stats = None
             self.hparams.train_logger.log_stats(
                 stats_meta={"epoch": epoch, "lr": old_lr},
-                train_stats=self.train_stats,
+                train_stats=train_stats,
                 valid_stats=stage_stats,
             )
 

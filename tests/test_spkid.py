@@ -151,7 +151,7 @@ class TestSpkid(unittest.TestCase):
         self.assertTrue(os.path.isfile(log_file))
         with open(log_file) as f:
             lines = f.readlines()
-        self.assertEqual(len(lines), 1)
+        self.assertEqual(len(lines), 2)
         new_state_dict = model.model.state_dict()
         self.assertTrue(
             any(

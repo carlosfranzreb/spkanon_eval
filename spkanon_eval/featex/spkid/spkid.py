@@ -10,6 +10,7 @@ import json
 import csv
 import random
 
+import speechbrain as sb
 from speechbrain.pretrained import EncoderClassifier
 from hyperpyyaml import load_hyperpyyaml
 from omegaconf import OmegaConf
@@ -131,15 +132,24 @@ class SpkId:
             hparams=hparams,
             run_opts={"device": self.device},
         )
+        val_dl = speaker_brain.make_dataloader(
+            val_data,
+            stage=sb.Stage.VALID,
+            ckpt_prefix=None,
+        )
+
         speaker_brain.epoch_losses = {"TRAIN": [], "VALID": []}
         val_kwargs = hparams["dataloader_options"]
         val_kwargs["shuffle"] = False
+
+        speaker_brain._fit_valid(valid_set=val_dl, epoch=0, enable=True)
         speaker_brain.fit(
             speaker_brain.hparams.epoch_counter,
             train_data,
             val_data,
             train_loader_kwargs=hparams["dataloader_options"],
             valid_loader_kwargs=val_kwargs,
+            progressbar=True,
         )
 
         # save the embedding model and load it

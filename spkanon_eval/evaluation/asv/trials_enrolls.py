@@ -11,16 +11,21 @@ import logging
 LOGGER = logging.getLogger("progress")
 
 
-def split_trials_enrolls(exp_folder: str, root_folder: str) -> tuple[str, str]:
+def split_trials_enrolls(
+    exp_folder: str, root_folder: str = None, anon_folder: str = None
+) -> tuple[str, str]:
     """
     Split the evaluation data into trial and enrollment datafiles. The first utt of
     each speaker is the trial utt, and the rest are enrollment utts. If the root folder
     is given, it is replaced in the trial with the folder where the anonymized
-    evaluation data is stored (`exp_folder/results/eval`).
+    evaluation data is stored (`exp_folder/results/anon_eval`). The root folder is None
+    if we are evaluating the baseline, where speech is not anonymized.
 
     Args:
         exp_folder: path to the experiment folder.
         root_folder (optional): root folder of the data.
+        anon_folder (optional): folder where the anonymized evaluation data is stored.
+            It it is not give, we assume that it is the same as the experiment folder.
 
     Returns:
         paths to the created trial and enrollment datafiles
@@ -35,6 +40,9 @@ def split_trials_enrolls(exp_folder: str, root_folder: str) -> tuple[str, str]:
     f_trials = os.path.join(exp_folder, "data", "eval_trials.txt")
     f_enrolls = os.path.join(exp_folder, "data", "eval_enrolls.txt")
 
+    if anon_folder is None:
+        anon_folder = exp_folder
+
     current_spk = None
     spk_objs = list()
 
@@ -44,12 +52,12 @@ def split_trials_enrolls(exp_folder: str, root_folder: str) -> tuple[str, str]:
         if current_spk is None:
             current_spk = spk
         elif spk != current_spk:
-            split_speaker(spk_objs, f_trials, f_enrolls, exp_folder, root_folder)
+            split_speaker(spk_objs, f_trials, f_enrolls, anon_folder, root_folder)
             spk_objs = list()
             current_spk = spk
         spk_objs.append(obj)
 
-    split_speaker(spk_objs, f_trials, f_enrolls, exp_folder, root_folder)
+    split_speaker(spk_objs, f_trials, f_enrolls, anon_folder, root_folder)
     return f_trials, f_enrolls
 
 

@@ -1,5 +1,8 @@
 import os
 import logging
+import shutil
+
+from omegaconf import OmegaConf
 
 from spkanon_eval.anonymizer import Anonymizer
 from spkanon_eval.inference import infer
@@ -11,17 +14,12 @@ LOGGER = logging.getLogger("progress")
 TARGET_LOGGER = logging.getLogger("targets")
 
 
-def main(config, log_dir):
+def main(config: OmegaConf, exp_folder: str):
     """Run the jobs (training, inference, evaluation) as specified in the config."""
 
-    model = Anonymizer(config, log_dir)  # create the model
+    model = Anonymizer(config, exp_folder)  # create the model
 
     if "inference" in config and config.inference.run is not False:
-        # if an experiment folder is given, use it, otherwise use the current one
-        if isinstance(config.inference.run, str):  # path is given
-            exp_folder = config.inference.run
-        else:  # infer an existing exp folder
-            exp_folder = log_dir
         log_msg = f"### Start of inference with experiment folder `{exp_folder}`"
         LOGGER.info(log_msg)
         TARGET_LOGGER.info(log_msg)
@@ -35,15 +33,29 @@ def main(config, log_dir):
         log_msg = "### Start of evaluation"
         LOGGER.info(log_msg)
         TARGET_LOGGER.info(log_msg)
-        # if an experiment folder is given, use it, otherwise use the current one
+        # if an experiment folder is given, copy its eval datafiles
         if config.eval.config.exp_folder is not None:
-            exp_folder = config.eval.config.exp_folder
-        else:
-            exp_folder = model.log_dir
-        LOGGER.info(f"Evaluating experiment folder `{exp_folder}`")
+            os.makedirs(os.path.join(exp_folder, "data"), exist_ok=True)
+            files = ["eval"]
+            if config.eval.config.baseline is False:
+                files.append("anon_eval")
+            if any([c.train for c in config.eval.components.values()]):
+                files.append("train_eval")
+                if os.path.exists(
+                    os.path.join(config.eval.config.exp_folder, "anon_train_eval.txt")
+                ):
+                    files.append("anon_train_eval")
+            LOGGER.info(
+                f"Copying datafiles {files} from {config.eval.config.exp_folder}"
+            )
+            for f in files:
+                shutil.copy(
+                    os.path.join(config.eval.config.exp_folder, "data", f + ".txt"),
+                    os.path.join(exp_folder, "data", f + ".txt"),
+                )
+            config.data.config.anon_folder = config.eval.config.exp_folder
 
-        # if any component requires training, create the necessary datafiles
-        if any([c.train for c in config.eval.components.values()]):
+        elif any([c.train for c in config.eval.components.values()]):
             prepare_datafile("train_eval", config, exp_folder)
 
         # create the eval datafiles if they don't exist (for the baseline)
