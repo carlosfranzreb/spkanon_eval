@@ -67,9 +67,11 @@ class SpeakerBrain(sb.core.Brain):
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss using speaker-id as label."""
         predictions, lens = predictions
+        predictions = predictions.to(self.device)
+        lens = lens.to(self.device)
         spkid = torch.tensor([int(spkid) for spkid in batch.spk_id_encoded]).unsqueeze(
             1
-        )
+        ).to(self.device)
 
         if stage == sb.Stage.TRAIN:
             spkid = torch.cat([spkid] * self.n_augment, dim=0).to(self.device)
