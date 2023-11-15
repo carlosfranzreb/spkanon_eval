@@ -9,6 +9,7 @@ import logging
 import json
 import csv
 import random
+import shutil
 
 import speechbrain as sb
 from speechbrain.pretrained import EncoderClassifier
@@ -70,6 +71,10 @@ class SpkId(InferComponent):
         """
 
         LOGGER.info(f"Fine-tuning the spkid model with datafile {datafile}")
+        os.makedirs(dump_dir, exist_ok=True)
+        shutil.copyfile(
+            self.config.finetune_config, os.path.join(dump_dir, "finetune_config.yaml")
+        )
 
         with open(self.config.finetune_config) as f:
             hparams = load_hyperpyyaml(
@@ -82,7 +87,6 @@ class SpkId(InferComponent):
             )
 
         # create the datafiles and writers
-        os.makedirs(dump_dir, exist_ok=True)
         splits = dict()
         for split in ["train", "val"]:
             splits[split] = dict()
@@ -141,6 +145,7 @@ class SpkId(InferComponent):
             val_data,
             stage=sb.Stage.VALID,
             ckpt_prefix=None,
+            **hparams["dataloader_options"],
         )
 
         speaker_brain.epoch_losses = {"TRAIN": [], "VALID": []}
