@@ -17,13 +17,14 @@ from omegaconf import OmegaConf
 import torch
 
 from spkanon_eval.featex.spkid.finetune import SpeakerBrain, prepare_dataset
+from spkanon_eval.component_definitions import InferComponent
 
 
 LOGGER = logging.getLogger("progress")
 SAMPLE_RATE = 16000
 
 
-class SpkId:
+class SpkId(InferComponent):
     def __init__(self, config: OmegaConf, device: str) -> None:
         """Initialize the model with the given config and freeze its parameters."""
         self.config = config
@@ -37,6 +38,10 @@ class SpkId:
             state_dict = torch.load(config.emb_model_ckpt, map_location=device)
             self.model.mods.embedding_model.load_state_dict(state_dict)
         self.model.eval()
+
+    def to(self, device: str) -> None:
+        self.device = device
+        self.model.to(device)
 
     def run(self, batch: list[torch.Tensor]) -> torch.Tensor:
         """

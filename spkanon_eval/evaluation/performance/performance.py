@@ -6,15 +6,20 @@ import sys
 import torch
 import numpy as np
 
+from spkanon_eval.component_definitions import EvalComponent
+
 
 LOGGER = logging.getLogger("progress")
 
 
-class PerformanceEvaluator:
+class PerformanceEvaluator(EvalComponent):
     def __init__(self, config, device, model):
         self.config = config
         self.device = device
         self.model = model
+
+    def train(self, exp_folder: str) -> None:
+        raise NotImplementedError("Performance evaluation does not require training")
 
     def eval_dir(self, exp_folder: str, *args) -> None:
         """

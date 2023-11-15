@@ -26,8 +26,8 @@ class TestDataset(unittest.TestCase):
 
     def test_dataset_items(self):
         """
-        Ensure that the dataset returns the correct audio and speaker IDs. We assume
-        that the dataset's spk2id mapping is correct.
+        Ensure that the dataset returns the correct audio, speaker IDs and audio
+        durations. We assume that the dataset's spk2id mapping is correct.
         """
 
         sample_idx = 0
@@ -39,8 +39,10 @@ class TestDataset(unittest.TestCase):
                     orig_freq=sr, new_freq=self.sample_rate
                 )
                 audio_true = resampler(audio_true)
-            audio_dataset, spk = self.dataset[sample_idx]
-            self.assertEqual(audio_true.shape[1], audio_dataset.shape[0])
+            audio_true = audio_true.squeeze()
+            audio_dataset, spk, n_samples = self.dataset[sample_idx]
+            self.assertEqual(audio_true.shape[0], audio_dataset.shape[0])
             self.assertEqual(obj["speaker_id"], spk)
             self.assertTrue(torch.allclose(audio_true, audio_dataset))
+            self.assertEqual(n_samples, audio_true.shape[0])
             sample_idx += 1

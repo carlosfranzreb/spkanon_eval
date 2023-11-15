@@ -10,13 +10,14 @@ import logging
 import torch
 
 from spkanon_eval.featex.spkid.spkid import SpkId
+from spkanon_eval.component_definitions import InferComponent
 
 
 LOGGER = logging.getLogger("progress")
 SAMPLE_RATE = 16000
 
 
-class SpkIdConcat:
+class SpkIdConcat(InferComponent):
     def __init__(self, config, device):
         """Initialize the model with the given config and freeze its parameters."""
         self.config = config
@@ -26,3 +27,8 @@ class SpkIdConcat:
     def run(self, batch):
         spkembs = [model.run(batch) for model in self.models]
         return torch.cat(spkembs, dim=1)
+
+    def to(self, device: str) -> None:
+        for model in self.models:
+            model.to(device)
+        self.device = device

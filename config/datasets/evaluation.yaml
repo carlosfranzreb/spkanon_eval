@@ -15,3 +15,5 @@ data:
     train_eval:
       - spkanon_eval/data/librispeech/ls-train-clean-100.txt
       - spkanon_eval/data/edacc/edacc-dev.txt
+    targets:
+      - spkanon_eval/data/librispeech/ls-train-clean-5.txt

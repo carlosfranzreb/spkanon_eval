@@ -3,8 +3,10 @@ from omegaconf import OmegaConf
 
 from .wavlm_model import WavLM, WavLMConfig
 
+from spkanon_eval.component_definitions import InferComponent
 
-class WavlmWrapper:
+
+class WavlmWrapper(InferComponent):
     def __init__(self, config: OmegaConf, device: str, **kwargs):
         """
         Load the model from the checkpoint and move it to the device.
@@ -15,23 +17,34 @@ class WavlmWrapper:
             `layer`.
             device: the device where the model should run.
         """
-        ckpt = torch.load(config.ckpt_path, map_location=device)
-        model_cfg = WavLM(ckpt["cfg"])
+        ckpt = torch.load(config.ckpt, map_location=device)
+        model_cfg = WavLMConfig(ckpt["cfg"])
         self.model = WavLM(model_cfg)
         self.model.load_state_dict(ckpt["model"])
         self.model.eval()
         self.device = device
         self.config = config
 
-    def run(self, batch: list) -> torch.Tensor:
+    def run(self, batch: list) -> dict:
         """
         Pases the batch through the model until the specified layer and returns the
         output of that layer.
 
         Args:
-            batch: a list with a tensor comprising waveforms in first position.
+            batch: a list with a tensor comprising waveforms in first position, and the
+            number of samples per item in the batch in third position.
 
         Returns:
-            the output of the specified layer.
+            a dictionary with the output of the specified WavLM layer under the key "feats" and
+            the number of feats for each sample under "n_feats".
         """
-        return self.model.extract_features(batch[0], output_layer=self.config.layer)[1]
+        out = self.model.extract_features(batch[0], output_layer=self.config.layer)[0]
+        n_feats = batch[2] // self.config.hop_length
+        return {"feats": out, "n_feats": n_feats}
+
+    def to(self, device: str) -> None:
+        """
+        Implementation of PyTorch's `to()` method to set the device.
+        """
+        self.device = device
+        self.model.to(self.device)

@@ -16,6 +16,10 @@ LOGGER = logging.getLogger("progress")
 def main(config: OmegaConf, exp_folder: str):
     """Run the jobs (training, inference, evaluation) as specified in the config."""
 
+    target_df = config.data.datasets.get("targets", list())
+    if len(target_df) > 0:
+        prepare_datafile("targets", config, exp_folder)
+
     model = Anonymizer(config, exp_folder)  # create the model
 
     if "inference" in config and config.inference.run is not False:

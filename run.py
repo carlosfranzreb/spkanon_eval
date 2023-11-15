@@ -23,31 +23,32 @@ def setup(args):
     )
 
     # create the logging directory
-    log_dir = os.path.join(config.log_dir, str(int(time())))
-    while os.path.exists(log_dir):
+    exp_folder = os.path.join(config.log_dir, str(int(time())))
+    while os.path.exists(exp_folder):
         sleep(1)
-        log_dir = os.path.join(config.log_dir, str(int(time())))
-    os.makedirs(log_dir)
+        exp_folder = os.path.join(config.log_dir, str(int(time())))
+    os.makedirs(exp_folder)
+    config.exp_folder = exp_folder
 
     # if a seed is specified, set it
     if config.seed is not None:
         seed_everything(config.seed)
 
     # dump config file to experiment folder
-    OmegaConf.save(config, os.path.join(log_dir, "exp_config.yaml"))
+    OmegaConf.save(config, os.path.join(exp_folder, "exp_config.yaml"))
 
     # create logger in experiment folder to log progress: dump to file and stdout
     logger_name = "progress"
     logger = logging.getLogger(logger_name)
     logger.setLevel(logging.INFO)
-    file_handler = logging.FileHandler(os.path.join(log_dir, f"{logger_name}.log"))
+    file_handler = logging.FileHandler(os.path.join(exp_folder, f"{logger_name}.log"))
     file_handler.setFormatter(
         logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     )
     logger.addHandler(file_handler)
     logger.addHandler(logging.StreamHandler())
 
-    return config, log_dir
+    return config, exp_folder
 
 
 def load_subconfigs(config):

@@ -13,7 +13,7 @@ import json
 
 from omegaconf import OmegaConf
 
-from spkanon_eval.featex.asr.whisper import Whisper
+from spkanon_eval.featex.asr.whisper_wrapper import Whisper
 
 
 class TestEvalWhisper(unittest.TestCase):

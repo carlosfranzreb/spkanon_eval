@@ -1,6 +1,8 @@
 import logging
 
 import torch
+from torch import Tensor
+from omegaconf import DictConfig
 
 from spkanon_eval.setup_module import setup
 
@@ -9,7 +11,8 @@ LOGGER = logging.getLogger("progress")
 
 
 class Anonymizer:
-    def __init__(self, config, log_dir):
+    def __init__(self, config: DictConfig, log_dir: str) -> None:
+        """Initialize the components and optionally the target selection algorithm."""
         super().__init__()
         self.config = config
         self.device = config.device
@@ -38,7 +41,7 @@ class Anonymizer:
                     LOGGER.info(f"Passing target selection algorithm to {name}")
                     component.init_target_selection(*args)
 
-    def get_feats(self, batch, source, target=None):
+    def get_feats(self, batch: list, source: Tensor, target: Tensor = None):
         """
         Run the featex, featproc and featfusion modules. Returns spectrograms and
         targets. Sources refer to the input speaker, and targets to the output speaker.
@@ -70,53 +73,14 @@ class Anonymizer:
             out = self.featfusion.run(out)
         return out
 
-    def forward(self, batch, source, target=None):
-        """Returns anonymized speech as a tensor (B, S, T)."""
-        fused = self.get_feats(batch, source, target)
-        return self.synthesis.run(fused)
+    def forward(self, batch: list, data: list) -> tuple[Tensor, Tensor, Tensor]:
+        """Returns anonymized speech, item lengths and targets."""
+        source = torch.tensor([d["speaker_id"] for d in data], dtype=torch.long)
+        out = self.get_feats(batch, source)
+        waves, n_samples = self.synthesis.run(out)
+        return waves, n_samples, out["target"]
 
-    def infer(self, batch, data, inputs):
-        """
-        Run the forward pass to get the synthesized speech and unpad the audios before
-        returning them. We do so by looking for repeated values at the end of the
-        spectrogram, which indicates the padding. The audios are detached from the
-        graph and moved to CPU.
-
-        ! This method requires the output of `get_feats` to be a spectrogram.
-        """
-        source = [d["label"] for d in data]
-        feats = self.get_feats(batch, source)
-        audios = self.synthesis.run(feats).detach().cpu()
-        specs = feats[inputs.spectrogram]
-        unpadded_audios = list()
-        for i in range(specs.shape[0]):
-            try:
-                # find the number of repeated values at the end of each channel
-                min_idx = list()
-                for channel in specs[i]:
-                    same_value = channel == channel[-1]
-                    for idx in range(same_value.shape[0] - 1, 0, -1):
-                        if same_value[idx] == False:
-                            break
-                        last_idx = idx
-                    min_idx.append(last_idx)
-                # compute the ratio between the spectrogram length and the audio length
-                ratio = audios.shape[-1] / specs[i].shape[-1]
-                # remove max(min_idx) frames from the spec
-                removed_frames_spec = specs[i].shape[1] - max(min_idx)
-                # compute the number of samples to remove from the audio
-                removed_frames_audio = removed_frames_spec * ratio
-                # remove the padding from the audio
-                unpadded_audios.append(audios[i, :, : -int(removed_frames_audio)])
-            except Exception:
-                fpath = data[i]["path"]
-                LOGGER.error(
-                    f"Error while unpadding anonymized `{fpath}`; dumping padded"
-                )
-                unpadded_audios.append(audios[i])
-        return unpadded_audios, feats[inputs.target]
-
-    def _run_module(self, module, batch):
+    def _run_module(self, module: dict, batch: list) -> dict:
         """
         Run each component of the module with the given batch. The outputs are stored
         in a dictionary. If the output of a component is a dictionary, its keys are
@@ -132,7 +96,7 @@ class Anonymizer:
                 out[name] = component_out
         return out
 
-    def set_consistent_targets(self, consistent_targets):
+    def set_consistent_targets(self, consistent_targets: bool) -> None:
         """
         Set whether the selected targets should be consistent. We assume that targets
         are selected in the `featproc` module, and iterate over its components looking
@@ -146,7 +110,7 @@ class Anonymizer:
                 LOGGER.info(f"Set consistent targets of {name} to {consistent_targets}")
                 component.target_selection.set_consistent_targets(consistent_targets)
 
-    def to(self, device):
+    def to(self, device: str) -> None:
         """
         Overwrite of PyTorch's method, to propagate it to all components.
         """

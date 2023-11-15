@@ -50,6 +50,7 @@ from spkanon_eval.evaluation.asv.asv_utils import (
     compute_llrs,
 )
 from spkanon_eval.evaluation.asv.trials_enrolls import split_trials_enrolls
+from spkanon_eval.component_definitions import EvalComponent
 
 
 SAMPLE_RATE = 16000  # sample rate of the spkid model
@@ -57,7 +58,7 @@ LOGGER = logging.getLogger("progress")
 CHUNK_SIZE = 5000  # defines how many LLRs are computed in parallel
 
 
-class ASV:
+class ASV(EvalComponent):
     def __init__(self, config, device, model=None):
         """Initialize the ASV system."""
 

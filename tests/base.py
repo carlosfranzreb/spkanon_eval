@@ -55,7 +55,7 @@ class BaseTestClass(unittest.TestCase):
                 "synthesis": {
                     "cls": "spkanon_eval.synthesis.dummy.DummySynthesizer",
                     "sample_rate": "${sample_rate}",
-                    "input": {"spectrogram": "spectrogram"},
+                    "input": {"spectrogram": "spectrogram", "n_frames": "n_frames"},
                 },
                 "data": {
                     "config": {

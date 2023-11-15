@@ -13,12 +13,13 @@ from spkanon_eval.evaluation.ser.analysis_utils import analyse_func, headers_fun
 from spkanon_eval.evaluation.analysis import analyse_results
 from spkanon_eval.datamodules.dataloader import eval_dataloader
 from spkanon_eval.datamodules.collator import collate_fn
+from spkanon_eval.component_definitions import InferComponent, EvalComponent
 
 
 LOGGER = logging.getLogger("progress")
 
 
-class EmotionEvaluator:
+class EmotionEvaluator(InferComponent, EvalComponent):
     def __init__(self, config, device, **kwargs):
         self.config = config
         self.device = device
@@ -29,6 +30,10 @@ class EmotionEvaluator:
         # prepare the config for the dataloader
         self.config.data.config.batch_size = config.batch_size
         self.config.data.config.sample_rate = SAMPLE_RATE
+
+    def to(self, device):
+        self.device = device
+        self.model.to(device)
 
     def run(self, batch):
         """
@@ -107,7 +112,8 @@ class EmotionEvaluator:
                 [
                     [
                         resampled_x[i].squeeze(),
-                        torch.tensor([0]),  # dummy data; not used
+                        torch.tensor([0]),
+                        resampled_x[i].squeeze().shape[0],
                     ]
                     for i in range(len(resampled_x))
                 ]

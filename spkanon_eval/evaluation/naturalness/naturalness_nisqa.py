@@ -12,12 +12,13 @@ from spkanon_eval.evaluation.naturalness.analysis_utils import (
     headers_func,
 )
 from spkanon_eval.evaluation.analysis import analyse_results
+from spkanon_eval.component_definitions import EvalComponent
 
 
 LOGGER = logging.getLogger("progress")
 
 
-class NisqaEvaluator:
+class NisqaEvaluator(EvalComponent):
     def __init__(self, config, device, **kwargs):
         self.config = config
         self.device = device

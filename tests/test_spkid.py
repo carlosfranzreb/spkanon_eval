@@ -61,7 +61,7 @@ class TestSpkid(unittest.TestCase):
         spk = torch.tensor(1)
         for sample in samples:
             audio = load_audio(os.path.join(self.data_dir, sample), SAMPLE_RATE)
-            batch.append([audio, spk])
+            batch.append([audio, spk, audio.shape[0]])
         batch = collate_fn(batch)
 
         emb = model.run(batch)
@@ -88,7 +88,7 @@ class TestSpkid(unittest.TestCase):
         spk = torch.tensor(1)
         for sample in samples:
             audio = load_audio(os.path.join(self.data_dir, sample), SAMPLE_RATE)
-            batch.append([audio, spk])
+            batch.append([audio, spk, audio.shape[0]])
         batch = collate_fn(batch)
 
         out = concat_model.run(batch)

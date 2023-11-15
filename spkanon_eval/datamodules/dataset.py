@@ -39,8 +39,8 @@ class SpeakerIdDataset(torch.utils.data.Dataset):
         """
         Return the `sample_idx`-th sample of the dataset. The id is the index of the
         sample when considering all the datafiles as a single dataset. The item is
-        returned as a tuple of (audio, speaker), where the audio is resampled to the
-        given sampling rate.
+        returned as a tuple of (audio, speaker, n_samples), where the audio is
+        resampled to the given sampling rate.
         """
 
         # load the audio and the tokens
@@ -51,17 +51,20 @@ class SpeakerIdDataset(torch.utils.data.Dataset):
 
         obj = json.loads(line)
         audio = load_audio(obj["path"], self.sample_rate)
-        return (audio, obj["speaker_id"])
+        return (audio, obj["speaker_id"], audio.shape[0])
 
 
 def load_audio(audio_path: str, sample_rate: int) -> torch.Tensor:
     """
     Load the audio from the given path. If the sampling rate is different from
     given sampling rate, resample the audio. Return the waveform as a 1D tensor.
-    If the audio is stereo, return only the first channel.
+    If the audio is stereo, returns the mean across channels.
     """
 
     audio, sr = torchaudio.load(audio_path, normalize=True)
     if sr != sample_rate:
         audio = torchaudio.transforms.Resample(sr, sample_rate)(audio)
-    return audio[0] if audio.ndim > 1 else audio.squeeze(0)
+    audio = audio.squeeze()
+    if audio.ndim > 1:
+        audio = audio.mean(dim=0)
+    return audio

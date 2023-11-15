@@ -15,7 +15,7 @@ class TestConsistentSelection(unittest.TestCase):
         # ensure that given targets are propagated to all utts of the same speaker
         cfg = OmegaConf.create({"consistent_targets": True})
         selector = RandomSelector(torch.randn(20, 16), cfg)
-        source = ["a", "a", "b", "b", "b", "c"]
+        source = torch.tensor([0, 0, 1, 1, 1, 2])
         target_in = torch.tensor([-1, -1, 0, -1, -1, 2])
         spec = torch.randn(6, 80, 100)
         target_1 = selector.select(spec, source, target_in)
@@ -24,7 +24,7 @@ class TestConsistentSelection(unittest.TestCase):
         self.assertTrue(target_1[5] == 2)
 
         # ensure that targets defined in previous calls are used again
-        source = ["a", "b", "c", "d"]
+        source = torch.tensor([0, 1, 2, 3])
         spec = torch.randn(4, 80, 100)
         target_2 = selector.select(spec, source)
         self.assertTrue(target_2[:3].tolist() == [target_1[0].item(), 0, 2])
@@ -33,7 +33,7 @@ class TestConsistentSelection(unittest.TestCase):
         # ensure that targets change between calls
         cfg = OmegaConf.create({"consistent_targets": False})
         selector = RandomSelector(torch.randn(1000, 16), cfg)
-        source = ["a", "a", "b", "b", "b", "c"]
+        source = torch.Tensor([0, 0, 1, 1, 1, 2])
         spec = torch.randn(6, 80, 100)
         target_1 = selector.select(spec, source)
         target_2 = selector.select(spec, source)

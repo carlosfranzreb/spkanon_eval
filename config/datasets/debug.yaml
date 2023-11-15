@@ -14,3 +14,5 @@ data:
       # - spkanon_eval/data/debug/ravdess.txt
     train_eval: # data to train the evaluation systems
       - spkanon_eval/data/debug/ls-dev-clean-2.txt
+    targets:
+      - spkanon_eval/data/debug/ls-dev-clean-2.txt

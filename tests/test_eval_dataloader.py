@@ -46,7 +46,7 @@ class TestEvalDataloader(unittest.TestCase):
             for _ in range(batch_size):
                 objs.append(json.loads(samples.pop(0)))
 
-            self.assertEqual(len(batch), 2)  # audio, speakers
+            self.assertEqual(len(batch), 3)  # audio, speakers, lengths
             for i in range(batch_size):
                 obj = objs[i]
                 audio_true, sr = torchaudio.load(obj["path"])
@@ -61,6 +61,7 @@ class TestEvalDataloader(unittest.TestCase):
                     torch.allclose(audio_true, batch[0][i, : audio_true.shape[1]])
                 )
                 self.assertTrue(torch.sum(batch[0][i, audio_true.shape[1] :]) == 0)
+                self.assertEqual(audio_true.shape[1], batch[2][i])
 
                 # check metadata
                 for key in obj.keys():

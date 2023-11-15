@@ -15,7 +15,7 @@ def prepare_datafile(stage: str, config: OmegaConf, log_dir: str) -> None:
     the stage.
 
     Args:
-        stage: stage of the datafiles to create (eval, train_eval, target_pool)
+        stage: stage of the datafiles to create (eval, train_eval, targets)
         config: config object, containing:
         - the datafiles under `data.datasets.{stage}`,
         - the root folder under `data.config.root_folder`,

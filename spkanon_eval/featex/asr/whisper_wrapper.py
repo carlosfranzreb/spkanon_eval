@@ -11,13 +11,14 @@ import numpy as np
 from spkanon_eval.datamodules.dataloader import eval_dataloader
 from spkanon_eval.evaluation.analysis import analyse_results
 from spkanon_eval.featex.asr.whisper_analysis_utils import analyse_func, headers_func
+from spkanon_eval.component_definitions import InferComponent, EvalComponent
 
 
 SAMPLE_RATE = 16000  # Whisper expects 16kHz audio
 LOGGER = logging.getLogger("progress")
 
 
-class Whisper:
+class Whisper(InferComponent, EvalComponent):
     def __init__(self, config, device, **kwargs):
         self.model = whisper.load_model(
             config.size,
@@ -51,6 +52,9 @@ class Whisper:
             return [decoding.text for decoding in out]
         elif self.out == "encoding":  # return encoder output
             return self.model.encoder(mels)
+
+    def train(self, exp_folder: str) -> None:
+        raise NotImplementedError("Whisper wrapper does not support training")
 
     def eval_dir(self, exp_folder: str, datafile: str, *args) -> None:
         """

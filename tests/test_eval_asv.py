@@ -10,6 +10,7 @@ import pickle
 import os
 import copy
 from shutil import rmtree
+import json
 
 import torchaudio
 from omegaconf import OmegaConf
@@ -58,6 +59,19 @@ ASV_LAZY_CONFIG = OmegaConf.create(
         }
     }
 )
+FEATPROC_CONFIG = {
+    "dummy": {
+        "cls": "spkanon_eval.featproc.dummy.DummyConverter",
+        "input": {
+            "spectrogram": "spectrogram",
+            "n_frames": "n_frames",
+            "source": "source",
+            "target": "target",
+        },
+        "n_targets": 20,
+    },
+    "output": {"featproc": ["spectrogram", "n_frames", "target"], "featex": []},
+}
 
 
 class TestEvalASV(BaseTestClass):
@@ -159,18 +173,7 @@ class TestEvalASV(BaseTestClass):
             "cls": "spkanon_eval.target_selection.random.RandomSelector",
             "consistent_targets": True,
         }
-        self.init_config.featproc = {
-            "dummy": {
-                "cls": "spkanon_eval.featproc.dummy.DummyConverter",
-                "input": {
-                    "spectrogram": "spectrogram",
-                    "source": "source",
-                    "target": "target",
-                },
-                "n_targets": 20,
-            },
-            "output": {"featproc": ["spectrogram", "target"], "featex": []},
-        }
+        self.init_config.featproc = FEATPROC_CONFIG
         self.init_config.eval.config.seed = self.init_config.seed + 100
         self.init_config.eval.components = ASV_LAZY_CONFIG
         self.init_config.log_dir = os.path.join(
@@ -179,21 +182,14 @@ class TestEvalASV(BaseTestClass):
 
         # run the experiment and get the log file with the selected targets
         config, log_dir = run_pipeline(self.init_config)
-        targets_log = os.path.join(log_dir, "targets.log")
 
         # gather the source-target pairs, separating them by run (inference, enroll)
         targets = list()
-        last_line_was_included = False
-        for line in open(targets_log):
-            if "###" in line:
-                last_line_was_included = False
-                continue
-            elements = line.strip().split()
-            source, target = elements[-3], elements[-1]
-            if last_line_was_included is False:
-                targets.append(list())
-                last_line_was_included = True
-            targets[-1].append((source, target))
+        for f in ["anon_eval.txt", "anon_eval_enrolls.txt"]:
+            targets.append(list())
+            for line in open(os.path.join(log_dir, "data", f)):
+                obj = json.loads(line)
+                targets[-1].append((obj["speaker_id"], obj["target"]))
 
         # assert that there are two lists of targets: inference and enrollment
         self.assertEqual(len(targets), 2)
@@ -229,18 +225,7 @@ class TestEvalASV(BaseTestClass):
             "cls": "spkanon_eval.target_selection.random.RandomSelector",
             "consistent_targets": True,
         }
-        self.init_config.featproc = {
-            "dummy": {
-                "cls": "spkanon_eval.featproc.dummy.DummyConverter",
-                "input": {
-                    "spectrogram": "spectrogram",
-                    "source": "source",
-                    "target": "target",
-                },
-                "n_targets": 20,
-            },
-            "output": {"featproc": ["spectrogram", "target"], "featex": []},
-        }
+        self.init_config.featproc = FEATPROC_CONFIG
         self.init_config.eval.config.seed = self.init_config.seed + 1
         self.init_config.eval.components = ASV_LAZY_CONFIG
         self.init_config.log_dir = os.path.join(

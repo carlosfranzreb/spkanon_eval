@@ -45,10 +45,9 @@ def infer(exp_folder: str, df_name: str, model: Anonymizer, config: OmegaConf) -
     dump_dir = os.path.join(exp_folder, "results", df_name)
     data_cfg = config.data.config
     sample_rate = config.data.config.sample_rate
-    infer_input = config.inference.input
 
     for _, batch, data in eval_dataloader(data_cfg, datafile, model.device):
-        audio_anon, target = model.infer(batch, data, infer_input)
+        audio_anon, length, target = model.forward(batch, data)
         for idx in range(len(audio_anon)):
             data[idx]["path"] = data[idx]["path"].replace(
                 data_cfg.root_folder, dump_dir
@@ -56,7 +55,10 @@ def infer(exp_folder: str, df_name: str, model: Anonymizer, config: OmegaConf) -
             format = os.path.splitext(data[idx]["path"])[1][1:]
             os.makedirs(os.path.split(data[idx]["path"])[0], exist_ok=True)
             torchaudio.save(
-                data[idx]["path"], audio_anon[idx], sample_rate, format=format
+                data[idx]["path"],
+                audio_anon[idx, :, : length[idx]],
+                sample_rate,
+                format=format,
             )
             data[idx]["target"] = target[idx].item()
             writer.write(json.dumps(data[idx]) + "\n")

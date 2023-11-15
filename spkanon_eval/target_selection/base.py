@@ -1,12 +1,14 @@
 import logging
 import torch
+from torch import Tensor
+from omegaconf import OmegaConf
 
 
 LOGGER = logging.getLogger("progress")
 
 
 class BaseSelector:
-    def __init__(self, vecs, cfg):
+    def __init__(self, vecs: list, cfg: OmegaConf) -> None:
         """
         Initialize the target selector with the style vectors and a flag indicating
         whether the targets should be consistent across the utterances. If this flag
@@ -18,7 +20,7 @@ class BaseSelector:
         self.vecs = vecs
         self.targets = dict() if cfg.consistent_targets else None
 
-    def select(self, spec, source, target=None):
+    def select(self, spec: Tensor, source: Tensor, target: Tensor = None) -> Tensor:
         """
         Targets may be -1, in which case the target selection algorithm is used. If
         speaker consistency is enabled, the target speakers must be consistent across
@@ -35,49 +37,50 @@ class BaseSelector:
         if self.targets is None:
             mask = target == -1
             target[mask] = self.select_new(spec[mask])
-            self.log_targets(source, target)
             return target
 
         # overwrite current targets
-        for i, s in enumerate(source):
-            if s in self.targets and self.targets[s] != target[i]:
-                target[i] = self.targets[s]
+        for idx, src in enumerate(source):
+            src = src.item()
+            if src in self.targets and self.targets[src] != target[idx]:
+                target[idx] = self.targets[src]
 
         # if a target is already defined, ensure that it is consistent across sources
-        for i in torch.argwhere(target != -1):
-            if target[i] == -1:
+        for idx in torch.argwhere(target != -1):
+            if target[idx] == -1:
                 continue
             for j in range(target.shape[0]):
-                if i == j:
+                if idx == j:
                     continue
-                if source[i] == source[j] and target[i] != target[j]:
-                    target[j] = target[i]
+                if source[idx] == source[j] and target[idx] != target[j]:
+                    target[j] = target[idx]
 
         # compute the target for each unique source that is not already defined
-        unique_source = list()
-        for i in range(len(source)):
-            if i not in unique_source and target[i] == -1:
-                unique_source.append(i)
-
-        if len(unique_source) > 0:
-            unique_target = self.select_new(spec[unique_source])
+        new_sources = list()
+        new_source_indices = list()
+        for idx, src in enumerate(source):
+            if target[idx] == -1 and src not in new_sources:
+                new_sources.append(src.item())
+                new_source_indices.append(idx)
+        if len(new_sources) > 0:
+            new_targets = self.select_new(spec[new_source_indices])
 
         # update the output targets and the stored targets
-        for i, s in enumerate(source):
-            if target[i] == -1:
-                target[i] = unique_target[unique_source.index(source.index(s))]
-            if s not in self.targets:
-                self.targets[s] = target[i]
+        for idx, src in enumerate(source):
+            if target[idx] == -1:
+                target[idx] = new_targets[new_sources.index(src)]
+            if src not in self.targets:
+                self.targets[src.item()] = target[idx].item()
 
         return target
 
-    def select_new(self, spec):
+    def select_new(self, spec: Tensor) -> Tensor:
         """
         Select a new target speaker style vector for the given input spectrogram.
         """
         raise NotImplementedError
 
-    def set_consistent_targets(self, consistent_targets):
+    def set_consistent_targets(self, consistent_targets: bool) -> None:
         """
         Update the target selection algorithm with the new value of
         `consistent_targets`.
