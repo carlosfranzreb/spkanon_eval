@@ -141,18 +141,11 @@ class SpkId(InferComponent):
             hparams=hparams,
             run_opts={"device": self.device},
         )
-        val_dl = speaker_brain.make_dataloader(
-            val_data,
-            stage=sb.Stage.VALID,
-            ckpt_prefix=None,
-            **hparams["dataloader_options"],
-        )
 
         speaker_brain.epoch_losses = {"TRAIN": [], "VALID": []}
         val_kwargs = hparams["dataloader_options"]
         val_kwargs["shuffle"] = False
 
-        speaker_brain._fit_valid(valid_set=val_dl, epoch=0, enable=True)
         speaker_brain.fit(
             speaker_brain.hparams.epoch_counter,
             train_data,
