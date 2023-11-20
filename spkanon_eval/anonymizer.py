@@ -75,9 +75,12 @@ class Anonymizer:
 
     def forward(self, batch: list, data: list) -> tuple[Tensor, Tensor, Tensor]:
         """Returns anonymized speech, item lengths and targets."""
-        source = torch.tensor([d["speaker_id"] for d in data], dtype=torch.long)
-        out = self.get_feats(batch, source)
-        waves, n_samples = self.synthesis.run(out)
+        source = torch.tensor(
+            [d["speaker_id"] for d in data], dtype=torch.long, device=self.device
+        )
+        with torch.no_grad():
+            out = self.get_feats(batch, source)
+            waves, n_samples = self.synthesis.run(out)
         return waves, n_samples, out["target"]
 
     def _run_module(self, module: dict, batch: list) -> dict:

@@ -21,6 +21,7 @@ class WavlmWrapper(InferComponent):
         model_cfg = WavLMConfig(ckpt["cfg"])
         self.model = WavLM(model_cfg)
         self.model.load_state_dict(ckpt["model"])
+        self.model.to(device)
         self.model.eval()
         self.device = device
         self.config = config
@@ -38,7 +39,8 @@ class WavlmWrapper(InferComponent):
             a dictionary with the output of the specified WavLM layer under the key "feats" and
             the number of feats for each sample under "n_feats".
         """
-        out = self.model.extract_features(batch[0], output_layer=self.config.layer)[0]
+        with torch.no_grad():
+            out = self.model.extract_features(batch[0], output_layer=self.config.layer)[0]
         n_feats = batch[2] // self.config.hop_length
         return {"feats": out, "n_feats": n_feats}
 

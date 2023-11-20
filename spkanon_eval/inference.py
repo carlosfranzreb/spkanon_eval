@@ -56,7 +56,7 @@ def infer(exp_folder: str, df_name: str, model: Anonymizer, config: OmegaConf) -
             os.makedirs(os.path.split(data[idx]["path"])[0], exist_ok=True)
             torchaudio.save(
                 data[idx]["path"],
-                audio_anon[idx, :, : length[idx]],
+                audio_anon[idx, :, : length[idx]].cpu().detach(),
                 sample_rate,
                 format=format,
             )
