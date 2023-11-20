@@ -40,6 +40,10 @@ def split_trials_enrolls(
     f_trials = os.path.join(exp_folder, "data", "eval_trials.txt")
     f_enrolls = os.path.join(exp_folder, "data", "eval_enrolls.txt")
 
+    if os.path.exists(f_trials):
+        LOGGER.info("Datafile splits into trial and enrolls already exist, skipping")
+        return f_trials, f_enrolls
+
     if anon_folder is None:
         anon_folder = exp_folder
 
