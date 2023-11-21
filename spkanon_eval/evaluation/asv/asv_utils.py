@@ -101,12 +101,13 @@ def analyse_results(datafile, llr_file):
             )
             if eer_key >= 0:
                 dump_file = os.path.join(os.path.dirname(dump_folder), f"eer_{key}.txt")
+                eer = (fpr[eer_key] + (1 - tpr[eer_key])) / 2
                 if not os.path.exists(dump_file):
                     with open(dump_file, "w") as f:
                         f.write(f"dataset {key} n_pairs threshold eer\n")
                 with open(dump_file, "a") as f:
                     f.write(f"{fname} {value} {indices.size} ")
-                    f.write(f"{thresholds[eer_key]} {fpr[eer_key]}\n")
+                    f.write(f"{thresholds[eer_key]} {eer}\n")
 
 
 def count_speakers(datafile: str) -> int:
