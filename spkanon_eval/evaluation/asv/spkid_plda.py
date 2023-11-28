@@ -121,7 +121,8 @@ class ASV(EvalComponent):
 
         # compute SpkId vectors of all utterances with spkid model and center them
         vecs, labels = self.compute_spkid_vecs(datafile)
-        vecs -= np.mean(vecs, axis=0)
+        train_mean_spkemb = np.mean(vecs, axis=0)
+        vecs -= train_mean_spkemb
 
         # create the directory where models are stored
         models_dir = os.path.join(dump_dir, "models")
@@ -141,6 +142,7 @@ class ASV(EvalComponent):
         # train the PLDA model and store the model
         LOGGER.info("Training PLDA model")
         self.plda_model = plda.Classifier()
+        self.plda_model.train_mean_spkemb = train_mean_spkemb
         self.plda_model.fit_model(vecs, labels)
         if self.plda_model.model.pca is not None:
             n_components = self.plda_model.model.pca.components_.shape[0]
@@ -185,7 +187,7 @@ class ASV(EvalComponent):
         vecs, labels = dict(), dict()
         for name, f in zip(["trials", "enrolls"], [f_trials, f_enrolls]):
             vecs[name], labels[name] = self.compute_spkid_vecs(f)
-            vecs[name] -= np.mean(vecs[name], axis=0)
+            vecs[name] -= self.plda_model.train_mean_spkemb
             if self.lda_model is not None:
                 vecs[name] = self.lda_model.transform(vecs[name])
             vecs[name] = self.plda_model.model.transform(
@@ -203,9 +205,10 @@ class ASV(EvalComponent):
         # avg. LLRs across speakers and dump them to the experiment folder
         LOGGER.info("Averaging LLRs across speakers")
         LOGGER.info(f"No. of speaker pairs: {pairs.shape[0]}")
-        llr_file = os.path.join(dump_subfolder, "llrs.npy")
         unique_pairs, inverse = np.unique(pairs, axis=0, return_inverse=True)
         llr_avgs = np.bincount(inverse, weights=llrs) / np.bincount(inverse)
+
+        llr_file = os.path.join(dump_subfolder, "llrs.npy")
         np.save(llr_file, np.hstack((unique_pairs, llr_avgs.reshape(-1, 1))))
 
         # compute the EER for the data and its subsets w.r.t. speaker chars.

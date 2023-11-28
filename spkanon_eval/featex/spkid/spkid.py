@@ -11,7 +11,6 @@ import csv
 import random
 import shutil
 
-import speechbrain as sb
 from speechbrain.pretrained import EncoderClassifier
 from hyperpyyaml import load_hyperpyyaml
 from omegaconf import OmegaConf
