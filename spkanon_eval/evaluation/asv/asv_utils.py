@@ -14,7 +14,7 @@ LOGGER = logging.getLogger("progress")
 
 
 def compute_eer(
-    sources: np.array, targets: np.array, llrs: np.array
+    trials: np.array, enrolls: np.array, llrs: np.array
 ) -> tuple[np.array, np.array, np.array, int]:
     """
     Compute the equal error rate (EER) for the given LLRs. The EER is the threshold
@@ -22,9 +22,9 @@ def compute_eer(
     and the false negative rate (FNR). We compute it with sklearn's roc_curve.
 
     Args:
-        sources: shape (n_pairs) - the source speakers
-        targets: shape (n_pairs) - the target speaker for each source speaker
-        llrs: shape (n_pairs) - the log-likelihood ratio of each source-target pair
+        trials: shape (n_pairs) - the trial speakers
+        enrolls: shape (n_pairs) - the enroll speakers
+        llrs: shape (n_pairs) - the log-likelihood ratio of each trial-enroll pair
 
     Returns:
         fpr: shape (n_pairs) - the false positive rates (FPR) for each threshold
@@ -32,12 +32,12 @@ def compute_eer(
         thresholds: shape (n_pairs) - the thresholds
         key: index of the threshold that is closest to the EER
     """
-    # check that there are sources and targets
-    if len(sources) == 0 or len(targets) == 0:
-        LOGGER.warn("There are no sources or targets; cannot compute EER")
+    # check that there are trials and enrolls
+    if len(trials) == 0 or len(enrolls) == 0:
+        LOGGER.warn("There are no trials or enrolls; cannot compute EER")
         return None, None, None, -1
     # compute the ROC curve
-    same_speaker = sources == targets
+    same_speaker = trials == enrolls
     fpr, tpr, thresholds = roc_curve(same_speaker, llrs)
     # check that there are no NaNs
     if np.any(np.isnan(fpr)):
