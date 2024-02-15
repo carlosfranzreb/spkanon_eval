@@ -26,7 +26,7 @@ def evaluate(exp_folder: str, model: Anonymizer, config: OmegaConf) -> None:
 
     # change the RNG seed if required
     if "seed" in config.eval.config:
-        seed_everything(config.seed)
+        seed_everything(config.eval.config.seed)
 
     # ensure that the directory where the evaluation results will be stored exists
     os.makedirs(os.path.join(exp_folder, "eval"), exist_ok=True)
