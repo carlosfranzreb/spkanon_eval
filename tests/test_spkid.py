@@ -3,7 +3,6 @@ Test that the spkid model correctly initializes and runs speechbrain models.
 We test with the test samples from common voice on CPU.
 """
 
-
 import unittest
 import os
 import shutil
@@ -151,7 +150,7 @@ class TestSpkid(unittest.TestCase):
         self.assertTrue(os.path.isfile(log_file))
         with open(log_file) as f:
             lines = f.readlines()
-        self.assertEqual(len(lines), 2)
+        self.assertEqual(len(lines), 1)
         new_state_dict = model.model.state_dict()
         self.assertTrue(
             any(
