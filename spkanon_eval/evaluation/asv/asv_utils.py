@@ -1,11 +1,12 @@
 import os
-import json
 import logging
+from typing import Callable
 
 import numpy as np
 from sklearn.metrics import roc_curve, RocCurveDisplay
 from matplotlib import pyplot as plt
-from omegaconf import OmegaConf
+from tqdm import tqdm
+import plda
 
 from spkanon_eval.evaluation.analysis import get_characteristics
 
@@ -52,7 +53,7 @@ def compute_eer(
     return fpr, tpr, thresholds, key
 
 
-def analyse_results(datafile, llr_file):
+def analyse_results(datafile: str, llr_file: str) -> None:
     """
     Compute and dump the EER and ROC curve for the whole dataset and each of its
     subsets w.r.t speaker characteristics present in the file (age, gender, etc.).
@@ -110,21 +111,32 @@ def analyse_results(datafile, llr_file):
                     f.write(f"{thresholds[eer_key]} {eer}\n")
 
 
-def count_speakers(datafile: str) -> int:
-    """Count the number of speakers in the datafile."""
-    with open(datafile) as f:
-        current_spk = None
-        n_speakers = 0
-        for line in f:
-            obj = json.loads(line.strip())
-            if obj["label"] != current_spk:
-                current_spk = obj["label"]
-                n_speakers += 1
-    LOGGER.info(f"Number of speakers in {datafile}: {n_speakers}")
-    return n_speakers
+def iterate_over_chunks(
+    vecs: np.array, chunk_func: Callable, chunk_size: int, **kwargs
+) -> tuple[np.array, np.array]:
+    """
+    Iterate over all possible pairs of trial and enrollment utterances, and compute
+    the `chunk_func` output for each chunk of pairs.
+    """
+    # compute all pairs of trial and enrollment utterances
+    indices = np.dstack(
+        np.meshgrid(
+            np.arange(vecs["trials"].shape[0]), np.arange(vecs["enrolls"].shape[0])
+        )
+    ).reshape(-1, 2)
+
+    # iterate over chunks of `chunk_size` pairs to avoid memory issues
+    scores = None
+    for i in tqdm(range(0, indices.shape[0], chunk_size)):
+        idx = indices[i : i + chunk_size]
+        chunk_scores = chunk_func(vecs, idx, **kwargs)
+        scores = np.concatenate((scores, chunk_scores)) if scores else chunk_scores
+    return scores, indices
 
 
-def compute_llrs(plda, vecs, chunk_size):
+def compute_llrs(
+    plda: plda.Classifier, vecs: np.array, chunk_size: int
+) -> tuple[np.array, np.array]:
     """
     Compute the log-likelihood ratios (LLRs) of all pairs of trial and enrollment
     utterances. For each speaker, the first utterance is considered the trial
@@ -144,44 +156,56 @@ def compute_llrs(plda, vecs, chunk_size):
         combinations of trial and enroll utts.
     """
     LOGGER.info("Computing LLRs for all pairs of trial and enrollment utterances")
-    # compute all pairs of trial and enrollment utterances
-    indices = np.dstack(
-        np.meshgrid(
-            np.arange(vecs["trials"].shape[0]), np.arange(vecs["enrolls"].shape[0])
-        )
-    ).reshape(-1, 2)
+    return iterate_over_chunks(vecs, compute_llrs_chunk, chunk_size, plda=plda)
 
-    # iterate over chunks of `chunk_size` pairs to avoid memory issues
-    llrs = None
-    for i in range(0, indices.shape[0], chunk_size):
-        # define the indices and vectors of the current chunk
-        idx = indices[i : i + chunk_size]
-        data = {"trials": dict(), "enrolls": dict()}
-        for i, key in enumerate(data):
-            data[key]["idx"] = idx[:, i]
-            data[key]["idx_unique"], data[key]["idx_inverse"] = np.unique(
-                data[key]["idx"], return_inverse=True
-            )
-            data[key]["vecs"] = vecs[key][data[key]["idx_unique"]]
-            # add a new dimension to the vectors to conform to PLDA's input format
-            data[key]["vecs"] = data[key]["vecs"][:, np.newaxis, :]
-            # compute the marginal log-likelihoods of the vectors
-            data[key]["lls"] = plda.model.calc_logp_marginal_likelihood(
-                data[key]["vecs"]
-            )
-            # map vecs and lls back to the original indices
-            data[key]["vecs"] = data[key]["vecs"][data[key]["idx_inverse"]]
-            data[key]["lls"] = data[key]["lls"][data[key]["idx_inverse"]]
-        # compute the LLRs for the current chunk
-        pairs = np.concatenate(
-            [data["trials"]["vecs"], data["enrolls"]["vecs"]],
-            axis=1,
+
+def compute_llrs_chunk(
+    vecs: np.array, indices: np.array, plda: plda.Classifier
+) -> np.array:
+    """Compute the LLRs for the given chunk of trial and enroll utterances."""
+    data = {"trials": dict(), "enrolls": dict()}
+    for i, key in enumerate(data):
+        data[key]["idx"] = indices[:, i]
+        data[key]["idx_unique"], data[key]["idx_inverse"] = np.unique(
+            data[key]["idx"], return_inverse=True
         )
-        pair_lls = plda.model.calc_logp_marginal_likelihood(pairs)
-        chunk_llrs = pair_lls - (data["trials"]["lls"] + data["enrolls"]["lls"])
-        # add the LLRs of the current chunk to the total LLRs
-        if llrs is None:
-            llrs = chunk_llrs
-        else:
-            llrs = np.concatenate((llrs, chunk_llrs))
-    return llrs, indices
+        data[key]["vecs"] = vecs[key][data[key]["idx_unique"]]
+        # add a new dimension to the vectors to conform to PLDA's input format
+        data[key]["vecs"] = data[key]["vecs"][:, np.newaxis, :]
+        # compute the marginal log-likelihoods of the vectors
+        data[key]["lls"] = plda.model.calc_logp_marginal_likelihood(data[key]["vecs"])
+        # map vecs and lls back to the original indices
+        data[key]["vecs"] = data[key]["vecs"][data[key]["idx_inverse"]]
+        data[key]["lls"] = data[key]["lls"][data[key]["idx_inverse"]]
+    # compute the LLRs for the current chunk
+    pairs = np.concatenate(
+        [data["trials"]["vecs"], data["enrolls"]["vecs"]],
+        axis=1,
+    )
+    pair_lls = plda.model.calc_logp_marginal_likelihood(pairs)
+    chunk_llrs = pair_lls - (data["trials"]["lls"] + data["enrolls"]["lls"])
+    return chunk_llrs
+
+
+def compute_dists(vecs: np.array, chunk_size: int) -> tuple[np.array, np.array]:
+    """
+    This is the analogous function to `compute_llrs`, but for the cosine similarity.
+    See `compute_llrs` for more details.
+    """
+    LOGGER.info(
+        "Computing spkemb dists. for all pairs of trial and enrollment utterances"
+    )
+    return iterate_over_chunks(vecs, compute_dists_chunk, chunk_size)
+
+
+def compute_dists_chunk(vecs: np.array, indices: np.array) -> np.array:
+    """
+    Compute the cosine similarities for the given chunk of trial and enroll
+    utterances.
+    """
+    trials = vecs["trials"][indices[:, 0]]
+    enrolls = vecs["enrolls"][indices[:, 1]]
+    dot_product = np.sum(trials * enrolls, axis=-1)
+    trials_norm = np.linalg.norm(trials, axis=-1)
+    enrolls_norm = np.linalg.norm(enrolls, axis=-1)
+    return dot_product / (trials_norm * enrolls_norm)

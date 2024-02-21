@@ -2,7 +2,6 @@
 Helper functions related to splitting the data into trial and enrollment utterances.
 """
 
-
 import os
 import json
 import logging
@@ -25,7 +24,7 @@ def split_trials_enrolls(
         exp_folder: path to the experiment folder.
         root_folder (optional): root folder of the data.
         anon_folder (optional): folder where the anonymized evaluation data is stored.
-            It it is not give, we assume that it is the same as the experiment folder.
+            It it is not given, we assume that it is the same as the experiment folder.
 
     Returns:
         paths to the created trial and enrollment datafiles

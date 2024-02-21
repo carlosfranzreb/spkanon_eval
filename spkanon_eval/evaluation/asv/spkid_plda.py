@@ -31,51 +31,32 @@ This phase requires a dataset different from the one used for evaluation.
     is anonymized with consistent targets.
 """
 
-
 import os
 import pickle
 import logging
-import copy
+import json
 
 import numpy as np
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 import plda
+from omegaconf import DictConfig
 
-from spkanon_eval.setup_module import setup
-from spkanon_eval.datamodules.dataloader import setup_dataloader
-from spkanon_eval.inference import infer
-from spkanon_eval.evaluation.asv.asv_utils import (
-    analyse_results,
-    count_speakers,
-    compute_llrs,
-)
-from spkanon_eval.evaluation.asv.trials_enrolls import split_trials_enrolls
-from spkanon_eval.component_definitions import EvalComponent
+from spkanon_eval.anonymizer import Anonymizer
+from .asv_utils import analyse_results, compute_llrs
+from .asv_component import ASVComponent
 
 
-SAMPLE_RATE = 16000  # sample rate of the spkid model
 LOGGER = logging.getLogger("progress")
 CHUNK_SIZE = 5000  # defines how many LLRs are computed in parallel
 
 
-class ASV(EvalComponent):
-    def __init__(self, config, device, model=None):
+class ASV(ASVComponent):
+    def __init__(
+        self, config: DictConfig, device: str, model: Anonymizer = None
+    ) -> None:
         """Initialize the ASV system."""
-
-        # delete the model if it is not used
-        self.scenario = config.scenario
-        if config.scenario == "lazy-informed":
-            self.model = model
-            if self.model is None:
-                raise ValueError("Lazy-informed scenario requires a model")
-        else:
-            self.model = None
-
-        self.device = device
-        self.config = config
-
-        # prepare the spkid config and init the model
-        self.spkid_model = setup(config.spkid, device)
+        super().__init__(config, device, model)
+        self.component_name = "asv-plda"
 
         # init the LDA model with ckpt if possible, else declare it null
         lda_ckpt = config.get("lda_ckpt", None)
@@ -102,7 +83,9 @@ class ASV(EvalComponent):
         datafile = os.path.join(exp_folder, "data", "train_eval.txt")
 
         # define and create the directory where models and training data are stored
-        dump_dir = os.path.join(exp_folder, "eval", "asv-plda", self.scenario, "train")
+        dump_dir = os.path.join(
+            exp_folder, "eval", "asv-plda", self.config.scenario, "train"
+        )
         os.makedirs(dump_dir, exist_ok=True)
 
         # If the scenario is "lazy-informed", anonymize the training data
@@ -149,44 +132,16 @@ class ASV(EvalComponent):
             LOGGER.warn(f"PCA is used within PLDA with {n_components} components")
         pickle.dump(self.plda_model, open(os.path.join(models_dir, "plda.pkl"), "wb"))
 
-    def eval_dir(self, exp_folder: str, datafile: str, is_baseline: bool) -> None:
+    def evaluate(
+        self, vecs: dict, labels: dict, dump_folder: str, datafile: str
+    ) -> None:
         """
-        Evaluate the ASV system on the given directory. The results of the
-        anonymization are stored in the given path `exp_folder`, in the folder
-        `data`. The results of this evaluation are stored in `eval`.
-        The first utterance of each speaker is considered the trial utterances and
-        the rest are considered the enrollment utterances.
-
-        Args:
-            exp_folder: path to the experiment folder
-            datafile: datafile to evaluate
-            is_baseline: whether the baseline is being evaluated
+        Evaluate the ASV system on the given directory. Each pair of trial
+        and enrollment spkembs is given a log-likelihood ratio (LLR) by the
+        PLDA model. These LLRs are dumped, and the EER is computed in
+        `analyse_results`.
         """
-        dump_folder = os.path.join(exp_folder, "eval", "asv-plda", self.scenario)
-
-        fname = os.path.splitext(os.path.basename(datafile))[0]
-        dump_subfolder = os.path.join(dump_folder, "results", fname)
-        os.makedirs(dump_subfolder, exist_ok=True)
-
-        # split the datafile into trial and enrollment datafiles
-        root_dir = None if is_baseline else self.config.data.config.root_folder
-        anon_folder = self.config.data.config.get("anon_folder", None)
-        f_trials, f_enrolls = split_trials_enrolls(exp_folder, root_dir, anon_folder)
-
-        # if the f_trials or f_enrolls do not exist, skip the evaluation
-        if not (os.path.exists(f_trials) and os.path.exists(f_enrolls)):
-            LOGGER.warning("No trials to evaluate; stopping component evaluation")
-            return
-
-        # If the scenario is "lazy-informed", anonymize the enrollment data
-        if self.config.scenario == "lazy-informed":
-            LOGGER.info("Anonymizing enrollment data of the ASV system")
-            f_enrolls = self.anonymize_data(exp_folder, "eval_enrolls", True)
-
-        # compute SpkId vectors of all utts and map them to PLDA space
-        vecs, labels = dict(), dict()
-        for name, f in zip(["trials", "enrolls"], [f_trials, f_enrolls]):
-            vecs[name], labels[name] = self.compute_spkid_vecs(f)
+        for name in ["trials", "enrolls"]:
             vecs[name] -= self.plda_model.train_mean_spkemb
             if self.lda_model is not None:
                 vecs[name] = self.lda_model.transform(vecs[name])
@@ -208,56 +163,22 @@ class ASV(EvalComponent):
         unique_pairs, inverse = np.unique(pairs, axis=0, return_inverse=True)
         llr_avgs = np.bincount(inverse, weights=llrs) / np.bincount(inverse)
 
-        llr_file = os.path.join(dump_subfolder, "llrs.npy")
+        llr_file = os.path.join(dump_folder, "llrs.npy")
         np.save(llr_file, np.hstack((unique_pairs, llr_avgs.reshape(-1, 1))))
 
         # compute the EER for the data and its subsets w.r.t. speaker chars.
         analyse_results(datafile, llr_file)
 
-    def anonymize_data(
-        self, exp_folder: str, df_name: str, consistent_targets: bool
-    ) -> str:
-        """
-        Anonymize the given datafile and return the path to the anonymized datafile.
 
-        Args:
-            exp_folder: path to the experiment folder
-            df_name: name of the datafile, without the directory or the extension
-                (e.g. "f_enrolls"). The corresponding datafile is assumed to be in
-                `{exp_folder}/data`.
-            consistent_targets: whether each speaker should always be anonymized with
-            the same target.
-        """
-        self.model.set_consistent_targets(consistent_targets)
-        anon_datafile = infer(exp_folder, df_name, self.model, self.config)
-        return anon_datafile
-
-    def compute_spkid_vecs(self, datafile: str) -> tuple[np.ndarray, np.ndarray]:
-        """
-        Compute the SpkId vectors of all speakers and return them along with their
-        speaker labels. The labels returned here are not the same as those in the
-        datafiles, because our dataset changes them so that they are consecutive
-        integers starting from 0. You can find the mapping in the experiment folder,
-        under `spk2id.json`.
-
-        Args:
-            datafile: path to the datafile
-
-        Returns:
-            SpkId vectors: (n_utterances, embedding_dim)
-            speaker labels: (n_utterances,)
-        """
-        LOGGER.info(f"Computing SpkId vectors of {datafile}")
-        labels = np.array([], dtype=int)  # utterance labels
-        vecs = None  # spkid vecs of utterances
-
-        spkid_config = copy.deepcopy(self.config.data.config)
-        spkid_config.batch_size = self.config.spkid.batch_size
-        spkid_config.sample_rate = SAMPLE_RATE
-        dl = setup_dataloader(spkid_config, datafile)
-        for batch in dl:
-            new_vecs = self.spkid_model.run(batch).detach().cpu().numpy()
-            vecs = new_vecs if vecs is None else np.vstack([vecs, new_vecs])
-            new_labels = batch[1].detach().cpu().numpy()
-            labels = np.concatenate([labels, new_labels])
-        return vecs, labels
+def count_speakers(datafile: str) -> int:
+    """Count the number of speakers in the datafile."""
+    with open(datafile) as f:
+        current_spk = None
+        n_speakers = 0
+        for line in f:
+            obj = json.loads(line.strip())
+            if obj["label"] != current_spk:
+                current_spk = obj["label"]
+                n_speakers += 1
+    LOGGER.info(f"Number of speakers in {datafile}: {n_speakers}")
+    return n_speakers
