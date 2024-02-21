@@ -6,8 +6,8 @@ data:
 
   datasets:
     eval:
-      - spkanon_eval/data/librispeech/ls-test-clean.txt
+      - spkanon_eval/data/librispeech/ls-test-other.txt
     train_eval:
       - spkanon_eval/data/librispeech/ls-train-clean-360.txt
     targets:
-      - spkanon_eval/data/librispeech/ls-train-clean-5.txt
+      - spkanon_eval/data/librispeech/ls-dev-other.txt

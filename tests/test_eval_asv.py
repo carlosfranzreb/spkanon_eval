@@ -5,7 +5,6 @@ and utterances. This test class inherits from BaseTestClass, which runs the infe
 for the debug data.
 """
 
-
 import pickle
 import os
 import copy
@@ -19,8 +18,8 @@ import plda
 
 from base import BaseTestClass, run_pipeline
 from spkanon_eval.setup_module import setup
-from spkanon_eval.datamodules.dataloader import setup_dataloader
-from spkanon_eval.evaluation.asv.spkid_plda import SAMPLE_RATE as EVAL_SR
+from spkanon_eval.datamodules import setup_dataloader
+from spkanon_eval.evaluate import SAMPLE_RATE as EVAL_SR
 from spkanon_eval.utils import seed_everything
 
 

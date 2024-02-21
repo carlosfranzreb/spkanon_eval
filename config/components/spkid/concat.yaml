@@ -1,5 +1,5 @@
 spkid:
-  cls: spkanon_eval.featex.spkid.spkid_concat.SpkIdConcat
+  cls: spkanon_eval.featex.SpkIdConcat
   train: false
   trainer_cfg: null
   models:

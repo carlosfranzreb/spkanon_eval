@@ -4,7 +4,7 @@ import json
 import torch
 import torchaudio
 
-from spkanon_eval.datamodules.dataset import SpeakerIdDataset
+from spkanon_eval.datamodules import SpeakerIdDataset
 
 
 class TestDataset(unittest.TestCase):

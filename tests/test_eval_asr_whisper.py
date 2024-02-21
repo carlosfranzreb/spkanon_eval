@@ -5,7 +5,6 @@ and utterances. This test class inherits from BaseTestClass, which runs the infe
 for the debug data.
 """
 
-
 import os
 import shutil
 import unittest
@@ -13,7 +12,7 @@ import json
 
 from omegaconf import OmegaConf
 
-from spkanon_eval.featex.asr.whisper_wrapper import Whisper
+from spkanon_eval.featex import Whisper
 
 
 class TestEvalWhisper(unittest.TestCase):

@@ -1,7 +1,7 @@
 import unittest
 import torch
 
-from spkanon_eval.datamodules.collator import collate_fn
+from spkanon_eval.datamodules import collate_fn
 
 
 class TestCollateFunction(unittest.TestCase):

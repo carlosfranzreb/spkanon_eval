@@ -12,11 +12,14 @@ import copy
 from omegaconf import OmegaConf
 import torch
 
-from spkanon_eval.featex.spkid.spkid import SpkId, SAMPLE_RATE
-from spkanon_eval.featex.spkid.spkid_concat import SpkIdConcat
+from spkanon_eval.featex import SpkId
+from spkanon_eval.featex import SpkIdConcat
 from spkanon_eval.datamodules.collator import collate_fn
 from spkanon_eval.datamodules.dataset import load_audio
 from spkanon_eval.utils import seed_everything
+
+
+SAMPLE_RATE = 16000
 
 
 class TestSpkid(unittest.TestCase):

@@ -4,11 +4,8 @@ This base class should be inherited by all test classes.
     and experiment and delete it at the end.
 """
 
-
-import os
 import unittest
 from argparse import ArgumentParser
-from shutil import rmtree
 from tempfile import NamedTemporaryFile
 
 from omegaconf import OmegaConf

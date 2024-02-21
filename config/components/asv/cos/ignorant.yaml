@@ -1,0 +1,5 @@
+# this config must be a child of the `eval.components` config
+asv_ignorant:
+  cls: spkanon_eval.evaluation.FastASV
+  scenario: ignorant
+  spkid: ${eval.config.spkid}

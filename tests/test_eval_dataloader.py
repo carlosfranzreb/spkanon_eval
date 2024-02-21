@@ -1,14 +1,11 @@
 import unittest
-import os
 import json
-import logging
-import shutil
 
 from omegaconf import OmegaConf
 import torchaudio
 import torch
 
-from spkanon_eval.datamodules.dataloader import eval_dataloader
+from spkanon_eval.datamodules import eval_dataloader
 
 
 class TestEvalDataloader(unittest.TestCase):

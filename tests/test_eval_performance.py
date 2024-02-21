@@ -5,7 +5,6 @@ and utterances. This test class inherits from BaseTestClass, which runs the infe
 for the debug data.
 """
 
-
 import os
 import unittest
 import shutil
@@ -13,7 +12,7 @@ import shutil
 from omegaconf import OmegaConf
 import torch
 
-from spkanon_eval.evaluation.performance.performance import PerformanceEvaluator
+from spkanon_eval.evaluation import PerformanceEvaluator
 
 
 class DummyModel(torch.nn.Module):

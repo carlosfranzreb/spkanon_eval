@@ -5,7 +5,7 @@ import shutil
 import torch
 from omegaconf import OmegaConf
 
-from spkanon_eval.evaluation.ser.audeering_w2v import EmotionEvaluator
+from spkanon_eval.evaluation import EmotionEvaluator
 from base import BaseTestClass, run_pipeline
 
 

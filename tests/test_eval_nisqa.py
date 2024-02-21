@@ -5,7 +5,6 @@ and utterances. This test class inherits from BaseTestClass, which runs the infe
 for the debug data.
 """
 
-
 import json
 import os
 import shutil
@@ -13,7 +12,7 @@ import unittest
 
 from omegaconf import OmegaConf
 
-from spkanon_eval.evaluation.naturalness.naturalness_nisqa import NisqaEvaluator
+from spkanon_eval.evaluation import NisqaEvaluator
 
 
 NISQA_CFG = OmegaConf.create(
