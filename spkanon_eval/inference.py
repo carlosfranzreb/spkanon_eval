@@ -5,7 +5,7 @@ import logging
 import torchaudio
 from omegaconf import OmegaConf
 
-from spkanon_eval.datamodules.dataloader import eval_dataloader
+from spkanon_eval.datamodules import eval_dataloader
 from spkanon_eval.anonymizer import Anonymizer
 
 

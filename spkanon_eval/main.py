@@ -7,7 +7,7 @@ from omegaconf import OmegaConf
 from spkanon_eval.anonymizer import Anonymizer
 from spkanon_eval.inference import infer
 from spkanon_eval.evaluate import evaluate
-from spkanon_eval.datamodules.utils import prepare_datafile
+from spkanon_eval.datamodules import prepare_datafile
 
 
 LOGGER = logging.getLogger("progress")

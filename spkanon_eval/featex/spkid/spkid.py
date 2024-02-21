@@ -3,7 +3,6 @@ Wrapper for Speechbrain speaker recognition models. The `run` method returns spe
 embeddings.
 """
 
-
 import os
 import logging
 import json
@@ -21,12 +20,12 @@ from spkanon_eval.component_definitions import InferComponent
 
 
 LOGGER = logging.getLogger("progress")
-SAMPLE_RATE = 16000
 
 
 class SpkId(InferComponent):
     def __init__(self, config: OmegaConf, device: str) -> None:
         """Initialize the model with the given config and freeze its parameters."""
+        self.sample_rate = 16000
         self.config = config
         self.device = device
         self.save_dir = os.path.join("checkpoints", config.path)

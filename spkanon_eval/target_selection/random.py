@@ -1,6 +1,6 @@
 import torch
 
-from spkanon_eval.target_selection.base import BaseSelector
+from .base import BaseSelector
 
 
 class RandomSelector(BaseSelector):

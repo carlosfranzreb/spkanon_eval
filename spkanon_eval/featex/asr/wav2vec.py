@@ -1,10 +1,10 @@
 from speechbrain.lobes.models.huggingface_wav2vec import HuggingFaceWav2Vec2
 from omegaconf import DictConfig
 from torch import Tensor
-from spkanon_eval.abstract_component import Component
+from spkanon_eval.component_definitions import InferComponent
 
 
-class Wav2Vec(Component):
+class Wav2Vec(InferComponent):
     def __init__(self, config: DictConfig, device: str, **kwargs) -> None:
         self.model = HuggingFaceWav2Vec2(
             config["hf_hub"],
