@@ -130,7 +130,11 @@ def iterate_over_chunks(
     for i in tqdm(range(0, indices.shape[0], chunk_size)):
         idx = indices[i : i + chunk_size]
         chunk_scores = chunk_func(vecs, idx, **kwargs)
-        scores = np.concatenate((scores, chunk_scores)) if scores else chunk_scores
+        scores = (
+            np.concatenate((scores, chunk_scores))
+            if scores is not None
+            else chunk_scores
+        )
     return scores, indices
 
 
