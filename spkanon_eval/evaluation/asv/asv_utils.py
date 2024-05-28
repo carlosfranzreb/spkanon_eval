@@ -75,8 +75,9 @@ def analyse_results(datafile: str, llr_file: str) -> None:
         with open(eer_file, "w") as f:
             f.write("dataset n_pairs threshold eer\n")
     # dump the EER and the threshold to the eer file
+    eer = (fpr[key] + (1 - tpr[key])) / 2
     with open(eer_file, "a") as f:
-        f.write(f"{fname} {llrs.size} {thresholds[key]} {fpr[key]}\n")
+        f.write(f"{fname} {llrs.size} {thresholds[key]} {eer}\n")
     # dump the ROC curve
     RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
     plt.plot([0, 1], [0, 1], "k--")

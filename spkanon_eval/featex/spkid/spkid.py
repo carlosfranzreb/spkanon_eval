@@ -57,24 +57,24 @@ class SpkId(InferComponent):
         """
         return self.model.encode_batch(batch[0].to(self.device)).squeeze(1)
 
-    def finetune(self, dump_dir: str, datafile: str, n_speakers: int) -> None:
+    def train(self, dump_dir: str, datafile: str, n_speakers: int) -> None:
         """
-        Fine-tune this model with the given datafiles.
+        Train this model with the given datafiles. No checkpoint will be used as a
+        starting point.
 
         Args:
             dump_dir: Path to the folder where the model and datafiles will be saved.
-            datafile: paths to the datafile used for fine-tuning.
+            datafile: paths to the datafile used for training.
             n_speakers: Number of speakers across all datafiles, used to initialize
                 the classifier.
         """
-
-        LOGGER.info(f"Fine-tuning the spkid model with datafile {datafile}")
+        LOGGER.info(f"Training the spkid model with datafile {datafile}")
         os.makedirs(dump_dir, exist_ok=True)
         shutil.copyfile(
-            self.config.finetune_config, os.path.join(dump_dir, "finetune_config.yaml")
+            self.config.train_config, os.path.join(dump_dir, "train_config.yaml")
         )
 
-        with open(self.config.finetune_config) as f:
+        with open(self.config.train_config) as f:
             hparams = load_hyperpyyaml(
                 f,
                 overrides={
@@ -176,7 +176,6 @@ def split_spk_utts(
         ratio: Ratio of validation utterances.
         spk_id: Speaker ID, as stored in self.speakers.
     """
-
     indices = list(range(len(speaker_objs)))
     random_indices = random.sample(indices, len(indices))
     n_val = int(len(speaker_objs) * ratio)
