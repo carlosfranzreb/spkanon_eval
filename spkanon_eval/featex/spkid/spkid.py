@@ -138,6 +138,7 @@ class SpkId(InferComponent):
             opt_class=hparams["opt_class"],
             hparams=hparams,
             run_opts={"device": self.device},
+            checkpointer=hparams["checkpointer"],
         )
 
         speaker_brain.epoch_losses = {"TRAIN": [], "VALID": []}
@@ -155,7 +156,6 @@ class SpkId(InferComponent):
 
         # save the embedding model and load it
         emb_model_state_dict = speaker_brain.modules.embedding_model.state_dict()
-        torch.save(emb_model_state_dict, os.path.join(dump_dir, "embedding_model.pt"))
         self.model.mods.embedding_model.load_state_dict(emb_model_state_dict)
 
 

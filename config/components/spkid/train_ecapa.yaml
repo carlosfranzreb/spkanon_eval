@@ -100,3 +100,12 @@ error_stats: !name:speechbrain.utils.metric_stats.MetricStats
 
 train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
   save_file: !ref <train_log>
+
+checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
+  checkpoints_dir: !ref <save_folder>
+  recoverables:
+    embedding_model: !ref <embedding_model>
+    classifier: !ref <classifier>
+    normalizer: !ref <mean_var_norm>
+    counter: !ref <epoch_counter>
+    lr_annealing: !ref <lr_annealing>
