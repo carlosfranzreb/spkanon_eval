@@ -3,3 +3,4 @@ asv_ignorant:
   cls: spkanon_eval.evaluation.FastASV
   scenario: ignorant
   spkid: ${eval.config.spkid}
+  train: false

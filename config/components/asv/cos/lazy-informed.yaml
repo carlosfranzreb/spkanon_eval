@@ -3,3 +3,4 @@ asv_lazy_informed:
   cls: spkanon_eval.evaluation.FastASV
   scenario: lazy-informed
   spkid: ${eval.config.spkid}
+  train: false
