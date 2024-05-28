@@ -31,58 +31,75 @@ class SpeakerBrain(sb.core.Brain):
         Data augmentation and environmental corruption are applied to the
         input speech.
         """
-        batch = batch.to(self.device)
-        wavs, lens = batch.sig
+        try:
+            batch = batch.to(self.device)
+            wavs, lens = batch.sig
 
-        if stage == sb.Stage.TRAIN:
-            wavs_aug_tot = []
-            wavs_aug_tot.append(wavs)
-            for augment in self.hparams.augment_pipeline:
-                wavs_aug = augment(wavs, lens)
+            if stage == sb.Stage.TRAIN:
+                wavs_aug_tot = []
+                wavs_aug_tot.append(wavs)
+                for augment in self.hparams.augment_pipeline:
+                    wavs_aug = augment(wavs, lens)
 
-                if wavs_aug.shape[1] > wavs.shape[1]:
-                    wavs_aug = wavs_aug[:, 0 : wavs.shape[1]]
-                else:
-                    zero_sig = torch.zeros_like(wavs)
-                    zero_sig[:, 0 : wavs_aug.shape[1]] = wavs_aug
-                    wavs_aug = zero_sig
+                    if wavs_aug.shape[1] > wavs.shape[1]:
+                        wavs_aug = wavs_aug[:, 0 : wavs.shape[1]]
+                    else:
+                        zero_sig = torch.zeros_like(wavs)
+                        zero_sig[:, 0 : wavs_aug.shape[1]] = wavs_aug
+                        wavs_aug = zero_sig
 
-                if self.hparams.concat_augment:
-                    wavs_aug_tot.append(wavs_aug)
-                else:
-                    wavs = wavs_aug
-                    wavs_aug_tot[0] = wavs
+                    if self.hparams.concat_augment:
+                        wavs_aug_tot.append(wavs_aug)
+                    else:
+                        wavs = wavs_aug
+                        wavs_aug_tot[0] = wavs
 
-            wavs = torch.cat(wavs_aug_tot, dim=0)
-            self.n_augment = len(wavs_aug_tot)
-            lens = torch.cat([lens] * self.n_augment)
+                wavs = torch.cat(wavs_aug_tot, dim=0)
+                self.n_augment = len(wavs_aug_tot)
+                lens = torch.cat([lens] * self.n_augment)
 
-        feats = self.modules.compute_features(wavs)
-        feats = self.modules.mean_var_norm(feats, lens)
-        embeddings = self.modules.embedding_model(feats)
-        outputs = self.modules.classifier(embeddings)
+            feats = self.modules.compute_features(wavs)
+            feats = self.modules.mean_var_norm(feats, lens)
+            embeddings = self.modules.embedding_model(feats)
+            outputs = self.modules.classifier(embeddings)
 
-        return outputs, lens
+            return outputs, lens
+        except Exception as e:
+            print("Error in compute_objectives")
+            print("predictions:", predictions.shape)
+            print("batch:", batch.shape)
+            print(e)
+            import sys
+            sys.exit()
 
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss using speaker-id as label."""
-        predictions, lens = predictions
-        predictions = predictions.to(self.device)
-        lens = lens.to(self.device)
-        spkid = torch.tensor([int(spkid) for spkid in batch.spk_id_encoded]).unsqueeze(
-            1
-        ).to(self.device)
+        try:
+            predictions, lens = predictions
+            predictions = predictions.to(self.device)
+            lens = lens.to(self.device)
+            spkid = torch.tensor([int(spkid) for spkid in batch.spk_id_encoded]).unsqueeze(
+                1
+            ).to(self.device)
 
-        if stage == sb.Stage.TRAIN:
-            spkid = torch.cat([spkid] * self.n_augment, dim=0).to(self.device)
+            if stage == sb.Stage.TRAIN:
+                spkid = torch.cat([spkid] * self.n_augment, dim=0).to(self.device)
 
-        loss = self.hparams.compute_cost(predictions, spkid, lens)
-        if stage == sb.Stage.TRAIN and hasattr(
-            self.hparams.lr_annealing, "on_batch_end"
-        ):
-            self.hparams.lr_annealing.on_batch_end(self.optimizer)
+            loss = self.hparams.compute_cost(predictions, spkid, lens)
+            if stage == sb.Stage.TRAIN and hasattr(
+                self.hparams.lr_annealing, "on_batch_end"
+            ):
+                self.hparams.lr_annealing.on_batch_end(self.optimizer)
 
-        return loss
+            return loss
+        except Exception as e:
+            print("Error in compute_objectives")
+            print("predictions:", predictions.shape)
+            print("batch:", batch.shape)
+            print(e)
+            import sys
+            sys.exit()
+
 
     def on_stage_start(self, stage, epoch=None):
         """Gets called at the beginning of an epoch."""

@@ -98,7 +98,7 @@ class ASV(ASVComponent):
 
         # fine-tune SpkId model and store the ckpt if needed
         if self.config.spkid.train:
-            self.spkid_model.finetune(
+            self.spkid_model.train(
                 os.path.join(dump_dir, "spkid"), datafile, n_speakers
             )
 
