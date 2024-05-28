@@ -1,4 +1,4 @@
-speechbrain>=0.5.15
+speechbrain>=1.0.0
 openai-whisper==20230314
 plda @ https://github.com/RaviSoji/plda/tarball/master
 omegaconf>=2.3.0

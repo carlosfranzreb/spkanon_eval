@@ -10,12 +10,12 @@ import csv
 import random
 import shutil
 
-from speechbrain.pretrained import EncoderClassifier
+from speechbrain.inference.speaker import EncoderClassifier
 from hyperpyyaml import load_hyperpyyaml
 from omegaconf import OmegaConf
 import torch
 
-from spkanon_eval.featex.spkid.finetune import SpeakerBrain, prepare_dataset
+from spkanon_eval.featex.spkid.train import SpeakerBrain, prepare_dataset
 from spkanon_eval.component_definitions import InferComponent
 
 
