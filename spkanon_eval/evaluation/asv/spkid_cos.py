@@ -82,5 +82,8 @@ class FastASV(ASVComponent):
         dist_file = os.path.join(dump_folder, "dists.npy")
         np.save(dist_file, np.hstack((unique_pairs, dist_avgs.reshape(-1, 1))))
 
+        dist_file = os.path.join(dump_folder, "utt_dists.npy")
+        np.save(dist_file, np.hstack((pairs, dists.reshape(-1, 1))))
+
         # compute the EER for the data and its subsets w.r.t. speaker chars.
         analyse_results(datafile, dist_file)
