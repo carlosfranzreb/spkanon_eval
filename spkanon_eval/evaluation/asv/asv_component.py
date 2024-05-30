@@ -69,7 +69,12 @@ class ASVComponent(EvalComponent):
         # split the datafile into trial and enrollment datafiles
         root_dir = None if is_baseline else self.config.data.config.root_folder
         anon_folder = self.config.data.config.get("anon_folder", None)
-        f_trials, f_enrolls = split_trials_enrolls(exp_folder, root_dir, anon_folder)
+        f_trials, f_enrolls = split_trials_enrolls(
+            exp_folder,
+            root_dir,
+            anon_folder,
+            self.config.data.datasets.get("enrolls", None),
+        )
 
         # if the f_trials or f_enrolls do not exist, skip the evaluation
         if not (os.path.exists(f_trials) and os.path.exists(f_enrolls)):
