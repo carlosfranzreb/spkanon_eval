@@ -4,6 +4,7 @@ import logging
 
 import torchaudio
 from omegaconf import OmegaConf
+from tqdm import tqdm
 
 from spkanon_eval.datamodules import eval_dataloader
 from spkanon_eval.anonymizer import Anonymizer
@@ -46,7 +47,7 @@ def infer(exp_folder: str, df_name: str, model: Anonymizer, config: OmegaConf) -
     data_cfg = config.data.config
     sample_rate = config.data.config.sample_rate
 
-    for _, batch, data in eval_dataloader(data_cfg, datafile, model.device):
+    for _, batch, data in tqdm(eval_dataloader(data_cfg, datafile, model.device)):
         audio_anon, length, target = model.forward(batch, data)
         for idx in range(len(audio_anon)):
             data[idx]["path"] = data[idx]["path"].replace(

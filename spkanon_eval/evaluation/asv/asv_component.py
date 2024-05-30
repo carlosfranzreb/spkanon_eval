@@ -8,6 +8,7 @@ import os
 import logging
 
 import numpy as np
+from tqdm import tqdm
 
 from spkanon_eval.evaluate import SAMPLE_RATE
 from spkanon_eval.inference import infer
@@ -129,7 +130,7 @@ class ASVComponent(EvalComponent):
         spkid_config.batch_size = self.config.spkid.batch_size
         spkid_config.sample_rate = SAMPLE_RATE
         dl = setup_dataloader(spkid_config, datafile)
-        for batch in dl:
+        for batch in tqdm(dl):
             new_vecs = self.spkid_model.run(batch).detach().cpu().numpy()
             vecs = np.vstack([vecs, new_vecs]) if vecs is not None else new_vecs
             labels = np.concatenate([labels, batch[1].detach().cpu().numpy()])
