@@ -1,6 +1,6 @@
 datasets_cfg: spkanon_eval/config/datasets/librispeech.yaml
 seed: 0
-log_dir: logs/train_spkembs
+log_dir: logs/aa_debug_spkembs
 device: cpu # overwritten on runtime
 
 inference:
@@ -10,13 +10,14 @@ inference:
     target: target
 
 target_selection_cfg: spkanon_eval/config/components/target_selection/random.yaml
-pipeline_cfg: spkanon_eval/spkanon_models/stargan/config.yaml # must clone spkanon_models repo first (see README)
+pipeline_cfg: spkanon_eval/spkanon_models/knnvc/config.yaml # must clone spkanon_models repo first (see README)
+target_feats: logs/aa_debug_spkembs/1717068676/target_feats
 
 eval: # calls func `eval_dir` of each component, passing exp_folder and config
   config:
     seed: 300
     baseline: false # non-anonymized speech is evaluated; inference and train must be false, eval must be present
-    exp_folder: logs/train_spkembs/1716903870 # if not null, this folder is evaluated instead of current exp_folder
+    exp_folder: logs/aa_debug_spkembs/1717068676 # if not null, this folder is evaluated instead of current exp_folder
     sample_rate: ${synthesis.sample_rate} # SR of the anonymized data
     asv_reduce_dims: null
     asv_spkid_cfg: spkanon_eval/config/components/spkid/ecapa.yaml
