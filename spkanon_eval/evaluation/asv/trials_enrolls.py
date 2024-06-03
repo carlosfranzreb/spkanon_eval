@@ -63,7 +63,8 @@ def split_trials_enrolls(
         # gather the filenames of the enrollment data
         for enroll_file in enrolls:
             with open(enroll_file) as f:
-                enroll_fnames.extend(f.readlines())
+                for line in f:
+                    enroll_fnames.append(line.strip())
 
         # split the data into trial and enrollment data
         for line in open(datafile):
@@ -74,6 +75,9 @@ def split_trials_enrolls(
             else:
                 obj["path"] = anon_path(obj["path"], anon_folder, root_folder)
                 trial_writer.write(json.dumps(obj) + "\n")
+        
+        trial_writer.close()
+        enroll_writer.close()
 
     # if no enrolls, the trial is the first utt of each speaker
     else:
