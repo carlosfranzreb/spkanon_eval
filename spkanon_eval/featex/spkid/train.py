@@ -35,31 +35,6 @@ class SpeakerBrain(sb.core.Brain):
         """
         batch = batch.to(self.device)
         wavs, lens = batch.sig
-
-        if stage == sb.Stage.TRAIN:
-            wavs_aug_tot = []
-            wavs_aug_tot.append(wavs)
-            if hasattr(self.hparams, "augment_pipeline"):
-                for augment in self.hparams.augment_pipeline:
-                    wavs_aug = augment(wavs, lens)
-
-                    if wavs_aug.shape[1] > wavs.shape[1]:
-                        wavs_aug = wavs_aug[:, 0 : wavs.shape[1]]
-                    else:
-                        zero_sig = torch.zeros_like(wavs)
-                        zero_sig[:, 0 : wavs_aug.shape[1]] = wavs_aug
-                        wavs_aug = zero_sig
-
-                    if self.hparams.concat_augment:
-                        wavs_aug_tot.append(wavs_aug)
-                    else:
-                        wavs = wavs_aug
-                        wavs_aug_tot[0] = wavs
-
-            wavs = torch.cat(wavs_aug_tot, dim=0)
-            self.n_augment = len(wavs_aug_tot)
-            lens = torch.cat([lens] * self.n_augment)
-
         feats = self.modules.compute_features(wavs)
         feats = self.modules.mean_var_norm(feats, lens)
         embeddings = self.modules.embedding_model(feats)
@@ -78,9 +53,6 @@ class SpeakerBrain(sb.core.Brain):
             .to(self.device)
         )
 
-        if stage == sb.Stage.TRAIN and hasattr(self.hparams, "augment_pipeline"):
-            spkid = torch.cat([spkid] * self.n_augment, dim=0).to(self.device)
-
         loss = self.hparams.compute_cost(predictions, spkid, lens)
         if stage == sb.Stage.TRAIN and hasattr(
             self.hparams.lr_annealing, "on_batch_end"
@@ -94,6 +66,15 @@ class SpeakerBrain(sb.core.Brain):
 
     def on_stage_start(self, stage, epoch=None):
         """Gets called at the beginning of an epoch."""
+        for module in [
+            self.modules.compute_features,
+            self.modules.mean_var_norm,
+            self.modules.embedding_model,
+            self.modules.classifier
+        ]:
+            for p in module.parameters():
+                p.requires_grad = True
+
         if stage == sb.Stage.VALID:
             self.error_metrics = self.hparams.error_stats()
 
@@ -126,12 +107,9 @@ def prepare_dataset(hparams: dict, datafile: str) -> DynamicItemDataset:
     "Creates the datasets and their data processing pipelines."
 
     snt_len_sample = int(hparams["sample_rate"] * hparams["sentence_len"])
-    data = DynamicItemDataset.from_csv(
-        csv_path=datafile,
-    )
-    datasets = [data]
+    data = DynamicItemDataset.from_csv(csv_path=datafile)
 
-    # Define audio pipeline:
+    # define audio pipeline:
     @sb.utils.data_pipeline.takes("wav", "duration")
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav, duration):
@@ -146,8 +124,7 @@ def prepare_dataset(hparams: dict, datafile: str) -> DynamicItemDataset:
         sig, fs = torchaudio.load(wav, num_frames=num_frames, frame_offset=start)
         sig = sig.transpose(0, 1).squeeze(1)
         return sig
-
-    sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
+    sb.dataio.dataset.add_dynamic_item(data, audio_pipeline)
     sb.dataio.dataset.set_output_keys(datasets, ["id", "sig", "spk_id_encoded"])
-
+    
     return data
