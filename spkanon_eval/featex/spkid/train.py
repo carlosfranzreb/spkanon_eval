@@ -29,10 +29,7 @@ class SpeakerBrain(sb.core.Brain):
     """Class for speaker embedding training"""
 
     def compute_forward(self, batch: PaddedBatch, stage):
-        """Computation pipeline based on a encoder + speaker classifier.
-        Data augmentation and environmental corruption are applied to the
-        input speech.
-        """
+        """Computation pipeline based on a encoder + speaker classifier."""
         batch = batch.to(self.device)
         wavs, lens = batch.sig
         feats = self.modules.compute_features(wavs)
@@ -70,7 +67,7 @@ class SpeakerBrain(sb.core.Brain):
             self.modules.compute_features,
             self.modules.mean_var_norm,
             self.modules.embedding_model,
-            self.modules.classifier
+            self.modules.classifier,
         ]:
             for p in module.parameters():
                 p.requires_grad = True
@@ -124,7 +121,8 @@ def prepare_dataset(hparams: dict, datafile: str) -> DynamicItemDataset:
         sig, fs = torchaudio.load(wav, num_frames=num_frames, frame_offset=start)
         sig = sig.transpose(0, 1).squeeze(1)
         return sig
-    sb.dataio.dataset.add_dynamic_item(data, audio_pipeline)
-    sb.dataio.dataset.set_output_keys(datasets, ["id", "sig", "spk_id_encoded"])
-    
+
+    sb.dataio.dataset.add_dynamic_item([data], audio_pipeline)
+    sb.dataio.dataset.set_output_keys([data], ["id", "sig", "spk_id_encoded"])
+
     return data
