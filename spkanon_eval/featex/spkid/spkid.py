@@ -146,7 +146,7 @@ class SpkId(InferComponent):
         )
 
         speaker_brain.epoch_losses = {"TRAIN": [], "VALID": []}
-        val_kwargs = hparams["dataloader_options"]
+        val_kwargs = hparams["dataloader_options"].copy()
         val_kwargs["shuffle"] = False
 
         speaker_brain.fit(
