@@ -55,7 +55,9 @@ class SpkId(InferComponent):
             A tensor containing the speaker embeddings with shape
             (batch_size, embedding_dim).
         """
-        return self.model.encode_batch(batch[0].to(self.device)).squeeze(1)
+        return self.model.encode_batch(
+            batch[0].to(self.device), batch[2].to(self.device), True
+        ).squeeze(1)
 
     def train(self, dump_dir: str, datafile: str, n_speakers: int) -> None:
         """
@@ -97,7 +99,7 @@ class SpkId(InferComponent):
                 quoting=csv.QUOTE_MINIMAL,
             )
             splits[split]["csv_writer"].writerow(
-                ["ID", "duration", "wav", "spk_id", "spk_id_encoded"]
+                ["ID", "wav", "duration", "start", "stop", "spk_id", "spk_id_encoded"]
             )
 
         # split the data of each speaker into training and validation sets
@@ -114,6 +116,7 @@ class SpkId(InferComponent):
                     splits["train"]["csv_writer"],
                     splits["val"]["csv_writer"],
                     hparams["val_ratio"],
+                    int(hparams["sentence_len"]),
                     current_spk,
                 )
                 speaker_objs = list()
@@ -124,6 +127,7 @@ class SpkId(InferComponent):
             splits["train"]["csv_writer"],
             splits["val"]["csv_writer"],
             hparams["val_ratio"],
+            int(hparams["sentence_len"]),
             current_spk,
         )
 
@@ -164,6 +168,7 @@ def split_spk_utts(
     train_writer: csv.writer,
     val_writer: csv.writer,
     ratio: float,
+    sentence_len: int,
     spk_id: int,
 ) -> None:
     """
@@ -174,6 +179,7 @@ def split_spk_utts(
         train_writer: CSV writer for the training datafile.
         val_writer: CSV writer for the validation datafile.
         ratio: Ratio of validation utterances.
+        sentence_len: Utterances are split into samples of this length.
         spk_id: Speaker ID, as stored in self.speakers.
     """
     indices = list(range(len(speaker_objs)))
@@ -183,6 +189,17 @@ def split_spk_utts(
     for idx, random_idx in enumerate(random_indices):
         obj = speaker_objs[random_idx]
         writer = val_writer if idx < n_val else train_writer
-        writer.writerow(
-            [obj["path"], obj["duration"], obj["path"], obj["label"], spk_id]
-        )
+        fname = os.path.splitext(os.path.basename(obj["path"]))[0]
+        for start in range(0, int(obj["duration"]), sentence_len):
+            stop = min(start + sentence_len, obj["duration"])
+            writer.writerow(
+                [
+                    f"{fname}_{start}_{stop}",
+                    obj["path"],
+                    obj["duration"],
+                    float(start),
+                    float(stop),
+                    obj["label"],
+                    spk_id,
+                ]
+            )

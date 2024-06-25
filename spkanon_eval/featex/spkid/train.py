@@ -16,8 +16,6 @@ Author
 """
 
 
-import random
-
 import torch
 import torchaudio
 import speechbrain as sb
@@ -28,7 +26,7 @@ from speechbrain.dataio.batch import PaddedBatch
 class SpeakerBrain(sb.core.Brain):
     """Class for speaker embedding training"""
 
-    def compute_forward(self, batch: PaddedBatch, stage):
+    def compute_forward(self, batch: PaddedBatch, stage: sb.Stage):
         """Computation pipeline based on a encoder + speaker classifier."""
         batch = batch.to(self.device)
         wavs, lens = batch.sig
@@ -103,22 +101,16 @@ class SpeakerBrain(sb.core.Brain):
 def prepare_dataset(hparams: dict, datafile: str) -> DynamicItemDataset:
     "Creates the datasets and their data processing pipelines."
 
-    snt_len_sample = int(hparams["sample_rate"] * hparams["sentence_len"])
     data = DynamicItemDataset.from_csv(csv_path=datafile)
 
     # define audio pipeline:
-    @sb.utils.data_pipeline.takes("wav", "duration")
+    @sb.utils.data_pipeline.takes("wav", "start", "stop")
     @sb.utils.data_pipeline.provides("sig")
-    def audio_pipeline(wav, duration):
-        duration_sample = int(duration * hparams["sample_rate"])
-        if hparams["random_chunk"] and duration_sample > snt_len_sample:
-            start = random.randint(0, duration_sample - snt_len_sample)
-            stop = start + snt_len_sample
-        else:
-            start = 0
-            stop = duration_sample
-        num_frames = stop - start
-        sig, fs = torchaudio.load(wav, num_frames=num_frames, frame_offset=start)
+    def audio_pipeline(wav: torch.Tensor, start: str, stop: str) -> torch.Tensor:
+        start, stop = float(start), float(stop)
+        start_frame = start * hparams["sample_rate"]
+        num_frames = (stop - start) * hparams["sample_rate"]
+        sig, _ = torchaudio.load(wav, num_frames=num_frames, frame_offset=start_frame)
         sig = sig.transpose(0, 1).squeeze(1)
         return sig
 
