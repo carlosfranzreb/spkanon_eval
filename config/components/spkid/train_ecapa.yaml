@@ -27,9 +27,7 @@ sample_rate: 16000
 sentence_len: 3.0 # seconds
 shuffle: true
 num_workers: !PLACEHOLDER
-random_chunk: true
 
-# Feature parameters
 n_mels: 80
 left_frames: 0
 right_frames: 0
@@ -42,6 +40,7 @@ dataloader_options:
   batch_size: !ref <batch_size>
   shuffle: !ref <shuffle>
   num_workers: !ref <num_workers>
+  drop_last: true
 
 compute_features: !new:speechbrain.lobes.features.Fbank
   n_mels: !ref <n_mels>
