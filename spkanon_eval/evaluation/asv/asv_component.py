@@ -84,7 +84,7 @@ class ASVComponent(EvalComponent):
         # If the scenario is "lazy-informed", anonymize the enrollment data
         if self.config.scenario == "lazy-informed":
             LOGGER.info("Anonymizing enrollment data of the ASV system")
-            f_enrolls = self.anonymize_data(exp_folder, "eval_enrolls", True)
+            f_enrolls = self.anonymize_data(exp_folder, "eval_enrolls", False)
 
         # compute SpkId vectors of all utts and map them to PLDA space
         vecs, labels = dict(), dict()
