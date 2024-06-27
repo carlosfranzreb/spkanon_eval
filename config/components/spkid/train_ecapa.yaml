@@ -17,7 +17,7 @@ val_ratio: 0.1
 rir_folder: checkpoints/rirs
 
 # Training parameters
-number_of_epochs: 3
+number_of_epochs: 10
 batch_size: 256
 lr: 0.001
 base_lr: 0.000001
@@ -31,7 +31,7 @@ num_workers: !PLACEHOLDER
 n_mels: 80
 left_frames: 0
 right_frames: 0
-deltas: False
+deltas: false
 
 # Number of speakers
 out_n_neurons: !PLACEHOLDER
