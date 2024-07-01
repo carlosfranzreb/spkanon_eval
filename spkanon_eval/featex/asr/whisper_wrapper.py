@@ -43,7 +43,9 @@ class Whisper(InferComponent, EvalComponent):
         mels = list()
         for i in range(batch[0].shape[0]):  # iterate over waveforms in batch
             padded = whisper.pad_or_trim(batch[0][i])
-            mels.append(whisper.log_mel_spectrogram(padded).unsqueeze(0))
+            mels.append(
+                whisper.log_mel_spectrogram(padded, self.model.dims.n_mels).unsqueeze(0)
+            )
         mels = torch.cat(mels, dim=0)
         if self.out == "text":  # return predicted text
             out = self.model.decode(
