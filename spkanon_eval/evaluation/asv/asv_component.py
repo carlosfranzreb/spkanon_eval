@@ -86,7 +86,7 @@ class ASVComponent(EvalComponent):
             LOGGER.info("Anonymizing enrollment data of the ASV system")
             f_enrolls = self.anonymize_data(exp_folder, "eval_enrolls", False)
 
-        # compute SpkId vectors of all utts and map them to PLDA space
+        # compute SpkId vectors of all utts
         vecs, labels = dict(), dict()
         for name, f in zip(["trials", "enrolls"], [f_trials, f_enrolls]):
             vecs[name], labels[name] = self.compute_spkid_vecs(f)

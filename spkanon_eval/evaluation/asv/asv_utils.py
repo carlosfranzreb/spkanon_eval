@@ -112,6 +112,31 @@ def analyse_results(datafile: str, llr_file: str) -> None:
                     f.write(f"{thresholds[eer_key]} {eer}\n")
 
 
+def compute_llrs(
+    plda: plda.Classifier, vecs: np.array, chunk_size: int
+) -> tuple[np.array, np.array]:
+    """
+    Compute the log-likelihood ratios (LLRs) of all pairs of trial and enrollment
+    utterances. For each speaker, the first utterance is considered the trial
+    utterance and the rest are considered the enrollment utterances.
+    The LLRs are calculated as in the plda package, but the code is adapted to our
+    use case, where every vector is used multiple times. We therefore compute the
+    marginal LLs beforehand once, and use them to compute the LLRs for all pairs.
+
+    Args:
+    - vecs: dict with two keys, trials and enrolls, each containing a numpy array
+        containing speaker embeddings.
+
+    Returns:
+    - llrs: numpy array with the LLRs
+    - indices: numpy array containing the indices of trial and enroll utterances
+        that were used to compute each LLR. The number of pairs equals all possible
+        combinations of trial and enroll utts.
+    """
+    LOGGER.info("Computing LLRs for all pairs of trial and enrollment utterances")
+    return iterate_over_chunks(vecs, compute_llrs_chunk, chunk_size, plda=plda)
+
+
 def iterate_over_chunks(
     vecs: np.array, chunk_func: Callable, chunk_size: int, **kwargs
 ) -> tuple[np.array, np.array]:
@@ -137,31 +162,6 @@ def iterate_over_chunks(
             else chunk_scores
         )
     return scores, indices
-
-
-def compute_llrs(
-    plda: plda.Classifier, vecs: np.array, chunk_size: int
-) -> tuple[np.array, np.array]:
-    """
-    Compute the log-likelihood ratios (LLRs) of all pairs of trial and enrollment
-    utterances. For each speaker, the first utterance is considered the trial
-    utterance and the rest are considered the enrollment utterances.
-    The LLRs are calculated as in the plda package, but the code is adapted to our
-    use case, where every vector is used multiple times. We therefore compute the
-    marginal LLs beforehand once, and use them to compute the LLRs for all pairs.
-
-    Args:
-    - vecs: dict with two keys, trials and enrolls, each containing a numpy array
-        containing speaker embeddings.
-
-    Returns:
-    - llrs: numpy array with the LLRs
-    - indices: numpy array containing the indices of trial and enroll utterances
-        that were used to compute each LLR. The number of pairs equals all possible
-        combinations of trial and enroll utts.
-    """
-    LOGGER.info("Computing LLRs for all pairs of trial and enrollment utterances")
-    return iterate_over_chunks(vecs, compute_llrs_chunk, chunk_size, plda=plda)
 
 
 def compute_llrs_chunk(
