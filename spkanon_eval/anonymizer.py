@@ -41,26 +41,17 @@ class Anonymizer:
                     LOGGER.info(f"Passing target selection algorithm to {name}")
                     component.init_target_selection(*args)
 
-    def get_feats(self, batch: list, source: Tensor, target: Tensor = None):
+    def get_feats(self, batch: list, source: Tensor, source_is_male: Tensor) -> dict:
         """
-        Run the featex, featproc and featfusion modules. Returns spectrograms and
+        Run the featex, featproc and featfusion modules. Returns anonymized features and
         targets. Sources refer to the input speaker, and targets to the output speaker.
-        They are both added to the batch after the feature extraction phase with the
-        keys `source` and `target`. If the `target` argument is not None, it is created
-        with -1 values, which indicate that no target has been defined for the
-        corresponding sample.
         """
         out = batch
         if self.featex is not None:
             out = self._run_module(self.featex, batch)
 
-        # add targets and sources to the batch
-        if target is None:
-            target = torch.ones(batch[0].shape[0], dtype=torch.int64) * -1
-            target = target.to(batch[0].device)
-        out["target"] = target
         out["source"] = source
-
+        out["source_is_male"] = source_is_male
         if self.featproc is not None:
             processed = self._run_module(self.featproc, out)
             out_proc = dict()
@@ -78,8 +69,21 @@ class Anonymizer:
         source = torch.tensor(
             [d["speaker_id"] for d in data], dtype=torch.long, device=self.device
         )
+        if "gender" in data[0]:
+            source_is_male = torch.tensor(
+                [d["gender"] == "M" for d in data], dtype=torch.bool, device=self.device
+            )
+        else:
+            LOGGER.warning(
+                """
+                gender information not found in the data. Make sure it is not
+                considered for target selection.
+                """
+            )
+            source_is_male = torch.zeros_like(source, dtype=torch.bool)
+
         with torch.no_grad():
-            out = self.get_feats(batch, source)
+            out = self.get_feats(batch, source, source_is_male)
             waves, n_samples = self.synthesis.run(out)
         return waves, n_samples, out["target"]
 
