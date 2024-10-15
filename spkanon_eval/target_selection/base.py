@@ -54,14 +54,15 @@ class BaseSelector:
         new_sources = list()
         new_source_indices = list()
         for idx, src in enumerate(source):
-            if src not in new_sources:
-                new_sources.append(src.item())
+            src = src.item()
+            if src not in self.targets and src not in new_sources:
+                new_sources.append(src)
                 new_source_indices.append(idx)
 
         # select new targets for the new unique source speakers
         if len(new_sources) > 0:
             new_targets = self.select_new(
-                source_data[new_source_indices], source_is_male
+                source_data[new_source_indices], source_is_male[new_source_indices]
             )
 
         # create the output targets and store the assignments if needed
@@ -69,9 +70,12 @@ class BaseSelector:
             source_data.shape[0], dtype=torch.int64, device=source_data.device
         )
         for idx, src in enumerate(source):
-            target[idx] = new_targets[new_sources.index(src)]
-            if src not in self.targets:
-                self.targets[src.item()] = target[idx].item()
+            src = src.item()
+            if src in self.targets:
+                target[idx] = self.targets[src]
+            else:
+                target[idx] = new_targets[new_sources.index(src)]
+                self.targets[src] = target[idx].item()
 
         return target
 
