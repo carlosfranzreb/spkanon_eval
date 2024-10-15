@@ -8,7 +8,9 @@ def collate_fn(batch: list[tuple[tensor, int, int]]) -> tuple[tensor, tensor, te
     lengths. The waveforms are 1D tensors, and the speaker IDs and waveform lengths
     are integers.
     """
-    audio, speakers, n_samples = zip(*batch)
+    audio = [item["sig"] for item in batch]
+    speakers = [item["speaker_id"] for item in batch]
+    n_samples = [item["sig"].shape[0] for item in batch]
     audio = pad_sequence(audio, batch_first=True)
     speakers = tensor([int(speaker) for speaker in speakers])
     n_samples = tensor(n_samples)

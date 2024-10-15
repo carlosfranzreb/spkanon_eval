@@ -4,9 +4,11 @@ from collections.abc import Iterable
 
 import torch
 from torch.utils.data import DataLoader
+import torchaudio
 from omegaconf import OmegaConf
+import speechbrain as sb
+from speechbrain.dataio.dataset import DynamicItemDataset
 
-from spkanon_eval.datamodules.dataset import SpeakerIdDataset
 from spkanon_eval.datamodules.collator import collate_fn
 
 
@@ -23,8 +25,13 @@ def setup_dataloader(config: OmegaConf, datafile: str) -> DataLoader:
     LOGGER.info(f"\tBatch size: {config.batch_size}")
     LOGGER.info(f"\tNum. workers: {config.num_workers}")
 
+    data = dict()
+    for line in open(datafile):
+        obj = json.loads(line)
+        data[obj["path"]] = obj
+
     return DataLoader(
-        dataset=SpeakerIdDataset(datafile, config.sample_rate),
+        dataset=prepare_dataset(data),
         batch_size=config.batch_size,
         collate_fn=collate_fn,
         num_workers=config.num_workers,
@@ -65,3 +72,24 @@ def data_iterator(datafile: str) -> Iterable[dict]:
     with open(datafile) as f:
         for line in f:
             yield json.loads(line)
+
+
+def prepare_dataset(datafile: str) -> DynamicItemDataset:
+    "Creates the datasets and their data processing pipelines."
+
+    dataset = DynamicItemDataset(datafile)
+
+    # define audio pipeline:
+    @sb.utils.data_pipeline.takes("path")
+    @sb.utils.data_pipeline.provides("sig")
+    def audio_pipeline(wav: torch.Tensor) -> torch.Tensor:
+        sig, _ = torchaudio.load(wav)
+        sig = sig.transpose(0, 1).squeeze(1)
+        return sig
+
+    sb.dataio.dataset.add_dynamic_item([dataset], audio_pipeline)
+    sb.dataio.dataset.set_output_keys(
+        [dataset], ["id", "sig", "speaker_id", "text", "duration", "gender"]
+    )
+
+    return dataset
