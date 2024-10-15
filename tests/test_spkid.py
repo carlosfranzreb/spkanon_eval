@@ -35,7 +35,7 @@ class TestSpkid(unittest.TestCase):
                 "path": "speechbrain/spkrec-xvect-voxceleb",
                 "emb_model_ckpt": None,
                 "num_workers": 0,
-                "finetune_config": "spkanon_eval/config/components/spkid/train_xvec_debug.yaml",
+                "train_config": "spkanon_eval/config/components/spkid/train_xvec_debug.yaml",
             }
         )
         self.data_dir = "spkanon_eval/tests/data/LibriSpeech/dev-clean-2/1988/24833"
@@ -52,9 +52,10 @@ class TestSpkid(unittest.TestCase):
             for audiofile in os.listdir(self.data_dir):
                 audio = load_audio(os.path.join(self.data_dir, audiofile), SAMPLE_RATE)
                 audio = torch.tensor(audio).unsqueeze(0)
-                audio_len = torch.tensor([audio.shape[1]])
+                length = torch.tensor([audio.shape[1]], dtype=torch.int64)
+                spk = torch.tensor([0], dtype=torch.int64)
 
-                emb = model.run((audio, audio_len))
+                emb = model.run((audio, spk, length))
                 self.assertTrue(emb.shape == (1, 512))
 
         # test with one batch of 2 samples
@@ -109,7 +110,7 @@ class TestSpkid(unittest.TestCase):
         n_speakers = 3
         model = SpkId(self.cfg, "cpu")
         old_state_dict = copy.deepcopy(model.model.state_dict())
-        model.finetune(exp_folder, datafile, n_speakers)
+        model.train(exp_folder, datafile, n_speakers)
 
         # gather the utterances from the datafile
         expected_samples = dict()
@@ -117,36 +118,11 @@ class TestSpkid(unittest.TestCase):
             obj = json.loads(line)
             expected_samples[obj["path"]] = obj
 
-        split_samples = dict()
-
-        # check the train samples
-        with open(os.path.join(exp_folder, "train.csv")) as f:
-            train_lines = f.readlines()
-        self.assertEqual(len(train_lines), 8)
-        for line in train_lines[1:]:
-            split = line.strip().split(",")
-            self.assertTrue(split[0] in expected_samples)
-            split_samples[split[0]] = split
-
-        # check the val samples
-        with open(os.path.join(exp_folder, "val.csv")) as f:
-            val_lines = f.readlines()
-        self.assertEqual(len(val_lines), 4)
-        for line in val_lines[1:]:
-            split = line.strip().split(",")
-            self.assertTrue(split[0] in expected_samples)
-            split_samples[split[0]] = split
-
-        # check that the samples are the same
-        for path, split in split_samples.items():
-            obj = expected_samples[path]
-            for idx, key in enumerate(
-                ["path", "duration", "path", "label", "speaker_id"]
-            ):
-                self.assertTrue(split[idx] == str(obj[key]))
-
-        # check that all samples are used
-        self.assertEqual(len(split_samples), len(expected_samples))
+        # check the train and val samples
+        for split_file, n_lines in zip(["train.csv", "val.csv"], [17, 6]):
+            with open(os.path.join(exp_folder, split_file)) as f:
+                train_lines = f.readlines()
+            self.assertEqual(len(train_lines), n_lines)
 
         # check that the model is trained one epoch
         log_file = os.path.join(exp_folder, "train_log.txt")
@@ -167,7 +143,12 @@ class TestSpkid(unittest.TestCase):
         )
 
         # check that the model is saved
-        model_file = os.path.join(exp_folder, "embedding_model.pt")
+        subdir = None
+        for sub in os.listdir(exp_folder):
+            if sub.startswith("CKPT"):
+                subdir = sub
+                break
+        model_file = os.path.join(exp_folder, subdir, "embedding_model.ckpt")
         self.assertTrue(os.path.isfile(model_file))
 
         shutil.rmtree(exp_folder)

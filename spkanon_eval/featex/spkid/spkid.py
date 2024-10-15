@@ -47,9 +47,10 @@ class SpkId(InferComponent):
         Return speaker embeddings for the given batch of utterances.
 
         Args:
-            batch: A list of two tensors, the first containing the waveforms
-            with shape (batch_size, n_samples), and the second containing
-            the speaker labels as integers with shape (batch_size).
+            batch: A list of three tensors in the following order:
+            1. waveforms with shape (batch_size, n_samples)
+            2. waveform lengths with shape (batch_size), as integers
+            3. waveform speaker IDs with shape (batch_size), as integers
 
         Returns:
             A tensor containing the speaker embeddings with shape

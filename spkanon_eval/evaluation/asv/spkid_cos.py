@@ -79,11 +79,11 @@ class FastASV(ASVComponent):
         unique_pairs, inverse = np.unique(pairs, axis=0, return_inverse=True)
         dist_avgs = np.bincount(inverse, weights=dists) / np.bincount(inverse)
 
+        dist_file_utt = os.path.join(dump_folder, "utt_dists.npy")
+        np.save(dist_file_utt, np.hstack((pairs, dists.reshape(-1, 1))))
+
         dist_file = os.path.join(dump_folder, "dists.npy")
         np.save(dist_file, np.hstack((unique_pairs, dist_avgs.reshape(-1, 1))))
-
-        dist_file = os.path.join(dump_folder, "utt_dists.npy")
-        np.save(dist_file, np.hstack((pairs, dists.reshape(-1, 1))))
 
         # compute the EER for the data and its subsets w.r.t. speaker chars.
         analyse_results(datafile, dist_file)

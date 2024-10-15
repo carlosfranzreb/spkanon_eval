@@ -33,6 +33,8 @@ class BaseTestClass(unittest.TestCase):
                 "name": "Test",
                 "inference": {
                     "run": True,
+                    "consistent_targets": False,
+                    "gender_conversion": None,
                     "input": {"spectrogram": "spectrogram", "target": "target"},
                 },
                 "seed": 0,
@@ -40,6 +42,7 @@ class BaseTestClass(unittest.TestCase):
                 "device": "cpu",
                 "sample_rate": 24000,
                 "batch_size": 2,
+                "target_selection_cfg": "spkanon_eval/config/components/target_selection/random.yaml",
                 "featex": {
                     "spectrogram": {
                         "cls": "spkanon_eval.featex.spectrogram.SpecExtractor",
@@ -48,6 +51,22 @@ class BaseTestClass(unittest.TestCase):
                         "win_length": 1200,
                         "hop_length": 300,
                     }
+                },
+                "featproc": {
+                    "dummy": {
+                        "cls": "spkanon_eval.featproc.dummy.DummyConverter",
+                        "input": {
+                            "spectrogram": "spectrogram",
+                            "n_frames": "n_frames",
+                            "source": "source",
+                            "target": "target",
+                        },
+                        "n_targets": 10,
+                    },
+                    "output": {
+                        "featex": [],
+                        "featproc": ["spectrogram", "n_frames", "target"],
+                    },
                 },
                 "synthesis": {
                     "cls": "spkanon_eval.synthesis.dummy.DummySynthesizer",
