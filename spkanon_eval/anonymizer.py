@@ -41,7 +41,7 @@ class Anonymizer:
                     LOGGER.info(f"Passing target selection algorithm to {name}")
                     component.init_target_selection(*args)
 
-    def get_feats(self, batch: list, source: Tensor, source_is_male: Tensor) -> dict:
+    def get_feats(self, batch: list, source_is_male: Tensor) -> dict:
         """
         Run the featex, featproc and featfusion modules. Returns anonymized features and
         targets. Sources refer to the input speaker, and targets to the output speaker.
@@ -50,7 +50,7 @@ class Anonymizer:
         if self.featex is not None:
             out = self._run_module(self.featex, batch)
 
-        out["source"] = source
+        out["source"] = batch[1]
         out["source_is_male"] = source_is_male
         if self.featproc is not None:
             processed = self._run_module(self.featproc, out)
@@ -66,9 +66,6 @@ class Anonymizer:
 
     def forward(self, batch: list, data: list) -> tuple[Tensor, Tensor, Tensor]:
         """Returns anonymized speech, item lengths and targets."""
-        source = torch.tensor(
-            [d["speaker_id"] for d in data], dtype=torch.long, device=self.device
-        )
         if "gender" in data[0]:
             source_is_male = torch.tensor(
                 [d["gender"] == "M" for d in data], dtype=torch.bool, device=self.device
@@ -80,10 +77,10 @@ class Anonymizer:
                 considered for target selection.
                 """
             )
-            source_is_male = torch.zeros_like(source, dtype=torch.bool)
+            source_is_male = torch.zeros_like(batch[1], dtype=torch.bool)
 
         with torch.no_grad():
-            out = self.get_feats(batch, source, source_is_male)
+            out = self.get_feats(batch, source_is_male)
             waves, n_samples = self.synthesis.run(out)
         return waves, n_samples, out["target"]
 
