@@ -103,8 +103,11 @@ def compute_chunk_sizes(
     """
     LOGGER.info(f"Computing chunk sizes for file {datafile} and model {model}")
 
-    sorted_durs = sorted([json.loads(line)["duration"] for line in open(datafile)])
-    min_dur, max_dur = sorted_durs[0], sorted_durs[-1]
+    # read the first and last lines of the datafile to get the min and max duration
+    with open(datafile) as f:
+        lines = f.readlines()
+    min_dur = float(json.loads(lines[0])["duration"])
+    max_dur = float(json.loads(lines[-1])["duration"])
 
     if model.device == "cpu":
         LOGGER.warning("Model is on CPU. Skipping chunk size computation.")
