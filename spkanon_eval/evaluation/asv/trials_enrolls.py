@@ -10,6 +10,7 @@ import logging
 LOGGER = logging.getLogger("progress")
 
 
+# TODO: this expects the data to be sorted by speaker_id, but we sort it now by duration
 def split_trials_enrolls(
     exp_folder: str,
     root_folder: str = None,
@@ -75,17 +76,18 @@ def split_trials_enrolls(
             else:
                 obj["path"] = anon_path(obj["path"], anon_folder, root_folder)
                 trial_writer.write(json.dumps(obj) + "\n")
-        
+
         trial_writer.close()
         enroll_writer.close()
 
     # if no enrolls, the trial is the first utt of each speaker
     else:
         current_spk = None
-        spk_objs = list()
+        objects = [json.loads(line) for line in open(datafile)]
+        objects = sorted(objects, key=lambda x: x["speaker_id"])
 
-        for line in open(datafile):
-            obj = json.loads(line.strip())
+        spk_objs = list()
+        for obj in objects:
             spk = obj["speaker_id"]
             if current_spk is None:
                 current_spk = spk

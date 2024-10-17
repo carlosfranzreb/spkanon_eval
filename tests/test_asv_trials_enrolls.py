@@ -17,15 +17,15 @@ class TestTrialsEnrolls(unittest.TestCase):
         shutil.copy(datafile, os.path.join(self.exp_folder, "data", "eval.txt"))
         self.expected_trials = [
             "2412-153948-0000.flac",
-            "3752-4944-0000.flac",
-            "1988-24833-0000.flac",
+            "3752-4944-0001.flac",
+            "1988-24833-0001.flac",
         ]
         self.expected_enrolls = [
             "2412-153948-0001.flac",
             "2412-153948-0002.flac",
-            "3752-4944-0001.flac",
+            "3752-4944-0000.flac",
             "3752-4944-0002.flac",
-            "1988-24833-0001.flac",
+            "1988-24833-0000.flac",
             "1988-24833-0002.flac",
             "1988-24833-0003.flac",
         ]
