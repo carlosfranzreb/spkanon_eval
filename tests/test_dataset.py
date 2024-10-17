@@ -16,7 +16,7 @@ class TestDataset(unittest.TestCase):
         """
         self.datafile = "spkanon_eval/tests/datafiles/ls-dev-clean-2.txt"
         self.sample_rate = 16000
-        self.dataset = SpeakerIdDataset(self.datafile, self.sample_rate)
+        self.dataset = SpeakerIdDataset(self.datafile, self.sample_rate, {100: 1})
 
     def test_dataset_length(self):
         n_samples = 0
@@ -30,8 +30,7 @@ class TestDataset(unittest.TestCase):
         durations. We assume that the dataset's spk2id mapping is correct.
         """
 
-        sample_idx = 0
-        for line in open(self.datafile).readlines():
+        for sample_idx, line in enumerate(open(self.datafile).readlines()):
             obj = json.loads(line)
             audio_true, sr = torchaudio.load(obj["path"])
             if sr != self.sample_rate:
@@ -39,10 +38,9 @@ class TestDataset(unittest.TestCase):
                     orig_freq=sr, new_freq=self.sample_rate
                 )
                 audio_true = resampler(audio_true)
-            audio_true = audio_true.squeeze()
+
             audio_dataset, spk, n_samples = self.dataset[sample_idx]
-            self.assertEqual(audio_true.shape[0], audio_dataset.shape[0])
+            self.assertEqual(audio_true.shape[1], audio_dataset.shape[1])
             self.assertEqual(obj["speaker_id"], spk)
             self.assertTrue(torch.allclose(audio_true, audio_dataset))
-            self.assertEqual(n_samples, audio_true.shape[0])
-            sample_idx += 1
+            self.assertEqual(n_samples, audio_true.shape[1])

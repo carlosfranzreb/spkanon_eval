@@ -32,7 +32,8 @@ class SpeakerIdDataset(Dataset):
         the audio file.
 
         Args:
-            datafile: path to the datafile
+            datafile: path to the datafile. We expect it to be sorted in descending
+                order of audio duration.
             sample_rate: the sampling rate to resample the audio to
             chunk_sizes: a dictionary mapping the maximum duration of a batch to the
                 number of samples in the batch. This is used to maximize GPU usage.
@@ -41,7 +42,6 @@ class SpeakerIdDataset(Dataset):
         self.sample_rate = sample_rate
         self.datafile = datafile
         self.data = [json.loads(line) for line in open(datafile)]
-        self.data = sorted(self.data, key=lambda x: x["duration"], reverse=True)
 
         # aggregate the sorted data into chunks
         data_chunks = [[self.data[0]]]
