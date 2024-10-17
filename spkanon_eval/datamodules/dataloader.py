@@ -1,16 +1,17 @@
+import os
 import json
 import logging
 from collections.abc import Iterable
 
 import torch
+from torch import Tensor
 from torch.utils.data import DataLoader
 import torchaudio
 from omegaconf import OmegaConf
 import speechbrain as sb
 from speechbrain.dataio.dataset import DynamicItemDataset
 
-from spkanon_eval.datamodules.collator import collate_fn
-
+from spkanon_eval.datamodules.dataset import SpeakerIdDataset
 
 LOGGER = logging.getLogger("progress")
 
@@ -22,25 +23,21 @@ def setup_dataloader(config: OmegaConf, datafile: str) -> DataLoader:
 
     LOGGER.info(f"Creating dataloader for {datafile}")
     LOGGER.info(f"\tSample rate: {config.sample_rate}")
-    LOGGER.info(f"\tBatch size: {config.batch_size}")
     LOGGER.info(f"\tNum. workers: {config.num_workers}")
-
-    data = dict()
-    for line in open(datafile):
-        obj = json.loads(line)
-        data[obj["path"]] = obj
-
+    fname = os.path.splitext(os.path.basename(datafile))[0]
+    fname = fname.replace("anon_", "")
     return DataLoader(
-        dataset=prepare_dataset(data),
-        batch_size=config.batch_size,
-        collate_fn=collate_fn,
+        dataset=SpeakerIdDataset(
+            datafile, config.sample_rate, config.chunk_sizes[fname]
+        ),
         num_workers=config.num_workers,
+        batch_size=None,
     )
 
 
 def eval_dataloader(
     config: OmegaConf, datafile: str, device: str
-) -> Iterable[str, list[torch.Tensor], dict[str, str]]:
+) -> Iterable[str, list[Tensor], dict[str, str]]:
     """
     This function is called by evaluation and inference scripts. It is an
     iterator over the batches and other sample info in the given manifest.

@@ -8,7 +8,7 @@ from omegaconf import OmegaConf
 LOGGER = logging.getLogger("progress")
 
 
-def prepare_datafile(stage: str, config: OmegaConf, log_dir: str) -> None:
+def prepare_datafile(stage: str, config: OmegaConf, log_dir: str) -> str:
     """
     Add the root folder to the paths of the audiofiles and store the resulting
     datafiles within the experiment folder, merged into a single datafile named after
@@ -24,6 +24,9 @@ def prepare_datafile(stage: str, config: OmegaConf, log_dir: str) -> None:
 
     Raises:
         FileExistsError: if the new datafile already exists.
+
+    Returns:
+        The path to the new datafile.
     """
 
     LOGGER.info(f"Preparing datafile for stage {stage}")
@@ -74,3 +77,4 @@ def prepare_datafile(stage: str, config: OmegaConf, log_dir: str) -> None:
 
     new_df_writer.close()
     LOGGER.info(f"Done with datafile prep for stage {stage}")
+    return new_df

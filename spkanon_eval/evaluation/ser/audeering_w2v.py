@@ -2,6 +2,7 @@ import os
 import logging
 
 import torch
+from torch.nn.utils.rnn import pad_sequence
 import torchaudio
 from torchaudio.transforms import Resample
 from transformers import Wav2Vec2Processor
@@ -11,8 +12,7 @@ from spkanon_eval.evaluate import SAMPLE_RATE
 from spkanon_eval.evaluation.ser.model_utils import EmotionModel
 from spkanon_eval.evaluation.ser.analysis_utils import analyse_func, headers_func
 from spkanon_eval.evaluation.analysis import analyse_results
-from spkanon_eval.datamodules.dataloader import eval_dataloader
-from spkanon_eval.datamodules.collator import collate_fn
+from spkanon_eval.datamodules import eval_dataloader
 from spkanon_eval.component_definitions import InferComponent, EvalComponent
 
 
@@ -108,16 +108,7 @@ class EmotionEvaluator(InferComponent, EvalComponent):
                 if sr != SAMPLE_RATE:
                     audio = Resample(sr, SAMPLE_RATE)(audio)
                 resampled_x.append(audio)
-            batch_x = collate_fn(
-                [
-                    [
-                        resampled_x[i].squeeze(),
-                        torch.tensor([0]),
-                        resampled_x[i].squeeze().shape[0],
-                    ]
-                    for i in range(len(resampled_x))
-                ]
-            )
+            batch_x = [pad_sequence(resampled_x, batch_first=True)]
             embs_x, dims_x = self.run(batch_x)
 
             # compare the emotion content of the original and the anonymized audio
