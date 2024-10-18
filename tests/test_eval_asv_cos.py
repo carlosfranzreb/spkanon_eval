@@ -98,6 +98,7 @@ class TestEvalASVCos(BaseTestClass):
                 "sample_rate": EVAL_SR,
                 "batch_size": 2,
                 "num_workers": 0,
+                "chunk_sizes": {"eval": {100: 1}},
             }
         )
         vecs = {"trials": None, "enrolls": None}

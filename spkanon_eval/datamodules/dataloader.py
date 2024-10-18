@@ -24,8 +24,12 @@ def setup_dataloader(config: OmegaConf, datafile: str) -> DataLoader:
     LOGGER.info(f"Creating dataloader for {datafile}")
     LOGGER.info(f"\tSample rate: {config.sample_rate}")
     LOGGER.info(f"\tNum. workers: {config.num_workers}")
+
     fname = os.path.splitext(os.path.basename(datafile))[0]
     fname = fname.replace("anon_", "")
+    if "trials" in fname or "enrolls" in fname:
+        fname = fname.split("_")[0]
+
     return DataLoader(
         dataset=SpeakerIdDataset(
             datafile, config.sample_rate, config.chunk_sizes[fname]

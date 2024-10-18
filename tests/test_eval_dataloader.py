@@ -23,6 +23,7 @@ class TestEvalDataloader(unittest.TestCase):
                 "batch_size": self.batch_size,
                 "num_workers": 0,
                 "sample_rate": self.sample_rate,
+                "chunk_sizes": {"ls-dev-clean-2": {100: 1}},
             }
         )
         self.device = "cpu"

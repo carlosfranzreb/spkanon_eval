@@ -109,6 +109,8 @@ class EmotionEvaluator(InferComponent, EvalComponent):
                     audio = Resample(sr, SAMPLE_RATE)(audio)
                 resampled_x.append(audio)
             batch_x = [pad_sequence(resampled_x, batch_first=True)]
+            if batch_x[0].shape[0] == 1:
+                batch_x[0] = batch_x[0].squeeze(0)
             embs_x, dims_x = self.run(batch_x)
 
             # compare the emotion content of the original and the anonymized audio
