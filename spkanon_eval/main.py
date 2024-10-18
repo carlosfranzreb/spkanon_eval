@@ -75,11 +75,17 @@ def main(config: OmegaConf, exp_folder: str):
             config.data.config.anon_folder = config.eval.config.exp_folder
 
         elif any([c.train for c in config.eval.components.values()]):
-            prepare_datafile("train_eval", config, exp_folder)
+            df = prepare_datafile("train_eval", config, exp_folder)
+            config.data.config.chunk_sizes["train_eval"] = compute_chunk_sizes(
+                df, model, config.sample_rate
+            )
 
         # create the eval datafiles if they don't exist (for the baseline)
         if not os.path.exists(os.path.join(exp_folder, "data", "eval.txt")):
-            prepare_datafile("eval", config, exp_folder)
+            df = prepare_datafile("eval", config, exp_folder)
+            config.data.config.chunk_sizes["eval"] = compute_chunk_sizes(
+                df, model, config.sample_rate
+            )
 
         evaluate(exp_folder, model, config)
         LOGGER.info("End of evaluation")
@@ -106,8 +112,8 @@ def compute_chunk_sizes(
     # read the first and last lines of the datafile to get the min and max duration
     with open(datafile) as f:
         lines = f.readlines()
-    min_dur = float(json.loads(lines[0])["duration"])
-    max_dur = float(json.loads(lines[-1])["duration"])
+    max_dur = float(json.loads(lines[0])["duration"])
+    min_dur = float(json.loads(lines[-1])["duration"])
 
     if model.device == "cpu":
         LOGGER.warning("Model is on CPU. Skipping chunk size computation.")
