@@ -44,3 +44,30 @@ class TestDataset(unittest.TestCase):
             self.assertEqual(obj["speaker_id"], spk)
             self.assertTrue(torch.allclose(audio_true, audio_dataset))
             self.assertEqual(n_samples, audio_true.shape[1])
+
+    def test_data_chunking(self):
+        """
+        Check that the dataset chunks the samples with the given sizes per duration.
+        """
+        audios, speakers, durations = list(), list(), list()
+        for line in open(self.datafile).readlines():
+            obj = json.loads(line)
+            audios.append(torchaudio.load(obj["path"])[0].squeeze())
+            speakers.append(int(obj["speaker_id"]))
+            durations.append(int(audios[-1].shape[0]))
+
+        dataset = SpeakerIdDataset(self.datafile, self.sample_rate, {12: 2, 4: 3})
+        expected_sizes = [2, 2, 2, 3, 1]
+        sample_idx = 0
+        for batch_idx, batch in enumerate(dataset):
+            self.assertEqual(batch[1].shape[0], expected_sizes[batch_idx])
+            for batch_sample_idx in range(expected_sizes[batch_idx]):
+                self.assertEqual(batch[1][batch_sample_idx], speakers[sample_idx])
+                self.assertEqual(batch[2][batch_sample_idx], durations[sample_idx])
+                self.assertTrue(
+                    torch.allclose(
+                        batch[0][batch_sample_idx, : batch[2][batch_sample_idx]],
+                        audios[sample_idx],
+                    )
+                )
+                sample_idx += 1

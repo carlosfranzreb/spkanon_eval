@@ -65,12 +65,10 @@ class SpeakerIdDataset(Dataset):
         resampled to the given sampling rate.
         """
         objs = self.data[sample_idx]
-        audios = pad_sequence(
-            [load_audio(obj["path"], self.sample_rate) for obj in objs],
-            batch_first=True,
-        )
+        audios = [load_audio(obj["path"], self.sample_rate) for obj in objs]
         speaker_ids = tensor([int(obj["speaker_id"]) for obj in objs])
         audio_lens = tensor([audio.shape[0] for audio in audios])
+        audios = pad_sequence(audios, batch_first=True)
         return audios, speaker_ids, audio_lens
 
 
